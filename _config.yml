@@ -14,7 +14,7 @@ timezone:
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: https://elderjames.github.io
 root: /
-permalink: :year/:month/:day/:title/
+permalink: :year/:month/:day/:title.html
 permalink_defaults:
 
 # Directory
@@ -56,6 +56,10 @@ index_generator:
 default_category: uncategorized
 category_map:
 tag_map:
+
+search:
+	path: search.xml
+	field: all
 
 # Date / Time format
 ## Hexo uses Moment.js to parse and display date

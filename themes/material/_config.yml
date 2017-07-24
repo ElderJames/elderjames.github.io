@@ -64,12 +64,12 @@ thumbnail:
 #         type available value: A (animal), C (culture), N (nature), S (space), T (travel)
 background:
     purecolor: "#F5F5F5"
-    # bgimg: "/img/bg.png"
+    #bgimg: "/img/bg.png"
     bing:
         enable: true
-        parameter: 
-            color=: black
-            type=: S
+        parameter: type=S
+            #   color=: blue
+              #type=: A
 
 # Images Settings
 img:
@@ -223,7 +223,7 @@ comment:
 # Available value:
 #     swiftype | google | local
 search:
-    use: google
+    use: local
     swiftype_key:
 
 # Analytics Systems
