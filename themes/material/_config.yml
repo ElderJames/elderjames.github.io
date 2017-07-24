@@ -73,8 +73,8 @@ background:
 
 # Images Settings
 img:
-    logo: "/img/logo.png"
-    avatar: "/img/avatar.png"
+    logo: "https://avatars0.githubusercontent.com/u/7550366?v=4&s=460"
+    avatar: "https://avatars0.githubusercontent.com/u/7550366?v=4&s=460"
     daily_pic: "/img/daily_pic.png"
     sidebar_header: "/img/sidebar_header.png"
     random_thumbnail: "/img/random/material-"
@@ -164,22 +164,27 @@ sidebar:
         use: true
         icon: chrome_reader_mode
         divider: false
+
     pages:
-        About:
+        关于我:
             link: "/about"
-            icon: person
+            icon: face
             divider: false
-        Categories:
-            link: '/categories'
-            icon: person
+        相册:
+            link: '/gallery'
+            icon: image
             divider: false
-        Tags:
+        标签云:
             link: '/tags'
-            icon: person
+            icon: 
             divider: false
-        Timeline:
+        时间轴:
             link: '/timeline'
-            icon: person
+            icon: list
+            divider: false
+        朋友:
+            link: '/links'
+            icon: local_offer
             divider: false
     article_num:
         use: true
