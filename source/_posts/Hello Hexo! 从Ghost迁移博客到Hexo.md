@@ -2,8 +2,8 @@
 title: Hello Hexo! 从Ghost迁移博客到Hexo
 permalink: migrate-blog-from-ghost-to-hexo-and-github
 tags: hexo
-updated: '2016-07-26 01:19:08'
-date: '2016-07-26 01:19:08'
+updated: '2017-07-26 01:19:08'
+date: '2017-07-26 01:19:08'
 ---
 
 很高兴用上了hexo来搭建博客！
