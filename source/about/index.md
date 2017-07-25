@@ -1,8 +1,5 @@
 ---
 title: 关于我
-permalink: about
-id: 6
-updated: '2015-10-15 16:31:15'
 date: 2015-10-11 00:49:51
 layout: about
 comments: false
@@ -12,7 +9,6 @@ comments: false
 - James Yeung
 - 男
 - 2012年就读于广东海洋大学计算机科学与技术专业
-- 目前大四在读
 - 联系方式：[shunjiey@hotmail.com](mailto:shunjiey@hotmail.com)
 - github:[github.com/elderjames](http://github.com/elderjames)
 

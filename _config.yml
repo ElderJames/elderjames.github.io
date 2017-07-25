@@ -80,7 +80,7 @@ theme: material
 
 live2d:
   model: tororo
-  bottom: 0
+  bottom: 60
 
 
 # Deployment

@@ -176,7 +176,7 @@ sidebar:
             divider: false
         标签云:
             link: '/tags'
-            icon: tags
+            icon: local_offer
             divider: false
         时间轴:
             link: '/timeline'
@@ -184,7 +184,7 @@ sidebar:
             divider: false
         朋友:
             link: '/links'
-            icon: local_offer
+            icon: people
             divider: false
     article_num:
         use: true
