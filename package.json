@@ -5,6 +5,10 @@
   "hexo": {
     "version": "3.3.8"
   },
+  "scripts": {
+    "start": "hexo s",
+    "publish": "hexo g -d"
+  },
   "dependencies": {
     "hexo": "^3.2.0",
     "hexo-deployer-git": "^0.3.0",
@@ -14,7 +18,9 @@
     "hexo-generator-index": "^0.2.0",
     "hexo-generator-search": "^2.1.1",
     "hexo-generator-tag": "^0.2.0",
+    "hexo-helper-live2d": "^2.0.6",
     "hexo-helper-qrcode": "^1.0.2",
+    "hexo-migrator-ghost": "^0.1.0",
     "hexo-renderer-ejs": "^0.2.0",
     "hexo-renderer-less": "^0.2.0",
     "hexo-renderer-marked": "^0.2.10",

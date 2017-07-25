@@ -78,6 +78,11 @@ pagination_dir: page
 ## Themes: https://hexo.io/themes/
 theme: material
 
+live2d:
+  model: hijiki
+  bottom: 0
+
+
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:

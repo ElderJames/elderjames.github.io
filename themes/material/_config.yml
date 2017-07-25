@@ -28,7 +28,7 @@ url:
 # ---------------------------------------------------------------
 
 # Schemes
-# scheme: Nexus
+#  scheme: Nexus
 scheme: Paradox
 # scheme: Isolation
 
@@ -63,10 +63,10 @@ thumbnail:
 #         color available value: black, blue, brown, green, multi, orange, pink, purple, red, white, yellow
 #         type available value: A (animal), C (culture), N (nature), S (space), T (travel)
 background:
-    purecolor: "#F5F5F5"
-    #bgimg: "/img/bg.png"
+    #purecolor: "#F5F5F5"
+    bgimg: "http://7xn90z.com1.z0.glb.clouddn.com/image/4/0e/c4419e6cfc648f29175074e8ae9ac.jpg"
     bing:
-        enable: true
+        enable: false
         parameter: type=S
             #   color=: blue
               #type=: A
@@ -150,7 +150,7 @@ sns_share:
 sidebar:
     dropdown:
         Email Me:
-            link: "#"
+            link: "mailto:shunjiey@hotmail.com"
             icon: email
     homepage:
         use: true
@@ -176,7 +176,7 @@ sidebar:
             divider: false
         标签云:
             link: '/tags'
-            icon: 
+            icon: tags
             divider: false
         时间轴:
             link: '/timeline'
