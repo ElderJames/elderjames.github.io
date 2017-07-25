@@ -79,7 +79,7 @@ pagination_dir: page
 theme: material
 
 live2d:
-  model: hijiki
+  model: tororo
   bottom: 0
 
 
