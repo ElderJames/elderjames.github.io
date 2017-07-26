@@ -1,16 +1,16 @@
 ---
 title: 关于我
-date: 2015-10-11 00:49:51
+date: 2017-07-27 00:49:51
 layout: about
 comments: false
 ---
 
 ### 基本信息
-- James Yeung
+- 杨舜杰
 - 男
-- 2012年就读于广东海洋大学计算机科学与技术专业
+- 2016年于广东海洋大学计算机科学与技术专业毕业
 - 联系方式：[shunjiey@hotmail.com](mailto:shunjiey@hotmail.com)
-- github:[github.com/elderjames](http://github.com/elderjames)
+- Github:[github.com/elderjames](http://github.com/elderjames)
 
 ### 兴趣
 - 喜欢接触新鲜事物，尤其是最新科技
@@ -28,3 +28,5 @@ comments: false
 
 ### 目前
 - 就职于[广州百财帮网络金融信息服务有限公司](http://www.100cb.cn/) 任.NET开发工程师
+- 业余喜欢学习前端、.NET Core、docker、Cordova 等技术
+- 想养只猫了

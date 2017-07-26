@@ -113,6 +113,9 @@
         adjustFooter();
 
  <% if (theme.uiux.github) { %>
+
+        var friends=[];
+
         $.ajax({
                 url:'https://api.github.com/users/<%= theme.uiux.github %>',
                 jsonp:'callback',
@@ -133,6 +136,8 @@
             success:function(data){
                
                 data.forEach(function(item){
+                    if (friends.find(x=>x.id==item.id)==null){
+                        friends.push(item);
                     $.ajax({
                         url:'https://api.github.com/users/'+item.login,
                         jsonp:'callback',
@@ -148,7 +153,9 @@
                                     
                         }
                     });
+                    }
                 });
+                
             }
         });
         $.ajax({
@@ -157,6 +164,8 @@
             success:function(data){
                
                 data.forEach(function(item){
+                      if (friends.find(x=>x.id==item.id)==null) {
+                        friends.push(item);
                     $.ajax({
                         url:'https://api.github.com/users/'+item.login,
                         jsonp:'callback',
@@ -172,8 +181,10 @@
                                     
                         }
                     });
+                      }
                 });
             }
+        
         });
 
         <% } %>
