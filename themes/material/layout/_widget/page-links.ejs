@@ -112,9 +112,23 @@
     $(document).ready(function() {
         adjustFooter();
 
- <% if (theme.sns.github){ %>
+ <% if (theme.uiux.github) { %>
         $.ajax({
-            url: 'https://api.github.com/users/<%= theme.sns.github %>/followers',
+                url:'https://api.github.com/users/<%= theme.uiux.github %>',
+                jsonp:'callback',
+                success:function(userData){
+                        $('.md-links').prepend(`
+                               <li class="md-links-item">
+                                    <a href="${userData.html_url}" title="${userData.login}" target="_blank">
+                                        <img src="${userData.avatar_url}" alt="${userData.login}" width="72px"/>
+                                        <span class="md-links-title">${userData.name||userData.login}</span><br />
+                                        <span>${userData.bio|| userData.public_repos +' repos'}</span>
+                                        </a>
+                                    </li>`);
+                        }
+        })
+        $.ajax({
+            url: 'https://api.github.com/users/<%= theme.uiux.github %>/followers',
             jsonp:'callback',
             success:function(data){
                
@@ -127,8 +141,32 @@
                                     <li class="md-links-item">
                                         <a href="${item.html_url}" title="${item.login}" target="_blank">
                                             <img src="${item.avatar_url}" alt="${item.login}" width="72px"/>
-                                            <span class="md-links-title">${item.login}</span><br />
-                                            <span>${userData.bio||''}</span>
+                                            <span class="md-links-title">${userData.name||userData.login}</span><br />
+                                            <span>${userData.bio|| userData.public_repos +' repos'}</span>
+                                        </a>
+                                     </li>`);
+                                    
+                        }
+                    });
+                });
+            }
+        });
+        $.ajax({
+            url: 'https://api.github.com/users/<%= theme.uiux.github %>/following',
+            jsonp:'callback',
+            success:function(data){
+               
+                data.forEach(function(item){
+                    $.ajax({
+                        url:'https://api.github.com/users/'+item.login,
+                        jsonp:'callback',
+                        success:function(userData){
+                                 $('.md-links').append(`
+                                    <li class="md-links-item">
+                                        <a href="${item.html_url}" title="${item.login}" target="_blank">
+                                            <img src="${item.avatar_url}" alt="${item.login}" width="72px"/>
+                                            <span class="md-links-title">${userData.name||userData.login}</span><br />
+                                            <span>${userData.bio|| userData.public_repos +' repos'}</span>
                                         </a>
                                      </li>`);
                                     

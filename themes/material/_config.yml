@@ -18,7 +18,7 @@ head:
 
 # Jump Links Settings
 url:
-    rss:
+    rss: rss.xml
     daily_pic: "#"
     logo: "#"
 
@@ -42,6 +42,7 @@ uiux:
     android_chrome_color: "#0097A7"
     nprogress_color: "#29d"
     nprogress_buffer: "800"
+    github: "ElderJames"
 
 # JS Effect Switches
 js_effect:
@@ -130,7 +131,7 @@ sns:
     weibo:
     instagram:
     tumblr:
-    github: ElderJames
+    github: "https://github.com/ElderJames"
     linkedin:
     zhihu:
     bilibili:
@@ -183,7 +184,7 @@ sidebar:
             icon: list
             divider: false
         朋友:
-            link: '/links'
+            link: '/friends'
             icon: people
             divider: false
     article_num:
@@ -212,8 +213,8 @@ materialcdn:
 # Available value of "use":
 #     disqus | disqus_click | changyan | 163gentie
 comment:
-    use:
-    shortname: # duoshuo or disqus shortname
+    use: disqus
+    shortname: elderjames-github-io # duoshuo or disqus shortname
     changyan_appid:
     changyan_conf:
     changyan_thread_key_type: path
@@ -242,7 +243,7 @@ leancloud:
 
 # Busuanzi 不蒜子 Views
 busuanzi:
-    enable: false
-    all_site_uv: false
-    post_pv: false
+    enable: true
+    all_site_uv: true
+    post_pv: true
     busuanzi_pure_mini_js: "https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"

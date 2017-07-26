@@ -1,5 +1,5 @@
 ---
-title: links
+title: Friends
 date:
 layout: links
 ---
