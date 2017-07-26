@@ -109,5 +109,31 @@
     };
     $(document).ready(function() {
         adjustFooter();
+
+        $.ajax({
+            url: 'https://api.github.com/users/elderjames/followers',
+            jsonp:'callback',
+            success:function(data){
+                console.log(data);
+                data.forEach(function(item){
+                         $('.md-links').append(`
+                            <li class="md-links-item">
+                                <a href="${item.html_url}" title="${item.login}" target="_blank">
+                                    <img src="${item.avatar_url}" alt="${item.login}" width="72px"/>
+                                    <span class="md-links-title">${item.login}</span><br />
+                                    <span id="id-${item.id}"></span>
+                                 </a>
+                            </li>`)
+
+                            $.ajax({
+                                url:'https://api.github.com/users/'+item.login,
+                                jsonp:'callback',
+                                success:function(userData){
+                                    $('#id-'+userData.id).html(userData.bio)
+                                }
+                            })
+                        })
+            }
+        });
     });
 </script>
