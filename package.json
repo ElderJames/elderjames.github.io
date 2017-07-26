@@ -21,6 +21,7 @@
     "hexo-helper-live2d": "^2.0.6",
     "hexo-helper-qrcode": "^1.0.2",
     "hexo-migrator-ghost": "^0.1.0",
+    "hexo-prism-plugin": "^2.1.2",
     "hexo-renderer-ejs": "^0.2.0",
     "hexo-renderer-less": "^0.2.0",
     "hexo-renderer-marked": "^0.2.10",

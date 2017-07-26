@@ -2,13 +2,13 @@ sidebar:
     homepage: "主页"
     archive: "归档"
     article_num: "文章总数"
-    tags: bqianyun
+    tags: "标签云"
 post:
     visitor: "访客"
     views: "浏览量"
     continue: "阅读全文"
-    older: "旧篇"
-    newer: "新篇"
+    older: "下一篇"
+    newer: "上一篇"
     qrcode: "在其它设备中阅读本文章"
     comments_load_button: "阅读评论（请确保 disqus 可以正常加载）"    
     comments_fully_load_button: "加载完整评论（请确保 disqus 可以正常加载）" 
