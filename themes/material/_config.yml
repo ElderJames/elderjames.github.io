@@ -165,7 +165,6 @@ sidebar:
         use: true
         icon: chrome_reader_mode
         divider: false
-
     pages:
         关于我:
             link: "/about"
@@ -213,12 +212,17 @@ materialcdn:
 # Available value of "use":
 #     disqus | disqus_click | changyan | 163gentie
 comment:
-    use: disqus
+    use: gitment #disqus
     shortname: elderjames-github-io # duoshuo or disqus shortname
     changyan_appid:
     changyan_conf:
     changyan_thread_key_type: path
     gentie_productKey: 
+
+    gitment_owner: 'ElderJames'
+    gitment_repo: 'elderjames.github.io'
+    gitment_client_id: '695234dcb3266b06c9bc'
+    gitment_client_secret : '9012a4415f4672e4858df564fc9999e9b6d5cec0'
 
 # Search Systems
 # Available value:
