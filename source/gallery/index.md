@@ -1,5 +1,5 @@
 ---
-title: gallery
+title: 相册
 date:
 layout: gallery
 ---

@@ -4,8 +4,8 @@
 
 # Site
 title: ElderJames' Blog
-subtitle:
-description:
+subtitle: 编程之路
+description: 学习、札记、分享
 author: James Yeung
 language: zh-CN
 timezone:
@@ -82,7 +82,7 @@ theme: material
 ## Plugins: https://github.com/EYHN/hexo-helper-live2d
 live2d:
   model: tororo
-  bottom: 0
+  bottom: 60
   
 # prism
 ## Plugins:https://github.com/ele828/hexo-prism-plugin
@@ -97,3 +97,10 @@ prism_plugin:
 deploy:
   type: git
   repo: https://github.com/ElderJames/elderjames.github.io.git
+
+feed:
+  type: rss2
+  path: rss.xml
+  limit: 20
+  hub:
+  content:
