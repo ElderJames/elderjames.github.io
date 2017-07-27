@@ -5,7 +5,7 @@ environment:
     secure: X4W1aA/1N4LSTHOeDeRZS1j02bi5tjpf9z39vFsPLTROHnRVf6jKOcn2KPBpSne3
 
 install:
-  - ps: Install-Product node 6.11.1
+  - ps: Install-Product node 6.0
   - node --version
   - npm --version
   - npm install
@@ -31,5 +31,3 @@ on_success:
   - git commit -m "Update Static Site"
   - git push origin %TARGET_BRANCH%
   - appveyor AddMessage "Static Site Updated"
-  # - if "%APPVEYOR_REPO_BRANCH%"=="master" if not defined APPVEYOR_PULL_REQUEST_NUMBER (git diff --quiet --exit-code --cached || git commit -m "Update Static Site" && git push origin %TARGET_BRANCH% && appveyor AddMessage "Static Site Updated")
-
