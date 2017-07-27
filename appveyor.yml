@@ -5,6 +5,7 @@ environment:
     secure: X4W1aA/1N4LSTHOeDeRZS1j02bi5tjpf9z39vFsPLTROHnRVf6jKOcn2KPBpSne3
 
 install:
+  - ps: Install-Product node 6.11.1
   - node --version
   - npm --version
   - npm install
