@@ -1,0 +1,1 @@
+# Welcome to my blog! [![Build status](https://ci.appveyor.com/api/projects/status/b0wack7uxrvifijj?svg=true)](https://ci.appveyor.com/project/ElderJames/elderjames-github-io)
