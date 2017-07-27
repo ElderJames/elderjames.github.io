@@ -65,7 +65,7 @@ thumbnail:
 #         type available value: A (animal), C (culture), N (nature), S (space), T (travel)
 background:
     #purecolor: "#F5F5F5"
-    bgimg: /img/bg.png  #"http://7xn90z.com1.z0.glb.clouddn.com/image/4/0e/c4419e6cfc648f29175074e8ae9ac.jpg"
+    bgimg: "/img/bg.png"  #"http://7xn90z.com1.z0.glb.clouddn.com/image/4/0e/c4419e6cfc648f29175074e8ae9ac.jpg"
     bing:
         enable: false
         parameter: type=S
