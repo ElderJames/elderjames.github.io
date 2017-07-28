@@ -76,7 +76,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: material
+theme: material-dev
 
 #live2d 
 ## Plugins: https://github.com/EYHN/hexo-helper-live2d
