@@ -73,9 +73,21 @@
         cursor: pointer;
     }
 
+    .md-links-item .md-links-desc{
+        overflow : hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        position:relative;
+        line-height:15px;
+        height:30px;
+        overflow:hidden;
+    }
+
     .md-links-title {
         font-size: 20px;
-        line-height: 50px;
+        line-height: 40px;
     }
 
     #scheme-Paradox .mdl-mini-footer{
@@ -93,7 +105,7 @@
                 <a href="<%= site.data.links[i].link %>" title="<%= i %>" target="_blank">
                     <img src="<%= site.data.links[i].avatar %>" alt="<%= i %>" width="72px"/>
                     <span class="md-links-title"><%= i %></span><br />
-                    <span><%= site.data.links[i].descr %></span>
+                    <span class="md-links-desc"><%= site.data.links[i].descr %></span>
                 </a>
             </li>
         <% } %>
@@ -107,31 +119,30 @@
             $('#bottom').css('bottom', '-' + footerBottom + 'px');
         }
     };
-
-   
     $(document).ready(function() {
         adjustFooter();
-
- <% if (theme.uiux.github) { %>
-
-        var friends=[];
-
-        $.ajax({
-                url:'https://api.github.com/users/<%= theme.uiux.github %>',
+        <% if (page.github && page.github.name) { %>
+                var friends=[];
+        <% if (page.github.self){ %>
+            $.ajax({
+                url:'https://api.github.com/users/<%= page.github.name %>',
                 jsonp:'callback',
                 success:function(userData){
+                    friends.push(userData);
                         $('.md-links').prepend(`
                                <li class="md-links-item">
-                                    <a href="${userData.html_url}" title="${userData.login}" target="_blank">
+                                    <a href="${userData.html_url}" title="${userData.login}\n${(userData.bio? (userData.bio+'\n') :'')+ userData.public_repos +' repos' + ' && '+userData.followers+' followers' }" target="_blank">
                                         <img src="${userData.avatar_url}" alt="${userData.login}" width="72px"/>
                                         <span class="md-links-title">${userData.name||userData.login}</span><br />
-                                        <span>${userData.bio|| userData.public_repos +' repos'}</span>
+                                        <span class="md-links-desc">${userData.bio|| userData.public_repos +' repos' + ' && '+userData.followers+' followers' }</span>
                                         </a>
                                     </li>`);
                         }
         })
+        <% } %>
+        <% if (page.github.followers){ %>
         $.ajax({
-            url: 'https://api.github.com/users/<%= theme.uiux.github %>/followers',
+            url: 'https://api.github.com/users/<%= page.github.name %>/followers',
             jsonp:'callback',
             success:function(data){
                
@@ -144,13 +155,12 @@
                         success:function(userData){
                                  $('.md-links').append(`
                                     <li class="md-links-item">
-                                        <a href="${item.html_url}" title="${item.login}" target="_blank">
+                                        <a href="${item.html_url}" title="${userData.login}\n${(userData.bio? (userData.bio+'\n') :'')+ userData.public_repos +' repos' + ' && '+userData.followers+' followers' }"  target="_blank">
                                             <img src="${item.avatar_url}" alt="${item.login}" width="72px"/>
                                             <span class="md-links-title">${userData.name||userData.login}</span><br />
-                                            <span>${userData.bio|| userData.public_repos +' repos'}</span>
+                                            <span class="md-links-desc">${userData.bio|| userData.public_repos +' repos' + ' && '+userData.followers+' followers' }</span>
                                         </a>
                                      </li>`);
-                                    
                         }
                     });
                     }
@@ -158,8 +168,11 @@
                 
             }
         });
+        <% } %>
+        <% if (page.github.following) { %>
+
         $.ajax({
-            url: 'https://api.github.com/users/<%= theme.uiux.github %>/following',
+            url: 'https://api.github.com/users/<%= page.github.name %>/following',
             jsonp:'callback',
             success:function(data){
                
@@ -172,13 +185,12 @@
                         success:function(userData){
                                  $('.md-links').append(`
                                     <li class="md-links-item">
-                                        <a href="${item.html_url}" title="${item.login}" target="_blank">
+                                        <a href="${item.html_url}" title="${userData.login}\n${(userData.bio? (userData.bio+'\n') :'')+ userData.public_repos +' repos' + ' && '+userData.followers+' followers' }"  target="_blank">
                                             <img src="${item.avatar_url}" alt="${item.login}" width="72px"/>
                                             <span class="md-links-title">${userData.name||userData.login}</span><br />
-                                            <span>${userData.bio|| userData.public_repos +' repos'}</span>
+                                            <span class="md-links-desc">${userData.bio|| userData.public_repos +' repos' + ' && '+userData.followers+' followers' }</span>
                                         </a>
-                                     </li>`);
-                                    
+                                     </li>`);      
                         }
                     });
                       }
@@ -186,6 +198,7 @@
             }
         
         });
+        <% } %>
 
         <% } %>
     });

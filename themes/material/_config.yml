@@ -42,7 +42,6 @@ uiux:
     android_chrome_color: "#0097A7"
     nprogress_color: "#29d"
     nprogress_buffer: "800"
-    github: "ElderJames"
 
 # JS Effect Switches
 js_effect:
