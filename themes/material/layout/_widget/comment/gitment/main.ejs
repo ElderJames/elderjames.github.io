@@ -11,9 +11,6 @@ var gitment = new Gitment({
     client_secret: '<%= theme.comment.gitment_client_secret %>',
   },
 })
-console.log(gitment.state)
-// if (!gitment.state.meta)
-     gitment.init();
 gitment.render('container')
 
 </script>
