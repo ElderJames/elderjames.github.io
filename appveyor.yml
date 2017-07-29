@@ -1,5 +1,9 @@
 clone_depth: 5
 
+branches:
+  only:
+  - files
+
 environment:
   access_token:
     secure: X4W1aA/1N4LSTHOeDeRZS1j02bi5tjpf9z39vFsPLTROHnRVf6jKOcn2KPBpSne3
