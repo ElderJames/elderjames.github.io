@@ -1,100 +1,32 @@
 {
-  "_args": [
-    [
-      {
-        "raw": "hexo-material@^1.4.0",
-        "scope": null,
-        "escapedName": "hexo-material",
-        "name": "hexo-material",
-        "rawSpec": "^1.4.0",
-        "spec": ">=1.4.0 <2.0.0",
-        "type": "range"
-      },
-      "D:\\project\\blog\\hexoblog"
-    ]
+  "name": "hexo-material",
+  "version": "1.4.0",
+  "description": "Material Design Theme for Hexo",
+  "scripts": {
+    "test": "echo \"Error: no test specified\"",
+    "setup": "npm cache clean && npm install",
+    "lint": "npm run setup && bash lint.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/viosey/hexo-theme-material.git"
+  },
+  "keywords": [
+    "hexo",
+    "theme",
+    "material"
   ],
-  "_cnpm_publish_time": 1496317156031,
-  "_from": "hexo-material@>=1.4.0 <2.0.0",
-  "_id": "hexo-material@1.4.0",
-  "_inCache": true,
-  "_location": "/hexo-material",
-  "_nodeVersion": "7.3.0",
-  "_npmOperationalInternal": {
-    "host": "s3://npm-registry-packages",
-    "tmp": "tmp/hexo-material-1.4.0.tgz_1496317155795_0.37634855695068836"
-  },
-  "_npmUser": {
-    "name": "viosey",
-    "email": "imviosey@gmail.com"
-  },
-  "_npmVersion": "3.10.10",
-  "_phantomChildren": {},
-  "_requested": {
-    "raw": "hexo-material@^1.4.0",
-    "scope": null,
-    "escapedName": "hexo-material",
-    "name": "hexo-material",
-    "rawSpec": "^1.4.0",
-    "spec": ">=1.4.0 <2.0.0",
-    "type": "range"
-  },
-  "_requiredBy": [
-    "#USER",
-    "/"
-  ],
-  "_resolved": "https://registry.npm.taobao.org/hexo-material/download/hexo-material-1.4.0.tgz",
-  "_shasum": "98e85958b52a7652b845bf044a49698788c27e10",
-  "_shrinkwrap": null,
-  "_spec": "hexo-material@^1.4.0",
-  "_where": "D:\\project\\blog\\hexoblog",
-  "author": {
-    "name": "Viosey"
-  },
+  "author": "Viosey",
+  "license": "GPL-3.0",
   "bugs": {
     "url": "https://github.com/viosey/hexo-theme-material/issues"
   },
-  "dependencies": {},
-  "description": "Material Design Theme for Hexo",
+  "homepage": "https://github.com/viosey/hexo-theme-material#readme",
   "devDependencies": {
     "ejs-lint": "^0.2.0",
     "eslint": "^3.14.0",
     "eslint-config-airbnb-base": "^11.0.1",
     "eslint-plugin-import": "^2.2.0",
     "sass-lint": "^1.10.2"
-  },
-  "directories": {},
-  "dist": {
-    "shasum": "98e85958b52a7652b845bf044a49698788c27e10",
-    "size": 4080908,
-    "noattachment": false,
-    "tarball": "http://registry.npm.taobao.org/hexo-material/download/hexo-material-1.4.0.tgz"
-  },
-  "gitHead": "1ac6f1bffb3d53c8974a1aa6198551beccec52cd",
-  "homepage": "https://github.com/viosey/hexo-theme-material#readme",
-  "keywords": [
-    "hexo",
-    "theme",
-    "material"
-  ],
-  "license": "GPL-3.0",
-  "maintainers": [
-    {
-      "name": "viosey",
-      "email": "imviosey@gmail.com"
-    }
-  ],
-  "name": "hexo-material",
-  "optionalDependencies": {},
-  "publish_time": 1496317156031,
-  "readme": "ERROR: No README data found!",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/viosey/hexo-theme-material.git"
-  },
-  "scripts": {
-    "lint": "npm run setup && bash lint.sh",
-    "setup": "npm cache clean && npm install",
-    "test": "echo \"Error: no test specified\""
-  },
-  "version": "1.4.0"
+  }
 }

@@ -7,10 +7,10 @@ head:
     favicon: "/img/favicon.png"
     high_res_favicon: "/img/favicon.png"
     apple_touch_icon: "/img/favicon.png"
-    keywords:
+    keywords: ElderJames' Blog
     site_verification:
         google:
-        baidu: true
+        baidu:
 
     # Enable generate structured-data as JSON+LD for SEO or not.
     #        Set as 'false' if it cause some wrong when `hexo g`.
@@ -19,8 +19,8 @@ head:
 # Jump Links Settings
 url:
     rss: rss.xml
-    daily_pic: "#"
-    logo: "#"
+    daily_pic: "/about"
+    logo: "/"
 
 
 # ---------------------------------------------------------------
@@ -28,13 +28,12 @@ url:
 # ---------------------------------------------------------------
 
 # Schemes
-#  scheme: Nexus
 scheme: Paradox
-# scheme: Isolation
+#scheme: Isolation
 
 # UI & UX: slogan, color, effect
 uiux:
-    slogan: "Hi, nice to meet you"
+    slogan: "学习/创作/分享"
     theme_color: "#0097A7"
     theme_sub_color: "#00838F"
     hyperlink_color: "#00838F"
@@ -64,21 +63,22 @@ thumbnail:
 #         type available value: A (animal), C (culture), N (nature), S (space), T (travel)
 background:
     #purecolor: "#F5F5F5"
-    bgimg: "/img/bg.png"  #"http://7xn90z.com1.z0.glb.clouddn.com/image/4/0e/c4419e6cfc648f29175074e8ae9ac.jpg"
+    #bgimg: "/img/bg.png"
     bing:
-        enable: false
+        enable: true
         parameter: type=S
-            #   color=: blue
-              #type=: A
 
 # Images Settings
 img:
-    logo: "https://avatars0.githubusercontent.com/u/7550366?v=4&s=460"
+    logo: "/img/logo.png"
     avatar: "https://avatars0.githubusercontent.com/u/7550366?v=4&s=460"
     daily_pic: "/img/daily_pic.png"
     sidebar_header: "/img/sidebar_header.png"
     random_thumbnail: "/img/random/material-"
     footer_image:
+        AppVeyor:
+            link: 'https://ci.appveyor.com/api/projects/status/b0wack7uxrvifijj/branch/files?svg=true'
+            src: 'https://ci.appveyor.com/api/projects/status/b0wack7uxrvifijj?svg=true'
         #upyun_logo:
             #link: "https://www.upyun.com/"
             #src: "/img/upyun_logo.svg"
@@ -87,6 +87,7 @@ img:
 #   family: the font-family which will be used in the theme
 #   host: uri of fonts host.
 #       Available value of "host": google | baomitu | ustc | custom
+#       When you configured 'use' as 'custom', you should fill in the value of 'custom_font_host', which should be a mirror of google fonts.
 fonts:
     family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif
     use: google
@@ -98,7 +99,15 @@ card_elevation: 2
 # Copyright
 # Specify the date when the site was setup.
 #   For example, if you set it as 2015, then footer will show '© 2015 - 2017'
-copyright_since:
+copyright_since: 2015
+
+# Footer Text
+# You can specify the text you want to show in footer, HTML tag is supported.
+#   For example, you can setup ICP license number as:
+#       '<a href="http://www.miitbeian.gov.cn" rel="nofollow">某ICP备xxxxxxxx号-x</a>'
+footer_text: 学习/创作/分享
+
+footer_background: https://repository-hunter.herokuapp.com/contribution/ElderJames.svg
 
 # Qrcode for redirect at other device
 #   use: choose which method to generate the qrcode for each posts.
@@ -109,6 +118,23 @@ qrcode:
     enable: true
     use: plugin
 
+# Code 
+# Available value: true | false
+# theme value:
+#     theme-name  # /vendors/prettify/themes/[theme-name].css
+# if true, check highlight option in _config.yml. Make sure that default code highlight plugin is disabled.
+#       highlight:
+#         enable: false
+prettify:
+    enable: true
+    theme: "vibrant-ink" # default value: "vibrant-ink"   # theme-name without '.css'
+
+# Post License
+# You can specify the text you want to show in the end of your posts and pages, HTML tag is supported.
+#   For example, you can setup a CC license as:
+#       'This blog is under a <a href="/creativecommons.html" target="_blank">CC BY-NC-SA 3.0 Unported License</a>'
+# You can also use Front-Matter `license` to override this setting.
+license: '<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。'
 
 # ---------------------------------------------------------------
 # Menu Settings
@@ -124,26 +150,27 @@ toc:
 # SNS Menu
 sns:
     email: shunjiey@hotmail.com
-    facebook: "https://www.facebook.com/facebook"
-    twitter: "https://twitter.com/twitter"
-    googleplus: "https://www.google.com/"
+    facebook:
+    twitter:
+    googleplus:
     weibo:
     instagram:
     tumblr:
-    github: "https://github.com/ElderJames"
-    linkedin:
-    zhihu:
+    github: ElderJames
+    linkedin: 杨舜杰
+    zhihu: ElderJames
     bilibili:
     telegram:
+    v2ex:
 
 # SNS Share Switch
 sns_share:
-    twitter: true
-    facebook: true
-    googleplus: true
+    twitter: false
+    facebook: false
+    googleplus: false
     weibo: true
     linkedin: false
-    qq: false
+    qq: true
     telegram: false
 
 # Sidebar Customize
@@ -165,14 +192,6 @@ sidebar:
         icon: chrome_reader_mode
         divider: false
     pages:
-        关于我:
-            link: "/about"
-            icon: face
-            divider: false
-        相册:
-            link: '/gallery'
-            icon: image
-            divider: false
         标签云:
             link: '/tags'
             icon: local_offer
@@ -180,6 +199,18 @@ sidebar:
         时间轴:
             link: '/timeline'
             icon: list
+            divider: false
+        留言板:
+            link: '/contact'
+            icon: forum
+            divider: false
+        关于我:
+            link: "/about"
+            icon: face
+            divider: false
+        相册:
+            link: '/gallery'
+            icon: image
             divider: false
         朋友:
             link: '/friends'
@@ -195,33 +226,24 @@ sidebar:
         feedback: false
         material: false
 
-
 # ---------------------------------------------------------------
 # Integrated Services
 # ---------------------------------------------------------------
 
-# MaterialCDN
-# When you set 'use' as true, the needed css, js, font file will have a new src.
-# The new src will have the base domain you configured in 'base'.
-materialcdn: 
-    use: 
-    base: 
-
 # Comment Systems
 # Available value of "use":
-#     disqus | disqus_click | changyan | 163gentie
+#     disqus | disqus_click | changyan | livere | gitment
 comment:
-    use: gitment #disqus
-    shortname: elderjames-github-io # duoshuo or disqus shortname
+    use: gitment
+    shortname: # duoshuo or disqus shortname
     changyan_appid:
     changyan_conf:
     changyan_thread_key_type: path
-    gentie_productKey: 
-
+    livere_data_uid:
     gitment_owner: 'ElderJames'
     gitment_repo: 'elderjames.github.io'
     gitment_client_id: '695234dcb3266b06c9bc'
-    gitment_client_secret : '9012a4415f4672e4858df564fc9999e9b6d5cec0'
+    gitment_client_secret : '9012a4415f4672e4858df564fc9999e9b6d5cec0'    
 
 # Search Systems
 # Available value:
@@ -234,8 +256,9 @@ search:
 # Available value:
 #     baidu | google | cnzz
 analytics:
-    use:
-    site_id:
+    google_site_id:
+    baidu_site_id:
+    cnzz_site_id:
 
 # Leancloud Views
 leancloud:
@@ -250,3 +273,42 @@ busuanzi:
     all_site_uv: true
     post_pv: true
     busuanzi_pure_mini_js: "https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"
+
+meng:
+    #live2d 
+    ## Plugins: https://github.com/EYHN/hexo-helper-live2d
+    live2d:
+        model: tororo 
+        bottom: 60
+        width: 
+        height: 
+        className: 
+        id: 
+
+# Files Vendors
+# Set a CDN for the files src you want to customize. The url should with protocol.
+# Default(empty) will load the files from the origin server.
+vendors:
+# MaterialCDN
+#   You can load theme unique files from your private cdn or oss.
+#   The new src will have the base domain you configured below.
+#   For example
+#       materialcdn: https://cdn.jsdelivr.net/npm/hexo-material@1.4.0/source
+    materialcdn: https://cdn.jsdelivr.net/npm/hexo-material@1.4.0/source
+
+# Third party library
+#   You can load these files from public cdn.
+#   For example
+#       jquery: https://cdn.bootcss.com/jquery/2.2.1/jquery.js
+    # jQuery 2.2.0
+    jquery: https://cdn.bootcss.com/jquery/2.2.1/jquery.js
+    # nprogress 0.2.0
+    nprogress: //cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js
+    # FontAwesome 4.5.0
+    fontawesome: //cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css
+    # MathJax 2.7.0-2.7.1
+    mathjax: //cdn.bootcss.com/mathjax/2.7.1/MathJax.js
+    # Prettify r298 (only prettify.js)
+    prettify: //cdn.bootcss.com/prettify/r298/prettify.min.js
+    # Material Icons 3.0.1
+    material_icons: //cdn.bootcss.com/material-design-icons/3.0.1/iconfont/material-icons.min.css

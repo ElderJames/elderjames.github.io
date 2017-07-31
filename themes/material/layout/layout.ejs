@@ -42,7 +42,16 @@
                     <%- partial('_partial/import_js') %>
                 </main>
             </div>
-            <%- live2d() %>
+            <% if (theme.meng.live2d.model) { %>
+                <%- live2d({ 
+                        model: theme.meng.live2d.model,
+                        bottom: theme.meng.live2d.bottom||-20,
+                        className:  theme.meng.live2d.className||'live2d',
+                        width:  theme.meng.live2d.width ||150,
+                        height: theme.meng.live2d.height || 300,
+                        id: theme.meng.live2d.id||'live2dcanvas'
+                }) %>
+            <% } %>
         </body>
     <% } %>
 </html>
