@@ -77,7 +77,7 @@ img:
     random_thumbnail: "/img/random/material-"
     footer_image:
         AppVeyor:
-            link: 'https://ci.appveyor.com/api/projects/status/b0wack7uxrvifijj/branch/files?svg=true'
+            link: 'https://ci.appveyor.com/project/ElderJames/elderjames-github-io'
             src: 'https://ci.appveyor.com/api/projects/status/b0wack7uxrvifijj?svg=true'
         #upyun_logo:
             #link: "https://www.upyun.com/"
@@ -90,7 +90,7 @@ img:
 #       When you configured 'use' as 'custom', you should fill in the value of 'custom_font_host', which should be a mirror of google fonts.
 fonts:
     family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif
-    use: google
+    use: baomitu
     custom_font_host:
 
 # Card Elevation Level
@@ -193,27 +193,27 @@ sidebar:
         divider: false
     pages:
         标签云:
-            link: '/tags'
+            link: '/tags.html'
             icon: local_offer
             divider: false
         时间轴:
-            link: '/timeline'
+            link: '/timeline.html'
             icon: list
             divider: false
         留言板:
-            link: '/contact'
+            link: '/contact.html'
             icon: forum
             divider: false
         关于我:
-            link: "/about"
+            link: "/about.html"
             icon: face
             divider: false
         相册:
-            link: '/gallery'
+            link: '/gallery.html'
             icon: image
             divider: false
         朋友:
-            link: '/friends'
+            link: '/friends.html'
             icon: people
             divider: false
     article_num:
