@@ -5,7 +5,7 @@ tags: Hexo,Appveyor,ci
 updated: '2017-08-01 01:19:08'
 date: '2017-08-01 01:19:08'
 categories: Hexo
-thumbnail: 
+thumbnail: '/images/5.png'
 ---
 
 炎热的盛夏，真的是让人难以入眠。在这种不免之夜，如果还加上停电……简直就是惨绝人寰了！
