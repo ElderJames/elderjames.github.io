@@ -15,7 +15,52 @@ categories: Hexo
 
 AppVeyor是目前唯一支持.NET开源项目的持续集成功能，运行环境是Windows，身为.NET开发者和软粉的我，怎么不支持一下这个有情怀的服务商呢？
 
-太晚了，挖坑，明天继续写。可以先看看我的[配置文件](https://github.com/ElderJames/elderjames.github.io/blob/files/appveyor.yml)，以及底部的两篇参考文章~
+<del>太晚了，挖坑，明天继续写。</del> 可以先看看我的[配置文件]：
+
+在Hexo的根目录下新建一个`appveyor.yml`文件，写下以下内容
+
+```bash
+
+clone_depth: 5
+
+branches:
+  only:
+  - files
+
+environment:
+  access_token:
+    secure: github上申请的access_token
+
+install:
+  - ps: Install-Product node 6.0
+  - node --version
+  - npm --version
+  - npm install
+  - npm install hexo-cli -g
+
+build_script:
+  - hexo generate
+
+artifacts:
+  - path: public
+
+on_success:
+  - git config --global credential.helper store
+  - ps: Add-Content "$env:USERPROFILE\.git-credentials" "https://$($env:access_token):x-oauth-basic@github.com`n"
+  - git config --global user.email "%GIT_USER_EMAIL%"
+  - git config --global user.name "%GIT_USER_NAME%"
+  - git clone --depth 5 -q --branch=%TARGET_BRANCH% %STATIC_SITE_REPO% %TEMP%\static-site
+  - cd %TEMP%\static-site
+  - del * /f /q
+  - for /d %%p IN (*) do rmdir "%%p" /s /q
+  - SETLOCAL EnableDelayedExpansion & robocopy "%APPVEYOR_BUILD_FOLDER%\public" "%TEMP%\static-site" /e & IF !ERRORLEVEL! EQU 1 (exit 0) ELSE (IF !ERRORLEVEL! EQU 3 (exit 0) ELSE (exit 1))
+  - git add -A
+  - git commit -m "Update Static Site"
+  - git push origin %TARGET_BRANCH%
+  - appveyor AddMessage "Static Site Updated"
+
+```
+(https://github.com/ElderJames/elderjames.github.io/blob/files/appveyor.yml)，以及底部的两篇参考文章~
 
 {% aplayer '剩下的盛夏' 'TF Boys' http://dl.stream.qqmusic.qq.com/133751958.mp3?vkey=65AE8DE8D14CBE02883EBE1033D6E9127E077DBCAA4DAB55CF6DE2FA33A803BEAE739F1D56B6892BCA0EBCBF8C84BF7D47EC65652B06DEF0&guid=4082350140&fromtag=30 https://y.gtimg.cn/music/photo_new/T002R300x300M000001rvkpT0so9Uk.jpg?max_age=2592000 'narrow:true' 'width:400px' 'autoplay:true' %}
 
