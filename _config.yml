@@ -104,3 +104,9 @@ feed:
   limit: 20
   hub:
   content:
+
+#hexo sitemap
+sitemap:
+  path: sitemap.xml
+baidusitemap:
+  path: baidusitemap.xml
