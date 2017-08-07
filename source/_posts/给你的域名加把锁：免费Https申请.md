@@ -2,8 +2,8 @@
 title: 给你的域名加把锁：免费Https申请
 date: 2017-08-02 15:58:36
 permalink: how-to-request-a-free-https
-tags: Github Page,Https,SSL,Hexo
-categories: Github Page,HTTPS
+tags: Github Pages,Https,SSL,Hexo
+categories: Github Pages,HTTPS
 description: 企业级ssl证书费用高昂，如果只是个人网站没必要用企业级的，使用一些免费的就好了。接下来，我就以我的个人域名为例，介绍下申请免费https的流程。
 thumbnail: https://img.alicdn.com/tps/TB1sfvIMXXXXXcgXXXXXXXXXXXX-2800-1100.jpg
 ---
@@ -31,42 +31,46 @@ thumbnail: https://img.alicdn.com/tps/TB1sfvIMXXXXXcgXXXXXXXXXXXX-2800-1100.jpg
 
 #### 步骤
 
-1. 注册CloudFlare帐户，并添加域名解析
+##### 注册CloudFlare帐户，并添加域名解析
 
-    访问[CloudFlare注册页面](https://www.cloudflare.com/a/sign-up),简单地输入邮箱和密码就能注册成功好。
+访问[CloudFlare注册页面](https://www.cloudflare.com/a/sign-up),简单地输入邮箱和密码就能注册成功好。
 
-2. 添加域名
+##### 添加域名
 
-    登录后，访问[Add Websites页面](https://www.cloudflare.com/a/add-site)添加一个域名，如我的是yangshunjie.com，然后点击【Begin Scan】扫描。大概需要等待1分钟，完成后点击【Continue Setup】继续下一步。
+登录后，访问[Add Websites页面](https://www.cloudflare.com/a/add-site)添加一个域名，如我的是yangshunjie.com，然后点击【Begin Scan】扫描。大概需要等待1分钟，完成后点击【Continue Setup】继续下一步。
 
-    ![](/images/6.png)
+![](/images/6.png)
 
-3. 设置解析项
+##### 设置解析项
 
-    这时，我们需要添加域名解析了，将域名解析到指向的服务器。这跟普通的域名解析绑定是一样的。如果要绑定Github Pages，就需要参考[Github Help官方指南](https://help.github.com/articles/setting-up-an-apex-domain/#configuring-a-records-with-your-dns-provider)添加A记录分别指向`192.30.252.153`和`192.30.252.154`。另外再设置一个www的CNAME记录，指向yangshunjie.com。
+这时，我们需要添加域名解析了，将域名解析到指向的服务器。这跟普通的域名解析绑定是一样的。如果要绑定Github Pages，就需要参考[Github Help官方指南](https://help.github.com/articles/setting-up-an-apex-domain/#configuring-a-records-with-your-dns-provider)添加A记录分别指向`192.30.252.153`和`192.30.252.154`。另外再设置一个www的CNAME记录，指向yangshunjie.com。
 
-    ![](/images/7.png)
+![](/images/7.png)
 
-4. 修改域名解析服务器
+##### 修改域名解析服务器
 
-    登录你的域名注册商的控制后台，把DNS解析服务器改为CloudFlare提供的两个地址。然后等待转移完成。我的域名是在阿里云注册的，所以这里截图演示一下：
+登录你的域名注册商的控制后台，把DNS解析服务器改为CloudFlare提供的两个地址。然后等待转移完成。我的域名是在阿里云注册的，所以这里截图演示一下：
     
-    ![](/images/8.png)
-    ![](/images/9.png)
+![](/images/8.png)
+![](/images/9.png)
 
-    > 注：官方说明，域名服务器修改最长需要72小时生效 ，用了两个域名测试，大约需要 5~30 分钟，看到 Status: Active 即可。
+> 注：官方说明，域名服务器修改最长需要72小时生效 ，用了两个域名测试，大约需要 5~30 分钟，看到 Status: Active 即可。
 
-    ![](/images/10.png)
+![](/images/10.png)
 
-5. 回到CloudFlare，点击上部的 crypto 菜单 , 然后设置 Flexible SSL。
+##### 设置加密方式
 
-    ![](/images/11.png)
+回到CloudFlare，点击上部的 crypto 菜单 , 然后设置 ***Flexible SSL*** 。
 
-6. 接着点击 Page Rules 菜单，添加两个规则，一个是将`http://yangshunjie.com/*`设为 Always Use HTTPS,一个是讲`http://www.yangshunjie.com/`重定向到`https://yangshunjie.com/`(如果需要默认跳转到www开头的域名，则这里就重定向到`https://www.yangshunjie.com/`即可)。
+![](/images/11.png)
 
-    ![](/images/12.png)
-    ![](/images/13.png)
-    ![](/images/14.png)
+##### 设置页面规则
+
+ 接着点击 Page Rules 菜单，添加两个规则，一个是将`http://yangshunjie.com/*`设为 Always Use HTTPS,一个是讲`http://www.yangshunjie.com/`重定向到`https://yangshunjie.com/`(如果需要默认跳转到www开头的域名，则这里就重定向到`https://www.yangshunjie.com/`即可)。
+
+![](/images/12.png)
+![](/images/13.png)
+![](/images/14.png)
 
 #### 注意事项
 
