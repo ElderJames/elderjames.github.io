@@ -107,7 +107,7 @@ copyright_since: 2015
 #       '<a href="http://www.miitbeian.gov.cn" rel="nofollow">某ICP备xxxxxxxx号-x</a>'
 footer_text: '学习/创作/分享<br /><a href="http://icp.chinaz.com/info?q=yangshunjie.com" rel="nofollow">粤ICP备15021181号-1</a>'
 
-footer_background: https://repository-hunter.herokuapp.com/contribution/ElderJames.svg
+footer_background: #https://repository-hunter.herokuapp.com/contribution/ElderJames.svg
 
 # Qrcode for redirect at other device
 #   use: choose which method to generate the qrcode for each posts.
