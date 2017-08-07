@@ -64,8 +64,8 @@ thumbnail: https://img.alicdn.com/tps/TB1sfvIMXXXXXcgXXXXXXXXXXXX-2800-1100.jpg
 
 6. 接着点击 Page Rules 菜单，添加两个规则，一个是将`http://yangshunjie.com/*`设为 Always Use HTTPS,一个是讲`http://www.yangshunjie.com/`重定向到`https://yangshunjie.com/`(如果需要默认跳转到www开头的域名，则这里就重定向到`https://www.yangshunjie.com/`即可)。
 
-    ![](/iamges/12.png)
-    ![](/iamges/13.png)
+    ![](/images/12.png)
+    ![](/images/13.png)
     ![](/images/14.png)
 
 #### 注意事项
