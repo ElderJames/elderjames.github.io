@@ -1,8 +1,8 @@
 ---
 title: Framework7多视图（View）工具栏布局
-tags: |-
-
-  - Framework7
+tags:
+- Framework7
+- 前端
 permalink: the-multiple-views-structure-on-framework7
 id: 5
 updated: '2015-10-11 00:48:05'

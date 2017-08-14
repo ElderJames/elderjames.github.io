@@ -1,9 +1,8 @@
 ---
 title: ASP.NET Core中使用依赖注入获得请求生命周期内唯一的DbContext
-tags: |-
-
-  - .NET
-  - .NET Core
+tags:
+- .NET
+- .NET Core
 permalink: asp-net-corezhong-shi-yong-qing-qiu-sheng-ming-zhou-qi-nei-wei-yi-de-dbcontext
 id: 2
 updated: '2016-09-22 14:57:06'

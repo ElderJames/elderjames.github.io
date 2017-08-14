@@ -5,6 +5,8 @@ id: 13
 updated: '2016-03-24 11:35:19'
 date: 2016-03-24 11:31:49
 tags:
+- Linux
+- Ubuntu
 ---
 
 1.通过`wget http://oss.aliyuncs.com/aliyunecs/update_source.tgz` 下载update_source的压缩包。

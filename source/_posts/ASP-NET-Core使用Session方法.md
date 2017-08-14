@@ -5,6 +5,8 @@ id: 17
 updated: '2016-07-08 14:23:41'
 date: 2016-07-08 14:18:16
 tags:
+- .NET Core
+- .NET
 ---
 
 - 在project.json配置文件中引入程序集：`"Microsoft.AspNetCore.Session": "1.0.0"`

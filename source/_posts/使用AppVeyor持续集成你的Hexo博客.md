@@ -1,10 +1,14 @@
 ---
 title: 使用AppVeyor持续集成你的Hexo博客
 permalink: Use-Appveyor-to-continuously-integrate-your-Hexo-blog
-tags: Hexo,Appveyor,ci
+tags:
+- Hexo
+- Appveyor
+- CI
 updated: '2017-08-01 01:19:08'
 date: '2017-08-01 01:19:08'
-categories: Hexo
+categories: 
+- Hexo
 thumbnail: '/images/5.png'
 ---
 

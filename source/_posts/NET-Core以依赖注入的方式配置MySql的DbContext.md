@@ -5,6 +5,8 @@ id: 23
 updated: '2016-07-31 11:57:00'
 date: 2016-07-30 11:04:28
 tags:
+- .NET Core
+- Mysql
 ---
 
 使用ASP.NET Core开发Web项目，在很多方面都跟之前的.NET版本有很大不同，在Startup.cs的配置方面,一言不合就使用依赖注入。当然，这对于整个项目的解耦是极好的。这次踩的坑在DbContext的配置上。

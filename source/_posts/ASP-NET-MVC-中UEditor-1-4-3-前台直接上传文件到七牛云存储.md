@@ -1,8 +1,8 @@
 ---
 title: ASP.NET MVC 中UEditor 1.4.3 前台直接上传文件到七牛云存储
-tags: |-
-
-  - 七牛
+tags:
+- 七牛
+- .NET
 permalink: use-qiniu-upload-file-service-on-ueditor-for-asp-net-mvc
 id: 9
 updated: '2015-10-30 13:35:52'

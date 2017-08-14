@@ -2,8 +2,13 @@
 title: 给你的域名加把锁：免费Https申请
 date: 2017-08-02 15:58:36
 permalink: how-to-request-a-free-https
-tags: Github Pages,Https,SSL,Hexo
-categories: Github Pages,HTTPS
+tags:
+- Github Pages
+- Https
+- SSL
+- Hexo
+categories:
+- Github Pages
 description: 企业级ssl证书费用高昂，如果只是个人网站没必要用企业级的，使用一些免费的就好了。接下来，我就以我的个人域名为例，介绍下申请免费https的流程。
 thumbnail: https://img.alicdn.com/tps/TB1sfvIMXXXXXcgXXXXXXXXXXXX-2800-1100.jpg
 ---
