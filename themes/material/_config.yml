@@ -284,7 +284,13 @@ meng:
         height: 
         className: 
         id: 
-
+    title:
+        enable: true
+        leaved: '(●-●) 我奔溃啦~'
+        stay: '(*´∇｀*) 被发现啦~'
+        follow_default_title: true
+        reset_time: 1000
+        
 # Files Vendors
 # Set a CDN for the files src you want to customize. The url should with protocol.
 # Default(empty) will load the files from the origin server.
