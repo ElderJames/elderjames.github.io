@@ -13,6 +13,7 @@
 
 <%- partial('_widget/nprogress') %>
 
+
 <% if( theme.js_effect.smoothscroll === true ) { %>
     <% if(theme.vendors.materialcdn) { %>
         <%- jsLsload({path:(theme.vendors.materialcdn + '/js/smoothscroll.js'),key:'sm_js'}) %>
@@ -70,6 +71,13 @@
         <% } %>
     <% } %>
 <% } %>
+<% if (theme.hanabi.enable) { %>
+    <% if(theme.vendors.materialcdn) { %>
+        <%- jsLsload({path:(theme.vendors.materialcdn + '/js/hanabi-browser-bundle.js'),key:'hanabi'}) %>
+    <% } else { %>
+        <%- jsLsload({path:('js/hanabi-browser-bundle.js'),key:'hanabi'}) %>
+    <% } %>
+<% } %>
 
 <!-- Window Load -->
 <!-- add class for prettify -->
@@ -86,6 +94,21 @@
                 prettyPrint();
                 })
         <% } %>
+    <% } %>
+    <% if (theme.hanabi.enable) { %>
+        <% if (!theme.hanabi.includeDefaultColors) { %>
+            HanabiBrowser.clearColors();
+        <% } %>
+        <% if (theme.hanabi.customColors) { %>
+            <% if (typeof theme.hanabi.customColors === 'string') { %>
+                HanabiBrowser.putColor('<%= theme.hanabi.customColors %>');
+            <% } else { %>
+                <% theme.hanabi.customColors.forEach(function(elements) { %>
+                    HanabiBrowser.putColor('<%= elements %>');
+                <% }); %>
+            <% } %>
+        <% } %>
+        HanabiBrowser.start('pre code',<%= theme.hanabi.line_number %>);
     <% } %>
 </script>
 
@@ -184,5 +207,5 @@
             lsloader.runInlineScript(item.id,item.id);
         }
     })()
-console.log('\n %c © Material Theme | Version: 1.4.0 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+console.log('\n %c © Material Theme | Version: 1.5.0 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
 </script>

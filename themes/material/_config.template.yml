@@ -83,8 +83,9 @@ img:
 # Custom Fonts
 #   family: the font-family which will be used in the theme
 #   host: uri of fonts host.
-#       Available value of "host": google | baomitu | ustc | custom
+#       Available value of "host": google | baomitu | ustc | custom | catnet
 #       When you configured 'use' as 'custom', you should fill in the value of 'custom_font_host', which should be a mirror of google fonts.
+#        If you have setup your custom font-family, don't forget to add style tag with @font-face or link.tag with font css to /source/data/head.yml as custom code, to load custom font files.
 fonts:
     family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif
     use: google
@@ -115,16 +116,33 @@ qrcode:
     enable: false
     use: plugin
 
-# Code 
-# Available value: true | false
-# theme value:
-#     theme-name  # /vendors/prettify/themes/[theme-name].css
-# if true, check highlight option in _config.yml. Make sure that default code highlight plugin is disabled.
-#       highlight:
-#         enable: false
+# Code highlight
+# Available value for `prettify` or `hanabi`: true | false
+# You can only enable one of them to avoid issues. Also you need to check highlight option in _config.yml. Make sure that default hexo built in highlight plugin is disabled.
+#        highlight:
+#            enable: false
+#
+#     Prettify
+#         theme value:
+#         theme-name  # /vendors/prettify/themes/[theme-name].css
 prettify:
     enable: false
     theme: "vibrant-ink" # default value: "vibrant-ink"   # theme-name without '.css'
+
+#     Hanabi
+#         hanabi © egoist, Released under the MIT License
+#         https://github.com/egoist/hanabi
+#     
+#     line_number: [true/false] # Show line number for code block
+#     includeDefaultColors: [true/false] # Use default hanabi colors
+#     customColors:     # This value accept a string or am array to setting for hanabi colors.
+#                       # If `includeDefaultColors` is true, this will append colors to the color pool
+#                       # If `includeDefaultColors` is false, this will instead default color pool
+hanabi:
+    enable: false
+    line_number: true
+    includeDefaultColors: true
+    customColors: 
 
 # Post License
 # You can specify the text you want to show in the end of your posts and pages, HTML tag is supported.
@@ -266,6 +284,12 @@ meng:
         height: 
         className: 
         id: 
+    title:
+        enable: true
+        leaved: '(●—●)我奔溃啦~'
+        stay: '(*´∇｀*) 被发现啦~'
+        follow_default_title: true
+        reset_time: 1000
 
 # Files Vendors
 # Set a CDN for the files src you want to customize. The url should with protocol.
