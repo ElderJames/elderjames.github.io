@@ -5,13 +5,14 @@ permalink: ddd-project-collection
 tags:
 - DDD
 - .NET Core
+- .NET
 categories:
 - DDD
 description: 
 thumbnail:
 ---
 
-自从来了现在这家公司之后，就喜欢实践DDD开发程序，最近开始写一个叫做[尖叫(Shriek)]()的轻量DDD框架，下面列出一些在学习和开发过程中参考过的DDD开源项目。
+自从来了现在这家公司之后，就喜欢实践DDD开发程序，最近开始写一个叫做[尖叫(Shriek)](https://github.com/ElderJames/ShriekFx)的轻量DDD开源框架，下面列出一些在学习和开发过程中参考过的DDD开源项目。
 
 ### .NET Core
 
