@@ -1,6 +1,6 @@
 ---
 title: ASP.NET Core中POCO控制器特性：把普通类变成控制器
-date: 2017-09-12 12:00:00
+date: 2017-09-12 17:00:00
 permalink: add-the-webapi-service-to-the-general-class-using-the-POCO-controller-feature-of-ASP.NET-Core
 tags: 
 - ASP.NET Core
