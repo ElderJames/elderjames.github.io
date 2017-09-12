@@ -49,7 +49,7 @@ js_effect:
 
 # Reading experience
 reading:
-    entry_excerpt: 80
+    entry_excerpt: 200
 
 # Thumbnail Settings
 thumbnail:
@@ -140,7 +140,7 @@ prettify:
 #                       # If `includeDefaultColors` is false, this will instead default color pool
 hanabi:
     enable: false
-    line_number: true
+    line_number: false
     includeDefaultColors: true
     customColors: 
 

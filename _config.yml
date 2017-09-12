@@ -39,9 +39,9 @@ relative_link: false
 future: true
 highlight:
   enable: false
-  line_number: true
+  line_number: false
   auto_detect: false
-  tab_replace:
+  tab_replace: true
   
 # Home page setting
 # path: Root path for your blogs index page. (default = '')
@@ -87,10 +87,10 @@ live2d:
 # prism
 ## Plugins:https://github.com/ele828/hexo-prism-plugin
 ## Make sure that default code highlight plugin is disabled.
-prism_plugin:
+prism_plugin: 
   mode: 'preprocess'    # realtime/preprocess
-  theme: 'default'
-  line_number: false    # default false
+  theme: 'vs'
+  line_number: true    # default false
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
