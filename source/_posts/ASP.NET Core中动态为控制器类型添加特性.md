@@ -41,7 +41,7 @@ public void DoThing()
 
 ### 学以致用
 
-回到我们的需求，我们需要把指定类型的方法都加上MVC特性，就需要自定义一些`ModelConvention`。由于我们的需求比较简单，只需特性作用按类型来使指定类型获得MVC特性，我们只需在构造方法中传入指定类型，分别为控制器、操作和参数这三个作用类型都定义一个。由于篇幅问题，下面只贴Action的实现来讲解，另外两个大家可以看我项目中的[源码](https://github.com/ElderJames/shriek-fx/tree/master/src/Shriek.ServiceProxy.Http.Server/Internal)。
+回到我们的需求，我们需要把指定类型的方法都加上MVC特性，就需要自定义一些`ModelConvention`。由于我们的需求比较简单，只需特性作用按类型来使指定类型获得MVC特性，我们只需在构造方法中传入指定类型，分别为控制器、操作和参数这三个作用类型都定义一个。由于篇幅问题，下面只贴Action的实现来讲解，另外两个大家可以看我[项目中的源码](https://github.com/ElderJames/shriek-fx/tree/master/src/Shriek.ServiceProxy.Http.Server/Internal)。
 
 ```csharp
 using HttpGet = Microsoft.AspNetCore.Mvc.HttpGetAttribute;
@@ -112,7 +112,7 @@ internal class ActionModelConvention : IActionModelConvention
 }
 ```
 
-上面代码其实还省略了其它的请求方式，我的源码中是有的，大家也可以前去查看。除了`ActionModelConvention`，还需要写`ControllerModelConvention`和`ParameterModelConvention`。
+上面代码其实还省略了其它的请求方式，我的源码中是有的，大家也可以前去查看。除了[`ActionModelConvention`](https://github.com/ElderJames/shriek-fx/blob/master/src/Shriek.ServiceProxy.Http.Server/Internal/ActionModelConvention.cs)，还需要写[`ControllerModelConvention`](https://github.com/ElderJames/shriek-fx/blob/master/src/Shriek.ServiceProxy.Http.Server/Internal/ControllerModelConvention.cs)和[`ParameterModelConvention`](https://github.com/ElderJames/shriek-fx/blob/master/src/Shriek.ServiceProxy.Http.Server/Internal/ParameterModelConvention.cs)。
 
 ### 配置到MVC框架
 
@@ -121,12 +121,20 @@ internal class ActionModelConvention : IActionModelConvention
 来看看我这里的实现：
 
 ```csharp
+//假设我们定义了这样的接口
+[Route("test")]
+public interface ITestService
+{
+    [Route("{name}"), HttpGet]
+    string Test(string name);
+}
+
 //AddMvc也一样，这里用AddMvcCore只是为了减少依赖
 services.AddMvcCore(opt=>
     {
-        opt.Conventions.Add(new ControllerModelConvention(typeof(TestService)));
-        opt.Conventions.Add(new ActionModelConvention(typeof(TestService)));
-        opt.Conventions.Add(new ParameterModelConvention(typeof(TestService)));
+        opt.Conventions.Add(new ControllerModelConvention(typeof(ITestService)));
+        opt.Conventions.Add(new ActionModelConvention(typeof(ITestService)));
+        opt.Conventions.Add(new ParameterModelConvention(typeof(ITestService)));
     })
 ```
 
@@ -177,9 +185,9 @@ internal class Program
                 //使用AddMvc亦可
                 services.AddMvcCore(opt=>
                 {
-                    opt.Conventions.Add(new ControllerModelConvention(typeof(TestService)));
-                    opt.Conventions.Add(new ActionModelConvention(typeof(TestService)));
-                    opt.Conventions.Add(new ParameterModelConvention(typeof(TestService)));
+                    opt.Conventions.Add(new ControllerModelConvention(typeof(ITestService)));
+                    opt.Conventions.Add(new ActionModelConvention(typeof(ITestService)));
+                    opt.Conventions.Add(new ParameterModelConvention(typeof(ITestService)));
                 })
                 //下面这段是上一篇文章里的内容
                 .ConfigureApplicationPartManager(manager =>
