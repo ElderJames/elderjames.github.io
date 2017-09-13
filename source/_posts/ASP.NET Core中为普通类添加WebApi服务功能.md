@@ -160,6 +160,8 @@ internal class Program
 
 这篇文章中主要介绍了通过实现`IApplicationFeatureProvider<ControllerFeature>`接口实现设置指定类型为WebApi控制器的方法。
 
-在接下来的文章中，我会介绍如何从接口获取自定义特性标签，实现从接口获得mvc特性，使得接口和实现类都不依赖MVC库的方法，只要在接口中以标记特性的方式定义了路由和http方法，实现类的操作就都按照接口的路由和http方法去提供WebApi服务，最后还要介绍使用功能强大的.NTE Core开源AOP框架[**AspectCore**](https://github.com/dotnetcore/AspectCore-Framework)实现的动态代理客户端，注册以上所说的接口，即可获得可以调用对应的WebApi服务。这些工作的源码可以在[我的框架示例项目](https://github.com/ElderJames/shriek-fx/tree/master/samples/Shriek.Samples.WebApiProxy)中运行，大家有兴趣可以看看效果。
+在接下来的文章中，我会介绍如何从接口获取自定义特性标签，实现从接口获得mvc特性，使得接口和实现类都不依赖MVC库的方法，只要在接口中以标记特性的方式定义了路由和http方法，实现类的操作就都按照接口的路由和http方法去提供WebApi服务，最后还要介绍使用功能强大的.NTE Core开源AOP框架[**AspectCore**](https://github.com/dotnetcore/AspectCore-Framework)实现的动态代理客户端，注册以上所说的接口，即可获得可以调用对应的WebApi服务的功能。这些工作的源码可以在[我的框架示例项目](https://github.com/ElderJames/shriek-fx/tree/master/samples/Shriek.Samples.WebApiProxy)中运行，大家有兴趣可以看看效果。
 
 **感谢阅读和批评指教！**
+
+[温馨提示：为方便大家看文中提到的源码，原文中有大量指向源码链接，如果您看的是没有链接的转载，可以再来看我的原文。]
