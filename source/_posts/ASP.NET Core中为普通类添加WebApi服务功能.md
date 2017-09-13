@@ -6,6 +6,7 @@ tags:
 - ASP.NET Core
 - .NET Core
 - WebApi
+- MVC
 categories:
 - .NET Core
 thumbnail: /images/add_webapi_to_class/title.png
