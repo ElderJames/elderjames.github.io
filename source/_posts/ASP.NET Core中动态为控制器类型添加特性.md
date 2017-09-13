@@ -1,11 +1,12 @@
 ---
 title: ASP.NET Core中动态为控制器类型添加特性
-date: 2017-09-13 17:45:22
+date: 2017-09-13 17:59:22
 permalink: dynamically-add-features-to-the-controller-type-in-dot-net-core
 tags: 
 - ASP.NET Core
 - .NET Core
 - WebApi
+- MVC
 categories:
 - .NET Core
 thumbnail: /images/add_webapi_to_class/title.png
@@ -25,10 +26,10 @@ MVC框架给出的配置点在[`IControllerModelConvention`](https://github.com/
 例如有以下的操作方法和它的特性：
 
 ```csharp
-    [HttpGet]
-    [AcceptVerbs("POST", "PUT")]
-    [HttpPost("Api/Things")]
-    public void DoThing()
+[HttpGet]
+[AcceptVerbs("POST", "PUT")]
+[HttpPost("Api/Things")]
+public void DoThing()
 ```
 
 那么MVC中就需要把他们分为两组：
@@ -115,7 +116,7 @@ internal class ActionModelConvention : IActionModelConvention
 
 ### 配置到MVC框架
 
-核心的代码写好了，那么怎么让它起作用呢？其实官方的源码已经提供了示例：[Mvc/test/WebSites/ApplicationModelWebSite/Startup.cs](https://github.com/aspnet/Mvc/blob/760c8f38678118734399c58c2dac981ea6e47046/test/WebSites/ApplicationModelWebSite/Startup.cs#L16)，我们只需在`services.AddMvc()`后面再将我们的配置类型添加紧[MvcOptions.Conventions](https://github.com/aspnet/Mvc/blob/b4fe715c71f472180069f674bde3ef8014064d64/src/Microsoft.AspNetCore.Mvc.Core/MvcOptions.cs#L59)属性上就好了，这个属性是用来添加所有模型配置的，然后MVC启动后会把这些配置都扫描处理一遍。
+核心的代码写好了，那么怎么让它起作用呢？其实官方的源码已经提供了示例：[Mvc/test/WebSites/ApplicationModelWebSite/Startup.cs](https://github.com/aspnet/Mvc/blob/760c8f38678118734399c58c2dac981ea6e47046/test/WebSites/ApplicationModelWebSite/Startup.cs#L16)，我们只需在`services.AddMvc()`里的`setupAction`委托中将我们的配置类型添加到[MvcOptions.Conventions](https://github.com/aspnet/Mvc/blob/b4fe715c71f472180069f674bde3ef8014064d64/src/Microsoft.AspNetCore.Mvc.Core/MvcOptions.cs#L59)属性里就好了，这个属性是用来添加所有模型配置的，然后MVC启动后会把这些配置都扫描处理一遍。
 
 来看看我这里的实现：
 
@@ -202,7 +203,7 @@ internal class Program
 
 这篇文章中主要介绍了通过实现[`IControllerModelConvention`](https://github.com/aspnet/Mvc/blob/de1b763d963f8be612d93889e08e43f67c98d0d5/src/Microsoft.AspNetCore.Mvc.Core/ApplicationModels/IControllerModelConvention.cs)、[`IActionModelConvention`](https://github.com/aspnet/Mvc/blob/b6a6b50776bb1ee49c0bca1353375e964101bb8a/src/Microsoft.AspNetCore.Mvc.Core/ApplicationModels/IActionModelConvention.cs)、[`IParameterModelConvention`](https://github.com/aspnet/Mvc/blob/16c267d95eafbf310f17bc938d00048a541be0d0/src/Microsoft.AspNetCore.Mvc.Core/ApplicationModels/IParameterModelConvention.cs)三个接口实现为指定为控制器的类型添加MVC特性的方法。
 
-本篇文章发现源码的部分受到[*max zhang*](https://github.com/maxzhang1985) 和他的群里的群友*福州 | Today*的帮助，在此表示感谢。
+本篇文章发现源码的部分受到[*max zhang*](https://github.com/maxzhang1985) 和他的群里的群友*福州 | Today*的帮助，在此表示衷心的感谢。
 
 在接下来的文章中，会介绍使用功能强大的.NTE Core开源AOP框架[**AspectCore**](https://github.com/dotnetcore/AspectCore-Framework)实现的动态代理客户端，注册以上所说的接口，即可获得可以调用对应的WebApi服务的功能。这些工作的源码可以在[我的框架示例项目](https://github.com/ElderJames/shriek-fx/tree/master/samples/Shriek.Samples.WebApiProxy)中运行，大家有兴趣可以看看效果。
 
