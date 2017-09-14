@@ -11,7 +11,7 @@ categories:
 - .NET Core
 thumbnail: /images/add_webapi_to_class/title.png
 ---
-POCO Controller是 **ASP.NET Core** 中的一个特性，虽然在2015年刚发布的时候就有这个特性了，可是大多数开发者都只是按原有的方式去写，而没有用到这个特性。其实，如果利用这个特性进行稍微封装后，用在SOA架构中Service层的场景中是极其便利的。这篇文章主要就是说我最近在学习使用开源AOP库AspectCore写WebApi动态代理客户端的时候，实现为普通类无添加WebApi服务的过程。
+POCO Controller是 **ASP.NET Core** 中的一个特性，虽然在2015年刚发布的时候就有这个特性了，可是大多数开发者都只是按原有的方式去写，而没有用到这个特性。其实，如果利用这个特性进行稍微封装后，用在SOA架构中Service层的场景中是极其便利的。这篇文章主要就是说我最近在学习使用开源AOP库AspectCore写WebApi动态代理客户端的时候，实现为普通类添加WebApi服务的过程。
 
 ### POCO控制器简介
 
