@@ -103,7 +103,7 @@ public class InfluxDbContext
 
 #### IEventStorageRepository.cs
 
-`IEventStorageRepository`事件仓储接口是我设计的，只有两个方法，一个存储方法`Store`，一个查询方法`GetEvents`。
+`IEventStorageRepository`事件仓储接口是我设计的，只有两个方法，一个存储方法`Store`，一个查询方法`GetEvents`。有这个接口，我可以设计不同的ORM和数据库仓储，如已经实现的InMemory、EFCore、MongoDB、LiteDB，以及本篇的主角InfluxDB。
 
 ```csharp
 public interface IEventStorageRepository
@@ -135,6 +135,8 @@ public class StoredEvent : Event
     public string Data { get; set; }
 }
 ```
+
+
 #### EventStorageRepository.cs
 
 仓储实现类
@@ -153,6 +155,8 @@ public class EventStorageRepository : IEventStorageRepository
 
     public IEnumerable<StoredEvent> GetEvents(Guid aggregateId, int afterVersion = 0)
     {
+        //查询语法跟普通sql是基本一致的，一定要注意，比价大小的字段一定是要在Fields中。Tags中的可以比较字符串是否相等
+        //另外，time是默认的索引，也可以比价大小
         var query = $"SELECT * FROM {TableName} WHERE AggregateId='{aggregateId}' AND Version >= {afterVersion}";
         var result = _dbContext.QueryAsync(query).Result;
 
@@ -161,13 +165,17 @@ public class EventStorageRepository : IEventStorageRepository
 
     public void Store(StoredEvent theEvent)
     {
+        //实例化一个Point
         var point = new Point()
         {
+            //表名
             Name = TableName,
+            //用作索引的字段放到Tags里（只支持字符串，不能比较大小）
             Tags = new Dictionary<string, object>()
             {
                 {"AggregateId", theEvent.AggregateId}
             },
+            //其他字段放到Fields里，参数值支持系统基本类型，不支持实体类
             Fields = new Dictionary<string, object>()
             {
                 {"Data", theEvent.Data},
@@ -175,21 +183,25 @@ public class EventStorageRepository : IEventStorageRepository
                 {"User", theEvent.User},
                 {"Version", theEvent.Version}
             },
+            //时间戳，默认是当前时间，此处用事件的时间戳比较准确
             Timestamp = theEvent.Timestamp
         };
 
         var result = _dbContext.WriteAsync(point).Result;
 
+        //结果返回是否写入成功
         if (!result.Success)
             throw new InfluxDataException("事件插入失败");
     }
 
+    //从Serie取数据转换为StoredEvent，需要一个个字段去取，所有字段都在Serie.Values中了
     private static IEnumerable<StoredEvent> SerieToStoredEvent(Serie serie)
     {
         return serie.Values.Select(item => new StoredEvent
         {
             AggregateId = Guid.Parse(item[serie.Columns.IndexOf("AggregateId")].ToString()),
             Version = int.Parse(item[serie.Columns.IndexOf("Version")].ToString()),
+            //这里的Replace是客户端的一个bug，已经提交Pull Request
             Data = item[serie.Columns.IndexOf("Data")].ToString().Replace(@"\", string.Empty),
             User = item[serie.Columns.IndexOf("User")].ToString(),
             MessageType = item[serie.Columns.IndexOf("EventType")].ToString().Replace(@"\", string.Empty),
