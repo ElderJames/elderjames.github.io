@@ -249,7 +249,7 @@ sidebar:
 # Available value of "use":
 #     disqus | disqus_click | changyan | livere | gitment
 comment:
-    use: gitment
+    use: gitalk
     shortname: # duoshuo or disqus shortname
     changyan_appid:
     changyan_conf:
@@ -259,6 +259,11 @@ comment:
     gitment_repo: 'elderjames.github.io'
     gitment_client_id: '695234dcb3266b06c9bc'
     gitment_client_secret : '9012a4415f4672e4858df564fc9999e9b6d5cec0'    
+
+    gitalk_owner: 'ElderJames'
+    gitalk_repo: 'elderjames.github.io'
+    gitalk_client_id: '695234dcb3266b06c9bc'
+    gitalk_client_secret : '9012a4415f4672e4858df564fc9999e9b6d5cec0'   
 
 # Search Systems
 # Available value:
