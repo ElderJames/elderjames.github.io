@@ -185,65 +185,56 @@ finally
     var hasExpire = int.TryParse(Configuration["html_cache_expire_time"], out var expire);
 
     if (hasExpire && expire > 0)
+    {
+        //文件缓存
+        app.Use(async (context, next) =>
+        {
+            var url = context.Request.Path.ToString();
+            var th = new MD5CryptoServiceProvider();
+            var data = th.ComputeHash(Encoding.Unicode.GetBytes(url));
+            var key = Convert.ToBase64String(data, Base64FormattingOptions.None);
+            var path = HttpUtility.UrlEncode(key);
+
+            var timeTicks = new DateTime(DateTime.Now.Ticks / 10000000 / expire * 10000000 * expire);
+
+            const string filePath = "static/cache/";
+            var fileName = path + "." + timeTicks.ToString("yyyyMMddHHmmss") + ".html";
+            var fullPath = Path.Combine(filePath, fileName);
+
+            if (File.Exists(fullPath))
             {
-                //文件缓存
-                app.Use(async (context, next) =>
-                {
-                    var url = context.Request.Path.ToString();
-                    var th = new MD5CryptoServiceProvider();
-                    var data = th.ComputeHash(Encoding.Unicode.GetBytes(url));
-                    var key = Convert.ToBase64String(data, Base64FormattingOptions.None);
-                    var path = HttpUtility.UrlEncode(key);
-
-                    var timeTicks = new DateTime(DateTime.Now.Ticks / 10000000 / expire * 10000000 * expire);
-
-                    const string filePath = "static/cache/";
-                    var fileName = path + "." + timeTicks.ToString("yyyyMMddHHmmss") + ".html";
-                    var fullPath = Path.Combine(filePath, fileName);
-
-                    if (File.Exists(fullPath))
-                    {
-                        await context.Response.SendFileAsync(fullPath);
-                    }
-                    else
-                    {
-                        var originalBody = context.Response.Body;
-
-                        try
-                        {
-                            using (var memStream = new MemoryStream())
-                            {
-                                context.Response.Body = memStream;
-                                await next();
-                                if (context.Response.StatusCode == (int)HttpStatusCode.OK)
-                                {
-                                    if (!Directory.Exists(filePath))
-                                        Directory.CreateDirectory(filePath);
-
-                                    memStream.Position = 0;
-                                    var responseBody = new StreamReader(memStream).ReadToEnd();
-                                    await File.WriteAllTextAsync(fullPath, Regex.Replace(responseBody, "\\n+\\s+", string.Empty));
-                                    memStream.Position = 0;
-                                    await memStream.CopyToAsync(originalBody);
-                                }
-                            }
-                        }
-                        finally
-                        {
-                            context.Response.Body = originalBody;
-                        }
-                    }
-
-                    //清理超时文件
-                    Task.Run(() =>
-                    {
-                        foreach (var file in Directory.GetFiles(filePath).Where(x => !x.Contains(timeTicks.ToString("yyyyMMddHHmmss"))))
-                        {
-                            File.Delete(file);
-                        }
-                    });
-                });
+                await context.Response.SendFileAsync(fullPath);
             }
+            else
+            {
+                var originalBody = context.Response.Body;
+
+                try
+                {
+                    using (var memStream = new MemoryStream())
+                    {
+                        context.Response.Body = memStream;
+                        await next();
+                        if (context.Response.StatusCode == (int)HttpStatusCode.OK)
+                        {
+                            if (!Directory.Exists(filePath))
+                                Directory.CreateDirectory(filePath);
+
+                            memStream.Position = 0;
+                            var responseBody = new StreamReader(memStream).ReadToEnd();
+                            await File.WriteAllTextAsync(fullPath, Regex.Replace(responseBody, "\\n+\\s+", string.Empty));
+                            memStream.Position = 0;
+                            await memStream.CopyToAsync(originalBody);
+                        }
+                    }
+                }
+                finally
+                {
+                    context.Response.Body = originalBody;
+                }
+            }
+        });
+    }
 
 ```
 
