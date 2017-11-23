@@ -82,7 +82,7 @@ theme: material
 ## Plugins: https://github.com/EYHN/hexo-helper-live2d
 live2d:
   model: tororo
-  bottom: 60
+  verticalOffset: 60
   
 # prism
 ## Plugins:https://github.com/ele828/hexo-prism-plugin
