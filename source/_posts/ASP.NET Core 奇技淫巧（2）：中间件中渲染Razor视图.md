@@ -27,11 +27,9 @@ thumbnail:
 
 由于CMS系统中不止一处需要返回404状态，所以因为用代码整洁作为懒惰的借口，决定尝试第二个方法。
 
-## 原理
-
-待续...
-
 ## 实现
+
+实现方式很简单，就是在Configure中注入ICompositeViewEngine实例，构造视图上下文，再渲染视图为字符串，最后输出。其它的分析就在代码注释中说明吧
 
 直接上代码：
 
@@ -40,49 +38,48 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env, IComposi
 {
     app.Use(async (context, next) =>
     {
+        //因为只是在请求最后处理，所以这里直接就运行下一个中间件
         await next();
+        //返回后检查是否出现错误的状态
         if (context.Response.StatusCode >= 400)
         {
             context.Response.StatusCode = (int)HttpStatusCode.NotFound;
+            //ContentType设置为text/html，使浏览器以正常页面的格式显示
             context.Response.ContentType = "text/html";
-
+            //指向特定的视图
             var viewResult = engine.GetView("~/", "~/Views/Default/Home/Error.cshtml", true);
 
             if (!viewResult.Success)
                 await context.Response.WriteAsync("OMG! 连错误视图都找不到了。。");
-
+            //创建临时的StringWriter实例，用来配置到视图上下文中
             using (var output = new StringWriter())
             {
+                //视图上下文对于视图渲染来说很重要，视图中的前后台交互都需要它
                 var viewContext = new ViewContext()
                 {
                     HttpContext = context,
                     Writer = output,
                     RouteData = new Microsoft.AspNetCore.Routing.RouteData()
                     {
-                        Routers = { new RouteProvider() },
+                        //RouteData在这里传入视图，这样视图可以显示错误信息之类的数据
                     },
                     View = viewResult.View,
                     FormContext = new FormContext(),
                     ActionDescriptor = new Microsoft.AspNetCore.Mvc.Abstractions.ActionDescriptor()
                 };
-
+                //渲染
                 await viewResult.View.RenderAsync(viewContext);
-
+                //输出到响应体
                 await context.Response.WriteAsync(output.ToString());
             }
         }
     });
 
-    app.UseMvc(routes =>
-    {
-        //添加 自定义路由匹配与url生成组件
-        routes.Routes.Add(new RouteProvider());
-    });
+    //后面是Mvc的中间件，执行Mvc的处理
+    //...app.UseMvc
 }
 ```
 
 ## 总结
 
 这个技巧还能用于单页面应用程序的路由重定向，把所有路由都输出入口页面代码。
-
-待续...
