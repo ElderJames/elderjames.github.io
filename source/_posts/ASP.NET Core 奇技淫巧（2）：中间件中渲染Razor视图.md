@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Core奇技淫巧（2）：中间件中渲染Razor视图
+title: ASP.NET Core奇技淫巧（2）：中间件中渲染Razor视图
 date: 2017-11-23 21:50:39
 permalink: A-Middleware-Implement-For-Rendering-Razor-Views-In-AspNetCore
 tags:
