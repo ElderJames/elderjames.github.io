@@ -29,7 +29,7 @@ thumbnail:
 
 ## 实现
 
-实现方式很简单，就是在Configure中注入ICompositeViewEngine实例，构造视图上下文，再渲染视图为字符串，最后输出。其它的分析就在代码注释中说明吧
+实现方式很简单，就是在Configure中注入ICompositeViewEngine实例，构造视图上下文，再渲染视图为字符串，最后输出。其它的分析就在代码注释中说明吧。
 
 直接上代码：
 
