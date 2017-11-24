@@ -5,7 +5,7 @@ layout: links
 permalink: friends.html
 github:
     name: ElderJames
-    access_token: 44a5b8baa580b158dd6c640cc5c1ee2214870145
+    access_token: 61897c2078c832bef1327221ebb632ab1604ed8f
     followers: true
     following: true
     self: true
