@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ASP.NET Core 奇技淫巧（1）：中间件实现服务端静态化缓存
+title: ASP.NET Core 中的SEO优化（1）：中间件实现服务端静态化缓存
 permalink: A-Middleware-Implement-For-Server-Side-Static-Caching-In-AspNetCore
 date: 2017-11-23 18:31:34
 tags:
