@@ -12,7 +12,7 @@ thumbnail:
 ---
 ## 前言
 
-上一篇文章[《ASP.NET Core 奇技淫巧（1）：中间件实现服务端静态化缓存》](A-Middleware-Implement-For-Server-Side-Static-Caching-In-AspNetCore.html)中介绍了中间件的使用方法、以及使用中间件实现服务端静态化缓存的功能。本系列文章取名“奇技淫巧”不是没道理的，因为这写技巧都是我最近在做的公司实际项目中的一些奇怪的需求之后总结而来的……
+上一篇文章[《ASP.NET Core 中的SEO优化（1）：中间件实现服务端静态化缓存》](A-Middleware-Implement-For-Server-Side-Static-Caching-In-AspNetCore.html)中介绍了中间件的使用方法、以及使用中间件实现服务端静态化缓存的功能。本系列文章的这些技巧都是我最近在做的公司实际项目中的一些奇怪的需求之后总结而来的……
 
 ## 要解决的问题
 
