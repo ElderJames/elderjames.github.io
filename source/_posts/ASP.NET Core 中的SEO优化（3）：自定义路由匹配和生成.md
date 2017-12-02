@@ -13,7 +13,7 @@ categories:
 
 前两篇文章主要总结了CMS系统两个技术点在**ASP.NET Core**中的应用：
 - [《ASP.NET Core 中的SEO优化（1）：中间件实现服务端静态化缓存》](A-Middleware-Implement-For-Server-Side-Static-Caching-In-AspNetCore.html)
-- [《ASP.NET Core 中的SEO优化（2）：中间件中渲染Razor视图》](A-Middleware-Implement-For-Rendering-Razor-Views-In-AspNetCore)
+- [《ASP.NET Core 中的SEO优化（2）：中间件中渲染Razor视图》](A-Middleware-Implement-For-Rendering-Razor-Views-In-AspNetCore.html)
 
 而本篇文章，继续介绍另一个技术点：自定义路由匹配和生成。
 

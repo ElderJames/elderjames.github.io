@@ -17,7 +17,7 @@ tags:
 
 先设计一个泛型接口`IService<T>`,声明两个方法：
 
-```
+```csharp
 namespace Service
 {
    public Interface IService<T> where T : class
@@ -30,9 +30,10 @@ namespace Service
    }
 }
 ```
+
 然后再写一个基础类，继承这个接口：
 
-```
+```csharp
 namespace Service
 {
       public class BaseService<T> : IService<T> where T : class
@@ -47,9 +48,10 @@ namespace Service
     }
 }
 ```
+
 设计业务工厂类，提供统一的实例化出口
 
-```
+```csharp
     /// <summary>
     /// 业务工厂类
     /// <para>所有业务类都必须从这里产生</para>
