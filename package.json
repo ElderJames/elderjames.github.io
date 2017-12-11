@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "hexo": {
-    "version": "3.3.8"
+    "version": "3.4.2"
   },
   "scripts": {
     "start": "hexo s",
@@ -21,7 +21,7 @@
     "hexo-generator-search": "^2.1.1",
     "hexo-generator-sitemap": "^1.2.0",
     "hexo-generator-tag": "^0.2.0",
-    "hexo-helper-live2d": "^2.0.6",
+    "hexo-helper-live2d": "^2.1.5",
     "hexo-helper-qrcode": "^1.0.2",
     "hexo-migrator-ghost": "^0.1.0",
     "hexo-prism-plugin": "^2.1.2",
