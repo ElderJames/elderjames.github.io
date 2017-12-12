@@ -22,7 +22,8 @@ date: 2015-10-30 12:52:35
 - 在配置文件config.json中，修改替换所有的`upfile` 为`file`，这里是因为七牛的上传接口要求文件上传控件（input）的name为file。
 
 - 然后在最后加上几个配置项：
-```
+
+```js
 
     /*七牛配置*/
     "access_key": "",
@@ -36,7 +37,7 @@ date: 2015-10-30 12:52:35
 
 - 在路径 ueditor/dialogs/image/image.js 中找到` header['X_Requested_With'] = 'XMLHttpRequest';` 在下面添加以下代码：
 
-```
+```js
   var filename = file.file.name;
   var token = "";
   console.log(filename);
@@ -55,7 +56,8 @@ date: 2015-10-30 12:52:35
 注释并修改为`uploader.option('server',editor.getOpt('uploadUrl'));`
 
 - 在这段代码下面寻找`  uploader.on('uploadSuccess', function (file, ret) {`，并在这个方法中的`   if (json.state == 'SUCCESS') {`增加一行代码：
-```
+
+```js
       //在返回的地址加上七牛设置里的域名
       json.url = editor.getOpt('domain') + json.url;
 ```
@@ -67,6 +69,7 @@ date: 2015-10-30 12:52:35
 - 引入Qiniu SDK,添加一个获取token的服务:
 
 - 添加获取token的Action（事先已经含有UEditor SDK的代码）：
+
 ![ ](http://cdn.blog.yangshunjie.com/image/2/80/e2d2079f10dae2c8d51d0b96fe131.png)
 
 - OssService.cs 中相关代码

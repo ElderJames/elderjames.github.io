@@ -88,17 +88,17 @@ internal class ActionModelConvention : IActionModelConvention
                     if (httpMethod == HttpMethod.Get)
                     {
                         //添加的HttpGet和HttpPost使用了命名空间别名
-                        actionAttrs.Add(Activator.CreateInstance(typeof(HttpGet), path));
+                        actionAttrs.Add(new HttpGet(path));
                     }
                     else if (httpMethod == HttpMethod.Post)
                     {
-                        actionAttrs.Add(Activator.CreateInstance(typeof(HttpPost), path));
+                        actionAttrs.Add(new HttpPost(path));
                     }
                 }
                  //下面的RouteAttribute是我们自己写的特性类型
                 if (att is RouteAttribute routeAttr)
                 {
-                    actionAttrs.Add(Activator.CreateInstance(typeof(Route), routeAttr.Template));
+                    actionAttrs.Add(new Route(routeAttr.Template));
                 }
             }
 
