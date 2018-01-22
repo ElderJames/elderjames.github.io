@@ -3,7 +3,7 @@ title: ASP.NET Core 中的SEO优化（4）：自定义视图路径及主题切�
 date: 2017-11-30 21:44:19
 permalink: Customized-View-Path-And-Theme-Switching-In-AspNetCore
 description:
-thumbnail:
+thumbnail: https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE1HH8q
 tags:
 - ASP.NET Core
 - .NET Core

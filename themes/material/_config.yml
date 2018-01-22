@@ -213,7 +213,7 @@ sidebar:
             divider: false
         时间轴:
             link: '/timeline.html'
-            icon: list
+            icon: timeline
             divider: false
         留言板:
             link: '/contact.html'
@@ -230,6 +230,10 @@ sidebar:
         朋友:
             link: '/friends.html'
             icon: people
+            divider: false
+        开源项目——尖叫框架:
+            link: '/shriek-fx'
+            icon: flash_on
             divider: false
     article_num:
         use: true
