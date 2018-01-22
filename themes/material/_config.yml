@@ -329,7 +329,7 @@ vendors:
     # jQuery 2.2.0
     jquery: https://cdn.bootcss.com/jquery/2.2.1/jquery.js
     # nprogress 0.2.0
-    nprogress: //cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js
+    nprogress: #//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js
     # FontAwesome 4.5.0
     fontawesome: //cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css
     # MathJax 2.7.0-2.7.1
