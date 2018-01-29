@@ -105,7 +105,7 @@
                 <a href="<%= site.data.links[i].link %>" title="<%= i %>" target="_blank">
                     <img src="<%= site.data.links[i].avatar %>" alt="<%= i %>" height="72px"/>
                     <span class="md-links-title"><%= i %></span><br />
-                    <span class="md-links-desc"><%= site.data.links[i].descr %></span>
+                    <span class="md-links-desc"><%=site.data.links[i].github? ('Github: '+ site.data.links[i].github ) : site.data.links[i].descr %></span>
                 </a>
             </li>
         <% } %>
@@ -114,6 +114,13 @@
 
 <script type="text/ls-javascript" id="page-links-script">
     var addGithubLink = function(userData,self=false){
+        if (site.data.links)
+        {
+            var addedLinks=site.data.links.filter(x=>x.github == userData.html_url);
+            if (addedLinks&&addedLinks!=null)
+            userData.html_url= addedLinks.link;
+        }
+
        var linkstr = `
             <li class="md-links-item">
                 <a href="${userData.html_url}" title="${userData.login}\n${(userData.bio? (userData.bio+'\n') :'') + userData.public_repos +' repos' + ' && ' + userData.followers + ' followers'}" target="_blank">
@@ -129,8 +136,10 @@
             $('.md-links').append(linkstr);
     }
     $(document).ready(function() {
+        var friends=[];
+         
         <% if (page.github && page.github.name) { %>
-            var friends=[];
+           
             <% if (page.github.self){ %>
                 $.ajax({
                     url:'https://api.github.com/users/<%= page.github.name %>',
