@@ -1846,6 +1846,7 @@ a {
 }
 .sidebar::-webkit-scrollbar,::-webkit-scrollbar {
     width: 5px;
+    height: 5px;
     background-color: #F7F7F7;
 }
 .sidebar::-webkit-scrollbar-thumb,::-webkit-scrollbar-thumb {
