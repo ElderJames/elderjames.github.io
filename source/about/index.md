@@ -3,7 +3,7 @@ title: 关于我
 date: 2017-07-27 00:49:51
 layout: about
 permalink: about.html
-comments: false
+comment: false
 ---
 
 ### 博客历程

@@ -113,10 +113,17 @@
 </ul>
 
 <script type="text/ls-javascript" id="page-links-script">
+var siteLinks= [];
+
+<% if (site.data.links) { %>
+    <% for (var i in site.data.links) { %>
+    siteLinks.push('<%=site.data.links[i].github %>' )
+<% }} %>
+
+
     var addGithubLink = function(userData,self=false){
-        if (site.data.links)
-        {
-            var addedLinks=site.data.links.filter(x=>x.github == userData.html_url);
+        if (siteLinks.length>0)  {
+            var addedLinks = siteLinks.filter(x=>x == userData.html_url);
             if (addedLinks&&addedLinks!=null)
             userData.html_url= addedLinks.link;
         }
@@ -135,6 +142,7 @@
         else
             $('.md-links').append(linkstr);
     }
+
     $(document).ready(function() {
         var friends=[];
          
