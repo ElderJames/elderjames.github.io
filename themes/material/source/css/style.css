@@ -224,7 +224,7 @@ a {
     padding-left: 30px;
     font-size: 15px;
     line-height: 1.7;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 #post-content ul.no-list,
 #post-content ol.no-list {
