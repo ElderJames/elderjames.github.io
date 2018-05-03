@@ -105,7 +105,7 @@ copyright_since: 2015
 # You can specify the text you want to show in footer, HTML tag is supported.
 #   For example, you can setup ICP license number as:
 #       '<a href="http://www.miitbeian.gov.cn" rel="nofollow">某ICP备xxxxxxxx号-x</a>'
-footer_text: '学习/创作/分享<br /><a href="http://icp.chinaz.com/info?q=yangshunjie.com" rel="nofollow">粤ICP备15021181号-1</a>'
+footer_text: '学习/创作/分享<br />粤ICP备18033053号'
 
 footer_background: #https://repository-hunter.herokuapp.com/contribution/ElderJames.svg
 
