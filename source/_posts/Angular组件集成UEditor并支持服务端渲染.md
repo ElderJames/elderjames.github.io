@@ -10,6 +10,10 @@ categories:
 - Angular
 ---
 
+# 背景
+
+PS.[可以跳过此部分](#%E9%A1%B9%E7%9B%AE%E4%BB%8B%E7%BB%8D)
+
 Angular、React和Vue 被誉为现今最强大的前端三大框架，其中React和Vue在移动端（web、rn）开发方面如鱼得水，而Angular凭借优秀的模块化设计、工程化构建以及强类型语言Typescript加持，在大中型规模的应用开发上相比另外两个框架更能大展拳脚。
 
 本人作为偏向后端（大部分是.NET）的开发者，对Angular的最主要需求就是中台(管理后台)应用了。随着.NET Core的开源和壮大，它以很快的速度与“现代”技术接轨，比如跨平台特性使得在微服务、容器技术以及DevOps上与其他平台有着平等的地位；更高的性能、更轻的体量使得它有着比一直以此特点著称的Node.js更加有优势……自从了解到ASP.NET Core框架下的JavascriptService项目后，我就一直在关注着他的发展，这是因为它支持了Angular、React和Vue 这类单页应用（single page application, spa）的服务端渲染（server-side rendering, ssr）的特性。服务端渲染主要是在完全支持前后端分离开发的优点的同时，弥补了spa需要在浏览器完全加载后才开始渲染页面导致的首屏加载慢、难以进行SEO优化的缺点。
@@ -22,7 +26,9 @@ Angular、React和Vue 被誉为现今最强大的前端三大框架，其中Reac
 
 没办法，得知Angular 6.0和Material2 6.0发布之际，决定自己来对某个组件库做改造吧！
 
-早在去年的Angular 4.0版本，Angular Universal项目就组件完善了。还在beta版本的Material组件库也有消息逐步支持了。如今6.0发布，我独钟的Material已经有很漂亮的基本组件了，决定马上开干！
+早在去年的Angular 4.0版本，Angular Universal项目就组件完善了。还在beta版本的Material组件库也有消息逐步支持了。如今6.0发布，我独钟的Material已经有很漂亮的基本组件了，是时候动手啦！
+
+# 项目介绍
 
 请大家Star一下我两天前才发布的项目[ElderJames/aspnetcore-material-universal](https://github.com/ElderJames/aspnetcore-material-universal)
 
@@ -41,10 +47,8 @@ UEditor的js库“日久失修”，本身就不支持模块化，window引用�
 先把js库下载并放在assets（或其他用来放置静态文件的）目录，分别在[neditor.all.js](https://github.com/ElderJames/aspnetcore-material-universal/blob/master/ClientApp/assets/neditor/neditor.all.js)、[neditor.copnfig.js](https://github.com/ElderJames/aspnetcore-material-universal/blob/master/ClientApp/assets/neditor/neditor.config.js)、[zh-cn.js](https://github.com/ElderJames/aspnetcore-material-universal/blob/master/ClientApp/assets/neditor/i18n/zh-cn/zh-cn.js)文件源程序前加入以下代码：
 
 ```js
-
 if (typeof window === 'undefined')
   return;
-
 ```
 
 #### 解决难点2：*模块化引用*
@@ -91,7 +95,8 @@ export class UEditorComponent implements ControlValueAccessor, OnInit, OnDestroy
 ```
 
 `ngOnInit`钩子中进行每次组建渲染后的UEditor初始化，`ngOnDestroy`钩子进行UEditor实例的释放，防止内存泄漏。
-```
+
+```ts
     ngOnDestroy() {
         if (!this.isBowser)
             return;
@@ -113,10 +118,7 @@ export class UEditorComponent implements ControlValueAccessor, OnInit, OnDestroy
 
         let con: any = _.merge({}, this.defaultConfig, this.config);
         this.ue = UE.getEditor(id, con);
-
-        this.registerEvents();
-
     }
 ```
 
-好了，先写到这里，相信这次实践能对其他类似的js库的ssr支持集成带来有用的经验。
+好了，先写到这里，其他对原js库的Api和事件的导出以及[用例](https://github.com/ElderJames/aspnetcore-material-universal/blob/master/ClientApp/app/forms/ueditor/ueditor.component.ts)已经在[组件源码](https://github.com/ElderJames/aspnetcore-material-universal/blob/master/ClientApp/app/component/ueditor/ueditor.component.ts)中实现，有兴趣可以clone下来看看。相信这次实践能给将来对其他类似的js库的ssr支持集成工作带来有用的经验。
