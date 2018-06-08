@@ -1,40 +1,40 @@
 <!-- Import JS File -->
 <% if(theme.vendors.materialcdn) { %>
     <%- jsLsload({path:(theme.vendors.materialcdn + '/js/lazyload.min.js'),key:'lazyload_js'}) %>
-        <% } else { %>
-            <%- jsLsload({path:('js/lazyload.min.js'),key:'lazyload_js'}) %>
-                <% } %>
+<% } else { %>
+    <%- jsLsload({path:('js/lazyload.min.js'),key:'lazyload_js'}) %>
+<% } %>
 
-                    <% if(theme.vendors.materialcdn) { %>
-                        <%- jsLsload({path:(theme.vendors.materialcdn + '/js/js.min.js'),key:'js_js'}) %>
-                            <% } else { %>
-                                <%- jsLsload({path:('js/js.min.js'),key:'js_js'}) %>
-                                    <% } %>
+<% if(theme.vendors.materialcdn) { %>
+    <%- jsLsload({path:(theme.vendors.materialcdn + '/js/js.min.js'),key:'js_js'}) %>
+<% } else { %>
+    <%- jsLsload({path:('js/js.min.js'),key:'js_js'}) %>
+<% } %>
 
-                                        <%- partial('_widget/nprogress') %>
+<%- partial('_widget/nprogress') %>
 
 
-                                            <% if( theme.js_effect.smoothscroll === true ) { %>
-                                                <% if(theme.vendors.materialcdn) { %>
-                                                    <%- jsLsload({path:(theme.vendors.materialcdn + '/js/smoothscroll.js'),key:'sm_js'}) %>
-                                                        <% } else { %>
-                                                            <%- jsLsload({path:('js/smoothscroll.js'),key:'sm_js'}) %>
-                                                                <% } %>
-                                                                    <% } %>
+<% if( theme.js_effect.smoothscroll === true ) { %>
+    <% if(theme.vendors.materialcdn) { %>
+        <%- jsLsload({path:(theme.vendors.materialcdn + '/js/smoothscroll.js'),key:'sm_js'}) %>
+    <% } else { %>
+        <%- jsLsload({path:('js/smoothscroll.js'),key:'sm_js'}) %>
+    <% } %>
+<% } %>
 
-                                                                        <%- partial('_partial/footer-option') %>
+<%- partial('_partial/footer-option') %>
 
-                                                                            <% if( (page.current === 1) && (is_home()) ) { %>
-                                                                                <!-- Swiftye -->
-                                                                                <% if( theme.search.use === 'swiftype' ) { %>
-                                                                                    <%- partial('_widget/search-swiftype-js') %>
-                                                                                        <% } %>
+<% if( (page.current === 1) && (is_home()) ) { %>
+    <!-- Swiftye -->
+    <% if( theme.search.use === 'swiftype' ) { %>
+        <%- partial('_widget/search-swiftype-js') %>
+    <% } %>
 
-                                                                                            <!-- Local Search-->
-                                                                                            <% if( theme.search.use === 'local' ) { %>
-                                                                                                <%- partial('_widget/search-local-js') %>
+    <!-- Local Search-->
+    <% if( theme.search.use === 'local' ) { %>
+        <%- partial('_widget/search-local-js') %>
 
-                                                                                                    <script type="text/ls-javascript" id="search-input-script">
+        <script type="text/ls-javascript" id="search-input-script">
             var inputArea = document.querySelector('#search');
             var getSearchFile = function() {
                 var path = '<%= config.search.path %>';
@@ -47,41 +47,41 @@
                 }
             }
         </script>
-                                                                                                    <% } %>
-                                                                                                        <% } %>
+    <% } %>
+<% } %>
 
-                                                                                                            <!-- UC Browser Compatible -->
-                                                                                                            <script>
-                                                                                                                var agent = navigator.userAgent.toLowerCase();
-                                                                                                                if (agent.indexOf('ucbrowser') > 0) {
-                                                                                                                    document.write('<%- css("css/uc") %>');
-                                                                                                                    alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
-                                                                                                                }
-                                                                                                            </script>
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('<%- css("css/uc") %>');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
 
-                                                                                                            <!-- Import prettify js  -->
-                                                                                                            <% if (theme.prettify.enable){ %>
-                                                                                                                <% if ( (is_post()) ) { %>
-                                                                                                                    <% if(theme.vendors.prettify) { %>
-                                                                                                                        <%- jsLsload({path:(theme.vendors.prettify),key:'prettify_js'}) %>
-                                                                                                                            <% } else if(theme.vendors.materialcdn) { %>
-                                                                                                                                <%- jsLsload({path:(theme.vendors.materialcdn + '/js/prettify.min.js'),key:'prettify_js'}) %>
-                                                                                                                                    <% } else { %>
-                                                                                                                                        <%- jsLsload({path:('js/prettify.min.js'),key:'prettify_js'}) %>
-                                                                                                                                            <% } %>
-                                                                                                                                                <% } %>
-                                                                                                                                                    <% } %>
-                                                                                                                                                        <% if (theme.hanabi.enable) { %>
-                                                                                                                                                            <% if(theme.vendors.materialcdn) { %>
-                                                                                                                                                                <%- jsLsload({path:(theme.vendors.materialcdn + '/js/hanabi-browser-bundle.js'),key:'hanabi'}) %>
-                                                                                                                                                                    <% } else { %>
-                                                                                                                                                                        <%- jsLsload({path:('js/hanabi-browser-bundle.js'),key:'hanabi'}) %>
-                                                                                                                                                                            <% } %>
-                                                                                                                                                                                <% } %>
+<!-- Import prettify js  -->
+<% if (theme.prettify.enable){ %>
+    <% if ( (is_post()) ) { %>
+        <% if(theme.vendors.prettify) { %>
+            <%- jsLsload({path:(theme.vendors.prettify),key:'prettify_js'}) %>
+        <% } else if(theme.vendors.materialcdn) { %>
+            <%- jsLsload({path:(theme.vendors.materialcdn + '/js/prettify.min.js'),key:'prettify_js'}) %>
+        <% } else { %>
+            <%- jsLsload({path:('js/prettify.min.js'),key:'prettify_js'}) %>
+        <% } %>
+    <% } %>
+<% } %>
+<% if (theme.hanabi.enable) { %>
+    <% if(theme.vendors.materialcdn) { %>
+        <%- jsLsload({path:(theme.vendors.materialcdn + '/js/hanabi-browser-bundle.js'),key:'hanabi'}) %>
+    <% } else { %>
+        <%- jsLsload({path:('js/hanabi-browser-bundle.js'),key:'hanabi'}) %>
+    <% } %>
+<% } %>
 
-                                                                                                                                                                                    <!-- Window Load -->
-                                                                                                                                                                                    <!-- add class for prettify -->
-                                                                                                                                                                                    <script type="text/ls-javascript" id="window-load">
+<!-- Window Load -->
+<!-- add class for prettify -->
+<script type="text/ls-javascript" id="window-load">
     $(window).on('load', function() {
         // Post_Toc parent position fixed
         $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
@@ -112,21 +112,21 @@
     <% } %>
 </script>
 
-                                                                                                                                                                                    <!-- MathJax Load-->
-                                                                                                                                                                                    <% if (page.mathjax) { %>
-                                                                                                                                                                                        <%- partial('_widget/mathjax') %>
-                                                                                                                                                                                            <% } %>
+<!-- MathJax Load-->
+<% if (page.mathjax) { %>
+    <%- partial('_widget/mathjax') %>
+<% } %>
 
-                                                                                                                                                                                                <!-- Bing Background -->
-                                                                                                                                                                                                <% if(theme.background.bing.enable) { %>
-                                                                                                                                                                                                    <script type="text/ls-javascript" id="Bing-Background-script">
+<!-- Bing Background -->
+<% if(theme.background.bing.enable) { %>
+<script type="text/ls-javascript" id="Bing-Background-script">
     queue.offer(function(){
         $('body').attr('data-original', 'https://api.i-meto.com/bing?<%= theme.background.bing.parameter %>');
     });
 </script>
-                                                                                                                                                                                                    <% } %>
-                                                                                                                                                                                                        <% if(theme.meng.title.enable) { %>
-                                                                                                                                                                                                            <script type="text/ls-javascript" id="title-script">
+<% } %>
+<% if(theme.meng.title.enable) { %>
+    <script type = "text/ls-javascript" id= "title-script">
         //网页当前状态判断
         var hidden, state, visibilityChange,timer;
         var leaveTitle='<%=theme.meng.title.leaved||'' %>';
@@ -174,9 +174,9 @@
         //初始化页面状态
         document.title = document[state] =='visible'?stayTitle:leaveTitle ;
     </script>
-                                                                                                                                                                                                            <% } %>
+    <% } %>
 
-                                                                                                                                                                                                                <script type="text/ls-javascript" id="lazy-load">
+<script type="text/ls-javascript" id="lazy-load">
     // Offer LazyLoad
     queue.offer(function(){
         $('.lazy').lazyload({
@@ -192,22 +192,32 @@
     });
 </script>
 
-                                                                                                                                                                                                                <!-- Custom Footer -->
+<!-- Custom Footer -->
 
-                                                                                                                                                                                                                <% if (site.data.footer) { %>
-                                                                                                                                                                                                                    <% for (var i in site.data.footer) { %>
-                                                                                                                                                                                                                        <%- site.data.footer[i] %>
-                                                                                                                                                                                                                            <% } %>
-                                                                                                                                                                                                                                <% } %>
+<% if (site.data.footer) { %>
+    <% for (var i in site.data.footer) { %>
+        <%- site.data.footer[i] %>
+    <% } %>
+<% } %>
 
-                                                                                                                                                                                                                                    <script>
-                                                                                                                                                                                                                                        (function () {
-                                                                                                                                                                                                                                            var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+<script>
+    var copyrightNow = new Date().getFullYear();
+    var textContent = document.querySelector('span[year]')
 
-                                                                                                                                                                                                                                            for (var i = 0; i < scriptList.length; ++i) {
-                                                                                                                                                                                                                                                var item = scriptList[i];
-                                                                                                                                                                                                                                                lsloader.runInlineScript(item.id, item.id);
-                                                                                                                                                                                                                                            }
-                                                                                                                                                                                                                                        })()
-                                                                                                                                                                                                                                        console.log('\n %c © Material Theme | Version: 1.5.2 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
-                                                                                                                                                                                                                                    </script>
+    copyrightSince = <% if(theme.copyright_since) { %><%= theme.copyright_since %><% } else { %>0000<% } %>;
+    if (copyrightSince === copyrightNow||copyrightSince === 0000) {
+        textContent.textContent = copyrightNow
+    } else {
+        textContent.textContent = copyrightSince + ' - ' + copyrightNow
+    }
+
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.5.2 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
