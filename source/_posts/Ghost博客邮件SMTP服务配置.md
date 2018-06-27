@@ -1,9 +1,8 @@
 ---
 title: Ghost博客邮件SMTP服务配置
-tags: |-
-
-  - ghost
-  - smtp
+tags:
+- ghost
+- smtp
 permalink: the-smtp-setting-for-ghost-blog
 id: 7
 updated: '2015-10-13 17:25:43'

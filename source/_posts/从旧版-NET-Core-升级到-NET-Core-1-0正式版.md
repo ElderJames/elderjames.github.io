@@ -4,8 +4,11 @@ permalink: cong-jiu-ban-net-core-sheng-ji-dao-net-core-1-0zheng-shi-ban
 id: 16
 updated: '2016-06-30 15:11:08'
 date: 2016-06-30 14:00:33
-tags: .NET Core,.NET
-categories: .NET Core
+tags:
+- .NET Core
+- .NET
+categories:
+- .NET Core
 ---
 
 6月28日凌晨，RedHat 开发者大会上微软正式发布.NET Core正式版，我作为.NET爱好者，马上就想安装来玩玩，不过因为之前电脑上就装有旧版本，在这次正式版的安装中遇到了一些坑，装了n遍，死活装不上，停留在旧版本。

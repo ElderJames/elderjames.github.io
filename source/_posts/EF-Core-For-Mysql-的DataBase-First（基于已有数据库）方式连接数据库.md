@@ -5,6 +5,8 @@ id: 24
 updated: '2016-07-30 12:25:49'
 date: 2016-07-30 11:30:16
 tags:
+- .NET Core
+- Mysql
 ---
 
 .NET要跨平台，就一定要使用同样可以跨平台的数据库，而轻量的MySQL自然是首选。.NET Core发展到现在，虽然官方的Entity Framework还没发布MySQL版本，但是刚认识的柚子大神已经首先把它做出来了（[他的博客](http://www.1234.sh/post/pomelo-data-mysql)）。

@@ -1,9 +1,9 @@
 ---
 title: Ubuntu安装mono 4.2.1 最新版教程
-tags: |-
-
-  - mono
-  - 安装
+tags:
+- mono
+- Linux
+- Ubuntu
 permalink: the-lastest-way-to-install-mono-4-2-1-on-ubuntu
 id: 11
 updated: '2015-12-03 14:39:39'

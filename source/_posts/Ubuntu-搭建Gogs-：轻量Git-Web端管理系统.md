@@ -1,9 +1,10 @@
 ---
 title: Ubuntu 搭建Gogs ：轻量Git Web端管理系统
-tags: |-
-
-  - git
-  - gogs
+tags:
+- git
+- gogs
+- Linux
+- Ubuntu
 permalink: ubuntu-da-jian-gogs-qing-liang-git-webduan-guan-li-xi-tong
 id: 14
 updated: '2016-03-28 18:13:06'

@@ -5,3 +5,6 @@ db.json
 node_modules/
 public/
 .deploy*/
+themes/material-dev
+yarn.lock
+package-lock.json

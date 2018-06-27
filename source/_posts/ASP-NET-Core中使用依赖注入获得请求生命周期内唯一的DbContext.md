@@ -1,9 +1,8 @@
 ---
 title: ASP.NET Core中使用依赖注入获得请求生命周期内唯一的DbContext
-tags: |-
-
-  - .NET
-  - .NET Core
+tags:
+- .NET
+- .NET Core
 permalink: asp-net-corezhong-shi-yong-qing-qiu-sheng-ming-zhou-qi-nei-wei-yi-de-dbcontext
 id: 2
 updated: '2016-09-22 14:57:06'
@@ -19,14 +18,14 @@ date: 2016-09-22 13:58:52
 
 首先，我们在Startup.cs中配置好EF Core:
 
-```asp.net
+```csharp
 services.AddDbContext<YourContext>(option =>
      option.UseMySql(Configuration.GetConnectionString("YunGoConllection"))
 );
 ```
 然后，在需要的类中以构造方法注入的方式注入YourContext即可。注意：不管是在MVC项目中还是被应用的类库中，都可以使用注入方法！这就是.NET Core的强大~
 
-```asp.net
+```csharp
   public class TestController : Controller
     {
         YourContext _db;

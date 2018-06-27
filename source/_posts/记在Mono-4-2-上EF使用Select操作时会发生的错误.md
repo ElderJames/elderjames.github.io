@@ -1,10 +1,9 @@
 ---
 title: 记在Mono 4.2 上EF使用Select操作时会发生的错误
-tags: |-
-
-  - mono
-  - .NET
-  - EF
+tags:
+- mono
+- .NET
+- EF
 permalink: yun-xing-zai-monoshang-de-efyun-xing-cuo-wu
 id: 18
 updated: '2016-07-20 18:18:29'

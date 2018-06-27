@@ -6,7 +6,7 @@ branches:
 
 environment:
   access_token:
-    secure: X4W1aA/1N4LSTHOeDeRZS1j02bi5tjpf9z39vFsPLTROHnRVf6jKOcn2KPBpSne3
+    secure: GYJHzvXekOiCH4MswyJ0ipBLonWDrU7XBcppEXwAhhGop/RFxYVVCmqhv2uYw9FV
 
 install:
   - ps: Install-Product node 6.0

@@ -1,8 +1,10 @@
 ---
 title: 在Jexus环境部署Ghost博客系统
-tags: |-
-
-  - 环境部署
+tags: 
+- 环境部署
+- Linux
+- Jexus
+- Blog
 permalink: install-ghost-blog-on-jexus-successfully
 id: 3
 updated: '2015-10-17 15:13:50'
