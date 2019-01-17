@@ -35,11 +35,10 @@ STP的防御过程：
 
 TagHelper用法：
 
-```cs
+```html
 <form asp-controller="Manage" asp-action="ChangePassword" method="post">
     ...
 </form>
-
 ```
 
 HtmlHelper 生成Form的用法：
@@ -52,7 +51,7 @@ HtmlHelper 生成Form的用法：
 
 普通html form表单用法：
 
-```cs
+```html
 <form action="/" method="post">
     @Html.AntiForgeryToken()
 </form>
@@ -61,7 +60,7 @@ HtmlHelper 生成Form的用法：
 那么在Razor渲染之后，表单中就会生成一个隐藏的表单字段：
 
 ```html
-<input name="__RequestVerificationToken" type="hidden" value="CfDJ8NrAkS ... s2-m9Yw">
+    <input name="__RequestVerificationToken" type="hidden" value="CfDJ8NrAkS ... s2-m9Yw">
 ```
 
 ## 那么Ajax中要怎么处理呢？
@@ -73,13 +72,11 @@ HtmlHelper 生成Form的用法：
 这种方法跟上面提到的Form表单提交一致，只要把所生成的隐藏的表单字段也一并提交到服务器即可。
 
 ```js
-
 $.ajax({
     url:"/Manage/ChangePassword",
     type:"post"
     data: { "__RequestVerificationToken":"CfDJ8NrAkS ... s2-m9Yw" }
 })
-
 ```
 
 但是这种方法有个弊端，就是需要配置的东西很多，又要在Contorller中加`[ValidateAntiForgeryToken]`特性，又要在表单中处理使其生成隐藏字段。
@@ -92,7 +89,7 @@ $.ajax({
 
 全局（每个页面）获取Forgery Token就是文档中提到的注入`Microsoft.AspNetCore.Antiforgery.IAntiforgery`并调用`GetAndStoreTokens`方法，但是由于需要达到全局获取，我需要把这个方法的调用写到布局页,如默认MVC模版的`Views/Shared/_Layout.cshtml`
 
-```cs
+```aspnet
 @inject Microsoft.AspNetCore.Antiforgery.IAntiforgery Xsrf
 @functions{
     public string GetAntiXsrfRequestToken()
