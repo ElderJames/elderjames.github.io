@@ -119,7 +119,7 @@ categories:
 
             HostFactory.Run(x =>
             {
-                x.SetServiceName("GenericHostInTopshelf");
+                x.SetServiceName("GenericHostWindowsServiceWithTopshelf");
                 x.SetDisplayName("Topshelf创建的Generic Host服务");
                 x.SetDescription("运行Topshelf创建的Generic Host服务");
 
@@ -142,17 +142,30 @@ categories:
 
 3. 最后发布应用程序，并安装到Windows服务。
 
-终端中执行命令：
+以管理员权限开启终端，执行命令：
 
 ```bash
   dotnet publish -c release -r win-x64
+  
   cd path-to-project/bin/release/netcoreapp2.1/win-x64/publish
+
   ./project-name install
-  net start GenericHostInTopshelf
+
+  net start GenericHostWindowsServiceWithTopshelf
+
 ```
+
+![](/images/generic-host/generic-host-install.png)
+
 这样这个Windows服务就启动了！查看输出文件，可以看到定时写入成功，服务也一直没关闭~
 
-## 参考链接:
+![](/images/generic-host/generic-host-result.png)
+
+## 示例代码
+
+https://github.com/ElderJames/GenericHostWindowsServiceWithTopshelf
+
+## 参考链接
 
 官方文档[《.NET 通用主机》](https://docs.microsoft.com/zh-cn/aspnet/core/fundamentals/host/generic-host?view=aspnetcore-2.1)
 
