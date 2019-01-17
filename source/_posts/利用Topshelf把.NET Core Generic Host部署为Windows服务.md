@@ -13,7 +13,7 @@ categories:
 
 2019第一篇文章。
 
-此文源于前公司在迁移项目到.NET Core的过程中，希望使用Generic Host来管理定时任务程序时，没法部署到Windows服务的问题，而且官方也没给出解决方案。
+此文源于前公司在迁移项目到.NET Core的过程中，希望使用Generic Host来管理定时任务程序时，没法部署到Windows服务的问题，而且官方也没给出解决方案，只能关注一下[官方issue #809](https://github.com/aspnet/Extensions/issues/809) 等他们方解决了。
 
 官方文档只提供了一个[《在 Windows 服务中托管 ASP.NET Core》](https://docs.microsoft.com/en-us/aspnet/core/host-and-deploy/windows-service?spm=a2c4e.11153940.blogcont676413.12.65753eb0BIzfmE&view=aspnetcore-2.1)的方案，可以使用`Microsoft.AspNetCore.Hosting.WindowsServices`类库来把Web应用部署为Windows服务。但是ASP.NET Core虽然是控制台程序，但是它本身是使用了含有HTTP管道的Web Host来负责应用程序的生命周期管理，用它来作为定时任务的话，会有很多不必要的工作负载，例如占用端口、增加了很多依赖等等。
 
