@@ -113,6 +113,8 @@ IAsyncEnumerable<ChatResponse> SubscribeAsync(IAsyncEnumerable<ChatRequest> requ
 
 下一篇，我将主要介绍利用 `protobuf-net.Grpc` 的 gRPC 双向流模式与 `Blazor` 实现一个简单的在线即时聊天室。
 
+![](https://raw.githubusercontent.com/ElderJames/GrpcChat/master/grpc-chat.gif)
+
 相关链接：
 
 -   protobuf-net.Grpc：https://github.com/protobuf-net/protobuf-net.Grpc
