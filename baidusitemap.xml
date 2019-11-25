@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://yangshunjie.com/code-first-generate-gRPC-services-and-clients-in-dotnet-Core-3_0.html</loc>
+    <lastmod>2019-11-25</lastmod>
+  </url>  <url>
+    <loc>https://yangshunjie.com/my-first-respberry-pi.html</loc>
+    <lastmod>2019-11-25</lastmod>
+  </url>  <url>
+    <loc>https://yangshunjie.com/Angular-integrating-with-UEditor-and-ssr-supporting.html</loc>
+    <lastmod>2019-11-25</lastmod>
+  </url>  <url>
+    <loc>https://yangshunjie.com/change-the-docker-image-origin-to-aliyun.html</loc>
+    <lastmod>2019-03-08</lastmod>
+  </url>  <url>
+    <loc>https://yangshunjie.com/how-to-request-a-free-https.html</loc>
+    <lastmod>2019-03-08</lastmod>
+  </url>  <url>
+    <loc>https://yangshunjie.com/net-core-on-linux-operation-note.html</loc>
+    <lastmod>2019-03-08</lastmod>
+  </url>  <url>
+    <loc>https://yangshunjie.com/boot-the-berryboot-installer-for-raspberry-pi-with-wifi-and-vnc-but-no-screen.html</loc>
+    <lastmod>2019-03-08</lastmod>
+  </url>  <url>
+    <loc>https://yangshunjie.com/implement-simple-Aop-using-a-dotnet-core-library-System-Reflection-DispatchProxy.html</loc>
+    <lastmod>2019-03-08</lastmod>
+  </url>  <url>
+    <loc>https://yangshunjie.com/Using-Topshelf-To-Deploy-Net-Core-Generic-Host-App-To-Windows-Services.html</loc>
+    <lastmod>2019-03-08</lastmod>
+  </url>  <url>
+    <loc>https://yangshunjie.com/the-basic-credential-prompt-for-git-on-windows-10.html</loc>
+    <lastmod>2019-03-08</lastmod>
+  </url>  <url>
+    <loc>https://yangshunjie.com/TinyMCE-with-SSR-and-webpack.html</loc>
+    <lastmod>2019-03-08</lastmod>
+  </url>  <url>
+    <loc>https://yangshunjie.com/influxdb-in-dotNEt-Core-2-ioc-and-repository-pattern.html</loc>
+    <lastmod>2019-03-08</lastmod>
+  </url>  <url>
+    <loc>https://yangshunjie.com/influxdb-in-dotNEt-Core-1-Introduction.html</loc>
+    <lastmod>2019-03-08</lastmod>
+  </url>  <url>
+    <loc>https://yangshunjie.com/ddd-project-collection.html</loc>
+    <lastmod>2019-03-08</lastmod>
+  </url>  <url>
+    <loc>https://yangshunjie.com/AutoMappers-automatic-registration-mapping-relationship-configuration.html</loc>
+    <lastmod>2019-03-08</lastmod>
+  </url>  <url>
+    <loc>https://yangshunjie.com/dynamically-add-features-to-the-controller-type-in-dot-net-core.html</loc>
+    <lastmod>2019-03-08</lastmod>
+  </url>  <url>
+    <loc>https://yangshunjie.com/Customized-View-Path-And-Theme-Switching-In-AspNetCore.html</loc>
+    <lastmod>2019-03-08</lastmod>
+  </url>  <url>
+    <loc>https://yangshunjie.com/add-the-webapi-service-to-the-specified-class-in-asp-net-core.html</loc>
+    <lastmod>2019-03-08</lastmod>
+  </url>  <url>
+    <loc>https://yangshunjie.com/A-Middleware-Implement-For-Rendering-Razor-Views-In-AspNetCore.html</loc>
+    <lastmod>2019-03-08</lastmod>
+  </url>  <url>
+    <loc>https://yangshunjie.com/A-Middleware-Implement-For-Customized-Routing-In-AspNetCore.html</loc>
+    <lastmod>2019-03-08</lastmod>
+  </url>  <url>
+    <loc>https://yangshunjie.com/A-Middleware-Implement-For-Server-Side-Static-Caching-In-AspNetCore.html</loc>
+    <lastmod>2019-03-08</lastmod>
+  </url>  <url>
+    <loc>https://yangshunjie.com/The-Ajax-global-Antiforgery-Token-configuration-in-ASP.NET-Core.html</loc>
+    <lastmod>2019-03-08</lastmod>
+  </url>  <url>
+    <loc>https://yangshunjie.com/dotnet-dev-certs.html</loc>
+    <lastmod>2018-05-31</lastmod>
+  </url>  <url>
+    <loc>https://yangshunjie.com/Use-Appveyor-to-continuously-integrate-your-Hexo-blog.html</loc>
+    <lastmod>2017-07-31</lastmod>
+  </url>  <url>
+    <loc>https://yangshunjie.com/migrate-blog-from-ghost-to-hexo-and-github.html</loc>
+    <lastmod>2017-07-25</lastmod>
+  </url>  <url>
+    <loc>https://yangshunjie.com/visual-studio-2017-zheng-shi-ban-an-zhuang-wen-ti-ji-jie-jue-fang-an-ji-lu.html</loc>
+    <lastmod>2017-03-14</lastmod>
+  </url>  <url>
+    <loc>https://yangshunjie.com/n.html</loc>
+    <lastmod>2016-09-28</lastmod>
+  </url>  <url>
+    <loc>https://yangshunjie.com/asp-net-corezhong-shi-yong-qing-qiu-sheng-ming-zhou-qi-nei-wei-yi-de-dbcontext.html</loc>
+    <lastmod>2016-09-22</lastmod>
+  </url>  <url>
+    <loc>https://yangshunjie.com/yi-zhu-ru-de-fang-shi.html</loc>
+    <lastmod>2016-07-31</lastmod>
+  </url>  <url>
+    <loc>https://yangshunjie.com/ef-core-for-mysql-de-databasefang-shi-lian-jie-shu-ju-ku.html</loc>
+    <lastmod>2016-07-30</lastmod>
+  </url>  <url>
+    <loc>https://yangshunjie.com/yun-xing-zai-monoshang-de-efyun-xing-cuo-wu.html</loc>
+    <lastmod>2016-07-20</lastmod>
+  </url>  <url>
+    <loc>https://yangshunjie.com/shi-yong-securecrtlian-jie-ya-ma-xun-yun-fu-wu-qi.html</loc>
+    <lastmod>2016-07-19</lastmod>
+  </url>  <url>
+    <loc>https://yangshunjie.com/net-core-zi-liao-zheng-li.html</loc>
+    <lastmod>2016-07-15</lastmod>
+  </url>  <url>
+    <loc>https://yangshunjie.com/dong-tai-chuang-jian-fan-xing-jie-kou-shi-li.html</loc>
+    <lastmod>2016-07-12</lastmod>
+  </url>  <url>
+    <loc>https://yangshunjie.com/as.html</loc>
+    <lastmod>2016-07-08</lastmod>
+  </url>  <url>
+    <loc>https://yangshunjie.com/cong-jiu-ban-net-core-sheng-ji-dao-net-core-1-0zheng-shi-ban.html</loc>
+    <lastmod>2016-06-30</lastmod>
+  </url>  <url>
+    <loc>https://yangshunjie.com/git-cao-zuo-bi-ji.html</loc>
+    <lastmod>2016-03-28</lastmod>
+  </url>  <url>
+    <loc>https://yangshunjie.com/ubuntu-da-jian-gogs-qing-liang-git-webduan-guan-li-xi-tong.html</loc>
+    <lastmod>2016-03-28</lastmod>
+  </url>  <url>
+    <loc>https://yangshunjie.com/xiu-fu-apt-getbao-guan-li.html</loc>
+    <lastmod>2016-03-24</lastmod>
+  </url>  <url>
+    <loc>https://yangshunjie.com/the-lastest-way-to-install-mono-4-2-1-on-ubuntu.html</loc>
+    <lastmod>2015-12-03</lastmod>
+  </url>  <url>
+    <loc>https://yangshunjie.com/make-mysql-support-chinese-encoding.html</loc>
+    <lastmod>2015-11-08</lastmod>
+  </url>  <url>
+    <loc>https://yangshunjie.com/use-qiniu-upload-file-service-on-ueditor-for-asp-net-mvc.html</loc>
+    <lastmod>2015-10-30</lastmod>
+  </url>  <url>
+    <loc>https://yangshunjie.com/install-ghost-blog-on-jexus-successfully.html</loc>
+    <lastmod>2015-10-17</lastmod>
+  </url>  <url>
+    <loc>https://yangshunjie.com/the-smtp-setting-for-ghost-blog.html</loc>
+    <lastmod>2015-10-13</lastmod>
+  </url>  <url>
+    <loc>https://yangshunjie.com/the-multiple-views-structure-on-framework7.html</loc>
+    <lastmod>2015-10-10</lastmod>
+  </url>
+</urlset>

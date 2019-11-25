@@ -1,0 +1,1289 @@
+<!DOCTYPE html>
+<html style="display: none;" lang="zh">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.5.2 -->
+    <script>
+        window.materialVersion = "1.5.2"
+        // Delete localstorage with these tags
+        window.oldVersion = [
+            'codestartv1',
+            '1.3.4',
+            '1.4.0',
+            '1.4.0b1',
+            '1.5.0'
+        ]
+    </script>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+
+
+    <link rel="dns-prefetch" href="https://busuanzi.ibruce.info"/>
+
+
+
+
+
+
+
+    <link rel="dns-prefetch" href="https://lib.baomitu.com"/>
+
+
+
+
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!-- Title -->
+    
+    <title>
+        
+            ASP.NET Core中为指定类添加WebApi服务功能 | 
+        
+        ElderJames&#39; Blog
+    </title>
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
+    <link rel="icon" href="/img/favicon.png">
+
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="description" itemprop="description" content="学习、札记、分享">
+    <meta name="keywords" content="ElderJames&#39; Blog,.NET Core,ASP.NET Core,WebApi,MVC">
+    <meta name="theme-color" content="#0097A7">
+
+    <!-- Disable Fucking Bloody Baidu Tranformation -->
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(a){try{localStorage.removeItem(a)}catch(b){}};lsloader.setLS=function(a,c){try{localStorage.setItem(a,c)}catch(b){}};lsloader.getLS=function(a){var c="";try{c=localStorage.getItem(a)}catch(b){c=""}return c};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var b=[];for(var a=0;a<localStorage.length;a++){b.push(localStorage.key(a))}b.forEach(function(e){var f=lsloader.getLS(e);if(window.oldVersion){var d=window.oldVersion.reduce(function(g,h){return g||f.indexOf("/*"+h+"*/")!==-1},false);if(d){lsloader.removeLS(e)}}})}catch(c){}};lsloader.clean();lsloader.load=function(f,a,b,d){if(typeof b==="boolean"){d=b;b=undefined}d=d||false;b=b||function(){};var e;e=this.getLS(f);if(e&&e.indexOf(versionString)===-1){this.removeLS(f);this.requestResource(f,a,b,d);return}if(e){var c=e.split(versionString)[0];if(c!=a){console.log("reload:"+a);this.removeLS(f);this.requestResource(f,a,b,d);return}e=e.split(versionString)[1];if(d){this.jsRunSequence.push({name:f,code:e});this.runjs(a,f,e)}else{document.getElementById(f).appendChild(document.createTextNode(e));b()}}else{this.requestResource(f,a,b,d)}};lsloader.requestResource=function(b,e,a,c){var d=this;if(c){this.iojs(e,b,function(h,f,g){d.setLS(f,h+versionString+g);d.runjs(h,f,g)})}else{this.iocss(e,b,function(f){document.getElementById(b).appendChild(document.createTextNode(f));d.setLS(b,e+versionString+f)},a)}};lsloader.iojs=function(d,b,g){var a=this;a.jsRunSequence.push({name:b,code:""});try{var f=new XMLHttpRequest();f.open("get",d,true);f.onreadystatechange=function(){if(f.readyState==4){if((f.status>=200&&f.status<300)||f.status==304){if(f.response!=""){g(d,b,f.response);return}}a.jsfallback(d,b)}};f.send(null)}catch(c){a.jsfallback(d,b)}};lsloader.iocss=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.iofonts=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.runjs=function(f,c,e){if(!!c&&!!e){for(var b in this.jsRunSequence){if(this.jsRunSequence[b].name==c){this.jsRunSequence[b].code=e}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var a=document.createElement("script");a.appendChild(document.createTextNode(this.jsRunSequence[0].code));a.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(a);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else{if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var d=this;var a=document.createElement("script");a.src=this.jsRunSequence[0].path;a.type="text/javascript";this.jsRunSequence[0].status="loading";a.onload=function(){d.jsRunSequence.shift();if(d.jsRunSequence.length>0){d.runjs()}};document.body.appendChild(a)}}};lsloader.tagLoad=function(b,a){this.jsRunSequence.push({name:a,code:"",path:b,status:"failed"});this.runjs()};lsloader.jsfallback=function(c,b){if(!!this.jsnamemap[b]){return}else{this.jsnamemap[b]=b}for(var a in this.jsRunSequence){if(this.jsRunSequence[a].name==b){this.jsRunSequence[a].code="";this.jsRunSequence[a].status="failed";this.jsRunSequence[a].path=c}}this.runjs()};lsloader.cssfallback=function(e,c,b){if(!!this.cssnamemap[c]){return}else{this.cssnamemap[c]=1}var d=document.createElement("link");d.type="text/css";d.href=e;d.rel="stylesheet";d.onload=d.onerror=b;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(d,a)};lsloader.runInlineScript=function(c,b){var a=document.getElementById(b).innerText;this.jsRunSequence.push({name:c,code:a});this.runjs()}})();</script>
+
+    <!-- Import queue -->
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Import CSS -->
+    
+        <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","/css/material.min.css?976y5g1pRWbrdcUItimr0g==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?eXkKIGXLBtkgeML0A1Jlsg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+        
+            
+                <style id="prettify_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_css","/css/prettify.min.css?zp8STOU9v89XWFEnN+6YmQ==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+                <style id="prettify_theme"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_theme","/css/prettify/github-v2.min.css?AfzKxt++K+/lhZBlSjnxwg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+            
+        
+
+    
+
+    
+
+    <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    overflow-x: hidden !important;
+  }
+  
+  code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #0097A7 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #0097A7 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #0097A7 !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body {
+        background-color: ;
+      }
+
+      /* blog_info bottom background */
+      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text {
+        background-color: #fff;
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+<!-- Import Font -->
+<!-- Import Roboto -->
+
+    <style>
+        @font-face {
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: 300;
+            src: url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.eot);
+            src: local('Roboto'),local('Roboto-Normal'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.eot?#iefix) format('embedded-opentype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.woff2) format('woff2'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.woff) format('woff'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.ttf) format('truetype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.svg#Roboto) format('svg')
+        }
+
+        @font-face {
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: regular;
+            src: url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.eot);
+            src: local('Roboto'),local('Roboto-Normal'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.eot?#iefix) format('embedded-opentype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.woff2) format('woff2'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.woff) format('woff'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.ttf) format('truetype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.svg#Roboto) format('svg')
+        }
+
+        @font-face {
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: 500;
+            src: url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.eot);
+            src: local('Roboto'),local('Roboto-Normal'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.eot?#iefix) format('embedded-opentype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.woff2) format('woff2'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.woff) format('woff'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.ttf) format('truetype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.svg#Roboto) format('svg')
+        }
+    </style>
+
+
+<!-- Import Material Icons -->
+
+
+    <style id="material_icons"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_icons","/css/material-icons.css?pqhB/Rd/ab0H2+kZp0RDmw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+
+
+
+    <!-- Import jQuery -->
+    
+        <script>lsloader.load("jq_js","https://cdn.bootcss.com/jquery/2.2.1/jquery.js", true)</script>
+    
+
+    <!-- WebAPP Icons -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="ElderJames&#39; Blog">
+    <meta name="msapplication-starturl" content="https://yangshunjie.com/add-the-webapi-service-to-the-specified-class-in-asp-net-core.html">
+    <meta name="msapplication-navbutton-color" content="#0097A7">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="ElderJames&#39; Blog">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="/img/favicon.png">
+
+    <!-- Site Verification -->
+    
+    
+
+    <!-- RSS -->
+    
+        
+            <link rel=alternate type="application/rss+xml" href="rss.xml">
+        
+    
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="https://yangshunjie.com/add-the-webapi-service-to-the-specified-class-in-asp-net-core.html">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="ASP.NET Core中为指定类添加WebApi服务功能 | ElderJames&#39; Blog">
+    <meta property="og:image" content="/img/favicon.png">
+    <meta property="og:description" content="学习、札记、分享">
+    <meta property="og:article:tag" content=".NET Core"> <meta property="og:article:tag" content="ASP.NET Core"> <meta property="og:article:tag" content="WebApi"> <meta property="og:article:tag" content="MVC"> 
+
+    
+        <meta property="article:published_time" content="Tue Sep 12 2017 17:00:00 GMT+0800">
+        <meta property="article:modified_time" content="Fri Mar 08 2019 15:56:40 GMT+0800">
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="https://yangshunjie.com/add-the-webapi-service-to-the-specified-class-in-asp-net-core.html" />
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "https://yangshunjie.com/add-the-webapi-service-to-the-specified-class-in-asp-net-core.html",
+    "headline": "ASP.NET Core中为指定类添加WebApi服务功能",
+    "datePublished": "Tue Sep 12 2017 17:00:00 GMT+0800",
+    "dateModified": "Fri Mar 08 2019 15:56:40 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "James Yeung",
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://avatars0.githubusercontent.com/u/7550366?v=4&amp;s=460"
+        },
+        "description": "学习/创作/分享"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "ElderJames&#39; Blog",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.png"
+        }
+    },
+    "keywords": ",.NET Core,ASP.NET Core,WebApi,MVCElderJames&#39; Blog",
+    "description": "学习、札记、分享",
+}
+</script>
+
+
+    
+
+    <!-- Analytics -->
+    
+    
+    
+
+    <!-- Custom Head -->
+    
+
+<link rel="stylesheet" href="/css/prism-vs.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span id="MD-burger-id" class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#POCO控制器简介"><span class="post-toc-number">1.</span> <span class="post-toc-text">POCO控制器简介</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#POCO控制器原理"><span class="post-toc-number">2.</span> <span class="post-toc-text">POCO控制器原理</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#实现自定义判断规则"><span class="post-toc-number">3.</span> <span class="post-toc-text">实现自定义判断规则</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#配置自定义规则"><span class="post-toc-number">4.</span> <span class="post-toc-text">配置自定义规则</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#看看效果"><span class="post-toc-number">5.</span> <span class="post-toc-text">看看效果</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#总结"><span class="post-toc-number">6.</span> <span class="post-toc-text">总结</span></a></li></ol>
+    </ul>
+    
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        <!-- Custom Thumbnail -->
+        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(/images/add_webapi_to_class/title.png)">
+    
+            <p class="article-headline-p">
+                ASP.NET Core中为指定类添加WebApi服务功能
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="https://avatars0.githubusercontent.com/u/7550366?v=4&s=460" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>James Yeung</strong>
+        <span>9月 12, 2017</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">devices other</i>
+    <span class="visuallyhidden">devices other</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+    <li class="mdl-menu__item">在其它设备中阅读本文章</li>
+    
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQ4AAAEOCAAAAABd2qZ5AAADfklEQVR42u3aS24jMQwFwNz/0jPbAEGc90jJ7kX1KrCFtlRaMPx8/fN8e74Q4MCBAwcOHDhw4MDxYI6v+Pm+/vUb8m9/vvP1yt/2MDsLDhw4cOC4x/FHKPqFIzn866O+/iT5rc1ZcODAgQPHbY5kK8lG83CYo7ymn50FBw4cOHA8gSMHSo49O17+TwAOHDhw4Hg+RxsO84QwT89yGhw4cODA8VmOoqB2KKzOdtImjRdrpThw4MCB4+hAwzP//th8Bw4cOHDgWDyzVlA7BrEZmyvOggMHDhw4jnLsN7ff9Kz4mOwqWokDBw4cOI5ynApX7y8j5oMR9f8dOHDgwIFjwZGPF8xW5uvzNe3l/RHmceDAgQPHNY68wXMquCboeQqXr8eBAwcOHPc48nDYJnt5YpaUDi+GYRw4cODAcZkjD42bkNkW/toB6+LNOHDgwIHjAkcyUjBrVu3fMEsUi8vDgQMHDhxHOWYp0H64bXbsDU1RK8WBAwcOHGuOTQDbDDHMrmQ/ZocDBw4cOO5xtA2n5PD1SMFL4uTbWTERBw4cOHDc4GgHzpJN5+2fU7+SB/5hRosDBw4cOBYDDbNxh3x9zjcrQSZXggMHDhw47nHkWzw14rZpEeUJZ06DAwcOHDjOcuQH3v98Hm7bZKy9PBw4cODAcZtjlrC1gwX7b/NGVHGpOHDgwIHjKMcmVduszAcg2tGHvHyJAwcOHDjucbTb3SRgswJfnnbmoxU4cODAgeP9HLM2Up7g7cuIbcAuunA4cODAgeMaR9vmOVVwbJPDNnXEgQMHDhw3ONr0aT+mljef8oGGHB0HDhw4cNzmmKVJs5ZVngS26V+SFtZtJxw4cODAseCYASWjA/l4waZ0mIRtHDhw4MDxTo59m+dUYXH2bb6HOoXDgQMHDhwLjtmgW93mKUfc2lG5NujiwIEDB47bHO3wWf6e2QW04wvH2k44cODAgWM90JA8bfunLfmdCsl52MaBAwcOHGc5ZoGqLsCNWkTtO3NoHDhw4MBxmyMPrm0StRlNyK9kFuZx4MCBA8dtjvYwOessJN8L+Thw4MCB42kc+3GEHHQWYovPceDAgQPHRzlmraP8k1NNpmKHOHDgwIHjGkcbApPUq03zbow+4MCBAweO93PMSnLtyEIe4NsLSMLt9fkOHDhw4MDhwYEDBw4cOHDgwIEDxxOf/2SRL+CDLkp1AAAAAElFTkSuQmCC">
+    
+</ul>
+
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/NET-Core/">.NET Core</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/ASP-NET-Core/">ASP.NET Core</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/MVC/">MVC</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/WebApi/">WebApi</a>
+    </ul>
+    
+
+    <!-- Share -->
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+        
+            <!-- Busuanzi Views -->
+            <a class="post_share-link" href="#">
+                <li class="mdl-menu__item">
+                    <span id="busuanzi_container_page_pv">
+                        <span id="busuanzi_value_page_pv"></span>&nbsp;浏览量
+                    </span>
+                </li>
+            </a>
+        
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=ASP.NET Core中为指定类添加WebApi服务功能&url=https://yangshunjie.com/add-the-webapi-service-to-the-specified-class-in-asp-net-core.html&pic=https://yangshunjie.com/img/favicon.png&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+
+    <!-- Share Facebook -->
+    
+
+    <!-- Share Google+ -->
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=ElderJames&#39; Blog&title=ASP.NET Core中为指定类添加WebApi服务功能&summary=学习、札记、分享&pics=https://yangshunjie.com/img/favicon.png&url=https://yangshunjie.com/add-the-webapi-service-to-the-specified-class-in-asp-net-core.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+    
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <p>POCO Controller是 <strong>ASP.NET Core</strong> 中的一个特性，虽然在2015年刚发布的时候就有这个特性了，可是大多数开发者都只是按原有的方式去写，而没有用到这个特性。其实，如果利用这个特性进行稍微封装后，用在SOA架构中Service层的场景中是极其便利的。这篇文章主要就是说我最近在学习使用开源AOP库AspectCore写WebApi动态代理客户端的时候，实现为普通类添加WebApi服务的过程。</p>
+<h3 id="POCO控制器简介"><a href="#POCO控制器简介" class="headerlink" title="POCO控制器简介"></a>POCO控制器简介</h3><p>POCO控制器就是ASP.NET Core项目中所有带有<code>Controller</code>后缀的类、或者标记了<code>[Controller]</code>特性的类，虽然没有像模版项目中那样继承自<strong>Controller类</strong>，也会被识别为控制器，拥有跟普通控制器一样的功能，像下面这段代码中，两个类都会被识别成控制器：</p>
+<pre class="line-numbers language-csharp"><code class="language-csharp"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">PocoController</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">public</span> IActionResult <span class="token function">Index</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">ContentResult</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> Content <span class="token operator">=</span> “Hello <span class="token keyword">from</span> POCO controller<span class="token operator">!</span>” <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token punctuation">[</span>Controller<span class="token punctuation">]</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Poco</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">public</span> IActionResult <span class="token function">Index</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">ContentResult</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> Content <span class="token operator">=</span> “Hello <span class="token keyword">from</span> POCO controller<span class="token operator">!</span>” <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="POCO控制器原理"><a href="#POCO控制器原理" class="headerlink" title="POCO控制器原理"></a>POCO控制器原理</h3><p>其实，在ASP.NET Core中，已经不像旧版本的 ASP.NET WebApi 那样，通过ControllerFactory来创建Controller，多亏于ASP.NET Core一脉相承的IoC框架 <code>Microsoft.Extensions.DependencyInjection</code>，ASP.NET Core中的内部实现变得更优雅。其中POCO控制器的核心原理就在<a href="https://github.com/aspnet/Mvc/blob/2bacb6003f3bc2c3b58107c1118346dca3f5fa13/src/Microsoft.AspNetCore.Mvc.Core/ApplicationParts/IApplicationFeatureProviderOfT.cs" target="_blank" rel="noopener"><code>IApplicationFeatureProvider&lt;ControllerFeature&gt;</code></a>这个接口的实现<a href="https://github.com/aspnet/Mvc/blob/760c8f38678118734399c58c2dac981ea6e47046/src/Microsoft.AspNetCore.Mvc.Core/Controllers/ControllerFeatureProvider.cs#L15" target="_blank" rel="noopener"><code>ControllerFeatureProvider</code></a>。</p>
+<p>通过<a href="https://github.com/aspnet/Mvc/search?p=1&amp;q=IApplicationFeatureProvider&amp;type=&amp;utf8=%E2%9C%93" target="_blank" rel="noopener">aspnet/Mvc项目的Github源码仓库</a>中查询得知，Mvc里把Controller、ViewComponent、TagHelper、Views等组件定义为特性(Feature)，如<code>ControllerFeature</code>，特性里就存放了应用中被识别为相组件的类型的集合，如如<code>ControllerFeature</code>中就存放了所有<code>Controller</code>类型。<code>IApplicationFeatureProvider&lt;ControllerFeature&gt;</code>这个接口是用来给MVC框架提供控制器类型识别的接口，当把这个接口的实现注册到服务配置中，就能为其中识别的类型提供控制器功能。</p>
+<p><a href="https://github.com/aspnet/Mvc/blob/760c8f38678118734399c58c2dac981ea6e47046/src/Microsoft.AspNetCore.Mvc.Core/Controllers/ControllerFeatureProvider.cs#L15" target="_blank" rel="noopener">ControllerFeatureProvider</a>是这个接口的默认实现，其中有一个方法<code>IsController(TypeInfo typeInfo)</code>的功能就是判断某类型是否为控制器的。而接口方法<code>PopulateFeature(IEnumerable&lt;ApplicationPart&gt; parts,ControllerFeature feature)</code>则为把传入的 “Mvc应用部分（<code>ApplicationPart</code>，大概是指Mvc的作用程序集）”中的类型都一一判断，如果是控制器，那么就加入控制器特性对象中。</p>
+<h3 id="实现自定义判断规则"><a href="#实现自定义判断规则" class="headerlink" title="实现自定义判断规则"></a>实现自定义判断规则</h3><p>通过上面的剖析，我们就知道要实现自定义的控制器判断规则，只需要重写<code>ControllerFeature</code>类或者重新实现<code>IApplicationFeatureProvider&lt;ControllerFeature&gt;</code>接口，但是由于<code>PopulateFeature</code>不是虚方法或抽象方法，所以不能被重写，那么只能重新写一个类来实现<code>IApplicationFeatureProvider&lt;ControllerFeature&gt;</code>接口了。为了兼容原来规则，我把原来的规则照搬过来，复制了<code>IsController</code>的方法（开源的好处），并且在<code>PopulateFeature</code>中加入了自己的规则。先贴代码，避免篇幅过长，<code>IsController</code>方法的实现就直接链接到<a href="https://github.com/aspnet/Mvc/blob/760c8f38678118734399c58c2dac981ea6e47046/src/Microsoft.AspNetCore.Mvc.Core/Controllers/ControllerFeatureProvider.cs#L41" target="_blank" rel="noopener">源码</a>了：</p>
+<pre class="line-numbers language-csharp"><code class="language-csharp"><span class="token keyword">internal</span> <span class="token keyword">class</span> <span class="token class-name">ServiceControllerFeatureProvider</span> <span class="token punctuation">:</span> IApplicationFeatureProvider<span class="token operator">&lt;</span>ControllerFeature<span class="token operator">></span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">private</span> <span class="token keyword">const</span> <span class="token keyword">string</span> ControllerTypeNameSuffix <span class="token operator">=</span> <span class="token string">"Controller"</span><span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token keyword">readonly</span> IEnumerable<span class="token operator">&lt;</span>Type<span class="token operator">></span> ServiceTypes<span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> <span class="token function">ServiceControllerFeatureProvider</span><span class="token punctuation">(</span>IEnumerable<span class="token operator">&lt;</span>Type<span class="token operator">></span> ServiceTypes<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+            <span class="token keyword">this</span><span class="token punctuation">.</span>ServiceTypes <span class="token operator">=</span> ServiceTypes<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">PopulateFeature</span><span class="token punctuation">(</span>IEnumerable<span class="token operator">&lt;</span>ApplicationPart<span class="token operator">></span> parts<span class="token punctuation">,</span> ControllerFeature feature<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">foreach</span> <span class="token punctuation">(</span><span class="token keyword">var</span> type <span class="token keyword">in</span> Reflection<span class="token punctuation">.</span>CurrentAssembiles<span class="token punctuation">.</span><span class="token function">SelectMany</span><span class="token punctuation">(</span>o <span class="token operator">=</span><span class="token operator">></span> o<span class="token punctuation">.</span>DefinedTypes<span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">IsController</span><span class="token punctuation">(</span>type<span class="token punctuation">)</span> <span class="token operator">||</span> ServiceTypes<span class="token punctuation">.</span><span class="token function">Any</span><span class="token punctuation">(</span>o <span class="token operator">=</span><span class="token operator">></span> type<span class="token punctuation">.</span>IsClass <span class="token operator">&amp;&amp;</span> o<span class="token punctuation">.</span><span class="token function">IsAssignableFrom</span><span class="token punctuation">(</span>type<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> <span class="token operator">!</span>feature<span class="token punctuation">.</span>Controllers<span class="token punctuation">.</span><span class="token function">Contains</span><span class="token punctuation">(</span>type<span class="token punctuation">)</span><span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+                    feature<span class="token punctuation">.</span>Controllers<span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span>type<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">protected</span> <span class="token keyword">bool</span> <span class="token function">IsController</span><span class="token punctuation">(</span>TypeInfo typeInfo<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">//...</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>上面代码的原理，是按照我的框架的需求来改写的，构造方法传入的参数ServiceTypes是定义了服务方法的接口的类型，接口和对应实现类似于以下代码，这些代码可以写在一个.NET Core控制台项目中。</p>
+<pre class="line-numbers language-csharp"><code class="language-csharp"><span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">ITestService</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">string</span> <span class="token function">Test</span><span class="token punctuation">(</span><span class="token keyword">string</span> name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token punctuation">[</span><span class="token function">Route</span><span class="token punctuation">(</span><span class="token string">"test"</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">TestService</span> <span class="token punctuation">:</span> ITestService
+<span class="token punctuation">{</span>
+    <span class="token punctuation">[</span><span class="token function">Route</span><span class="token punctuation">(</span><span class="token string">"{name}"</span><span class="token punctuation">)</span><span class="token punctuation">,</span> HttpGet<span class="token punctuation">]</span>
+    <span class="token keyword">public</span> <span class="token keyword">string</span> <span class="token function">Test</span><span class="token punctuation">(</span><span class="token keyword">string</span> name<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token string">"Hello "</span> <span class="token operator">+</span> name<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>其中TestService类就是会被识别为控制器的类，但是接口和实现是可以分开在不同程序集的。通过原本<code>ControllerFeatureProvider</code>类中<code>PopulateFeature</code>方法的<code>parts</code>参数中的类型是不包括除了引用了Mvc的程序集的其它程序集的，所以我这里用自己实现的类型扫描类<code>Reflection</code>中的<code>CurrentAssembiles</code>静态变量来获取当前应用程序的所有引用的（自己创建的项目）程序集的，具体实现的代码在我的框架[Shriek]的<a href="https://github.com/ElderJames/shriek-fx/blob/master/src/Shriek/Utils/Reflection.cs" target="_blank" rel="noopener">源码中</a>。</p>
+<h3 id="配置自定义规则"><a href="#配置自定义规则" class="headerlink" title="配置自定义规则"></a>配置自定义规则</h3><p>现在，我们拥有了自定义控制器识别规则<code>ServiceControllerFeatureProvider</code>，那么，怎么配置到Mvc中呢？又要去翻源码了！在<code>MvcCoreMvcBuilderExtensions.cs</code>扩展类中，有一个<code>IMvcBuilder</code>的扩展方法<a href="https://github.com/aspnet/Mvc/blob/1c4b0fcdf38320b2f02c0bb7c31df5bd391ace07/src/Microsoft.AspNetCore.Mvc.Core/DependencyInjection/MvcCoreMvcBuilderExtensions.cs#L93" target="_blank" rel="noopener"><code>ConfigureApplicationPartManager</code></a>（<code>IMvcCoreBuilder</code>也有这样的<a href="https://github.com/aspnet/Mvc/blob/1c4b0fcdf38320b2f02c0bb7c31df5bd391ace07/src/Microsoft.AspNetCore.Mvc.Core/DependencyInjection/MvcCoreMvcCoreBuilderExtensions.cs#L152" target="_blank" rel="noopener">扩展方法</a>），它的参数是传入<code>ApplicationPartManager</code>参数的委托，而<a href="https://github.com/aspnet/Mvc/blob/760c8f38678118734399c58c2dac981ea6e47046/src/Microsoft.AspNetCore.Mvc.Core/ApplicationParts/ApplicationPartManager.cs#L13" target="_blank" rel="noopener"><code>ApplicationPartManager</code></a>中有一个<code>FeatureProviders</code>属性，用来存储所有<code>IApplicationFeatureProvider</code>实例，会在应用第一次运行的时候，循环这些“特性提供器”提供所有上面提到的MVC特性。所以，只要我们在这里添加我们自定义的控制器特性提供器，MVC框架内部就能识别我们的指定的类型为控制器，并为他们添加控制器的相关功能。</p>
+<p>设计有点绕，那么我们用代码来实现：</p>
+<pre class="line-numbers language-csharp"><code class="language-csharp"><span class="token comment" spellcheck="true">//示例直接new ServiceCollection对象，下面有完整的能运行的示例代码。</span>
+<span class="token keyword">var</span> services <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ServiceCollection</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+services<span class="token punctuation">.</span><span class="token function">AddMvcCore</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">ConfigureApplicationPartManager</span><span class="token punctuation">(</span>manager <span class="token operator">=</span><span class="token operator">></span>
+        <span class="token punctuation">{</span>
+            <span class="token keyword">var</span> featureProvider <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ServiceControllerFeatureProvider</span><span class="token punctuation">(</span><span class="token keyword">typeof</span><span class="token punctuation">(</span>ITestService<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            manager<span class="token punctuation">.</span>FeatureProviders<span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span>featureProvider<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="看看效果"><a href="#看看效果" class="headerlink" title="看看效果"></a>看看效果</h3><p>现在，在TestService类所在项目文件中引入以下Nuget包（没错，运行一个webapi只需要两个Nuget包）：</p>
+<pre class="line-numbers language-xml"><code class="language-xml">    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>PackageReference</span> <span class="token attr-name">Include</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Microsoft.AspNetCore.Hosting<span class="token punctuation">"</span></span> <span class="token attr-name">Version</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>2.0.0<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>PackageReference</span> <span class="token attr-name">Include</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Microsoft.AspNetCore.Mvc.Core<span class="token punctuation">"</span></span> <span class="token attr-name">Version</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>2.0.0<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>然后在控制台程序的入口文件Program.cs的Main方法中写入一下代码：</p>
+<pre class="line-numbers language-csharp"><code class="language-csharp"><span class="token keyword">internal</span> <span class="token keyword">class</span> <span class="token class-name">Program</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">Main</span><span class="token punctuation">(</span><span class="token keyword">string</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+       <span class="token keyword">new</span> <span class="token class-name">WebHostBuilder</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+            <span class="token punctuation">.</span><span class="token function">UseKestrel</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+            <span class="token punctuation">.</span><span class="token function">UseUrls</span><span class="token punctuation">(</span><span class="token string">"http://localhost:8080"</span><span class="token punctuation">)</span>
+            <span class="token punctuation">.</span><span class="token function">ConfigureServices</span><span class="token punctuation">(</span>services <span class="token operator">=</span><span class="token operator">></span>
+            <span class="token punctuation">{</span>
+                services<span class="token punctuation">.</span><span class="token function">AddMvcCore</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+                <span class="token punctuation">.</span><span class="token function">ConfigureApplicationPartManager</span><span class="token punctuation">(</span>manager <span class="token operator">=</span><span class="token operator">></span>
+                <span class="token punctuation">{</span>
+                    <span class="token keyword">var</span> featureProvider <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ServiceControllerFeatureProvider</span><span class="token punctuation">(</span><span class="token keyword">typeof</span><span class="token punctuation">(</span>ITestService<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    manager<span class="token punctuation">.</span>FeatureProviders<span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span>featureProvider<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span><span class="token punctuation">)</span>
+            <span class="token punctuation">.</span><span class="token function">Configure</span><span class="token punctuation">(</span>app <span class="token operator">=</span><span class="token operator">></span> app<span class="token punctuation">.</span><span class="token function">UseMvc</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+            <span class="token punctuation">.</span><span class="token function">Build</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+            <span class="token punctuation">.</span><span class="token function">Start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>一切编译通过后，点击运行，在浏览器中访问”<a href="http://localhost:8080/test/elderjames" target="_blank" rel="noopener">http://localhost:8080/test/elderjames</a>”，如果看到返回了“Hello elderjames”，那么就大功告成啦！</p>
+<p><img src="/images/add_webapi_to_class/1.png" alt=""></p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>这篇文章中主要介绍了通过实现<code>IApplicationFeatureProvider&lt;ControllerFeature&gt;</code>接口实现设置指定类型为WebApi控制器的方法。</p>
+<p>在接下来的文章中，我会介绍如何从接口获取自定义特性标签，实现从接口获得mvc特性，使得接口和实现类都不依赖MVC库的方法，只要在接口中以标记特性的方式定义了路由和http方法，实现类的操作就都按照接口的路由和http方法去提供WebApi服务，最后还要介绍使用功能强大的.NTE Core开源AOP框架<a href="https://github.com/dotnetcore/AspectCore-Framework" target="_blank" rel="noopener"><strong>AspectCore</strong></a>实现的动态代理客户端，注册以上所说的接口，即可获得可以调用对应的WebApi服务的功能。这些工作的源码可以在<a href="https://github.com/ElderJames/shriek-fx/tree/master/samples/Shriek.Samples.WebApiProxy" target="_blank" rel="noopener">我的框架示例项目</a>中运行，大家有兴趣可以看看效果。</p>
+<p><strong>感谢阅读和批评指教！</strong></p>
+<p>[温馨提示：为方便大家看文中提到的源码，原文中有大量指向源码链接，如果您看的是没有链接的转载，可以再来看我的原文。]</p>
+
+        
+                <blockquote style="margin: 2em 0 0;padding: 0.5em 1em;border-left: 3px solid #F44336;background-color: #F5F5F5;list-style: none;">
+                    <p><strong>
+                         
+                            本文原创授权为：署名-非商业性使用-禁止演绎 4.0 国际 (CC BY-NC-ND 4.0) <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/">协议普通文本</a> | <a rel="law-license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode">协议法律文本</a>
+                        </strong>
+                        <br>
+                        <strong>本文链接：</strong><a href="https://yangshunjie.com/add-the-webapi-service-to-the-specified-class-in-asp-net-core.html">https://yangshunjie.com/add-the-webapi-service-to-the-specified-class-in-asp-net-core.html</a>
+                    </p>
+                </blockquote>
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用 Gitalk -->
+<div id="gitalk-comment">
+    <!-- Gitalk 评论框 -->
+<div id="gitalk-container"></div>
+
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.js"></script>
+
+<script>
+    var id = location.pathname;
+
+    if (Date.parse('Tue Sep 12 2017 17:00:00 GMT+0800') - Date.parse('2018-03-01') > 0 ||
+        'false' === 'true') {
+        id = md5(location.pathname)
+    }
+
+    if ('false' === 'true') {
+        id = location.pathname;
+    }
+
+    var gitalk = new Gitalk({
+        clientID: '695234dcb3266b06c9bc',
+        clientSecret: '9012a4415f4672e4858df564fc9999e9b6d5cec0',
+        repo: 'elderjames.github.io',
+        owner: 'ElderJames',
+        admin: ['ElderJames'],
+        id: id,
+        // facebook-like distraction free mode
+        distractionFreeMode: false
+    })
+    gitalk.render('gitalk-container')
+</script>
+</div>
+<style>
+    #gitalk-comment {
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/dynamically-add-features-to-the-controller-type-in-dot-net-core.html" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/change-the-docker-image-origin-to-aliyun.html" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="https://avatars0.githubusercontent.com/u/7550366?v=4&amp;s=460" alt="James Yeung's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        shunjiey@hotmail.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="mailto:shunjiey@hotmail.com" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                主页
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    归档
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2019/11/">十一月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/01/">一月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">九月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/06/">六月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/05/">五月 2018<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/01/">一月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/12/">十二月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">十一月 2017<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/09/">九月 2017<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">八月 2017<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/07/">七月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/03/">三月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/09/">九月 2016<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/07/">七月 2016<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/06/">六月 2016<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/03/">三月 2016<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2015/12/">十二月 2015<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2015/11/">十一月 2015<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2015/10/">十月 2015<span class="sidebar_archives-count">4</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">chrome_reader_mode</i>
+                
+                分类
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                <a class="sidebar_archives-link" href="/categories/NET-Core/">.NET Core<span class="sidebar_archives-count">14</span></a></li><li><a class="sidebar_archives-link" href="/categories/NET-笔记/">.NET 笔记<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/Angular/">Angular<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/DDD/">DDD<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Docker/">Docker<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Github-Pages/">Github Pages<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Hexo/">Hexo<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/树莓派/">树莓派<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/笔记/">笔记<span class="sidebar_archives-count">1</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Pages  -->
+    
+        <li>
+            <a href="/tags.html" title="标签云">
+                
+                    <i class="material-icons sidebar-material-icons">local_offer</i>
+                
+                标签云
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/timeline.html" title="时间轴">
+                
+                    <i class="material-icons sidebar-material-icons">timeline</i>
+                
+                时间轴
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/contact.html" title="留言板">
+                
+                    <i class="material-icons sidebar-material-icons">forum</i>
+                
+                留言板
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/about.html" title="关于我">
+                
+                    <i class="material-icons sidebar-material-icons">face</i>
+                
+                关于我
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/gallery.html" title="相册">
+                
+                    <i class="material-icons sidebar-material-icons">image</i>
+                
+                相册
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/friends.html" title="朋友">
+                
+                    <i class="material-icons sidebar-material-icons">people</i>
+                
+                朋友
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/shriek-fx" title="开源项目——尖叫框架">
+                
+                    <i class="material-icons sidebar-material-icons">flash_on</i>
+                
+                开源项目——尖叫框架
+            </a>
+        </li>
+        
+    
+
+    <!-- Article Number  -->
+    
+        <li>
+            <a href="/archives">
+                文章总数
+                <span class="sidebar-badge">45</span>
+            </a>
+        </li>
+        
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+
+<!-- Theme Material -->
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+    <span id="footer-image">
+        <a href="https://ci.appveyor.com/project/ElderJames/elderjames-github-io" target="_blank" title="AppVeyor">
+            <img src="https://ci.appveyor.com/api/projects/status/b0wack7uxrvifijj?svg=true" alt="AppVeyor"><!--
+     --></a>
+    </span>
+
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom" >
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+
+    <!-- Facebook -->
+    
+
+    <!-- Google + -->
+    
+
+    <!-- Weibo -->
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+        <a href="ElderJames" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-github">
+                <span class="visuallyhidden">Github</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- LinkedIn -->
+    
+        <a href="杨舜杰" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-linkedin">
+                <span class="visuallyhidden">LinkedIn</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Zhihu -->
+    
+        <a href="ElderJames" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-zhihu">
+                <span class="visuallyhidden">Zhihu</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+
+    <!-- V2EX -->
+    
+
+    <!-- Segmentfault -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©&nbsp;<span year></span>&nbsp;ElderJames' Blog
+            
+                <br>
+                
+                    学习/创作/分享<br />粤ICP备18033053号
+                
+            
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import JS File -->
+
+    <script>lsloader.load("lazyload_js","/js/lazyload.min.js?wgjW/HuQG9JDgvPDPoRAng==", true)</script>
+
+
+
+    <script>lsloader.load("js_js","/js/js.min.js?LT4t6iE6m8TO1BLGGiNJqA==", true)</script>
+
+
+
+    <script>lsloader.load("np_js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==", true)</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+
+    
+        <script>lsloader.load("sm_js","/js/smoothscroll.js?tNQK2Tw2SUL8a1Scn/Mgew==", true)</script>
+    
+
+
+
+
+
+    <!-- Busuanzi -->
+    <script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<!-- CommentBox -->
+   <!-- GitTalk -->
+
+
+
+
+
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('<link rel="stylesheet" href="/css/uc.css">');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
+
+<!-- Import prettify js  -->
+
+    
+        
+            <script>lsloader.load("prettify_js","//cdn.bootcss.com/prettify/r298/prettify.min.js", true)</script>
+        
+    
+
+
+
+<!-- Window Load -->
+<!-- add class for prettify -->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+
+    
+        
+            $(function() {
+                $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+                prettyPrint();
+                })
+        
+    
+    
+</script>
+
+<!-- MathJax Load-->
+
+
+<!-- Bing Background -->
+
+<script type="text/ls-javascript" id="Bing-Background-script">
+    queue.offer(function(){
+        $('body').attr('data-original', 'https://api.i-meto.com/bing?type=S');
+    });
+</script>
+
+
+    <script type = "text/ls-javascript" id= "title-script">
+        //网页当前状态判断
+        var hidden, state, visibilityChange,timer;
+        var leaveTitle='(●-●) 我奔溃啦~';
+        var stayTitle='(*´∇｀*) 被发现啦~';
+        var difaultTitle = document.title;
+        var resetTime=1000
+        
+                leaveTitle += document.title;
+                stayTitle += document.title;
+        
+
+        if (typeof document.hidden !== "undefined") {
+            hidden = "hidden";
+            visibilityChange = "visibilitychange";
+            state = "visibilityState";
+        } else if (typeof document.mozHidden !== "undefined") {
+            hidden = "mozHidden";
+            visibilityChange = "mozvisibilitychange";
+            state = "mozVisibilityState";
+        } else if (typeof document.msHidden !== "undefined") {
+            hidden = "msHidden";
+            visibilityChange = "msvisibilitychange";
+            state = "msVisibilityState";
+        } else if (typeof document.webkitHidden !== "undefined") {
+            hidden = "webkitHidden";
+            visibilityChange = "webkitvisibilitychange";
+            state = "webkitVisibilityState";
+        }
+        // 添加监听器，在title里显示状态变化
+        document.addEventListener(visibilityChange, function () {
+           // document.title = document[state] =='visible'?stayTitle:leaveTitle ;
+            if (timer!=null) clearTimeout(timer);
+            if (document[state] =='visible'){
+                document.title = stayTitle;
+                timer=setTimeout(function(){
+                    document.title=difaultTitle;
+                },resetTime)
+            }
+            else{
+                setTimeout(function(){
+                    document.title = leaveTitle;
+                },1000);
+            }
+        }, false);
+        //初始化页面状态
+        document.title = document[state] =='visible'?stayTitle:leaveTitle ;
+    </script>
+    
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+<!-- Custom Footer -->
+
+
+
+<script>
+    var copyrightNow = new Date().getFullYear();
+    var textContent = document.querySelector('span[year]')
+
+    copyrightSince = 2015;
+    if (copyrightSince === copyrightNow||copyrightSince === 0000) {
+        textContent.textContent = copyrightNow
+    } else {
+        textContent.textContent = copyrightSince + ' - ' + copyrightNow
+    }
+
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.5.2 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+                </main>
+            </div>
+        <script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","model":{"scale":0.8,"hHeadPos":0.5,"vHeadPos":0.618,"jsonPath":"/live2dw/assets/tororo.model.json"},"display":{"superSample":2,"width":80,"height":120,"position":"right","hOffset":20,"vOffset":50},"mobile":{"show":false,"scale":0.3,"motion":true},"react":{"opacityDefault":1,"opacityOnHover":0.2}});</script></body>
+    
+</html>
