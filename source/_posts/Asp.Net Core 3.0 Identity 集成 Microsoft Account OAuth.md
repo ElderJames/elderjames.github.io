@@ -4,10 +4,10 @@ title: Asp.Net Core 3.0 Identity 集成 Microsoft Account OAuth
 permalink: AspNet-Core-3_0-Identity-For-Microsoft-Account-OAuth
 date: 2019-12-06 15:59:00
 tags:
-- ASP.NET Core
-- .NET Core
+    - ASP.NET Core
+    - .NET Core
 categories:
-- .NET Core
+    - .NET Core
 ---
 
 
