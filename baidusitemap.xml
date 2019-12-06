@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://yangshunjie.com/AspNet-Core-3_0-Identity-For-Microsoft-Account-OAuth.html</loc>
+    <lastmod>2019-12-06</lastmod>
+  </url>  <url>
     <loc>https://yangshunjie.com/code-first-generate-gRPC-services-and-clients-in-dotnet-Core-3_0.html</loc>
-    <lastmod>2019-11-25</lastmod>
+    <lastmod>2019-12-06</lastmod>
   </url>  <url>
     <loc>https://yangshunjie.com/my-first-respberry-pi.html</loc>
     <lastmod>2019-11-25</lastmod>

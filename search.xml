@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>Asp.Net Core 3.0 Identity 集成 Microsoft Account OAuth</title>
+      <link href="/AspNet-Core-3_0-Identity-For-Microsoft-Account-OAuth.html"/>
+      <url>/AspNet-Core-3_0-Identity-For-Microsoft-Account-OAuth.html</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="一、注册-Azure-WebApp"><a href="#一、注册-Azure-WebApp" class="headerlink" title="一、注册 Azure WebApp"></a>一、注册 Azure WebApp</h2><ul><li>访问应用注册页面 <a href="https://ms.portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/RegisteredApps" target="_blank" rel="noopener">https://ms.portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/RegisteredApps</a></li></ul><p><img src="/images/msaccount/1.png" alt=""></p><ul><li>选择个人账户中的应用程序选项卡，点击新注册，选择“仅与个人账户关联”，输入名称，点击注册。</li></ul><p><img src="/images/msaccount/2.png" alt=""></p><ul><li>注册后，看到应用列表中有这个新注册的应用，点击进入设置页面，可以应用程序(客户端) ID。</li></ul><p><img src="/images/msaccount/3.png" alt=""></p><p><img src="/images/msaccount/4.png" alt=""></p><p><img src="/images/msaccount/5.png" alt=""></p><ul><li>进入证书与密码页面，点击新客户端密码，创建一个客户端密码。</li></ul><p><img src="/images/msaccount/6.png" alt=""></p><h2 id="二、在ASP-NET-Core-应用中注册一个ExternalProvider"><a href="#二、在ASP-NET-Core-应用中注册一个ExternalProvider" class="headerlink" title="二、在ASP.NET Core 应用中注册一个ExternalProvider"></a>二、在ASP.NET Core 应用中注册一个ExternalProvider</h2><ul><li><p>安装Nuget包</p><pre class="line-numbers language-xml"><code class="language-xml">      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>PackageReference</span> <span class="token attr-name">Include</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Microsoft.AspNetCore.Authentication.MicrosoftAccount<span class="token punctuation">"</span></span> <span class="token attr-name">Version</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>3.0.0<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li><li><p>注册 Microsoft Account OAuth 验证组件，配置ClientId和ClientSecret，以及回调路径</p><pre class="line-numbers language-cs"><code class="language-cs">  services.AddAuthentication()      .AddMicrosoftAccount(options =>      {          //options.SignInScheme = IdentityServerConstants.ExternalCookieAuthenticationScheme;          options.ClientId = Configuration["Microsoft:ClientId"];          options.ClientSecret = Configuration["Microsoft:ClientSecret"];          options.CallbackPath = new PathString("/signin-microsoft");      });<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>  PS. 集成 Identity Server 4 之后，可能需要设置 <code>options.SignInScheme = IdentityServerConstants.ExternalCookieAuthenticationScheme;</code></p><p>  <img src="/images/msaccount/7.png" alt=""></p></li></ul><h2 id="三、完成！"><a href="#三、完成！" class="headerlink" title="三、完成！"></a>三、完成！</h2>]]></content>
+      
+      
+      <categories>
+          
+          <category> .NET Core </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> .NET Core </tag>
+            
+            <tag> ASP.NET Core </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>.NET Core 3.0中用 Code-First 方式创建 gRPC 服务与客户端</title>
       <link href="/code-first-generate-gRPC-services-and-clients-in-dotnet-Core-3_0.html"/>
       <url>/code-first-generate-gRPC-services-and-clients-in-dotnet-Core-3_0.html</url>

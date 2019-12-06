@@ -5,11 +5,30 @@
   <channel>
     <title>ElderJames&#39; Blog</title>
     <link>https://yangshunjie.com/</link>
+    
     <atom:link href="/rss.xml" rel="self" type="application/rss+xml"/>
     
     <description>学习、札记、分享</description>
-    <pubDate>Mon, 25 Nov 2019 06:26:38 GMT</pubDate>
+    <pubDate>Fri, 06 Dec 2019 08:14:10 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>Asp.Net Core 3.0 Identity 集成 Microsoft Account OAuth</title>
+      <link>https://yangshunjie.com/AspNet-Core-3_0-Identity-For-Microsoft-Account-OAuth.html</link>
+      <guid>https://yangshunjie.com/AspNet-Core-3_0-Identity-For-Microsoft-Account-OAuth.html</guid>
+      <pubDate>Fri, 06 Dec 2019 07:59:00 GMT</pubDate>
+      <description>
+      
+        
+        
+          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla
+        
+      
+      </description>
+      
+      
+      <comments>https://yangshunjie.com/AspNet-Core-3_0-Identity-For-Microsoft-Account-OAuth.html#disqus_thread</comments>
+    </item>
     
     <item>
       <title>.NET Core 3.0中用 Code-First 方式创建 gRPC 服务与客户端</title>
@@ -24,6 +43,7 @@
         
       
       </description>
+      
       
       <comments>https://yangshunjie.com/code-first-generate-gRPC-services-and-clients-in-dotnet-Core-3_0.html#disqus_thread</comments>
     </item>
@@ -42,6 +62,7 @@
       
       </description>
       
+      
       <comments>https://yangshunjie.com/Using-Topshelf-To-Deploy-Net-Core-Generic-Host-App-To-Windows-Services.html#disqus_thread</comments>
     </item>
     
@@ -58,6 +79,7 @@
         
       
       </description>
+      
       
       <comments>https://yangshunjie.com/The-Ajax-global-Antiforgery-Token-configuration-in-ASP.NET-Core.html#disqus_thread</comments>
     </item>
@@ -76,6 +98,7 @@
       
       </description>
       
+      
       <comments>https://yangshunjie.com/implement-simple-Aop-using-a-dotnet-core-library-System-Reflection-DispatchProxy.html#disqus_thread</comments>
     </item>
     
@@ -92,6 +115,7 @@
         
       
       </description>
+      
       
       <comments>https://yangshunjie.com/boot-the-berryboot-installer-for-raspberry-pi-with-wifi-and-vnc-but-no-screen.html#disqus_thread</comments>
     </item>
@@ -110,6 +134,7 @@
       
       </description>
       
+      
       <comments>https://yangshunjie.com/dotnet-dev-certs.html#disqus_thread</comments>
     </item>
     
@@ -126,6 +151,7 @@
         
       
       </description>
+      
       
       <comments>https://yangshunjie.com/Angular-integrating-with-UEditor-and-ssr-supporting.html#disqus_thread</comments>
     </item>
@@ -144,6 +170,7 @@
       
       </description>
       
+      
       <comments>https://yangshunjie.com/TinyMCE-with-SSR-and-webpack.html#disqus_thread</comments>
     </item>
     
@@ -160,6 +187,7 @@
         
       
       </description>
+      
       
       <comments>https://yangshunjie.com/AutoMappers-automatic-registration-mapping-relationship-configuration.html#disqus_thread</comments>
     </item>
@@ -178,6 +206,7 @@
       
       </description>
       
+      
       <comments>https://yangshunjie.com/net-core-on-linux-operation-note.html#disqus_thread</comments>
     </item>
     
@@ -194,6 +223,7 @@
         
       
       </description>
+      
       
       <comments>https://yangshunjie.com/my-first-respberry-pi.html#disqus_thread</comments>
     </item>
@@ -212,6 +242,7 @@
       
       </description>
       
+      
       <comments>https://yangshunjie.com/Customized-View-Path-And-Theme-Switching-In-AspNetCore.html#disqus_thread</comments>
     </item>
     
@@ -228,6 +259,7 @@
         
       
       </description>
+      
       
       <comments>https://yangshunjie.com/A-Middleware-Implement-For-Customized-Routing-In-AspNetCore.html#disqus_thread</comments>
     </item>
@@ -246,6 +278,7 @@
       
       </description>
       
+      
       <comments>https://yangshunjie.com/A-Middleware-Implement-For-Rendering-Razor-Views-In-AspNetCore.html#disqus_thread</comments>
     </item>
     
@@ -262,6 +295,7 @@
         
       
       </description>
+      
       
       <comments>https://yangshunjie.com/A-Middleware-Implement-For-Server-Side-Static-Caching-In-AspNetCore.html#disqus_thread</comments>
     </item>
@@ -280,6 +314,7 @@
       
       </description>
       
+      
       <comments>https://yangshunjie.com/the-basic-credential-prompt-for-git-on-windows-10.html#disqus_thread</comments>
     </item>
     
@@ -296,6 +331,7 @@
         
       
       </description>
+      
       
       <comments>https://yangshunjie.com/influxdb-in-dotNEt-Core-2-ioc-and-repository-pattern.html#disqus_thread</comments>
     </item>
@@ -314,6 +350,7 @@
       
       </description>
       
+      
       <comments>https://yangshunjie.com/influxdb-in-dotNEt-Core-1-Introduction.html#disqus_thread</comments>
     </item>
     
@@ -331,24 +368,8 @@
       
       </description>
       
+      
       <comments>https://yangshunjie.com/dynamically-add-features-to-the-controller-type-in-dot-net-core.html#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>ASP.NET Core中为指定类添加WebApi服务功能</title>
-      <link>https://yangshunjie.com/add-the-webapi-service-to-the-specified-class-in-asp-net-core.html</link>
-      <guid>https://yangshunjie.com/add-the-webapi-service-to-the-specified-class-in-asp-net-core.html</guid>
-      <pubDate>Tue, 12 Sep 2017 09:00:00 GMT</pubDate>
-      <description>
-      
-        
-        
-          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla
-        
-      
-      </description>
-      
-      <comments>https://yangshunjie.com/add-the-webapi-service-to-the-specified-class-in-asp-net-core.html#disqus_thread</comments>
     </item>
     
   </channel>

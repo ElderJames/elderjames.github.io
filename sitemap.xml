@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://yangshunjie.com/AspNet-Core-3_0-Identity-For-Microsoft-Account-OAuth.html</loc>
+    
+    <lastmod>2019-12-06T08:14:10.770Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://yangshunjie.com/code-first-generate-gRPC-services-and-clients-in-dotnet-Core-3_0.html</loc>
     
-    <lastmod>2019-11-25T06:26:38.710Z</lastmod>
+    <lastmod>2019-12-06T08:00:17.106Z</lastmod>
     
   </url>
   
