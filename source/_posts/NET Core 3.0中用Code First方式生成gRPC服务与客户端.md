@@ -1,4 +1,5 @@
 ---
+layout: post
 title: .NET Core 3.0中用 Code-First 方式创建 gRPC 服务与客户端
 permalink: code-first-generate-gRPC-services-and-clients-in-dotnet-Core-3_0
 date: 2019-11-24 23:54:10
