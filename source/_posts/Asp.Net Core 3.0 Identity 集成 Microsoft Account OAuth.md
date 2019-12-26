@@ -10,8 +10,17 @@ categories:
     - .NET Core
 ---
 
+最近在给使用 Identity Server 开发的登录中心添加第三方授权登录，集成了微信、钉钉、Github，最后还想到使用Windows 10系统的用户，大多数都有 Microsoft 帐号了，如果集成了 Microsoft 帐号，会带来更多方便！于是就研究了 Microsoft Account OAuth 授权的集成。
 
-## 一、注册 Azure WebApp
+使用 Microsoft Account 授权的方式有几种:
+
+- Azure Active Directory
+- Microsoft Graph
+- Azure WebApp
+
+本示例就用注册简单的 WebApp 实现吧！
+
+### 一、注册 Azure WebApp
 
 - 访问应用注册页面 https://ms.portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/RegisteredApps
 
@@ -33,7 +42,7 @@ categories:
 
 ![](/images/msaccount/6.png)
 
-## 二、在ASP.NET Core 应用中注册一个ExternalProvider
+### 二、在ASP.NET Core 应用中注册一个ExternalProvider
 
 - 安装Nuget包
 
@@ -58,5 +67,5 @@ categories:
 
     ![](/images/msaccount/7.png)
 
-## 三、完成！
+### 三、完成！
 
