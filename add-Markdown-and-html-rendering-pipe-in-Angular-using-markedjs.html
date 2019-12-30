@@ -46,7 +46,7 @@
     
     <title>
         
-            标签: AutoMapper | 
+            Angular 利用 marked.js 添加 Markdown + HTML 同时渲染的 Pipe | 
         
         ElderJames&#39; Blog
     </title>
@@ -57,7 +57,7 @@
 
     <meta name="format-detection" content="telephone=no"/>
     <meta name="description" itemprop="description" content="学习、札记、分享">
-    <meta name="keywords" content="ElderJames&#39; Blog">
+    <meta name="keywords" content="ElderJames&#39; Blog,Angular,Typescript">
     <meta name="theme-color" content="#0097A7">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
@@ -84,6 +84,9 @@
         <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?eXkKIGXLBtkgeML0A1Jlsg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
 
         
+            
+                <style id="prettify_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_css","/css/prettify.min.css?zp8STOU9v89XWFEnN+6YmQ==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+                <style id="prettify_theme"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_theme","/css/prettify/github-v2.min.css?AfzKxt++K+/lhZBlSjnxwg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
             
         
 
@@ -244,7 +247,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="ElderJames&#39; Blog">
-    <meta name="msapplication-starturl" content="https://yangshunjie.com/tags/AutoMapper/">
+    <meta name="msapplication-starturl" content="https://yangshunjie.com/add-Markdown-and-html-rendering-pipe-in-Angular-using-markedjs.html">
     <meta name="msapplication-navbutton-color" content="#0097A7">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="ElderJames&#39; Blog">
@@ -263,13 +266,16 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="https://yangshunjie.com/tags/AutoMapper/">
+    <meta property="og:url" content="https://yangshunjie.com/add-Markdown-and-html-rendering-pipe-in-Angular-using-markedjs.html">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="标签: AutoMapper | ElderJames&#39; Blog">
+    <meta property="og:title" content="Angular 利用 marked.js 添加 Markdown + HTML 同时渲染的 Pipe | ElderJames&#39; Blog">
     <meta property="og:image" content="/img/favicon.png">
     <meta property="og:description" content="学习、札记、分享">
-    
+    <meta property="og:article:tag" content="Angular"> <meta property="og:article:tag" content="Typescript"> 
 
+    
+        <meta property="article:published_time" content="Fri Dec 27 2019 17:51:00 GMT+0000">
+        <meta property="article:modified_time" content="Mon Dec 30 2019 02:05:19 GMT+0000">
     
 
     <!-- The Twitter Card protocol -->
@@ -277,13 +283,43 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="https://yangshunjie.com/tags/AutoMapper/index.html" />
+        <link rel="canonical" href="https://yangshunjie.com/add-Markdown-and-html-rendering-pipe-in-Angular-using-markedjs.html" />
     
 
     <!-- Structured-data for SEO -->
     
         
 
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "https://yangshunjie.com/add-Markdown-and-html-rendering-pipe-in-Angular-using-markedjs.html",
+    "headline": "Angular 利用 marked.js 添加 Markdown + HTML 同时渲染的 Pipe",
+    "datePublished": "Fri Dec 27 2019 17:51:00 GMT+0000",
+    "dateModified": "Mon Dec 30 2019 02:05:19 GMT+0000",
+    "author": {
+        "@type": "Person",
+        "name": "James Yeung",
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://avatars0.githubusercontent.com/u/7550366?v=4&amp;s=460"
+        },
+        "description": "学习/创作/分享"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "ElderJames&#39; Blog",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.png"
+        }
+    },
+    "keywords": ",Angular,TypescriptElderJames&#39; Blog",
+    "description": "学习、札记、分享",
+}
+</script>
 
 
     
@@ -318,98 +354,338 @@
                         </button>
                     
 
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
-    
-    <div class="locate-thumbnail-symbol"></div>
+                    <!-- Post TOC -->
 
-    <!-- Pin on top -->
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#背景"><span class="post-toc-number">1.</span> <span class="post-toc-text">背景</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#marked-js-介绍"><span class="post-toc-number">2.</span> <span class="post-toc-text">marked.js 介绍</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#给-Angular-添加一个用于-Markdown-渲染的-Pipe"><span class="post-toc-number">3.</span> <span class="post-toc-text">给 Angular 添加一个用于 Markdown 渲染的 Pipe</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#一、npm-引用"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">一、npm 引用</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#二、创建-Pipe"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">二、创建 Pipe</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#修改-marked-pipe-ts"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">修改 marked.pipe.ts</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#使用方法"><span class="post-toc-number">3.4.</span> <span class="post-toc-text">使用方法</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#总结"><span class="post-toc-number">3.5.</span> <span class="post-toc-text">总结</span></a></li></ol></li></ol>
+    </ul>
     
 
-    <!-- Normal Post -->
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
     
         
             <!-- Random Thumbnail -->
             <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
 
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/AutoMappers-automatic-registration-mapping-relationship-configuration.html">AutoMapper自动注册映射关系配置</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            使用以下配置，即...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/AutoMappers-automatic-registration-mapping-relationship-configuration.html" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="https://avatars0.githubusercontent.com/u/7550366?v=4&amp;s=460" width="44px" height="44px" alt="James Yeung's avatar">
-            </div>
-            <div>
-                <strong>James Yeung</strong>
-                <span>5月 08, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/NET-%E7%AC%94%E8%AE%B0/">.NET 笔记</a>
-              </span>
-            
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-
-    
-
-    
-        <script type="text/ls-javascript" id="thumbnail-script">
-    var randomNum;
-
-    var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 19 + 1);
-
-        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
     $('.post_thumbnail-random').addClass('lazy');
-
-        locatePost = locatePost.next();
-    }
 </script>
 
+        
+    
+            <p class="article-headline-p">
+                Angular 利用 marked.js 添加 Markdown + HTML 同时渲染的 Pipe
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="https://avatars0.githubusercontent.com/u/7550366?v=4&s=460" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>James Yeung</strong>
+        <span>12月 27, 2019</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">devices other</i>
+    <span class="visuallyhidden">devices other</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+    <li class="mdl-menu__item">在其它设备中阅读本文章</li>
+    
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQ4AAAEOCAAAAABd2qZ5AAADkUlEQVR42u3aS27jMBAFQN//0jPbAIHk99ikRhgUV4biSGJx0e7P54/1Y30Q4MCBAwcOHDhw4MDxYo5PvK7+6+eVy0de3C25/vv++d2iveDAgQMHjgMcX0JR8J2rl766w9XL3W8sf2K+Fxw4cODAcY7jPoDdP/Jqw3kIbO+W0CQ/CHDgwIEDx3s48mCZB+Y2kcOBAwcOHP8TR5EmLa02tcOBAwcOHG/jaEt+bYsoCcaTdO4f1Epx4MCBA8d4oOH9nx+d78CBAwcOHL842jV53ftjuH9iOxJR7AgHDhw4cGzlyANV8rqTl27D/Lb3x4EDBw4chznWtr1WRlwbbrjHyq/jwIEDB44nOYri2qbRhHZ8YRJcceDAgQPHOY480doFkQTFtrB4j/WlyIgDBw4cOLZy7Cq3rSVU7SDC3sIlDhw4cOB4kqPddpt6rQX4tjgYHSQOHDhw4NjKkY/HTZpAk/GFtt2VXMeBAwcOHKc52lJdEm5b6HwAYj4SgQMHDhw4nuFYKw7mowY5Sh5682bVZcKJAwcOHDi2crQDATlBgls0h8YpX1ErxYEDBw4cA458G3noSkDz76yNLBSFRRw4cODAcYAjHy8oUqNyiGHtSPLv48CBAweOZzjypGutUdS2gtbG5tqjwoEDBw4c5zj2Bs62zJc/MW+G1UeIAwcOHDi2crQtorZZNb+eMI3GKXDgwIEDxwGOPOxtaPOUI3T5+6wdFQ4cOHDg2MsxGQ6YFPXaJLB9YvGzAAcOHDhwHONoBw7a8JmD7grzo0CLAwcOHDgGHGslwjxY5mFycgz5EAMOHDhw4DjHkT+mvTL56xrT4iAdDhw4cOA4wLHWwslLgXl6lpQp289foHHgwIEDxwGOyaBAm+DlJchzCwcOHDhwPMOxNqyQh9jJ3dqRhQ0ZLQ4cOHDg2MSRb6ZNzNqxhvYHweZaKQ4cOHDg2NR2mrSOJnD5EEOe7CUlQhw4cODAsZejXV9uHfPlLaW19HKxOIgDBw4cOMYca62apLG0dj0P5wnoYgqHAwcOHDi2VsPmyVgR5IKiXl6gzLFw4MCBA8czHGvJVR5020Jh3vqa/FDAgQMHDhzv4cj/t33pyRhEfXg4cODAgeM1HG04TFLHSZtqsayJAwcOHDiOcSTFwV2NnyLFenOtFAcOHDhwjAca2hGHtXLhrmQyOXIcOHDgwLGXw8KBAwcOHDhw4MCBA8fL1l9Ps+HLQUnh1wAAAABJRU5ErkJggg==">
+    
+</ul>
+
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/Angular/" rel="tag">Angular</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/Typescript/" rel="tag">Typescript</a>
+    </ul>
+    
+
+    <!-- Share -->
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+        
+            <!-- Busuanzi Views -->
+            <a class="post_share-link" href="#">
+                <li class="mdl-menu__item">
+                    <span id="busuanzi_container_page_pv">
+                        <span id="busuanzi_value_page_pv"></span>&nbsp;浏览量
+                    </span>
+                </li>
+            </a>
+        
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Angular 利用 marked.js 添加 Markdown + HTML 同时渲染的 Pipe&url=https://yangshunjie.com/add-Markdown-and-html-rendering-pipe-in-Angular-using-markedjs.html&pic=https://yangshunjie.com/img/favicon.png&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+
+    <!-- Share Facebook -->
+    
+
+    <!-- Share Google+ -->
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=ElderJames&#39; Blog&title=Angular 利用 marked.js 添加 Markdown + HTML 同时渲染的 Pipe&summary=学习、札记、分享&pics=https://yangshunjie.com/img/favicon.png&url=https://yangshunjie.com/add-Markdown-and-html-rendering-pipe-in-Angular-using-markedjs.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
     
 </div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>最近在公司开发的一个项目需要在 Angular 上展示图文，并且需要同时支持 Markdown 和 HTML</p>
+<p>对于同时支持 Markdown 和 HTML ，应该要分为编辑和渲染两部分考虑。</p>
+<p>对于编辑，目前尚未找到同时支持两种格式的编辑器。我个人认为 Markdown 最好的开源编辑器是 <a href="https://pandao.github.io/editor.md/" target="_blank" rel="noopener">Editor.md</a>，最好的 HTML 编辑器是 <a href="https://github.com/fex-team/ueditor" target="_blank" rel="noopener">UEditor</a>，虽然他们俩都已经很久很久没更新过……</p>
+<p>所以在编辑页面就只能提供两个编辑器的切换，对于 Markdown 和 HTML 分部用各自的编辑器。 但是，我可以存到同一个字段吗？</p>
+<p>这就要考虑到渲染了，如果能找到同时支持渲染 Markdown 和 HTML 的组件，我就不需要在后端把 Markdown 原文和渲染后的 HTML 分开字段存储了，还有利于对 Markdown 文本的修改。</p>
+<p>于是找到了 marked.js</p>
+<h2 id="marked-js-介绍"><a href="#marked-js-介绍" class="headerlink" title="marked.js 介绍"></a>marked.js 介绍</h2><p><a href="https://marked.js.org/" target="_blank" rel="noopener">官方文档</a></p>
+<p>marked.js 是一个普通的js库，并不是 Angular 特有的组件，所以我们在集成时还是需要进行一些编码。同时也说明它能支持其他前端框架，甚至是普通 HTML 的直接引用，非常轻量。</p>
+<h2 id="给-Angular-添加一个用于-Markdown-渲染的-Pipe"><a href="#给-Angular-添加一个用于-Markdown-渲染的-Pipe" class="headerlink" title="给 Angular 添加一个用于 Markdown 渲染的 Pipe"></a>给 Angular 添加一个用于 Markdown 渲染的 Pipe</h2><p>Angular Pipe 是 Angular 中用于字符格式转换的组件，专门处理输出字符的转换，如日期、翻译等等在Angular开发中都比较常用。今天我们就给项目添加一个用于 Markdown 渲染的 Pipe。</p>
+<h3 id="一、npm-引用"><a href="#一、npm-引用" class="headerlink" title="一、npm 引用"></a>一、npm 引用</h3><p>需要引用marked.js和它的 typescript 类型库来辅助模块声明</p>
+<pre class="line-numbers language-bash"><code class="language-bash">    <span class="token function">npm</span> <span class="token function">install</span> marked
+    <span class="token function">npm</span> <span class="token function">install</span> @types/marked<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h3 id="二、创建-Pipe"><a href="#二、创建-Pipe" class="headerlink" title="二、创建 Pipe"></a>二、创建 Pipe</h3><p>通过 angular-cli 创建 Pipe 文件</p>
+<pre class="line-numbers language-bash"><code class="language-bash">ng generate pipe marked<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>这样它能自动创建一个名为 “marked” 的 Pipe (<code>marked.pipe.ts</code>)，并导入到你的 <code>app.module.ts</code> 文件中了。</p>
+<h3 id="修改-marked-pipe-ts"><a href="#修改-marked-pipe-ts" class="headerlink" title="修改 marked.pipe.ts"></a>修改 <code>marked.pipe.ts</code></h3><p>生成出来的 <code>marked.pipe.ts</code> 文件如下：</p>
+<pre class="line-numbers language-ts"><code class="language-ts"><span class="token keyword">import</span> <span class="token punctuation">{</span> Pipe<span class="token punctuation">,</span> PipeTransform <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@angular/core'</span><span class="token punctuation">;</span>
+
+@<span class="token function">Pipe</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  name<span class="token punctuation">:</span> <span class="token string">'marked'</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">MarkedPipe</span> <span class="token keyword">implements</span> <span class="token class-name">PipeTransform</span> <span class="token punctuation">{</span>
+
+  <span class="token function">transform</span><span class="token punctuation">(</span>value<span class="token punctuation">:</span> <span class="token keyword">any</span><span class="token punctuation">,</span> args<span class="token operator">?</span><span class="token punctuation">:</span> <span class="token keyword">any</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token keyword">any</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>我们需要导入 marked , 然后修改 transform 方法来解析 Markdown 并返回 HTML 字符串。</p>
+<p>更改之后的代码如下：</p>
+<pre class="line-numbers language-ts"><code class="language-ts"><span class="token keyword">import</span> <span class="token punctuation">{</span> Pipe<span class="token punctuation">,</span> PipeTransform <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"@angular/core"</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token operator">*</span> as marked <span class="token keyword">from</span> <span class="token string">"marked"</span><span class="token punctuation">;</span>
+
+@<span class="token function">Pipe</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  name<span class="token punctuation">:</span> <span class="token string">"marked"</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">MarkedPipe</span> <span class="token keyword">implements</span> <span class="token class-name">PipeTransform</span> <span class="token punctuation">{</span>
+  <span class="token function">transform</span><span class="token punctuation">(</span>value<span class="token punctuation">:</span> <span class="token keyword">any</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token keyword">any</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>value <span class="token operator">&amp;&amp;</span> value<span class="token punctuation">.</span>length <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token function">marked</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> value<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>其中的 <code>transform</code> 方法将接受文本作为值，如果它有长度，则返回解析后的 HTML。否则，它只返回传递的值。</p>
+<h3 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h3><p>使用方法跟其他 Pipe 几乎差不多，但是有一点，就是如果渲染出来的是 HTML 字符串，需要让 Angular 自己在渲染成最终的 HTML，我们需要把 HTML 字符串传入到 Angular 模版中一个 HTML 元素的 <code>innerHTML</code> 属性中，举个例子：</p>
+<pre class="line-numbers language-ts"><code class="language-ts"><span class="token comment" spellcheck="true">// app.component.ts</span>
+<span class="token operator">...</span>
+<span class="token keyword">public</span> markdownString<span class="token punctuation">:</span> <span class="token keyword">string</span> <span class="token operator">=</span> <span class="token string">'This is text with **markdown**'</span><span class="token punctuation">;</span>
+<span class="token operator">...</span>
+
+<span class="token comment" spellcheck="true">// app.component.html</span>
+<span class="token operator">...</span>
+<span class="token operator">&lt;</span>div <span class="token punctuation">[</span>innerHTML<span class="token punctuation">]</span><span class="token operator">=</span><span class="token string">"markdownString | marked"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+<span class="token operator">...</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>这样就大功告成啦！你可以尝试使用同时含有 Markdown 和 HTML 的字符串，就像 Github 里众多开源项目的 README 文档一样，使用穿插着 HTML 排版的文档来渲染美观的图文。</p>
+
+        
+                <blockquote style="margin: 2em 0 0;padding: 0.5em 1em;border-left: 3px solid #F44336;background-color: #F5F5F5;list-style: none;">
+                    <p><strong>
+                         
+                            本文原创授权为：署名-非商业性使用-禁止演绎 4.0 国际 (CC BY-NC-ND 4.0) <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">协议普通文本</a> | <a rel="law-license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode" target="_blank">协议法律文本</a>
+                        </strong>
+                        <br>
+                        <strong>本文链接：</strong><a href="https://yangshunjie.com/add-Markdown-and-html-rendering-pipe-in-Angular-using-markedjs.html">https://yangshunjie.com/add-Markdown-and-html-rendering-pipe-in-Angular-using-markedjs.html</a>
+                    </p>
+                </blockquote>
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用 Gitalk -->
+<div id="gitalk-comment">
+    <!-- Gitalk 评论框 -->
+<div id="gitalk-container"></div>
+
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.js"></script>
+
+<script>
+    var id = location.pathname;
+
+    if (Date.parse('Fri Dec 27 2019 17:51:00 GMT+0000') - Date.parse('2018-03-01') > 0 ||
+        'false' === 'true') {
+        id = md5(location.pathname)
+    }
+
+    if ('false' === 'true') {
+        id = location.pathname;
+    }
+
+    var gitalk = new Gitalk({
+        clientID: '695234dcb3266b06c9bc',
+        clientSecret: '9012a4415f4672e4858df564fc9999e9b6d5cec0',
+        repo: 'elderjames.github.io',
+        owner: 'ElderJames',
+        admin: ['ElderJames'],
+        id: id,
+        // facebook-like distraction free mode
+        distractionFreeMode: false
+    })
+    gitalk.render('gitalk-container')
+</script>
+</div>
+<style>
+    #gitalk-comment {
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/AspNet-Core-3_0-Identity-For-Microsoft-Account-OAuth.html" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
 
 
                     
@@ -647,6 +923,14 @@ It will not impact the appearance and can give developers a lot of support :)
                     
 
                     
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
 
                     <!--Footer-->
 <footer class="mdl-mini-footer" id="bottom" >
@@ -814,6 +1098,10 @@ It will not impact the appearance and can give developers a lot of support :)
 <!-- Import prettify js  -->
 
     
+        
+            <script>lsloader.load("prettify_js","//cdn.bootcss.com/prettify/r298/prettify.min.js", true)</script>
+        
+    
 
 
 
@@ -826,6 +1114,11 @@ It will not impact the appearance and can give developers a lot of support :)
     });
 
     
+        
+            $(function() {
+                $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+                prettyPrint();
+                })
         
     
     

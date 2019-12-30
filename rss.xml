@@ -9,14 +9,32 @@
     <atom:link href="/rss.xml" rel="self" type="application/rss+xml"/>
     
     <description>学习、札记、分享</description>
-    <pubDate>Fri, 06 Dec 2019 08:14:10 GMT</pubDate>
+    <pubDate>Mon, 30 Dec 2019 02:05:19 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>Angular 利用 marked.js 添加 Markdown + HTML 同时渲染的 Pipe</title>
+      <link>https://yangshunjie.com/add-Markdown-and-html-rendering-pipe-in-Angular-using-markedjs.html</link>
+      <guid>https://yangshunjie.com/add-Markdown-and-html-rendering-pipe-in-Angular-using-markedjs.html</guid>
+      <pubDate>Fri, 27 Dec 2019 17:51:00 GMT</pubDate>
+      <description>
+      
+        
+        
+          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla
+        
+      
+      </description>
+      
+      
+      <comments>https://yangshunjie.com/add-Markdown-and-html-rendering-pipe-in-Angular-using-markedjs.html#disqus_thread</comments>
+    </item>
     
     <item>
       <title>Asp.Net Core 3.0 Identity 集成 Microsoft Account OAuth</title>
       <link>https://yangshunjie.com/AspNet-Core-3_0-Identity-For-Microsoft-Account-OAuth.html</link>
       <guid>https://yangshunjie.com/AspNet-Core-3_0-Identity-For-Microsoft-Account-OAuth.html</guid>
-      <pubDate>Fri, 06 Dec 2019 07:59:00 GMT</pubDate>
+      <pubDate>Fri, 06 Dec 2019 15:59:00 GMT</pubDate>
       <description>
       
         
@@ -34,7 +52,7 @@
       <title>.NET Core 3.0中用 Code-First 方式创建 gRPC 服务与客户端</title>
       <link>https://yangshunjie.com/code-first-generate-gRPC-services-and-clients-in-dotnet-Core-3_0.html</link>
       <guid>https://yangshunjie.com/code-first-generate-gRPC-services-and-clients-in-dotnet-Core-3_0.html</guid>
-      <pubDate>Sun, 24 Nov 2019 15:54:10 GMT</pubDate>
+      <pubDate>Sun, 24 Nov 2019 23:54:10 GMT</pubDate>
       <description>
       
         
@@ -52,7 +70,7 @@
       <title>利用Topshelf把.NET Core Generic Host管理的应用程序部署为Windows服务</title>
       <link>https://yangshunjie.com/Using-Topshelf-To-Deploy-Net-Core-Generic-Host-App-To-Windows-Services.html</link>
       <guid>https://yangshunjie.com/Using-Topshelf-To-Deploy-Net-Core-Generic-Host-App-To-Windows-Services.html</guid>
-      <pubDate>Sat, 12 Jan 2019 10:31:34 GMT</pubDate>
+      <pubDate>Sat, 12 Jan 2019 18:31:34 GMT</pubDate>
       <description>
       
         
@@ -70,7 +88,7 @@
       <title>ASP.NET Core 中的Ajax全局Antiforgery Token配置</title>
       <link>https://yangshunjie.com/The-Ajax-global-Antiforgery-Token-configuration-in-ASP.NET-Core.html</link>
       <guid>https://yangshunjie.com/The-Ajax-global-Antiforgery-Token-configuration-in-ASP.NET-Core.html</guid>
-      <pubDate>Tue, 11 Sep 2018 10:24:34 GMT</pubDate>
+      <pubDate>Tue, 11 Sep 2018 18:24:34 GMT</pubDate>
       <description>
       
         
@@ -88,7 +106,7 @@
       <title>利用.NET Core类库System.Reflection.DispatchProxy实现简易Aop</title>
       <link>https://yangshunjie.com/implement-simple-Aop-using-a-dotnet-core-library-System-Reflection-DispatchProxy.html</link>
       <guid>https://yangshunjie.com/implement-simple-Aop-using-a-dotnet-core-library-System-Reflection-DispatchProxy.html</guid>
-      <pubDate>Sat, 01 Sep 2018 12:35:00 GMT</pubDate>
+      <pubDate>Sat, 01 Sep 2018 20:35:00 GMT</pubDate>
       <description>
       
         
@@ -106,7 +124,7 @@
       <title>无显示器使用Wifi-VNC启动BerryBoot安装树莓派多系统</title>
       <link>https://yangshunjie.com/boot-the-berryboot-installer-for-raspberry-pi-with-wifi-and-vnc-but-no-screen.html</link>
       <guid>https://yangshunjie.com/boot-the-berryboot-installer-for-raspberry-pi-with-wifi-and-vnc-but-no-screen.html</guid>
-      <pubDate>Tue, 05 Jun 2018 05:36:41 GMT</pubDate>
+      <pubDate>Tue, 05 Jun 2018 13:36:41 GMT</pubDate>
       <description>
       
         
@@ -124,7 +142,7 @@
       <title>.NET Core 2.1 信任证书</title>
       <link>https://yangshunjie.com/dotnet-dev-certs.html</link>
       <guid>https://yangshunjie.com/dotnet-dev-certs.html</guid>
-      <pubDate>Thu, 31 May 2018 06:17:16 GMT</pubDate>
+      <pubDate>Thu, 31 May 2018 14:17:16 GMT</pubDate>
       <description>
       
         
@@ -142,7 +160,7 @@
       <title>Angular组件集成UEditor并支持服务端渲染</title>
       <link>https://yangshunjie.com/Angular-integrating-with-UEditor-and-ssr-supporting.html</link>
       <guid>https://yangshunjie.com/Angular-integrating-with-UEditor-and-ssr-supporting.html</guid>
-      <pubDate>Fri, 25 May 2018 16:35:00 GMT</pubDate>
+      <pubDate>Sat, 26 May 2018 00:35:00 GMT</pubDate>
       <description>
       
         
@@ -160,7 +178,7 @@
       <title>(转) TinyMCE with SSR and webpack</title>
       <link>https://yangshunjie.com/TinyMCE-with-SSR-and-webpack.html</link>
       <guid>https://yangshunjie.com/TinyMCE-with-SSR-and-webpack.html</guid>
-      <pubDate>Fri, 25 May 2018 04:59:28 GMT</pubDate>
+      <pubDate>Fri, 25 May 2018 12:59:28 GMT</pubDate>
       <description>
       
         
@@ -178,7 +196,7 @@
       <title>AutoMapper自动注册映射关系配置</title>
       <link>https://yangshunjie.com/AutoMappers-automatic-registration-mapping-relationship-configuration.html</link>
       <guid>https://yangshunjie.com/AutoMappers-automatic-registration-mapping-relationship-configuration.html</guid>
-      <pubDate>Tue, 08 May 2018 02:29:00 GMT</pubDate>
+      <pubDate>Tue, 08 May 2018 10:29:00 GMT</pubDate>
       <description>
       
         
@@ -196,7 +214,7 @@
       <title>.Net Core on Linux 操作笔记</title>
       <link>https://yangshunjie.com/net-core-on-linux-operation-note.html</link>
       <guid>https://yangshunjie.com/net-core-on-linux-operation-note.html</guid>
-      <pubDate>Wed, 17 Jan 2018 10:26:05 GMT</pubDate>
+      <pubDate>Wed, 17 Jan 2018 18:26:05 GMT</pubDate>
       <description>
       
         
@@ -214,7 +232,7 @@
       <title>我的第一块树莓派</title>
       <link>https://yangshunjie.com/my-first-respberry-pi.html</link>
       <guid>https://yangshunjie.com/my-first-respberry-pi.html</guid>
-      <pubDate>Fri, 15 Dec 2017 07:06:58 GMT</pubDate>
+      <pubDate>Fri, 15 Dec 2017 15:06:58 GMT</pubDate>
       <description>
       
         
@@ -232,7 +250,7 @@
       <title>ASP.NET Core 中的SEO优化（4）：自定义视图路径及主题切换</title>
       <link>https://yangshunjie.com/Customized-View-Path-And-Theme-Switching-In-AspNetCore.html</link>
       <guid>https://yangshunjie.com/Customized-View-Path-And-Theme-Switching-In-AspNetCore.html</guid>
-      <pubDate>Thu, 30 Nov 2017 13:44:19 GMT</pubDate>
+      <pubDate>Thu, 30 Nov 2017 21:44:19 GMT</pubDate>
       <description>
       
         
@@ -250,7 +268,7 @@
       <title>ASP.NET Core 中的SEO优化（3）:自定义路由匹配和生成</title>
       <link>https://yangshunjie.com/A-Middleware-Implement-For-Customized-Routing-In-AspNetCore.html</link>
       <guid>https://yangshunjie.com/A-Middleware-Implement-For-Customized-Routing-In-AspNetCore.html</guid>
-      <pubDate>Wed, 29 Nov 2017 10:31:34 GMT</pubDate>
+      <pubDate>Wed, 29 Nov 2017 18:31:34 GMT</pubDate>
       <description>
       
         
@@ -268,7 +286,7 @@
       <title>ASP.NET Core 中的SEO优化（2）：中间件中渲染Razor视图</title>
       <link>https://yangshunjie.com/A-Middleware-Implement-For-Rendering-Razor-Views-In-AspNetCore.html</link>
       <guid>https://yangshunjie.com/A-Middleware-Implement-For-Rendering-Razor-Views-In-AspNetCore.html</guid>
-      <pubDate>Thu, 23 Nov 2017 13:50:39 GMT</pubDate>
+      <pubDate>Thu, 23 Nov 2017 21:50:39 GMT</pubDate>
       <description>
       
         
@@ -286,7 +304,7 @@
       <title>ASP.NET Core 中的SEO优化（1）：中间件实现服务端静态化缓存</title>
       <link>https://yangshunjie.com/A-Middleware-Implement-For-Server-Side-Static-Caching-In-AspNetCore.html</link>
       <guid>https://yangshunjie.com/A-Middleware-Implement-For-Server-Side-Static-Caching-In-AspNetCore.html</guid>
-      <pubDate>Thu, 23 Nov 2017 10:31:34 GMT</pubDate>
+      <pubDate>Thu, 23 Nov 2017 18:31:34 GMT</pubDate>
       <description>
       
         
@@ -304,7 +322,7 @@
       <title>Windows 10 上使用 Git 时登录框问题</title>
       <link>https://yangshunjie.com/the-basic-credential-prompt-for-git-on-windows-10.html</link>
       <guid>https://yangshunjie.com/the-basic-credential-prompt-for-git-on-windows-10.html</guid>
-      <pubDate>Thu, 23 Nov 2017 10:31:34 GMT</pubDate>
+      <pubDate>Thu, 23 Nov 2017 18:31:34 GMT</pubDate>
       <description>
       
         
@@ -322,7 +340,7 @@
       <title>时序数据库InfluxDB在.NET Core中的使用——（2）IoC和仓储模式实现事件存储</title>
       <link>https://yangshunjie.com/influxdb-in-dotNEt-Core-2-ioc-and-repository-pattern.html</link>
       <guid>https://yangshunjie.com/influxdb-in-dotNEt-Core-2-ioc-and-repository-pattern.html</guid>
-      <pubDate>Mon, 25 Sep 2017 16:44:01 GMT</pubDate>
+      <pubDate>Tue, 26 Sep 2017 00:44:01 GMT</pubDate>
       <description>
       
         
@@ -340,7 +358,7 @@
       <title>时序数据库InfluxDB在.NET Core中的使用——（1）InfluxDB简介及使用</title>
       <link>https://yangshunjie.com/influxdb-in-dotNEt-Core-1-Introduction.html</link>
       <guid>https://yangshunjie.com/influxdb-in-dotNEt-Core-1-Introduction.html</guid>
-      <pubDate>Mon, 25 Sep 2017 14:56:01 GMT</pubDate>
+      <pubDate>Mon, 25 Sep 2017 22:56:01 GMT</pubDate>
       <description>
       
         
@@ -352,24 +370,6 @@
       
       
       <comments>https://yangshunjie.com/influxdb-in-dotNEt-Core-1-Introduction.html#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>ASP.NET Core中动态为控制器类型添加特性</title>
-      <link>https://yangshunjie.com/dynamically-add-features-to-the-controller-type-in-dot-net-core.html</link>
-      <guid>https://yangshunjie.com/dynamically-add-features-to-the-controller-type-in-dot-net-core.html</guid>
-      <pubDate>Wed, 13 Sep 2017 09:59:22 GMT</pubDate>
-      <description>
-      
-        
-        
-          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla
-        
-      
-      </description>
-      
-      
-      <comments>https://yangshunjie.com/dynamically-add-features-to-the-controller-type-in-dot-net-core.html#disqus_thread</comments>
     </item>
     
   </channel>

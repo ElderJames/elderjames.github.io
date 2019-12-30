@@ -274,8 +274,8 @@
     <meta property="og:article:tag" content=".NET Core"> <meta property="og:article:tag" content="ASP.NET Core"> 
 
     
-        <meta property="article:published_time" content="Wed Nov 29 2017 18:31:34 GMT+0800">
-        <meta property="article:modified_time" content="Fri Mar 08 2019 15:56:40 GMT+0800">
+        <meta property="article:published_time" content="Wed Nov 29 2017 18:31:34 GMT+0000">
+        <meta property="article:modified_time" content="Mon Dec 30 2019 02:05:19 GMT+0000">
     
 
     <!-- The Twitter Card protocol -->
@@ -297,8 +297,8 @@
     "@type": "BlogPosting",
     "mainEntityOfPage": "https://yangshunjie.com/A-Middleware-Implement-For-Customized-Routing-In-AspNetCore.html",
     "headline": "ASP.NET Core 中的SEO优化（3）:自定义路由匹配和生成",
-    "datePublished": "Wed Nov 29 2017 18:31:34 GMT+0800",
-    "dateModified": "Fri Mar 08 2019 15:56:40 GMT+0800",
+    "datePublished": "Wed Nov 29 2017 18:31:34 GMT+0000",
+    "dateModified": "Mon Dec 30 2019 02:05:19 GMT+0000",
     "author": {
         "@type": "Person",
         "name": "James Yeung",
@@ -332,7 +332,7 @@
     <!-- Custom Head -->
     
 
-<link rel="stylesheet" href="/css/prism-vs.css" type="text/css">
+<meta name="generator" content="Hexo 4.2.0"><link rel="stylesheet" href="/css/prism-vs.css" type="text/css">
 <link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 
@@ -568,8 +568,7 @@
         name<span class="token punctuation">:</span> <span class="token string">"tags"</span><span class="token punctuation">,</span>
         template<span class="token punctuation">:</span> <span class="token string">"{tag}/"</span><span class="token punctuation">,</span>
         defaults<span class="token punctuation">:</span> <span class="token keyword">new</span> <span class="token punctuation">{</span> controller <span class="token operator">=</span> <span class="token string">"Article"</span><span class="token punctuation">,</span> action <span class="token operator">=</span> <span class="token string">"Tag"</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>但是，这样配置很繁琐，也不灵活，如果还要传入更多规则，比如不向下匹配，就显得捉襟见肘了。那有没有更灵活的方案呢？当然有，就是本文接下来要介绍的IRouter接口。</p>
 <h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>上一节最后介绍的一般路由配置方法，其实是<code>MapRoute</code>方法创建一个个<code>IRouter</code>的实例，添加到<code>IRouteBuilder</code>实例中，具体方法可以<a href="https://github.com/aspnet/Routing/blob/032bcf43b2cefe641fc6ee9ef3ab0769024a182c/src/Microsoft.AspNetCore.Routing/MapRouteRouteBuilderExtensions.cs#L97" target="_blank" rel="noopener">看看源码</a>。</p>
 <p>所以我们可以实现一个自定义的<code>IRouter</code>，就能不用默认的约定，去实现我们的苛刻需求。</p>
@@ -582,8 +581,7 @@
 
         VirtualPathData <span class="token function">GetVirtualPath</span><span class="token punctuation">(</span>VirtualPathContext context<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><p><code>IRouter</code>接口只有两个方法，本文分别给出代码示例来介绍。</p>
 <h3 id="RouteAsync"><a href="#RouteAsync" class="headerlink" title="RouteAsync"></a><code>RouteAsync</code></h3><p>这个方法中实现路由匹配，从路由上下文中获取所需要的数据，存入RouteData字典中，再从控制器取出做相应的处理。</p>
 <pre class="line-numbers language-csharp"><code class="language-csharp"><span class="token keyword">public</span> <span class="token keyword">async</span> Task <span class="token function">RouteAsync</span><span class="token punctuation">(</span>RouteContext context<span class="token punctuation">)</span>
@@ -603,8 +601,7 @@
 
     <span class="token comment" spellcheck="true">//最后注入`MvcRouteHandler`示例执行`RouteAsync`方法，表示匹配成功</span>
     <span class="token keyword">await</span> context<span class="token punctuation">.</span>HttpContext<span class="token punctuation">.</span>RequestServices<span class="token punctuation">.</span><span class="token generic-method function">GetService<span class="token punctuation">&lt;</span>MvcRouteHandler<span class="token punctuation">></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">RouteAsync</span><span class="token punctuation">(</span>context<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>这样，当请求路由为<code>/news/asp.net.html</code>时，就会匹配到上面的规则，请求进入<code>Article</code>控制器中的<code>Detail</code>操作被处理，并且可以从控制器中的<code>RouteData.Values[&quot;category&quot;]?.ToString();</code>方法拿到所需的数据。</p>
 <h3 id="GetVirtualPath"><a href="#GetVirtualPath" class="headerlink" title="GetVirtualPath"></a><code>GetVirtualPath</code></h3><p>这个方法实现路由生成，可以从路由上下文中获取RouteData字典中的数据，进行虚拟路径（区别与真实目录）的生成。</p>
 <pre class="line-numbers language-csharp"><code class="language-csharp"><span class="token keyword">public</span> VirtualPathData <span class="token function">GetVirtualPath</span><span class="token punctuation">(</span>VirtualPathContext context<span class="token punctuation">)</span>
@@ -621,16 +618,14 @@
     <span class="token punctuation">}</span>
 
     <span class="token keyword">return</span> path <span class="token operator">!=</span> <span class="token keyword">string</span><span class="token punctuation">.</span>Empty <span class="token operator">?</span> <span class="token keyword">new</span> <span class="token class-name">VirtualPathData</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> path<span class="token punctuation">)</span> <span class="token punctuation">:</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>这样，当调用路径生成方法<a href="mailto:`@Url.Action" target="_blank" rel="noopener">`@Url.Action</a>(“Detail”,”Article”,new { title=”asp.net”, category=”news” })`,就会生成”/news/asp.net.html”这样的路径来。</p>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>这样，当调用路径生成方法<code>@Url.Action(&quot;Detail&quot;,&quot;Article&quot;,new { title=&quot;asp.net&quot;, category=&quot;news&quot; })</code>,就会生成”/news/asp.net.html”这样的路径来。</p>
 <h3 id="IRouter的设置生效"><a href="#IRouter的设置生效" class="headerlink" title="IRouter的设置生效"></a>IRouter的设置生效</h3><p>自定义实现的<code>IRouter</code>如何设置到原有的MVC项目中呢？方法很简单，上面已经简单说道了，其实<code>app.UseMvc</code>这个方法就有添加<code>IRouter</code>的方法:</p>
 <pre class="line-numbers language-csharp"><code class="language-csharp">app<span class="token punctuation">.</span><span class="token function">UseMvc</span><span class="token punctuation">(</span>routes <span class="token operator">=</span><span class="token operator">></span>
 <span class="token punctuation">{</span>
     <span class="token comment" spellcheck="true">//添加 自定义路由匹配与url生成组件</span>
     routes<span class="token punctuation">.</span>Routes<span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">RouteProvider</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>这里<code>RouteProvider</code>是<code>IRouter</code>的实现，这样自定义的路由提供对象就生效啦！</p>
 <h2 id="相关小技巧"><a href="#相关小技巧" class="headerlink" title="相关小技巧"></a>相关小技巧</h2><ol>
 <li><p>SEO中会有一条铁规则，就是不是有效链接的情况下只能返回404，比如，手动输入了一个路径，能匹配到文章详情的操作（action），如果数据库中查不出文章，本来应该不能匹配的，但是，如果在匹配的时候查询数据库确认是否存在的话，会加大系统的压力，所以，可以放在操作（action）中查询，查不到再返回<code>NotFound</code>，让上一篇文章<a href="A-Middleware-Implement-For-Rendering-Razor-Views-In-AspNetCore">《ASP.NET Core 中的SEO优化（2）：中间件中渲染Razor视图》</a>中介绍的中间件一并处理输出404页面。</p>
@@ -665,8 +660,7 @@
         <span class="token keyword">string</span> scheme <span class="token operator">=</span> helper<span class="token punctuation">.</span>ActionContext<span class="token punctuation">.</span>HttpContext<span class="token punctuation">.</span>Request<span class="token punctuation">.</span>Scheme<span class="token punctuation">;</span>
         <span class="token keyword">return</span> helper<span class="token punctuation">.</span><span class="token function">RouteUrl</span><span class="token punctuation">(</span>routeName<span class="token punctuation">,</span> routeValues<span class="token punctuation">,</span> scheme<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>本文主要介绍了自定义路由匹配和生成的解决方案，把路由相关的处理集中到一个类中，避免分散在各个视图进行维护。下篇文章，将会介绍自定义视图搜索目录及主题切换。</p>
 
         
@@ -704,7 +698,7 @@
 <script>
     var id = location.pathname;
 
-    if (Date.parse('Wed Nov 29 2017 18:31:34 GMT+0800') - Date.parse('2018-03-01') > 0 ||
+    if (Date.parse('Wed Nov 29 2017 18:31:34 GMT+0000') - Date.parse('2018-03-01') > 0 ||
         'false' === 'true') {
         id = md5(location.pathname)
     }
@@ -846,7 +840,7 @@
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2019/12/">十二月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/11/">十一月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/01/">一月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">九月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/06/">六月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/05/">五月 2018<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/01/">一月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/12/">十二月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">十一月 2017<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/09/">九月 2017<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">八月 2017<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/07/">七月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/03/">三月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/09/">九月 2016<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/07/">七月 2016<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/06/">六月 2016<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/03/">三月 2016<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2015/12/">十二月 2015<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2015/11/">十一月 2015<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2015/10/">十月 2015<span class="sidebar_archives-count">4</span></a>
+                <a class="sidebar_archives-link" href="/archives/2019/12/">十二月 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/11/">十一月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/01/">一月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">九月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/06/">六月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/05/">五月 2018<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/01/">一月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/12/">十二月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">十一月 2017<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/09/">九月 2017<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">八月 2017<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/07/">七月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/03/">三月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/09/">九月 2016<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/07/">七月 2016<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/06/">六月 2016<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/03/">三月 2016<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2015/12/">十二月 2015<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2015/11/">十一月 2015<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2015/10/">十月 2015<span class="sidebar_archives-count">4</span></a>
             </ul>
         </li>
         
@@ -864,7 +858,7 @@
             </a>
             <ul class="dropdown-menu">
                 <li>
-                <a class="sidebar_archives-link" href="/categories/NET-Core/">.NET Core<span class="sidebar_archives-count">15</span></a></li><li><a class="sidebar_archives-link" href="/categories/NET-%E7%AC%94%E8%AE%B0/">.NET 笔记<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/Angular/">Angular<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/DDD/">DDD<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Docker/">Docker<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Github-Pages/">Github Pages<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Hexo/">Hexo<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/%E6%A0%91%E8%8E%93%E6%B4%BE/">树莓派<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/%E7%AC%94%E8%AE%B0/">笔记<span class="sidebar_archives-count">1</span></a>
+                <a class="sidebar_archives-link" href="/categories/NET-Core/">.NET Core<span class="sidebar_archives-count">15</span></a></li><li><a class="sidebar_archives-link" href="/categories/NET-%E7%AC%94%E8%AE%B0/">.NET 笔记<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/Angular/">Angular<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/DDD/">DDD<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Docker/">Docker<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Github-Pages/">Github Pages<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Hexo/">Hexo<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/%E6%A0%91%E8%8E%93%E6%B4%BE/">树莓派<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/%E7%AC%94%E8%AE%B0/">笔记<span class="sidebar_archives-count">1</span></a>
             </ul>
         </li>
         
@@ -948,7 +942,7 @@
         <li>
             <a href="/archives">
                 文章总数
-                <span class="sidebar-badge">46</span>
+                <span class="sidebar-badge">47</span>
             </a>
         </li>
         
@@ -1110,11 +1104,11 @@ It will not impact the appearance and can give developers a lot of support :)
 
                     <!-- Import JS File -->
 
-    <script>lsloader.load("lazyload_js","/js/lazyload.min.js?wgjW/HuQG9JDgvPDPoRAng==", true)</script>
+    <script>lsloader.load("lazyload_js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==", true)</script>
 
 
 
-    <script>lsloader.load("js_js","/js/js.min.js?LT4t6iE6m8TO1BLGGiNJqA==", true)</script>
+    <script>lsloader.load("js_js","/js/js.min.js?Bn9UzEm8RrBSxqyZB0zPjA==", true)</script>
 
 
 
@@ -1146,7 +1140,7 @@ It will not impact the appearance and can give developers a lot of support :)
 
 
     
-        <script>lsloader.load("sm_js","/js/smoothscroll.js?tNQK2Tw2SUL8a1Scn/Mgew==", true)</script>
+        <script>lsloader.load("sm_js","/js/smoothscroll.js?lOy/ACj5suSNi7ZVFVbpFQ==", true)</script>
     
 
 
@@ -1169,7 +1163,9 @@ It will not impact the appearance and can give developers a lot of support :)
 <script>
 	var agent = navigator.userAgent.toLowerCase();
 	if(agent.indexOf('ucbrowser')>0) {
-		document.write('<link rel="stylesheet" href="/css/uc.css">');
+		document.write('
+<link rel="stylesheet" href="/css/uc.css">
+');
 	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
 	}
 </script>

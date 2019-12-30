@@ -274,8 +274,8 @@
     <meta property="og:article:tag" content=".NET Core"> <meta property="og:article:tag" content="ASP.NET Core"> <meta property="og:article:tag" content="JQuery"> 
 
     
-        <meta property="article:published_time" content="Tue Sep 11 2018 18:24:34 GMT+0800">
-        <meta property="article:modified_time" content="Fri Mar 08 2019 15:56:40 GMT+0800">
+        <meta property="article:published_time" content="Tue Sep 11 2018 18:24:34 GMT+0000">
+        <meta property="article:modified_time" content="Mon Dec 30 2019 02:05:19 GMT+0000">
     
 
     <!-- The Twitter Card protocol -->
@@ -297,8 +297,8 @@
     "@type": "BlogPosting",
     "mainEntityOfPage": "https://yangshunjie.com/The-Ajax-global-Antiforgery-Token-configuration-in-ASP.NET-Core.html",
     "headline": "ASP.NET Core 中的Ajax全局Antiforgery Token配置",
-    "datePublished": "Tue Sep 11 2018 18:24:34 GMT+0800",
-    "dateModified": "Fri Mar 08 2019 15:56:40 GMT+0800",
+    "datePublished": "Tue Sep 11 2018 18:24:34 GMT+0000",
+    "dateModified": "Mon Dec 30 2019 02:05:19 GMT+0000",
     "author": {
         "@type": "Person",
         "name": "James Yeung",
@@ -332,7 +332,7 @@
     <!-- Custom Head -->
     
 
-<link rel="stylesheet" href="/css/prism-vs.css" type="text/css">
+<meta name="generator" content="Hexo 4.2.0"><link rel="stylesheet" href="/css/prism-vs.css" type="text/css">
 <link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 
@@ -550,30 +550,25 @@
 <h1 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h1><h2 id="Form表单提交"><a href="#Form表单提交" class="headerlink" title="Form表单提交"></a>Form表单提交</h2><p>TagHelper用法：</p>
 <pre class="line-numbers language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span> <span class="token attr-name">asp-controller</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Manage<span class="token punctuation">"</span></span> <span class="token attr-name">asp-action</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>ChangePassword<span class="token punctuation">"</span></span> <span class="token attr-name">method</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>post<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
     ...
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">></span></span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p>HtmlHelper 生成Form的用法：</p>
 <pre class="line-numbers language-cs"><code class="language-cs">@using (Html.BeginForm("ChangePassword", "Manage"))
 {
     ...
-}
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <p>普通html form表单用法：</p>
 <pre class="line-numbers language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span> <span class="token attr-name">action</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>/<span class="token punctuation">"</span></span> <span class="token attr-name">method</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>post<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
     @Html.AntiForgeryToken()
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">></span></span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p>那么在Razor渲染之后，表单中就会生成一个隐藏的表单字段：</p>
-<pre class="line-numbers language-html"><code class="language-html">    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>__RequestVerificationToken<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>hidden<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>CfDJ8NrAkS ... s2-m9Yw<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-html"><code class="language-html">    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>__RequestVerificationToken<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>hidden<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>CfDJ8NrAkS ... s2-m9Yw<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h2 id="那么Ajax中要怎么处理呢？"><a href="#那么Ajax中要怎么处理呢？" class="headerlink" title="那么Ajax中要怎么处理呢？"></a>那么Ajax中要怎么处理呢？</h2><p>官方文档虽然有提到Ajax的处理方法，但是它指的Ajax是js原生实现<code>XMLHttpRequest</code>，而不是我们一般所认识的<code>JQuery.ajax</code>。所以本文就要介绍一下在使用<code>JQuery.ajax</code>时的全局配置。</p>
 <h3 id="场景一、从普通表单获取Antiforgery-Token"><a href="#场景一、从普通表单获取Antiforgery-Token" class="headerlink" title="场景一、从普通表单获取Antiforgery Token"></a>场景一、从普通表单获取Antiforgery Token</h3><p>这种方法跟上面提到的Form表单提交一致，只要把所生成的隐藏的表单字段也一并提交到服务器即可。</p>
 <pre class="line-numbers language-js"><code class="language-js">$<span class="token punctuation">.</span><span class="token function">ajax</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
     url<span class="token punctuation">:</span><span class="token string">"/Manage/ChangePassword"</span><span class="token punctuation">,</span>
     type<span class="token punctuation">:</span><span class="token string">"post"</span>
     data<span class="token punctuation">:</span> <span class="token punctuation">{</span> <span class="token string">"__RequestVerificationToken"</span><span class="token punctuation">:</span><span class="token string">"CfDJ8NrAkS ... s2-m9Yw"</span> <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>但是这种方法有个弊端，就是需要配置的东西很多，又要在Contorller中加<code>[ValidateAntiForgeryToken]</code>特性，又要在表单中处理使其生成隐藏字段。</p>
 <p>有没有更方便的方法？当然有！而且即使是文档中号称自动防范 XSRF/CSRF的Razor Pages都同样需要！因为它并没有处理Ajax的场景。</p>
 <h3 id="场景二、全局配置，自动处理"><a href="#场景二、全局配置，自动处理" class="headerlink" title="场景二、全局配置，自动处理"></a>场景二、全局配置，自动处理</h3><h4 id="全局获取Forgery-Token"><a href="#全局获取Forgery-Token" class="headerlink" title="全局获取Forgery Token"></a>全局获取Forgery Token</h4><p>全局（每个页面）获取Forgery Token就是文档中提到的注入<code>Microsoft.AspNetCore.Antiforgery.IAntiforgery</code>并调用<code>GetAndStoreTokens</code>方法，但是由于需要达到全局获取，我需要把这个方法的调用写到布局页,如默认MVC模版的<code>Views/Shared/_Layout.cshtml</code></p>
@@ -585,10 +580,9 @@
     }
 }
 
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span>
-    var csrfToken = '@GetAntiXsrfRequestToken()';
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script language-javascript">
+    <span class="token keyword">var</span> csrfToken <span class="token operator">=</span> <span class="token string">'@GetAntiXsrfRequestToken()'</span><span class="token punctuation">;</span>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="Ajax全局配置"><a href="#Ajax全局配置" class="headerlink" title="Ajax全局配置"></a>Ajax全局配置</h4><p><code>JQuery.ajax</code>里全局设置头部的方法是<code>$.ajaxSetup</code>，按照文档，把所需的头部字段<code>RequestVerificationToken</code>配置上上面获取到的令牌变量<code>csrfToken</code>，即可实现在每个Ajax请求都带有Forgery Token。</p>
 <pre class="line-numbers language-js"><code class="language-js"><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span>window<span class="token punctuation">,</span> document<span class="token punctuation">,</span> $<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     $<span class="token punctuation">.</span><span class="token function">ajaxSetup</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
@@ -596,8 +590,7 @@
             <span class="token string">'RequestVerificationToken'</span><span class="token punctuation">:</span> csrfToken
         <span class="token punctuation">}</span>
     <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span>window<span class="token punctuation">,</span> document<span class="token punctuation">,</span> jQuery<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span>window<span class="token punctuation">,</span> document<span class="token punctuation">,</span> jQuery<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>虽然现在流行前后端分离了，包括我在内，也用上高大上的React、Angular、Vue等优秀框架，Github前端也把JQuery去掉了，但是Razor在ASP.NET Core中的份量有增无减，2.0版本带来了更轻量的Razor Pages, 因此Razor+JQuery的热度不会那么快退去，希望这篇文章能给大家在Razor+JQuery技术的使用过程中带来一点参考价值。</p>
 
         
@@ -635,7 +628,7 @@
 <script>
     var id = location.pathname;
 
-    if (Date.parse('Tue Sep 11 2018 18:24:34 GMT+0800') - Date.parse('2018-03-01') > 0 ||
+    if (Date.parse('Tue Sep 11 2018 18:24:34 GMT+0000') - Date.parse('2018-03-01') > 0 ||
         'false' === 'true') {
         id = md5(location.pathname)
     }
@@ -777,7 +770,7 @@
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2019/12/">十二月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/11/">十一月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/01/">一月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">九月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/06/">六月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/05/">五月 2018<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/01/">一月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/12/">十二月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">十一月 2017<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/09/">九月 2017<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">八月 2017<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/07/">七月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/03/">三月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/09/">九月 2016<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/07/">七月 2016<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/06/">六月 2016<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/03/">三月 2016<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2015/12/">十二月 2015<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2015/11/">十一月 2015<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2015/10/">十月 2015<span class="sidebar_archives-count">4</span></a>
+                <a class="sidebar_archives-link" href="/archives/2019/12/">十二月 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/11/">十一月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/01/">一月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">九月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/06/">六月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/05/">五月 2018<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/01/">一月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/12/">十二月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">十一月 2017<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/09/">九月 2017<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">八月 2017<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/07/">七月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/03/">三月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/09/">九月 2016<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/07/">七月 2016<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/06/">六月 2016<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/03/">三月 2016<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2015/12/">十二月 2015<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2015/11/">十一月 2015<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2015/10/">十月 2015<span class="sidebar_archives-count">4</span></a>
             </ul>
         </li>
         
@@ -795,7 +788,7 @@
             </a>
             <ul class="dropdown-menu">
                 <li>
-                <a class="sidebar_archives-link" href="/categories/NET-Core/">.NET Core<span class="sidebar_archives-count">15</span></a></li><li><a class="sidebar_archives-link" href="/categories/NET-%E7%AC%94%E8%AE%B0/">.NET 笔记<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/Angular/">Angular<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/DDD/">DDD<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Docker/">Docker<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Github-Pages/">Github Pages<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Hexo/">Hexo<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/%E6%A0%91%E8%8E%93%E6%B4%BE/">树莓派<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/%E7%AC%94%E8%AE%B0/">笔记<span class="sidebar_archives-count">1</span></a>
+                <a class="sidebar_archives-link" href="/categories/NET-Core/">.NET Core<span class="sidebar_archives-count">15</span></a></li><li><a class="sidebar_archives-link" href="/categories/NET-%E7%AC%94%E8%AE%B0/">.NET 笔记<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/Angular/">Angular<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/DDD/">DDD<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Docker/">Docker<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Github-Pages/">Github Pages<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Hexo/">Hexo<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/%E6%A0%91%E8%8E%93%E6%B4%BE/">树莓派<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/%E7%AC%94%E8%AE%B0/">笔记<span class="sidebar_archives-count">1</span></a>
             </ul>
         </li>
         
@@ -879,7 +872,7 @@
         <li>
             <a href="/archives">
                 文章总数
-                <span class="sidebar-badge">46</span>
+                <span class="sidebar-badge">47</span>
             </a>
         </li>
         
@@ -1041,11 +1034,11 @@ It will not impact the appearance and can give developers a lot of support :)
 
                     <!-- Import JS File -->
 
-    <script>lsloader.load("lazyload_js","/js/lazyload.min.js?wgjW/HuQG9JDgvPDPoRAng==", true)</script>
+    <script>lsloader.load("lazyload_js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==", true)</script>
 
 
 
-    <script>lsloader.load("js_js","/js/js.min.js?LT4t6iE6m8TO1BLGGiNJqA==", true)</script>
+    <script>lsloader.load("js_js","/js/js.min.js?Bn9UzEm8RrBSxqyZB0zPjA==", true)</script>
 
 
 
@@ -1077,7 +1070,7 @@ It will not impact the appearance and can give developers a lot of support :)
 
 
     
-        <script>lsloader.load("sm_js","/js/smoothscroll.js?tNQK2Tw2SUL8a1Scn/Mgew==", true)</script>
+        <script>lsloader.load("sm_js","/js/smoothscroll.js?lOy/ACj5suSNi7ZVFVbpFQ==", true)</script>
     
 
 
@@ -1100,7 +1093,9 @@ It will not impact the appearance and can give developers a lot of support :)
 <script>
 	var agent = navigator.userAgent.toLowerCase();
 	if(agent.indexOf('ucbrowser')>0) {
-		document.write('<link rel="stylesheet" href="/css/uc.css">');
+		document.write('
+<link rel="stylesheet" href="/css/uc.css">
+');
 	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
 	}
 </script>

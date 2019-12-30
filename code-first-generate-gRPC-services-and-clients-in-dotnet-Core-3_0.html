@@ -274,8 +274,8 @@
     <meta property="og:article:tag" content=".NET Core"> <meta property="og:article:tag" content="ASP.NET Core"> 
 
     
-        <meta property="article:published_time" content="Sun Nov 24 2019 23:54:10 GMT+0800">
-        <meta property="article:modified_time" content="Fri Dec 06 2019 16:00:17 GMT+0800">
+        <meta property="article:published_time" content="Sun Nov 24 2019 23:54:10 GMT+0000">
+        <meta property="article:modified_time" content="Mon Dec 30 2019 02:05:19 GMT+0000">
     
 
     <!-- The Twitter Card protocol -->
@@ -297,8 +297,8 @@
     "@type": "BlogPosting",
     "mainEntityOfPage": "https://yangshunjie.com/code-first-generate-gRPC-services-and-clients-in-dotnet-Core-3_0.html",
     "headline": ".NET Core 3.0中用 Code-First 方式创建 gRPC 服务与客户端",
-    "datePublished": "Sun Nov 24 2019 23:54:10 GMT+0800",
-    "dateModified": "Fri Dec 06 2019 16:00:17 GMT+0800",
+    "datePublished": "Sun Nov 24 2019 23:54:10 GMT+0000",
+    "dateModified": "Mon Dec 30 2019 02:05:19 GMT+0000",
     "author": {
         "@type": "Person",
         "name": "James Yeung",
@@ -332,7 +332,7 @@
     <!-- Custom Head -->
     
 
-<link rel="stylesheet" href="/css/prism-vs.css" type="text/css">
+<meta name="generator" content="Hexo 4.2.0"><link rel="stylesheet" href="/css/prism-vs.css" type="text/css">
 <link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 
@@ -565,32 +565,25 @@
 public interface IMyAmazingService {
     ValueTask<SearchResponse> SearchAsync(SearchRequest request);
     // ...
-}
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>然后实现该接口的服务端：</p>
 <pre class="line-numbers language-cs"><code class="language-cs">public class MyServer : IMyAmazingService {
     // ...
-}
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p>或者向系统获取客户端：</p>
 <pre class="line-numbers language-cs"><code class="language-cs">var client = http.CreateGrpcService<IMyAmazingService>();
-var results = await client.SearchAsync(request);
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+var results = await client.SearchAsync(request);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>这相当于以下 .proto 中的服务：</p>
 <pre class="line-numbers language-proto"><code class="language-proto">service MyAmazingService {
     rpc Search (SearchRequest) returns (SearchResponse) {}
     // ...
-}
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <p><code>protobuf-net.Grpc</code> 同样通过普通类型定义支持 gRPC 的四种模式，把 C# 8.0 中最新的 <code>IAsyncEnumerable</code> 类型识别成 proto 中的 <code>stream</code>，单向流、双向流都可以实现！而且用 <code>IAsyncEnumerable</code> 实现可比 proto 生成的类方便很多。</p>
 <p>例如 proto 双向流定义：</p>
-<pre><code>rpc chat(stream ChatRequest) returns ( stream ChatResponse);
-</code></pre><p>生成出来的方法是：</p>
-<pre class="line-numbers language-cs"><code class="language-cs">Task BathTheCat(IAsyncStreamReader<ChatRequest> requestStream, IServerStreamWriter<ChatResponse> responseStream)
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre><code>rpc chat(stream ChatRequest) returns ( stream ChatResponse);</code></pre><p>生成出来的方法是：</p>
+<pre class="line-numbers language-cs"><code class="language-cs">Task BathTheCat(IAsyncStreamReader<ChatRequest> requestStream, IServerStreamWriter<ChatResponse> responseStream)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>而 <code>protobuf-net.Grpc</code> 只要定义一个方法：</p>
-<pre class="line-numbers language-cs"><code class="language-cs">IAsyncEnumerable<ChatResponse> SubscribeAsync(IAsyncEnumerable<ChatRequest> requestStream);
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-cs"><code class="language-cs">IAsyncEnumerable<ChatResponse> SubscribeAsync(IAsyncEnumerable<ChatRequest> requestStream);<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>由此可见，<code>protobuf-net.Grpc</code> 无需在契约层引入第三方库，充分运用了 C# 类型系统，把方法、类型映射到兼容了 gRPC 的服务定义上。</p>
 <p>上文所说的 proto 局限也迎刃而解了，函数调用、gRPC、REST 都能方便切换。（REST 实现可以参考我的开源框架 shriek-fx 中的 Shriek.ServiceProxy.Http ）组件。</p>
 <p>下一篇，我将主要介绍利用 <code>protobuf-net.Grpc</code> 的 gRPC 双向流模式与 <code>Blazor</code> 实现一个简单的在线即时聊天室。</p>
@@ -637,7 +630,7 @@ var results = await client.SearchAsync(request);
 <script>
     var id = location.pathname;
 
-    if (Date.parse('Sun Nov 24 2019 23:54:10 GMT+0800') - Date.parse('2018-03-01') > 0 ||
+    if (Date.parse('Sun Nov 24 2019 23:54:10 GMT+0000') - Date.parse('2018-03-01') > 0 ||
         'false' === 'true') {
         id = md5(location.pathname)
     }
@@ -779,7 +772,7 @@ var results = await client.SearchAsync(request);
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2019/12/">十二月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/11/">十一月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/01/">一月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">九月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/06/">六月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/05/">五月 2018<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/01/">一月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/12/">十二月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">十一月 2017<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/09/">九月 2017<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">八月 2017<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/07/">七月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/03/">三月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/09/">九月 2016<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/07/">七月 2016<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/06/">六月 2016<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/03/">三月 2016<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2015/12/">十二月 2015<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2015/11/">十一月 2015<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2015/10/">十月 2015<span class="sidebar_archives-count">4</span></a>
+                <a class="sidebar_archives-link" href="/archives/2019/12/">十二月 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/11/">十一月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/01/">一月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">九月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/06/">六月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/05/">五月 2018<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/01/">一月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/12/">十二月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">十一月 2017<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/09/">九月 2017<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">八月 2017<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/07/">七月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/03/">三月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/09/">九月 2016<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/07/">七月 2016<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/06/">六月 2016<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/03/">三月 2016<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2015/12/">十二月 2015<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2015/11/">十一月 2015<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2015/10/">十月 2015<span class="sidebar_archives-count">4</span></a>
             </ul>
         </li>
         
@@ -797,7 +790,7 @@ var results = await client.SearchAsync(request);
             </a>
             <ul class="dropdown-menu">
                 <li>
-                <a class="sidebar_archives-link" href="/categories/NET-Core/">.NET Core<span class="sidebar_archives-count">15</span></a></li><li><a class="sidebar_archives-link" href="/categories/NET-%E7%AC%94%E8%AE%B0/">.NET 笔记<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/Angular/">Angular<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/DDD/">DDD<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Docker/">Docker<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Github-Pages/">Github Pages<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Hexo/">Hexo<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/%E6%A0%91%E8%8E%93%E6%B4%BE/">树莓派<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/%E7%AC%94%E8%AE%B0/">笔记<span class="sidebar_archives-count">1</span></a>
+                <a class="sidebar_archives-link" href="/categories/NET-Core/">.NET Core<span class="sidebar_archives-count">15</span></a></li><li><a class="sidebar_archives-link" href="/categories/NET-%E7%AC%94%E8%AE%B0/">.NET 笔记<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/Angular/">Angular<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/DDD/">DDD<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Docker/">Docker<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Github-Pages/">Github Pages<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Hexo/">Hexo<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/%E6%A0%91%E8%8E%93%E6%B4%BE/">树莓派<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/%E7%AC%94%E8%AE%B0/">笔记<span class="sidebar_archives-count">1</span></a>
             </ul>
         </li>
         
@@ -881,7 +874,7 @@ var results = await client.SearchAsync(request);
         <li>
             <a href="/archives">
                 文章总数
-                <span class="sidebar-badge">46</span>
+                <span class="sidebar-badge">47</span>
             </a>
         </li>
         
@@ -1043,11 +1036,11 @@ It will not impact the appearance and can give developers a lot of support :)
 
                     <!-- Import JS File -->
 
-    <script>lsloader.load("lazyload_js","/js/lazyload.min.js?wgjW/HuQG9JDgvPDPoRAng==", true)</script>
+    <script>lsloader.load("lazyload_js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==", true)</script>
 
 
 
-    <script>lsloader.load("js_js","/js/js.min.js?LT4t6iE6m8TO1BLGGiNJqA==", true)</script>
+    <script>lsloader.load("js_js","/js/js.min.js?Bn9UzEm8RrBSxqyZB0zPjA==", true)</script>
 
 
 
@@ -1079,7 +1072,7 @@ It will not impact the appearance and can give developers a lot of support :)
 
 
     
-        <script>lsloader.load("sm_js","/js/smoothscroll.js?tNQK2Tw2SUL8a1Scn/Mgew==", true)</script>
+        <script>lsloader.load("sm_js","/js/smoothscroll.js?lOy/ACj5suSNi7ZVFVbpFQ==", true)</script>
     
 
 
@@ -1102,7 +1095,9 @@ It will not impact the appearance and can give developers a lot of support :)
 <script>
 	var agent = navigator.userAgent.toLowerCase();
 	if(agent.indexOf('ucbrowser')>0) {
-		document.write('<link rel="stylesheet" href="/css/uc.css">');
+		document.write('
+<link rel="stylesheet" href="/css/uc.css">
+');
 	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
 	}
 </script>

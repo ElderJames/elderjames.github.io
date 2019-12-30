@@ -274,8 +274,8 @@
     <meta property="og:article:tag" content="Framework7"> <meta property="og:article:tag" content="前端"> 
 
     
-        <meta property="article:published_time" content="Sat Oct 10 2015 23:33:25 GMT+0800">
-        <meta property="article:modified_time" content="Sun Oct 11 2015 00:48:05 GMT+0800">
+        <meta property="article:published_time" content="Sat Oct 10 2015 23:33:25 GMT+0000">
+        <meta property="article:modified_time" content="Sun Oct 11 2015 00:48:05 GMT+0000">
     
 
     <!-- The Twitter Card protocol -->
@@ -297,8 +297,8 @@
     "@type": "BlogPosting",
     "mainEntityOfPage": "https://yangshunjie.com/the-multiple-views-structure-on-framework7.html",
     "headline": "Framework7多视图（View）工具栏布局",
-    "datePublished": "Sat Oct 10 2015 23:33:25 GMT+0800",
-    "dateModified": "Sun Oct 11 2015 00:48:05 GMT+0800",
+    "datePublished": "Sat Oct 10 2015 23:33:25 GMT+0000",
+    "dateModified": "Sun Oct 11 2015 00:48:05 GMT+0000",
     "author": {
         "@type": "Person",
         "name": "James Yeung",
@@ -332,7 +332,7 @@
     <!-- Custom Head -->
     
 
-<link rel="stylesheet" href="/css/prism-vs.css" type="text/css">
+<meta name="generator" content="Hexo 4.2.0"><link rel="stylesheet" href="/css/prism-vs.css" type="text/css">
 <link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 
@@ -582,8 +582,7 @@
             &lt;/a&gt;
         &lt;/div&gt;
     &lt;/div&gt;
-&lt;/div&gt;
-</code></pre><p>这里注意几个地方：</p>
+&lt;/div&gt;</code></pre><p>这里注意几个地方：</p>
 <ul>
 <li><p>views里添加 navbar-through类,这使得各个view中的页面默认有工具栏布局</p>
 </li>
@@ -603,8 +602,7 @@
             ...
         &lt;/div&gt;
     &lt;/div&gt;
-&lt;/div&gt;
-</code></pre><p>page中添加no-toolbar类，这使得这个页面有无工具栏布局（底部没有留空），而这仅仅是对page布局有作用，而不会有文档中说的自动隐 藏toolbar效果，因为no-toolbar只会对跟该页面同view下的toolbar起作用，而我们的toolbar不是在view内，而是在各个view之外，所以要隐藏toolbar，还是要靠JS来实现。</p>
+&lt;/div&gt;</code></pre><p>page中添加no-toolbar类，这使得这个页面有无工具栏布局（底部没有留空），而这仅仅是对page布局有作用，而不会有文档中说的自动隐 藏toolbar效果，因为no-toolbar只会对跟该页面同view下的toolbar起作用，而我们的toolbar不是在view内，而是在各个view之外，所以要隐藏toolbar，还是要靠JS来实现。</p>
 <p>因为本人是初学者，看不懂RequireJS ，所以JS部分是我自己写的。<br>而JS的重点就在于，如何监听当前页面是否在首层呢？很容易想到，要Page添加事件，检验一下当前页是否为第一层的页面。但是要监听什么事件呢？</p>
 <p>如果是pageInit事件，那么在后退时会出现问题，因为F7为了呈现页面动画切换效果，在返回时会提前初始化前一个页面，比如，页面跳转顺序是A —&gt;B—&gt;C，现在要从C返回B，在返回前，view内会有BC两个页面以供切换，而切换到B的时候，F7会销毁C页面，加载A页面，这时会触发pageInit事件，如果用在pageInit触发时隐藏工具栏，那么当你从C切换到B时，工具栏就隐藏了，显然不符合我们要在A页面隐藏的要求。<br>而pageAfterBack事件是在返回动作完成后触发，这就会使得动画效果不连贯，不美观。</p>
 <p>那么，应该用哪个事件呢？</p>
@@ -621,8 +619,7 @@ $$(document).on(&#39;pageBeforeAnimation&#39;, function (e) {
     else {
         myApp.hideToolbar(&#39;.toolbar&#39;);
     }
-});
-</code></pre><p>好啦，这个问题就解决啦！希望大家多多分享你的经验哦！另外，有问题的话记得先看看文档，因为文档会解决很多问题的！</p>
+});</code></pre><p>好啦，这个问题就解决啦！希望大家多多分享你的经验哦！另外，有问题的话记得先看看文档，因为文档会解决很多问题的！</p>
 
         
                 <blockquote style="margin: 2em 0 0;padding: 0.5em 1em;border-left: 3px solid #F44336;background-color: #F5F5F5;list-style: none;">
@@ -659,7 +656,7 @@ $$(document).on(&#39;pageBeforeAnimation&#39;, function (e) {
 <script>
     var id = location.pathname;
 
-    if (Date.parse('Sat Oct 10 2015 23:33:25 GMT+0800') - Date.parse('2018-03-01') > 0 ||
+    if (Date.parse('Sat Oct 10 2015 23:33:25 GMT+0000') - Date.parse('2018-03-01') > 0 ||
         'false' === 'true') {
         id = md5(location.pathname)
     }
@@ -801,7 +798,7 @@ $$(document).on(&#39;pageBeforeAnimation&#39;, function (e) {
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2019/12/">十二月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/11/">十一月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/01/">一月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">九月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/06/">六月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/05/">五月 2018<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/01/">一月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/12/">十二月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">十一月 2017<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/09/">九月 2017<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">八月 2017<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/07/">七月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/03/">三月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/09/">九月 2016<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/07/">七月 2016<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/06/">六月 2016<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/03/">三月 2016<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2015/12/">十二月 2015<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2015/11/">十一月 2015<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2015/10/">十月 2015<span class="sidebar_archives-count">4</span></a>
+                <a class="sidebar_archives-link" href="/archives/2019/12/">十二月 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/11/">十一月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/01/">一月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">九月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/06/">六月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/05/">五月 2018<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/01/">一月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/12/">十二月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">十一月 2017<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/09/">九月 2017<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">八月 2017<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/07/">七月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/03/">三月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/09/">九月 2016<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/07/">七月 2016<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/06/">六月 2016<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/03/">三月 2016<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2015/12/">十二月 2015<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2015/11/">十一月 2015<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2015/10/">十月 2015<span class="sidebar_archives-count">4</span></a>
             </ul>
         </li>
         
@@ -819,7 +816,7 @@ $$(document).on(&#39;pageBeforeAnimation&#39;, function (e) {
             </a>
             <ul class="dropdown-menu">
                 <li>
-                <a class="sidebar_archives-link" href="/categories/NET-Core/">.NET Core<span class="sidebar_archives-count">15</span></a></li><li><a class="sidebar_archives-link" href="/categories/NET-%E7%AC%94%E8%AE%B0/">.NET 笔记<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/Angular/">Angular<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/DDD/">DDD<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Docker/">Docker<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Github-Pages/">Github Pages<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Hexo/">Hexo<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/%E6%A0%91%E8%8E%93%E6%B4%BE/">树莓派<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/%E7%AC%94%E8%AE%B0/">笔记<span class="sidebar_archives-count">1</span></a>
+                <a class="sidebar_archives-link" href="/categories/NET-Core/">.NET Core<span class="sidebar_archives-count">15</span></a></li><li><a class="sidebar_archives-link" href="/categories/NET-%E7%AC%94%E8%AE%B0/">.NET 笔记<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/Angular/">Angular<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/DDD/">DDD<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Docker/">Docker<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Github-Pages/">Github Pages<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Hexo/">Hexo<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/%E6%A0%91%E8%8E%93%E6%B4%BE/">树莓派<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/%E7%AC%94%E8%AE%B0/">笔记<span class="sidebar_archives-count">1</span></a>
             </ul>
         </li>
         
@@ -903,7 +900,7 @@ $$(document).on(&#39;pageBeforeAnimation&#39;, function (e) {
         <li>
             <a href="/archives">
                 文章总数
-                <span class="sidebar-badge">46</span>
+                <span class="sidebar-badge">47</span>
             </a>
         </li>
         
@@ -1065,11 +1062,11 @@ It will not impact the appearance and can give developers a lot of support :)
 
                     <!-- Import JS File -->
 
-    <script>lsloader.load("lazyload_js","/js/lazyload.min.js?wgjW/HuQG9JDgvPDPoRAng==", true)</script>
+    <script>lsloader.load("lazyload_js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==", true)</script>
 
 
 
-    <script>lsloader.load("js_js","/js/js.min.js?LT4t6iE6m8TO1BLGGiNJqA==", true)</script>
+    <script>lsloader.load("js_js","/js/js.min.js?Bn9UzEm8RrBSxqyZB0zPjA==", true)</script>
 
 
 
@@ -1101,7 +1098,7 @@ It will not impact the appearance and can give developers a lot of support :)
 
 
     
-        <script>lsloader.load("sm_js","/js/smoothscroll.js?tNQK2Tw2SUL8a1Scn/Mgew==", true)</script>
+        <script>lsloader.load("sm_js","/js/smoothscroll.js?lOy/ACj5suSNi7ZVFVbpFQ==", true)</script>
     
 
 
@@ -1124,7 +1121,9 @@ It will not impact the appearance and can give developers a lot of support :)
 <script>
 	var agent = navigator.userAgent.toLowerCase();
 	if(agent.indexOf('ucbrowser')>0) {
-		document.write('<link rel="stylesheet" href="/css/uc.css">');
+		document.write('
+<link rel="stylesheet" href="/css/uc.css">
+');
 	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
 	}
 </script>
