@@ -2,7 +2,7 @@
 layout: post
 title: Angular 利用 marked.js 添加 Markdown + HTML 同时渲染的 Pipe
 permalink: add-Markdown-and-html-rendering-pipe-in-Angular-using-markedjs
-date: 2019-12-27 17：51
+date: 2019-12-27 17:51:00
 tags:
 - Angular
 - Typescript
