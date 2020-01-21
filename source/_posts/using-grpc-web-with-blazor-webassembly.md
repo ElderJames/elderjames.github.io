@@ -51,6 +51,19 @@ ASP.NET Core 从 3.0 版本开始就提供了强大的 gRPC 支持。现在，�
 首先，由于 gRPC-Web 包还没有发布到 NuGet.org，现在你需要添加两个临时的包管理源来获得 nightly 预览。
 你可以在你的解决方案的根目录下添加`NuGet.config`文件。希望一两个月后就不需要了。
 
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <packageSources>
+    <!--To inherit the global NuGet package sources remove the <clear/> line below -->
+    <clear />
+    <add key="nuget" value="https://api.nuget.org/v3/index.json" />
+    <add key="gRPC-nightly" value="https://grpc.jfrog.io/grpc/api/nuget/v3/grpc-nuget-dev" />
+    <add key="blazor-nightly" value="https://dotnetfeed.blob.core.windows.net/aspnet-blazor/index.json" />
+  </packageSources>
+</configuration>
+```
+
 ## 添加 gRPC 服务到一个托管部署的 Blazor WebAssembly 应用程序
 
 如果你已经在 ASP.NET Core 服务端上托管了一个Blazor WebAssembly 应用程序，默认情况下，你有三个项目：客户端、服务端和共享项目。我发现定义 gRPC 服务最方便的地方是在共享项目中，因为这样生成的类对服务器和客户机都可用。
@@ -273,3 +286,9 @@ Server response: <strong>@serverResponse</strong>
 # 你的反馈要求
 
 如果你想进一步了解 gRPC，看看 ASP.NET Core gRPC 文档。请给我们关于你对 gRPC-Web 的意见和经验的反馈，因为这将帮助我们选择如何以及是否在未来的 ASP.NET Core 版本中使 gRPC-Web 成 一个标准特性。你可以在这里发布评论，或者在 GitHub 上发布标题中带有“反馈”的 issue。
+
+> 翻译自原文：https://blog.stevensanderson.com/2020/01/15/2020-01-15-grpc-web-in-blazor-webassembly
+>
+> 相关文章：
+> - ASP.NET Core 现已支持gRPC-Web
+> - .NET Core ❤ gRPC
