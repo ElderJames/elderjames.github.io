@@ -275,7 +275,7 @@
 
     
         <meta property="article:published_time" content="Tue Jan 21 2020 15:21:00 GMT+0000">
-        <meta property="article:modified_time" content="Tue Jan 21 2020 07:31:29 GMT+0000">
+        <meta property="article:modified_time" content="Tue Jan 21 2020 08:30:35 GMT+0000">
     
 
     <!-- The Twitter Card protocol -->
@@ -298,7 +298,7 @@
     "mainEntityOfPage": "https://yangshunjie.com/Using-gRPC-Web-with-Blazor-WebAssembly.html",
     "headline": "在 Blazor WebAssembly 中使用 gRPC-Web",
     "datePublished": "Tue Jan 21 2020 15:21:00 GMT+0000",
-    "dateModified": "Tue Jan 21 2020 07:31:29 GMT+0000",
+    "dateModified": "Tue Jan 21 2020 08:30:35 GMT+0000",
     "author": {
         "@type": "Person",
         "name": "James Yeung",
@@ -559,6 +559,16 @@
 <p>但是现在有一个解决方案！gRPC-Web 是 gRPC的扩展，它使 gRPC 与基于浏览器的代码兼容（从技术上讲，它是通过 HTTP/1.1 请求执行 gRPC 的一种方式）。gRPC-Web 还没有流行起来，因为到目前为止还没有多少服务器或客户端框架提供对它的支持。</p>
 <p>ASP.NET Core 从 3.0 版本开始就提供了强大的 gRPC 支持。现在，在此基础上，我们将在服务器和客户端提供对 gRPC-Web的预览支持。如果你想深入了解细节，可以在来自 James Newton-King 的优秀的 pull request 查看全部实现（<em><a href="https://github.com/grpc/grpc-dotnet/pull/695" target="_blank" rel="noopener">https://github.com/grpc/grpc-dotnet/pull/695</a></em>）。</p>
 <h1 id="添加-gRPC-服务到一个-Blazor-WebAssembly-应用程序"><a href="#添加-gRPC-服务到一个-Blazor-WebAssembly-应用程序" class="headerlink" title="添加 gRPC 服务到一个 Blazor WebAssembly 应用程序"></a>添加 gRPC 服务到一个 Blazor WebAssembly 应用程序</h1><p>目前还没有这方面的项目模板，所以将 gRPC 支持添加到 Blazor WebAssembly 应用程序需要很多步骤，本文是详细的介绍。但好消息是你只需要做一次这样的设置。当你完成起步与运行起来后，添加更多的 gRPC 端点并调用它们是非常简单的。<br>首先，由于 gRPC-Web 包还没有发布到 NuGet.org，现在你需要添加两个临时的包管理源来获得 nightly 预览。<br>你可以在你的解决方案的根目录下添加<code>NuGet.config</code>文件。希望一两个月后就不需要了。</p>
+<pre class="line-numbers language-xml"><code class="language-xml"><span class="token prolog">&lt;?xml version="1.0" encoding="utf-8"?></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>configuration</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>packageSources</span><span class="token punctuation">></span></span>
+    <span class="token comment" spellcheck="true">&lt;!--To inherit the global NuGet package sources remove the &lt;clear/> line below --></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>clear</span> <span class="token punctuation">/></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>add</span> <span class="token attr-name">key</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>nuget<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>https://api.nuget.org/v3/index.json<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>add</span> <span class="token attr-name">key</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>gRPC-nightly<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>https://grpc.jfrog.io/grpc/api/nuget/v3/grpc-nuget-dev<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>add</span> <span class="token attr-name">key</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>blazor-nightly<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>https://dotnetfeed.blob.core.windows.net/aspnet-blazor/index.json<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>packageSources</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>configuration</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="添加-gRPC-服务到一个托管部署的-Blazor-WebAssembly-应用程序"><a href="#添加-gRPC-服务到一个托管部署的-Blazor-WebAssembly-应用程序" class="headerlink" title="添加 gRPC 服务到一个托管部署的 Blazor WebAssembly 应用程序"></a>添加 gRPC 服务到一个托管部署的 Blazor WebAssembly 应用程序</h2><p>如果你已经在 ASP.NET Core 服务端上托管了一个Blazor WebAssembly 应用程序，默认情况下，你有三个项目：客户端、服务端和共享项目。我发现定义 gRPC 服务最方便的地方是在共享项目中，因为这样生成的类对服务器和客户机都可用。<br>首先，编辑你的共享项目的<code>.csproj</code>添加必要的 gRPC 包引用：</p>
 <pre class="line-numbers language-xml"><code class="language-xml">  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ItemGroup</span><span class="token punctuation">></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>PackageReference</span> <span class="token attr-name">Include</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Google.Protobuf<span class="token punctuation">"</span></span> <span class="token attr-name">Version</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>3.11.2<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
@@ -701,6 +711,14 @@ Server response<span class="token punctuation">:</span> <span class="token opera
 </ul>
 <h3 id="总结和示例-1"><a href="#总结和示例-1" class="headerlink" title="总结和示例"></a>总结和示例</h3><p>就是这样！现在，你的独立部署的 Blazor WebAssembly 应用程序可以使用外部的 gRPC-Web 服务。对于完整的可运行示例，下面是一个示例独立应用程序（<code>https://github.com/SteveSandersonMS/BlazorGrpcSamples/tree/master/Standalone</code>），它在外部 URL 上调用一个 gRPC-Web 服务。 这个示例附带了一个实际的用于测试的 gRPC-Web 服务器，但是你可以分开考虑它。如果你想确切地看到我更改了什么，这里是与默认项目模板输出的差异（<code>https://github.com/SteveSandersonMS/BlazorGrpcSamples/commit/d6ec609f2b7e6591958d38e4a207c9b4f52f0feb</code>）。</p>
 <h1 id="你的反馈要求"><a href="#你的反馈要求" class="headerlink" title="你的反馈要求"></a>你的反馈要求</h1><p>如果你想进一步了解 gRPC，看看 ASP.NET Core gRPC 文档。请给我们关于你对 gRPC-Web 的意见和经验的反馈，因为这将帮助我们选择如何以及是否在未来的 ASP.NET Core 版本中使 gRPC-Web 成 一个标准特性。你可以在这里发布评论，或者在 GitHub 上发布标题中带有“反馈”的 issue。</p>
+<blockquote>
+<p>翻译自原文：<a href="https://blog.stevensanderson.com/2020/01/15/2020-01-15-grpc-web-in-blazor-webassembly" target="_blank" rel="noopener">https://blog.stevensanderson.com/2020/01/15/2020-01-15-grpc-web-in-blazor-webassembly</a></p>
+<p>相关文章：</p>
+<ul>
+<li>ASP.NET Core 现已支持gRPC-Web</li>
+<li>.NET Core ❤ gRPC</li>
+</ul>
+</blockquote>
 
         
                 <blockquote style="margin: 2em 0 0;padding: 0.5em 1em;border-left: 3px solid #F44336;background-color: #F5F5F5;list-style: none;">

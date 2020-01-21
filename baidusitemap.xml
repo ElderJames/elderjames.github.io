@@ -1,6 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://yangshunjie.com/change-the-docker-image-origin-to-aliyun.html</loc>
+    <lastmod>2020-01-21</lastmod>
+  </url>  <url>
+    <loc>https://yangshunjie.com/how-to-request-a-free-https.html</loc>
+    <lastmod>2020-01-21</lastmod>
+  </url>  <url>
+    <loc>https://yangshunjie.com/boot-the-berryboot-installer-for-raspberry-pi-with-wifi-and-vnc-but-no-screen.html</loc>
+    <lastmod>2020-01-21</lastmod>
+  </url>  <url>
+    <loc>https://yangshunjie.com/influxdb-in-dotNEt-Core-1-Introduction.html</loc>
+    <lastmod>2020-01-21</lastmod>
+  </url>  <url>
+    <loc>https://yangshunjie.com/influxdb-in-dotNEt-Core-2-ioc-and-repository-pattern.html</loc>
+    <lastmod>2020-01-21</lastmod>
+  </url>  <url>
+    <loc>https://yangshunjie.com/code-first-generate-gRPC-services-and-clients-in-dotnet-Core-3_0.html</loc>
+    <lastmod>2020-01-21</lastmod>
+  </url>  <url>
+    <loc>https://yangshunjie.com/TinyMCE-with-SSR-and-webpack.html</loc>
+    <lastmod>2020-01-21</lastmod>
+  </url>  <url>
     <loc>https://yangshunjie.com/the-basic-credential-prompt-for-git-on-windows-10.html</loc>
     <lastmod>2020-01-21</lastmod>
   </url>  <url>
@@ -17,27 +38,6 @@
     <lastmod>2020-01-21</lastmod>
   </url>  <url>
     <loc>https://yangshunjie.com/net-core-on-linux-operation-note.html</loc>
-    <lastmod>2020-01-21</lastmod>
-  </url>  <url>
-    <loc>https://yangshunjie.com/boot-the-berryboot-installer-for-raspberry-pi-with-wifi-and-vnc-but-no-screen.html</loc>
-    <lastmod>2020-01-21</lastmod>
-  </url>  <url>
-    <loc>https://yangshunjie.com/change-the-docker-image-origin-to-aliyun.html</loc>
-    <lastmod>2020-01-21</lastmod>
-  </url>  <url>
-    <loc>https://yangshunjie.com/how-to-request-a-free-https.html</loc>
-    <lastmod>2020-01-21</lastmod>
-  </url>  <url>
-    <loc>https://yangshunjie.com/influxdb-in-dotNEt-Core-1-Introduction.html</loc>
-    <lastmod>2020-01-21</lastmod>
-  </url>  <url>
-    <loc>https://yangshunjie.com/influxdb-in-dotNEt-Core-2-ioc-and-repository-pattern.html</loc>
-    <lastmod>2020-01-21</lastmod>
-  </url>  <url>
-    <loc>https://yangshunjie.com/code-first-generate-gRPC-services-and-clients-in-dotnet-Core-3_0.html</loc>
-    <lastmod>2020-01-21</lastmod>
-  </url>  <url>
-    <loc>https://yangshunjie.com/TinyMCE-with-SSR-and-webpack.html</loc>
     <lastmod>2020-01-21</lastmod>
   </url>  <url>
     <loc>https://yangshunjie.com/ddd-project-collection.html</loc>
@@ -64,6 +64,9 @@
     <loc>https://yangshunjie.com/dynamically-add-features-to-the-controller-type-in-dot-net-core.html</loc>
     <lastmod>2020-01-21</lastmod>
   </url>  <url>
+    <loc>https://yangshunjie.com/add-Markdown-and-html-rendering-pipe-in-Angular-using-markedjs.html</loc>
+    <lastmod>2020-01-21</lastmod>
+  </url>  <url>
     <loc>https://yangshunjie.com/Angular-integrating-with-UEditor-and-ssr-supporting.html</loc>
     <lastmod>2020-01-21</lastmod>
   </url>  <url>
@@ -71,9 +74,6 @@
     <lastmod>2020-01-21</lastmod>
   </url>  <url>
     <loc>https://yangshunjie.com/AutoMappers-automatic-registration-mapping-relationship-configuration.html</loc>
-    <lastmod>2020-01-21</lastmod>
-  </url>  <url>
-    <loc>https://yangshunjie.com/add-Markdown-and-html-rendering-pipe-in-Angular-using-markedjs.html</loc>
     <lastmod>2020-01-21</lastmod>
   </url>  <url>
     <loc>https://yangshunjie.com/dotnet-dev-certs.html</loc>
