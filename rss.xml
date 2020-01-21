@@ -9,8 +9,26 @@
     <atom:link href="/rss.xml" rel="self" type="application/rss+xml"/>
     
     <description>学习、札记、分享</description>
-    <pubDate>Tue, 21 Jan 2020 08:30:35 GMT</pubDate>
+    <pubDate>Tue, 21 Jan 2020 08:32:55 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>ASP.NET Core Support gRPC-Web</title>
+      <link>https://yangshunjie.com/asp_net_core-support-grpc-web.html</link>
+      <guid>https://yangshunjie.com/asp_net_core-support-grpc-web.html</guid>
+      <pubDate>Tue, 21 Jan 2020 15:21:00 GMT</pubDate>
+      <description>
+      
+        
+        
+          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla
+        
+      
+      </description>
+      
+      
+      <comments>https://yangshunjie.com/asp_net_core-support-grpc-web.html#disqus_thread</comments>
+    </item>
     
     <item>
       <title>在 Blazor WebAssembly 中使用 gRPC-Web</title>
@@ -352,24 +370,6 @@
       
       
       <comments>https://yangshunjie.com/the-basic-credential-prompt-for-git-on-windows-10.html#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>时序数据库InfluxDB在.NET Core中的使用——（2）IoC和仓储模式实现事件存储</title>
-      <link>https://yangshunjie.com/influxdb-in-dotNEt-Core-2-ioc-and-repository-pattern.html</link>
-      <guid>https://yangshunjie.com/influxdb-in-dotNEt-Core-2-ioc-and-repository-pattern.html</guid>
-      <pubDate>Tue, 26 Sep 2017 00:44:01 GMT</pubDate>
-      <description>
-      
-        
-        
-          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla
-        
-      
-      </description>
-      
-      
-      <comments>https://yangshunjie.com/influxdb-in-dotNEt-Core-2-ioc-and-repository-pattern.html#disqus_thread</comments>
     </item>
     
   </channel>

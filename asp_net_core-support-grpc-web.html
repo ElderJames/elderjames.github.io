@@ -46,7 +46,7 @@
     
     <title>
         
-            归档: 2015/11 | 
+            ASP.NET Core Support gRPC-Web | 
         
         ElderJames&#39; Blog
     </title>
@@ -57,7 +57,7 @@
 
     <meta name="format-detection" content="telephone=no"/>
     <meta name="description" itemprop="description" content="学习、札记、分享">
-    <meta name="keywords" content="ElderJames&#39; Blog">
+    <meta name="keywords" content="ElderJames&#39; Blog,ASP.NET Core,.NET Core,gRPC-Web">
     <meta name="theme-color" content="#0097A7">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
@@ -84,6 +84,9 @@
         <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?eXkKIGXLBtkgeML0A1Jlsg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
 
         
+            
+                <style id="prettify_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_css","/css/prettify.min.css?zp8STOU9v89XWFEnN+6YmQ==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+                <style id="prettify_theme"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_theme","/css/prettify/github-v2.min.css?AfzKxt++K+/lhZBlSjnxwg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
             
         
 
@@ -244,7 +247,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="ElderJames&#39; Blog">
-    <meta name="msapplication-starturl" content="https://yangshunjie.com/archives/2015/11/">
+    <meta name="msapplication-starturl" content="https://yangshunjie.com/asp_net_core-support-grpc-web.html">
     <meta name="msapplication-navbutton-color" content="#0097A7">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="ElderJames&#39; Blog">
@@ -263,13 +266,16 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="https://yangshunjie.com/archives/2015/11/">
+    <meta property="og:url" content="https://yangshunjie.com/asp_net_core-support-grpc-web.html">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="归档: 2015/11 | ElderJames&#39; Blog">
+    <meta property="og:title" content="ASP.NET Core Support gRPC-Web | ElderJames&#39; Blog">
     <meta property="og:image" content="/img/favicon.png">
     <meta property="og:description" content="学习、札记、分享">
-    
+    <meta property="og:article:tag" content="ASP.NET Core"> <meta property="og:article:tag" content=".NET Core"> <meta property="og:article:tag" content="gRPC-Web"> 
 
+    
+        <meta property="article:published_time" content="Tue Jan 21 2020 15:21:00 GMT+0000">
+        <meta property="article:modified_time" content="Tue Jan 21 2020 08:32:55 GMT+0000">
     
 
     <!-- The Twitter Card protocol -->
@@ -277,13 +283,43 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="https://yangshunjie.com/archives/2015/11/index.html" />
+        <link rel="canonical" href="https://yangshunjie.com/asp_net_core-support-grpc-web.html" />
     
 
     <!-- Structured-data for SEO -->
     
         
 
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "https://yangshunjie.com/asp_net_core-support-grpc-web.html",
+    "headline": "ASP.NET Core Support gRPC-Web",
+    "datePublished": "Tue Jan 21 2020 15:21:00 GMT+0000",
+    "dateModified": "Tue Jan 21 2020 08:32:55 GMT+0000",
+    "author": {
+        "@type": "Person",
+        "name": "James Yeung",
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://avatars0.githubusercontent.com/u/7550366?v=4&amp;s=460"
+        },
+        "description": "学习/创作/分享"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "ElderJames&#39; Blog",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.png"
+        }
+    },
+    "keywords": ",ASP.NET Core,.NET Core,gRPC-WebElderJames&#39; Blog",
+    "description": "学习、札记、分享",
+}
+</script>
 
 
     
@@ -318,93 +354,328 @@
                         </button>
                     
 
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
-    
-    <div class="locate-thumbnail-symbol"></div>
+                    <!-- Post TOC -->
 
-    <!-- Pin on top -->
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#gRPC-Web-简介"><span class="post-toc-number">1.</span> <span class="post-toc-text">gRPC-Web 简介</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#服务端使用-Grpc-AspNetCore-Web"><span class="post-toc-number">2.</span> <span class="post-toc-text">服务端使用 Grpc.AspNetCore.Web</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#客户端使用-Grpc-Net-Client-Web"><span class="post-toc-number">3.</span> <span class="post-toc-text">客户端使用 Grpc.Net.Client.Web</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#总结"><span class="post-toc-number">4.</span> <span class="post-toc-text">总结</span></a></li></ol>
+    </ul>
     
 
-    <!-- Normal Post -->
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
     
         
             <!-- Random Thumbnail -->
             <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
 
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/make-mysql-support-chinese-encoding.html">ASP.NET 连接 Mysql 支持中文编码</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            1、关闭mysq...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/make-mysql-support-chinese-encoding.html" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="https://avatars0.githubusercontent.com/u/7550366?v=4&amp;s=460" width="44px" height="44px" alt="James Yeung's avatar">
-            </div>
-            <div>
-                <strong>James Yeung</strong>
-                <span>11月 06, 2015</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-
-    
-
-    
-        <script type="text/ls-javascript" id="thumbnail-script">
-    var randomNum;
-
-    var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 19 + 1);
-
-        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
     $('.post_thumbnail-random').addClass('lazy');
-
-        locatePost = locatePost.next();
-    }
 </script>
 
+        
+    
+            <p class="article-headline-p">
+                ASP.NET Core Support gRPC-Web
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="https://avatars0.githubusercontent.com/u/7550366?v=4&s=460" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>James Yeung</strong>
+        <span>1月 21, 2020</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">devices other</i>
+    <span class="visuallyhidden">devices other</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+    <li class="mdl-menu__item">在其它设备中阅读本文章</li>
+    
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACY0lEQVR42u3aS5LjIBAEUN//0t0HmAk5s0BY7XhaOfyReSwAZdXr56uvFx4eHh4eHh4e3sN4r/j691f/ufXlN9t7DseGh4eHd4T3ZqkNvnMNuH4nn6xoQvHw8PAO8q4Ht7K458j2f/Hw8PD+Lm82Hclv8fDw8L6JlwcTecCBh4eH97d4yQN/vtC3mOuN4VDWgoeHhxfz8iLT+ddH63t4eHh4Aa9uaSqHlZTKbmy6wsPDw7uBly/EyUE8jwxmd4smDg8PD+8IL1nWZw0Er/Jqx1Y8MeDh4eFt4uXH5TykyAPf698mU1Y8MeDh4eFt5bXDbUv++SaRT1YR4+Lh4eFt5e0NAtotp30naibAw8PDu5k3OwTnd5iFEW3MgYeHh/dZ3qwYlpe7klLZLMDFw8PDO8N7E4mWoUB7ON61YeDh4eE9jZfHrG2TQXJQrqcPDw8P72beLEhdX+5nkzJsusLDw8O7gZcvyrPhJp/mpa832wweHh7ezbx8cLOooj06z4pqeHh4eCd5u8pgK41Wedix1DqAh4eHt4k3e+yfhQj5QNvYFw8PD+88r12C87LZ3mAi+RQPDw/vCbx2M8jbBdoIuC6A4eHh4R3h7aLOgobZNOHh4eGd5LVX+5fJFhIdlNc7I/Dw8PA28WaL8qxkNYs88PDw8J7JmzUT1H9cNhC0GxIeHh7eeV5b+F9vNVgJheuNAQ8PD++jvF0hb770F8d9PDw8vEfykiW7bQ6YldNu3/fw8PDwlsOI/NN222gDETw8PLzP8tYjgKTVYNaOkIfCeHh4eGd433fh4eHh4eHh4eE94PoFyn/3E4npwYIAAAAASUVORK5CYII=">
+    
+</ul>
+
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/NET-Core/" rel="tag">.NET Core</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/ASP-NET-Core/" rel="tag">ASP.NET Core</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/gRPC-Web/" rel="tag">gRPC-Web</a>
+    </ul>
+    
+
+    <!-- Share -->
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+        
+            <!-- Busuanzi Views -->
+            <a class="post_share-link" href="#">
+                <li class="mdl-menu__item">
+                    <span id="busuanzi_container_page_pv">
+                        <span id="busuanzi_value_page_pv"></span>&nbsp;浏览量
+                    </span>
+                </li>
+            </a>
+        
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=ASP.NET Core Support gRPC-Web&url=https://yangshunjie.com/asp_net_core-support-grpc-web.html&pic=https://yangshunjie.com/img/favicon.png&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+
+    <!-- Share Facebook -->
+    
+
+    <!-- Share Google+ -->
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=ElderJames&#39; Blog&title=ASP.NET Core Support gRPC-Web&summary=学习、札记、分享&pics=https://yangshunjie.com/img/favicon.png&url=https://yangshunjie.com/asp_net_core-support-grpc-web.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
     
 </div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <blockquote>
+<p>grpc-dotnet 项目在 PR #695 完成了 ASP.NET Core 服务与 .NET Core gRPC 客户端的 gRPC-Web 实现。<br>虽然目前还是实验性项目，但是并不阻碍我们为之兴奋。下面我们来看看如何使用。</p>
+</blockquote>
+<h2 id="gRPC-Web-简介"><a href="#gRPC-Web-简介" class="headerlink" title="gRPC-Web 简介"></a>gRPC-Web 简介</h2><p>gRPC-Web 允许从浏览器应用程序使用 gRPC，gRPC-Web 支持在新场景中使用 gRPC：</p>
+<ul>
+<li>JavaScript 浏览器应用程序可以使用 gRPC-Web JavaScript 客户端调用 gRPC 服务。</li>
+<li>Blazor WebAssembly 应用程序可以使用.Net Core gRPC 客户端调用 gRPC 服务。</li>
+<li>可以让 gRPC 服务被用于不完全支持 HTTP/2 的环境中。</li>
+<li>可以让 gRPC 用于 HTTP/2 中没有的技术，例如 Windows 身份验证。</li>
+</ul>
+<p>Grpc.AspNetCore.Web 和 Grpc.Net.Client.Web 提供了扩展来为 .NET Core 支持端到端的 gRPC-Web。</p>
+<h2 id="服务端使用-Grpc-AspNetCore-Web"><a href="#服务端使用-Grpc-AspNetCore-Web" class="headerlink" title="服务端使用 Grpc.AspNetCore.Web"></a>服务端使用 Grpc.AspNetCore.Web</h2><p>Grpc.AspNetCore.Web 提供了中间件使 ASP.NET Core gRPC 服务接受 gRPC- web 调用。</p>
+<p><em>Startup.cs</em></p>
+<pre class="line-numbers language-csharp"><code class="language-csharp"><span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">ConfigureServices</span><span class="token punctuation">(</span>IServiceCollection services<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    services<span class="token punctuation">.</span><span class="token function">AddGrpc</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    services<span class="token punctuation">.</span><span class="token function">AddGrpcWeb</span><span class="token punctuation">(</span>o <span class="token operator">=</span><span class="token operator">></span> o<span class="token punctuation">.</span>GrpcWebEnabled <span class="token operator">=</span> <span class="token keyword">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">Configure</span><span class="token punctuation">(</span>IApplicationBuilder app<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    app<span class="token punctuation">.</span><span class="token function">UseRouting</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    app<span class="token punctuation">.</span><span class="token function">UseGrpcWeb</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    app<span class="token punctuation">.</span><span class="token function">UseEndpoints</span><span class="token punctuation">(</span>endpoints <span class="token operator">=</span><span class="token operator">></span>
+    <span class="token punctuation">{</span>
+        endpoints<span class="token punctuation">.</span><span class="token generic-method function">MapGrpcService<span class="token punctuation">&lt;</span>GreeterService<span class="token punctuation">></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>gRPC-Web 可以通过设置 <code>GrpcWebOptions.GrpcWebEnabled = true</code> 来被应用于所有 gRPC 服务，或者通过<code>EnableGrpcWeb()</code>方法被应用于单个服务：</p>
+<pre class="line-numbers language-c"><code class="language-c">app<span class="token punctuation">.</span><span class="token function">UseEndpoints</span><span class="token punctuation">(</span>endpoints <span class="token operator">=</span><span class="token operator">></span>
+<span class="token punctuation">{</span>
+    endpoints<span class="token punctuation">.</span>MapGrpcService<span class="token operator">&lt;</span>GreeterService<span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">EnableGrpcWeb</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="客户端使用-Grpc-Net-Client-Web"><a href="#客户端使用-Grpc-Net-Client-Web" class="headerlink" title="客户端使用 Grpc.Net.Client.Web"></a>客户端使用 Grpc.Net.Client.Web</h2><p>Grpc.Net.Client.Web 提供了一个 HttpClient delegating handler 来配置 .NET Core gRPC 客户端发送 gRPC-Web 请求。</p>
+<pre class="line-numbers language-c"><code class="language-c"><span class="token comment" spellcheck="true">// Create channel</span>
+var handler <span class="token operator">=</span> ew <span class="token function">GrpcWebHandler</span><span class="token punctuation">(</span>GrpcWebMode<span class="token punctuation">.</span>GrpcWebText<span class="token punctuation">,</span> new <span class="token function">HttpClientHandler</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+var channel <span class="token operator">=</span> GrpcChannel<span class="token punctuation">.</span><span class="token function">ForAddress</span><span class="token punctuation">(</span><span class="token string">"https://localhost:5001"</span><span class="token punctuation">,</span> new GrpcChannelOptions
+    <span class="token punctuation">{</span>
+        HttpClient <span class="token operator">=</span> new <span class="token function">HttpClient</span><span class="token punctuation">(</span>handler<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// Make call with a client</span>
+var client <span class="token operator">=</span> Greeter<span class="token punctuation">.</span><span class="token function">GreeterClient</span><span class="token punctuation">(</span>channel<span class="token punctuation">)</span><span class="token punctuation">;</span>
+var response <span class="token operator">=</span> await client<span class="token punctuation">.</span><span class="token function">SayHelloAsync</span><span class="token punctuation">(</span>new GreeterRequest <span class="token punctuation">{</span> Name <span class="token operator">=</span> <span class="token string">".NET"</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>可以看出，得益于 ASP.NET Core 3.0 以来对 gRPC 的深度集成，增加 gRPC 相关的新特性已经非常容易，使.NET Core 成为云原生家族的重要成员。</p>
+<p>近期，观测分析平台 SkyWalking 的 .NET 自动探针 (SkyAPM-dotnet) 也已经支持了 grpc-dotnet 远程调用的链路跟踪采集，欢迎大家使用！如果喜欢，也请大家给点个星星！</p>
+<p>项目地址：<a href="https://github.com/SkyAPM/SkyAPM-dotnet" target="_blank" rel="noopener">https://github.com/SkyAPM/SkyAPM-dotnet</a></p>
+
+        
+                <blockquote style="margin: 2em 0 0;padding: 0.5em 1em;border-left: 3px solid #F44336;background-color: #F5F5F5;list-style: none;">
+                    <p><strong>
+                         
+                            本文原创授权为：署名-非商业性使用-禁止演绎 4.0 国际 (CC BY-NC-ND 4.0) <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">协议普通文本</a> | <a rel="law-license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode" target="_blank">协议法律文本</a>
+                        </strong>
+                        <br>
+                        <strong>本文链接：</strong><a href="https://yangshunjie.com/asp_net_core-support-grpc-web.html">https://yangshunjie.com/asp_net_core-support-grpc-web.html</a>
+                    </p>
+                </blockquote>
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用 Gitalk -->
+<div id="gitalk-comment">
+    <!-- Gitalk 评论框 -->
+<div id="gitalk-container"></div>
+
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.js"></script>
+
+<script>
+    var id = location.pathname;
+
+    if (Date.parse('Tue Jan 21 2020 15:21:00 GMT+0000') - Date.parse('2018-03-01') > 0 ||
+        'false' === 'true') {
+        id = md5(location.pathname)
+    }
+
+    if ('false' === 'true') {
+        id = location.pathname;
+    }
+
+    var gitalk = new Gitalk({
+        clientID: '695234dcb3266b06c9bc',
+        clientSecret: '9012a4415f4672e4858df564fc9999e9b6d5cec0',
+        repo: 'elderjames.github.io',
+        owner: 'ElderJames',
+        admin: ['ElderJames'],
+        id: id,
+        // facebook-like distraction free mode
+        distractionFreeMode: false
+    })
+    gitalk.render('gitalk-container')
+</script>
+</div>
+<style>
+    #gitalk-comment {
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/Using-gRPC-Web-with-Blazor-WebAssembly.html" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
 
 
                     
@@ -817,6 +1088,10 @@ It will not impact the appearance and can give developers a lot of support :)
 <!-- Import prettify js  -->
 
     
+        
+            <script>lsloader.load("prettify_js","//cdn.bootcss.com/prettify/r298/prettify.min.js", true)</script>
+        
+    
 
 
 
@@ -829,6 +1104,11 @@ It will not impact the appearance and can give developers a lot of support :)
     });
 
     
+        
+            $(function() {
+                $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+                prettyPrint();
+                })
         
     
     
