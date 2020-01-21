@@ -21,33 +21,37 @@ categories:
 
 这种方法通常很有效，这样做的人往往能过上充实的生活。然而，它也有两个显而易见的弱点：
 
-- JSON 是一种非常冗长的数据格式。它没有优化带宽。
+- JSON 是一种非常冗长的数据格式，它没有优化带宽。
 - 没有任何机制可以保证所有这些预先约定的 url、HTTP 方法、状态码 等等的细节在服务器和客户端之间实际上是一致的。
 
 ## 什么是 gRPC?
 
 gRPC 是一种远程过程调用（RPC）机制，最初由谷歌开发。对于 SPA，你可以将其视为 JSON-over-HTTP 的替代方案。它直接修复了上面列出的两个弱点:
+
 - 它被优化为最小的网络流量，发送有效的二进制序列化消息
 - 你可以在编译时保证服务器和客户端对端点的存在、数据的发送和接收形式达成一致，而不需要指定任何URL、状态码 等等。
 
 ## 这是怎么做到的呢？
 
 要编写gRPC服务，你需要编写一个`.proto`文件，它是一组 RPC 服务及其数据形状的独立于语言的描述。从这里，你可以用任何语言生成强类型的服务器和客户端类，从而保证在编译时符合你的协议。然后在运行时，gRPC 处理(反)序列化数据并以有效的格式（默认为 protobuf ）发送/接收消息。
+
 另一个很大的好处是它不是 REST，所以你不必与同事经常争论哪些 HTTP 方法和状态代码在你的场景中是最幸福和幸运的。它只是简单的 RPC，在我们还是小孩子的时候就真情实感想要的。
 
-## 为什么不是每个人都在他们的SPA中使用 gRPC ?
+## 为什么不是每个人都在他们的 SPA 中使用 gRPC ?
 
 传统上，从基于浏览器的应用程序中使用 gRPC 是不可能的，因为 gRPC 需要 HTTP/2，而且浏览器不公开任何 api，让 JS、WASM 代码直接控制 HTTP/2 请求。
-但是现在有一个解决方案！gRPC-Web 是 gRPC的扩展，它使 gRPC 与基于浏览器的代码兼容（从技术上讲，它是通过 HTTP/1.1 请求执行 gRPC 的一种方式）。gRPC-Web 还没有流行起来，因为到目前为止还没有多少服务器或客户端框架提供对它的支持。
-ASP.NET Core 从 3.0 版本开始就提供了强大的 gRPC 支持。现在，在此基础上，我们将在服务器和客户端提供对 gRPC-Web的预览支持。如果你想深入了解细节，可以在来自 James Newton-King 的优秀的 pull request 查看全部实现。
 
-# 添加 gRPC 服务到一个Blazor WebAssembly 应用程序
+但是现在有一个解决方案！gRPC-Web 是 gRPC的扩展，它使 gRPC 与基于浏览器的代码兼容（从技术上讲，它是通过 HTTP/1.1 请求执行 gRPC 的一种方式）。gRPC-Web 还没有流行起来，因为到目前为止还没有多少服务器或客户端框架提供对它的支持。
+
+ASP.NET Core 从 3.0 版本开始就提供了强大的 gRPC 支持。现在，在此基础上，我们将在服务器和客户端提供对 gRPC-Web的预览支持。如果你想深入了解细节，可以在来自 James Newton-King 的优秀的 pull request 查看全部实现（*https://github.com/grpc/grpc-dotnet/pull/695*）。
+
+# 添加 gRPC 服务到一个 Blazor WebAssembly 应用程序
 
 目前还没有这方面的项目模板，所以将 gRPC 支持添加到 Blazor WebAssembly 应用程序需要很多步骤，本文是详细的介绍。但好消息是你只需要做一次这样的设置。当你完成起步与运行起来后，添加更多的 gRPC 端点并调用它们是非常简单的。
 首先，由于 gRPC-Web 包还没有发布到 NuGet.org，现在你需要添加两个临时的包管理源来获得 nightly 预览。
 你可以在你的解决方案的根目录下添加`NuGet.config`文件。希望一两个月后就不需要了。
 
-## 添加 gRPC 服务到一个托管部署的Blazor WebAssembly 应用程序
+## 添加 gRPC 服务到一个托管部署的 Blazor WebAssembly 应用程序
 
 如果你已经在 ASP.NET Core 服务端上托管了一个Blazor WebAssembly 应用程序，默认情况下，你有三个项目：客户端、服务端和共享项目。我发现定义 gRPC 服务最方便的地方是在共享项目中，因为这样生成的类对服务器和客户机都可用。
 首先，编辑你的共享项目的`.csproj`添加必要的 gRPC 包引用：
@@ -217,11 +221,11 @@ Server response: <strong>@serverResponse</strong>
 
 现在你已经有了基础，如果你愿意，还可以进一步使用 gRPC 来进行服务器和客户机之间的所有数据交换。gRPC 工具将为你生成所有的数据传输类，提高网络流量的效率，并消除 url、HTTP 方法、状态代码和序列化等 HTTP-over-JSON 的问题。
 
-还有一个更详细的示例（https://github.com/SteveSandersonMS/BlazorGrpcSamples/tree/master/Hosted），它是一个完整的 Blazor WebAssembly 托管应用程序，使用 gRPC 获取“天气预报”数据。如果你对从默认的基于json的解决方案升级到基于gRPC-Web的解决方案所需的具体步骤感兴趣，请参阅这个准确地显示了我所做的更改的差异对比（https://github.com/SteveSandersonMS/BlazorGrpcSamples/commit/72544c54085a35cd89aae20030d7f91d75317a2f）。
+还有一个更详细的示例（*https://github.com/SteveSandersonMS/BlazorGrpcSamples/tree/master/Hosted*），它是一个完整的 Blazor WebAssembly 托管应用程序，使用 gRPC 获取“天气预报”数据。如果你对从默认的基于json的解决方案升级到基于gRPC-Web的解决方案所需的具体步骤感兴趣，请参阅这个准确地显示了我所做的更改的差异对比（*https://github.com/SteveSandersonMS/BlazorGrpcSamples/commit/72544c54085a35cd89aae20030d7f91d75317a2f*）。
 
 ## 添加 gRPC 服务到一个独立部署的 Blazor WebAssembly 应用程序
 
-如果你正在构建一个纯独立的 Blazor WebAssembly 应用程序，而不是托管在 ASP.NET Core，那么我们就不能对你将拥有什么样的服务器做任何假设（意思是你只开发客户端，而服务端是由别人开发的场景）。我们只能假设你要调用一些与 gRPC-Web 兼容的服务端点，它们可能是在其他主机上的 ASP.NET Core 服务上暴露，或者是一个在另一个 gRPC 服务周围的 Envoy gRPC-Web 包装器（https://blog.envoyproxy.io/envoy-and-grpc-web-a-fresh-new-alternative-to-rest-6504ce7eb880）。在这里我们唯一关心的是配置你的 Blazor WebAssembly 应用程序来使用它。
+如果你正在构建一个纯独立的 Blazor WebAssembly 应用程序，而不是托管在 ASP.NET Core，那么我们就不能对你将拥有什么样的服务器做任何假设（意思是你只开发客户端，而服务端是由别人开发的场景）。我们只能假设你要调用一些与 gRPC-Web 兼容的服务端点，它们可能是在其他主机上的 ASP.NET Core 服务上暴露，或者是一个在另一个 gRPC 服务周围的 Envoy gRPC-Web 包装器（*https://blog.envoyproxy.io/envoy-and-grpc-web-a-fresh-new-alternative-to-rest-6504ce7eb880*）。在这里我们唯一关心的是配置你的 Blazor WebAssembly 应用程序来使用它。
 设置客户端应用程序的大多数步骤与上面的“托管部署”情况相同。然而，在某些方面，它有点棘手，因为我们不能依赖于我们在“托管”情况下所做的一些假设。区别如下:
 
 - 获取和使用.proto文件
