@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>把 Blazor WebAssembly 应用部署到 Serverless 中，加速加载能力</title>
+      <link href="/run-blazor-webassembly-on-serverless.html"/>
+      <url>/run-blazor-webassembly-on-serverless.html</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="Blazor-❤-Serverless"><a href="#Blazor-❤-Serverless" class="headerlink" title="Blazor ❤ Serverless"></a>Blazor ❤ Serverless</h1><p>我正在开发 Ant Design 的 Blazor 版本，预览页面部署在 Github Pages 上，但是加载速度很不理想，往往需要 1 分钟多钟才完成。</p><p>项目地址：<a href="https://github.com/ElderJames/ant-design-blazor" target="_blank" rel="noopener">https://github.com/ElderJames/ant-design-blazor</a> 求 Star。</p><p>当寻求解决方案时，了解到了 Serverless 可以轻松地部署静态网站到腾讯云的对象存储服务上，经过尝试之后，体验非常好！访问速度就变成了 3 秒钟，心想 Blazor 与 Serverless 结合后，是一定能成功的。</p><h2 id="Blazor-WebAssembly-简介"><a href="#Blazor-WebAssembly-简介" class="headerlink" title="Blazor WebAssembly 简介"></a>Blazor WebAssembly 简介</h2><p>Blazor 是 .NET 实现的前端框架，它使一套代码可分别支持服务端 WebSocket 双向绑定或者是运行在 WebAssembly上。Blazor WebAssembly 可以让开发者使用跟熟悉的 Razor 模版同样的开发模型，来开发基于 WebAssembly 的 SPA 应用。目前 Blazor WebAssembly 已经是在 WebAssembly 领域中发展得最完善的 Web 框架。</p><h2 id="Serverless-简介"><a href="#Serverless-简介" class="headerlink" title="Serverless 简介"></a>Serverless 简介</h2><p>Serverless 是开发者和企业用户共同推动的,它可以使开发者在构建和运行应用时无需管理服务器等基础设施，将构建应用的成本进一步降低，函数是部署和运行的基本单位。</p><p>开发者无需关心底层资源即可部署完整可用的 Serverless 应用架构。</p><h1 id="创建-Blazor-WebAssembly-应用程序"><a href="#创建-Blazor-WebAssembly-应用程序" class="headerlink" title="创建 Blazor WebAssembly 应用程序"></a>创建 Blazor WebAssembly 应用程序</h1><h2 id="前置准备"><a href="#前置准备" class="headerlink" title="前置准备"></a>前置准备</h2><p>安装.NET Core SDK 3.1.2 以上版本 <a href="https://dotnet.microsoft.com/download/dotnet-core" target="_blank" rel="noopener">下载地址</a></p><h2 id="安装模版"><a href="#安装模版" class="headerlink" title="安装模版"></a>安装模版</h2><p>Blazor WebAssembly 目前还在 preview 阶段，所以正式发布的.NET Core SDK 还没有内置模版，但是我们可以手动安装模版。</p><p>运行命令</p><pre><code>dotnet new -i Microsoft.AspNetCore.Blazor.Templates::3.2.0-preview1.20073.1</code></pre><h2 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h2><p>运行命令</p><pre><code>dotnet new blazorwasm -o BlazorServerless</code></pre><p>可以看到在 BlazorServerless 已经创建好了 Web WebAssembly 应用。我们进入目录，运行 <code>dotnet run</code> ，访问 <code>https://localhost:5001</code> 就能浏览了。</p><pre><code>cd BlazorServerlessdotnet run</code></pre><p><img src="/images/blazor_serverless/blazor.png" alt=""></p><p>可以看到，加载时要加载 2.1MB 的文件，首次加载时对网速的压力还是很大的。如果部署在境外，例如 Github Pages，可能就需要等上好几分钟了。</p><p>所幸，我们可以用 Serverless 把它部署到国内服务器上，解决了加载问题。</p><h2 id="发布项目"><a href="#发布项目" class="headerlink" title="发布项目"></a>发布项目</h2><p>现在，我们需要发布这个项目，生成需要部署的文件。</p><pre><code>dotnet publish -o publish</code></pre><p>这样，<code>publish\BlazorServerless\dist</code> 目录里的文件就是我们需要部署的文件了！</p><p><img src="/images/blazor_serverless/publish.png" alt=""></p><h1 id="部署到腾讯云-Serverless-平台"><a href="#部署到腾讯云-Serverless-平台" class="headerlink" title="部署到腾讯云 Serverless 平台"></a>部署到腾讯云 Serverless 平台</h1><h2 id="前置准备-1"><a href="#前置准备-1" class="headerlink" title="前置准备"></a>前置准备</h2><p>首先确保系统包含以下环境：</p><ul><li><a href="https://nodejs.org/dist/v12.16.1/node-v12.16.1-x64.msi" target="_blank" rel="noopener">Node.js</a> (Node.js 版本需不低于 8.6，建议使用最新版本)</li></ul><h2 id="安装-serverless-cli"><a href="#安装-serverless-cli" class="headerlink" title="安装 serverless cli"></a>安装 serverless cli</h2><pre><code>npm install -g serverless</code></pre><p>在 Windows 系统上，如果报错，错误提示是<code>因为在此系统上禁止运行脚本...</code>，那么请执行命令开启 <code>.ps1</code> 脚本</p><pre><code>set-ExecutionPolicy RemoteSigned</code></pre><h2 id="添加配置文件"><a href="#添加配置文件" class="headerlink" title="添加配置文件"></a>添加配置文件</h2><p>现在，需要在上面我们的发布目录 <code>publish\BlazorServerless</code> （跟 <code>dist</code> 目录同级）中，创建 <code>serverless.yml</code> 文件，内容如下：</p><pre class="line-numbers language-yml"><code class="language-yml"># serverless.ymlblazor-wasm:  component: "@serverless/tencent-website"  inputs:    code:      src: ./dist # Upload static files      index: index.html      error: index.html    region: ap-guangzhou    bucketName: blazor-bucket<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>需要注意的是，如果我们部署的是依赖路由系统的 SPA 站点，<code>error</code> 项也要指向 <code>index.html</code>，这样在直接访问子路由时，还能回到index页面加载路由。否则会有 404 错误。</p><p>配置完成后，文件目录如下：</p><pre><code>/BlazorServerless  ├── publish/BlazorServerless  |    ├── dist  |    |   ├── _framework  |    |   ├── css  |    |   ├── sample-data  |    |   └── index.html  |    └── serverless.yml  └── README.md</code></pre><p><img src="/images/blazor_serverless/yml.png" alt=""></p><h2 id="三、部署并浏览"><a href="#三、部署并浏览" class="headerlink" title="三、部署并浏览"></a>三、部署并浏览</h2><p>在上图所示，即 <code>serverless.yml</code> 文件所在目录下，通过 <code>serverless</code> 命令进行部署，添加 –debug 参数查看部署详情：</p><pre><code>serverless --debug</code></pre><p>如果这个目录是第一次授权，或者没有创建环境变量文件设置授权信息，则会出现一个二维码，不管有没有注册过腾讯云，都能通过微信扫码授权开通，非常方便。</p><p>以下是输入以上命令后的控制台的输出：</p><pre><code>PS D:\code\net\blazor\BlazorServerless\publish\BlazorServerless&gt; serverless --debug  DEBUG ─ Resolving the template&#39;s static variables.  DEBUG ─ Collecting components from the template.  DEBUG ─ Downloading any NPM components found in the template.  DEBUG ─ Analyzing the template&#39;s components dependencies.  DEBUG ─ Creating the template&#39;s components graph.  DEBUG ─ Syncing template state.  DEBUG ─ Executing the template&#39;s components graph.(此处会出现二维码)Please scan QR code login from wechat. Wait login...Login successful for TencentCloud.   DEBUG ─ Preparing website Tencent COS bucket blazor-bucket-1256169759.  DEBUG ─ Bucket &quot;blazor-bucket-1256169759&quot; in the &quot;ap-guangzhou&quot; region already exist.  DEBUG ─ Setting ACL for &quot;blazor-bucket-1256169759&quot; bucket in the &quot;ap-guangzhou&quot; region.  DEBUG ─ Ensuring no CORS are set for &quot;blazor-bucket-1256169759&quot; bucket in the &quot;ap-guangzhou&quot; region.  DEBUG ─ Ensuring no Tags are set for &quot;blazor-bucket-1256169759&quot; bucket in the &quot;ap-guangzhou&quot; region.  DEBUG ─ Configuring bucket blazor-bucket-1256169759 for website hosting.  DEBUG ─ Uploading website files from D:\code\net\blazor\BlazorServerless\publish\BlazorServerless\dist to bucket blazor-bucket-1256169759.  DEBUG ─ Starting upload to bucket blazor-bucket-1256169759 in region ap-guangzhou  DEBUG ─ Uploading directory D:\code\net\blazor\BlazorServerless\publish\BlazorServerless\dist to bucket blazor-bucket-1256169759  DEBUG ─ Website deployed successfully to URL: http://blazor-bucket-1256169759.cos-website.ap-guangzhou.myqcloud.com.  blazor-wasm:     url: http://blazor-bucket-1256169759.cos-website.ap-guangzhou.myqcloud.com    env:   116s » blazor-wasm » done</code></pre><p>这样，最后出现绿色的 Done 字样，就说明部署成功了！访问给出的url，就能看到部署在腾讯云对象存储服务中的站点了！</p><p><img src="/images/blazor_serverless/deploy.png" alt=""></p><p>访问时加载速度非常快！</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> .NET Core </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> .NET Core </tag>
+            
+            <tag> Blazor </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>前端 JS/TS 调用 ASP.NET Core gRPC-Web</title>
       <link href="/call-asp_net_core-grpc-web-with-js-and-ts.html"/>
       <url>/call-asp_net_core-grpc-web-with-js-and-ts.html</url>
@@ -20,38 +47,9 @@
       
         <tags>
             
-            <tag> ASP.NET Core </tag>
-            
             <tag> .NET Core </tag>
             
-            <tag> gRPC-Web </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>ASP.NET Core Support gRPC-Web</title>
-      <link href="/asp_net_core-support-grpc-web.html"/>
-      <url>/asp_net_core-support-grpc-web.html</url>
-      
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote><p>grpc-dotnet 项目在 PR #695 完成了 ASP.NET Core 服务与 .NET Core gRPC 客户端的 gRPC-Web 实现。<br>虽然目前还是实验性项目，但是并不阻碍我们为之兴奋。下面我们来看看如何使用。</p></blockquote><h2 id="gRPC-Web-简介"><a href="#gRPC-Web-简介" class="headerlink" title="gRPC-Web 简介"></a>gRPC-Web 简介</h2><p>gRPC-Web 允许从浏览器应用程序使用 gRPC，gRPC-Web 支持在新场景中使用 gRPC：</p><ul><li>JavaScript 浏览器应用程序可以使用 gRPC-Web JavaScript 客户端调用 gRPC 服务。</li><li>Blazor WebAssembly 应用程序可以使用.Net Core gRPC 客户端调用 gRPC 服务。</li><li>可以让 gRPC 服务被用于不完全支持 HTTP/2 的环境中。</li><li>可以让 gRPC 用于 HTTP/2 中没有的技术，例如 Windows 身份验证。</li></ul><p>Grpc.AspNetCore.Web 和 Grpc.Net.Client.Web 提供了扩展来为 .NET Core 支持端到端的 gRPC-Web。</p><h2 id="服务端使用-Grpc-AspNetCore-Web"><a href="#服务端使用-Grpc-AspNetCore-Web" class="headerlink" title="服务端使用 Grpc.AspNetCore.Web"></a>服务端使用 Grpc.AspNetCore.Web</h2><p>Grpc.AspNetCore.Web 提供了中间件使 ASP.NET Core gRPC 服务接受 gRPC- web 调用。</p><p><em>Startup.cs</em></p><pre class="line-numbers language-csharp"><code class="language-csharp"><span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">ConfigureServices</span><span class="token punctuation">(</span>IServiceCollection services<span class="token punctuation">)</span><span class="token punctuation">{</span>    services<span class="token punctuation">.</span><span class="token function">AddGrpc</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    services<span class="token punctuation">.</span><span class="token function">AddGrpcWeb</span><span class="token punctuation">(</span>o <span class="token operator">=</span><span class="token operator">></span> o<span class="token punctuation">.</span>GrpcWebEnabled <span class="token operator">=</span> <span class="token keyword">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">Configure</span><span class="token punctuation">(</span>IApplicationBuilder app<span class="token punctuation">)</span><span class="token punctuation">{</span>    app<span class="token punctuation">.</span><span class="token function">UseRouting</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    app<span class="token punctuation">.</span><span class="token function">UseGrpcWeb</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    app<span class="token punctuation">.</span><span class="token function">UseEndpoints</span><span class="token punctuation">(</span>endpoints <span class="token operator">=</span><span class="token operator">></span>    <span class="token punctuation">{</span>        endpoints<span class="token punctuation">.</span><span class="token generic-method function">MapGrpcService<span class="token punctuation">&lt;</span>GreeterService<span class="token punctuation">></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>gRPC-Web 可以通过设置 <code>GrpcWebOptions.GrpcWebEnabled = true</code> 来被应用于所有 gRPC 服务，或者通过<code>EnableGrpcWeb()</code>方法被应用于单个服务：</p><pre class="line-numbers language-c"><code class="language-c">app<span class="token punctuation">.</span><span class="token function">UseEndpoints</span><span class="token punctuation">(</span>endpoints <span class="token operator">=</span><span class="token operator">></span><span class="token punctuation">{</span>    endpoints<span class="token punctuation">.</span>MapGrpcService<span class="token operator">&lt;</span>GreeterService<span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">EnableGrpcWeb</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre><h2 id="客户端使用-Grpc-Net-Client-Web"><a href="#客户端使用-Grpc-Net-Client-Web" class="headerlink" title="客户端使用 Grpc.Net.Client.Web"></a>客户端使用 Grpc.Net.Client.Web</h2><p>Grpc.Net.Client.Web 提供了一个 HttpClient delegating handler 来配置 .NET Core gRPC 客户端发送 gRPC-Web 请求。</p><pre class="line-numbers language-c"><code class="language-c"><span class="token comment" spellcheck="true">// Create channel</span>var handler <span class="token operator">=</span> ew <span class="token function">GrpcWebHandler</span><span class="token punctuation">(</span>GrpcWebMode<span class="token punctuation">.</span>GrpcWebText<span class="token punctuation">,</span> new <span class="token function">HttpClientHandler</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>var channel <span class="token operator">=</span> GrpcChannel<span class="token punctuation">.</span><span class="token function">ForAddress</span><span class="token punctuation">(</span><span class="token string">"https://localhost:5001"</span><span class="token punctuation">,</span> new GrpcChannelOptions    <span class="token punctuation">{</span>        HttpClient <span class="token operator">=</span> new <span class="token function">HttpClient</span><span class="token punctuation">(</span>handler<span class="token punctuation">)</span>    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">// Make call with a client</span>var client <span class="token operator">=</span> Greeter<span class="token punctuation">.</span><span class="token function">GreeterClient</span><span class="token punctuation">(</span>channel<span class="token punctuation">)</span><span class="token punctuation">;</span>var response <span class="token operator">=</span> await client<span class="token punctuation">.</span><span class="token function">SayHelloAsync</span><span class="token punctuation">(</span>new GreeterRequest <span class="token punctuation">{</span> Name <span class="token operator">=</span> <span class="token string">".NET"</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>可以看出，得益于 ASP.NET Core 3.0 以来对 gRPC 的深度集成，增加 gRPC 相关的新特性已经非常容易，使.NET Core 成为云原生家族的重要成员。</p><p>近期，观测分析平台 SkyWalking 的 .NET 自动探针 (SkyAPM-dotnet) 也已经支持了 grpc-dotnet 远程调用的链路跟踪采集，欢迎大家使用！如果喜欢，也请大家给点个星星！</p><p>项目地址：<a href="https://github.com/SkyAPM/SkyAPM-dotnet" target="_blank" rel="noopener">https://github.com/SkyAPM/SkyAPM-dotnet</a></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> .NET Core </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
             <tag> ASP.NET Core </tag>
-            
-            <tag> .NET Core </tag>
             
             <tag> gRPC-Web </tag>
             
@@ -78,13 +76,42 @@
       
         <tags>
             
-            <tag> ASP.NET Core </tag>
-            
             <tag> .NET Core </tag>
+            
+            <tag> ASP.NET Core </tag>
             
             <tag> gRPC-Web </tag>
             
             <tag> Blazor </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>ASP.NET Core Support gRPC-Web</title>
+      <link href="/asp_net_core-support-grpc-web.html"/>
+      <url>/asp_net_core-support-grpc-web.html</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote><p>grpc-dotnet 项目在 PR #695 完成了 ASP.NET Core 服务与 .NET Core gRPC 客户端的 gRPC-Web 实现。<br>虽然目前还是实验性项目，但是并不阻碍我们为之兴奋。下面我们来看看如何使用。</p></blockquote><h2 id="gRPC-Web-简介"><a href="#gRPC-Web-简介" class="headerlink" title="gRPC-Web 简介"></a>gRPC-Web 简介</h2><p>gRPC-Web 允许从浏览器应用程序使用 gRPC，gRPC-Web 支持在新场景中使用 gRPC：</p><ul><li>JavaScript 浏览器应用程序可以使用 gRPC-Web JavaScript 客户端调用 gRPC 服务。</li><li>Blazor WebAssembly 应用程序可以使用.Net Core gRPC 客户端调用 gRPC 服务。</li><li>可以让 gRPC 服务被用于不完全支持 HTTP/2 的环境中。</li><li>可以让 gRPC 用于 HTTP/2 中没有的技术，例如 Windows 身份验证。</li></ul><p>Grpc.AspNetCore.Web 和 Grpc.Net.Client.Web 提供了扩展来为 .NET Core 支持端到端的 gRPC-Web。</p><h2 id="服务端使用-Grpc-AspNetCore-Web"><a href="#服务端使用-Grpc-AspNetCore-Web" class="headerlink" title="服务端使用 Grpc.AspNetCore.Web"></a>服务端使用 Grpc.AspNetCore.Web</h2><p>Grpc.AspNetCore.Web 提供了中间件使 ASP.NET Core gRPC 服务接受 gRPC- web 调用。</p><p><em>Startup.cs</em></p><pre class="line-numbers language-csharp"><code class="language-csharp"><span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">ConfigureServices</span><span class="token punctuation">(</span>IServiceCollection services<span class="token punctuation">)</span><span class="token punctuation">{</span>    services<span class="token punctuation">.</span><span class="token function">AddGrpc</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    services<span class="token punctuation">.</span><span class="token function">AddGrpcWeb</span><span class="token punctuation">(</span>o <span class="token operator">=</span><span class="token operator">></span> o<span class="token punctuation">.</span>GrpcWebEnabled <span class="token operator">=</span> <span class="token keyword">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">Configure</span><span class="token punctuation">(</span>IApplicationBuilder app<span class="token punctuation">)</span><span class="token punctuation">{</span>    app<span class="token punctuation">.</span><span class="token function">UseRouting</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    app<span class="token punctuation">.</span><span class="token function">UseGrpcWeb</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    app<span class="token punctuation">.</span><span class="token function">UseEndpoints</span><span class="token punctuation">(</span>endpoints <span class="token operator">=</span><span class="token operator">></span>    <span class="token punctuation">{</span>        endpoints<span class="token punctuation">.</span><span class="token generic-method function">MapGrpcService<span class="token punctuation">&lt;</span>GreeterService<span class="token punctuation">></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>gRPC-Web 可以通过设置 <code>GrpcWebOptions.GrpcWebEnabled = true</code> 来被应用于所有 gRPC 服务，或者通过<code>EnableGrpcWeb()</code>方法被应用于单个服务：</p><pre class="line-numbers language-c"><code class="language-c">app<span class="token punctuation">.</span><span class="token function">UseEndpoints</span><span class="token punctuation">(</span>endpoints <span class="token operator">=</span><span class="token operator">></span><span class="token punctuation">{</span>    endpoints<span class="token punctuation">.</span>MapGrpcService<span class="token operator">&lt;</span>GreeterService<span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">EnableGrpcWeb</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre><h2 id="客户端使用-Grpc-Net-Client-Web"><a href="#客户端使用-Grpc-Net-Client-Web" class="headerlink" title="客户端使用 Grpc.Net.Client.Web"></a>客户端使用 Grpc.Net.Client.Web</h2><p>Grpc.Net.Client.Web 提供了一个 HttpClient delegating handler 来配置 .NET Core gRPC 客户端发送 gRPC-Web 请求。</p><pre class="line-numbers language-c"><code class="language-c"><span class="token comment" spellcheck="true">// Create channel</span>var handler <span class="token operator">=</span> ew <span class="token function">GrpcWebHandler</span><span class="token punctuation">(</span>GrpcWebMode<span class="token punctuation">.</span>GrpcWebText<span class="token punctuation">,</span> new <span class="token function">HttpClientHandler</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>var channel <span class="token operator">=</span> GrpcChannel<span class="token punctuation">.</span><span class="token function">ForAddress</span><span class="token punctuation">(</span><span class="token string">"https://localhost:5001"</span><span class="token punctuation">,</span> new GrpcChannelOptions    <span class="token punctuation">{</span>        HttpClient <span class="token operator">=</span> new <span class="token function">HttpClient</span><span class="token punctuation">(</span>handler<span class="token punctuation">)</span>    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">// Make call with a client</span>var client <span class="token operator">=</span> Greeter<span class="token punctuation">.</span><span class="token function">GreeterClient</span><span class="token punctuation">(</span>channel<span class="token punctuation">)</span><span class="token punctuation">;</span>var response <span class="token operator">=</span> await client<span class="token punctuation">.</span><span class="token function">SayHelloAsync</span><span class="token punctuation">(</span>new GreeterRequest <span class="token punctuation">{</span> Name <span class="token operator">=</span> <span class="token string">".NET"</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>可以看出，得益于 ASP.NET Core 3.0 以来对 gRPC 的深度集成，增加 gRPC 相关的新特性已经非常容易，使.NET Core 成为云原生家族的重要成员。</p><p>近期，观测分析平台 SkyWalking 的 .NET 自动探针 (SkyAPM-dotnet) 也已经支持了 grpc-dotnet 远程调用的链路跟踪采集，欢迎大家使用！如果喜欢，也请大家给点个星星！</p><p>项目地址：<a href="https://github.com/SkyAPM/SkyAPM-dotnet" target="_blank" rel="noopener">https://github.com/SkyAPM/SkyAPM-dotnet</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> .NET Core </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> .NET Core </tag>
+            
+            <tag> ASP.NET Core </tag>
+            
+            <tag> gRPC-Web </tag>
             
         </tags>
       
@@ -136,9 +163,9 @@
       
         <tags>
             
-            <tag> ASP.NET Core </tag>
-            
             <tag> .NET Core </tag>
+            
+            <tag> ASP.NET Core </tag>
             
         </tags>
       
@@ -163,9 +190,9 @@
       
         <tags>
             
-            <tag> ASP.NET Core </tag>
-            
             <tag> .NET Core </tag>
+            
+            <tag> ASP.NET Core </tag>
             
         </tags>
       
@@ -215,9 +242,9 @@
       
         <tags>
             
-            <tag> ASP.NET Core </tag>
-            
             <tag> .NET Core </tag>
+            
+            <tag> ASP.NET Core </tag>
             
             <tag> JQuery </tag>
             
@@ -371,9 +398,9 @@
       
         <tags>
             
-            <tag> ASP.NET Core </tag>
-            
             <tag> .NET Core </tag>
+            
+            <tag> ASP.NET Core </tag>
             
             <tag> WebApi </tag>
             
@@ -458,9 +485,9 @@
       
         <tags>
             
-            <tag> ASP.NET Core </tag>
-            
             <tag> .NET Core </tag>
+            
+            <tag> ASP.NET Core </tag>
             
         </tags>
       
@@ -485,9 +512,9 @@
       
         <tags>
             
-            <tag> ASP.NET Core </tag>
-            
             <tag> .NET Core </tag>
+            
+            <tag> ASP.NET Core </tag>
             
         </tags>
       
@@ -512,9 +539,9 @@
       
         <tags>
             
-            <tag> ASP.NET Core </tag>
-            
             <tag> .NET Core </tag>
+            
+            <tag> ASP.NET Core </tag>
             
         </tags>
       
@@ -539,9 +566,9 @@
       
         <tags>
             
-            <tag> ASP.NET Core </tag>
-            
             <tag> .NET Core </tag>
+            
+            <tag> ASP.NET Core </tag>
             
         </tags>
       
@@ -647,9 +674,9 @@
       
         <tags>
             
-            <tag> ASP.NET Core </tag>
-            
             <tag> .NET Core </tag>
+            
+            <tag> ASP.NET Core </tag>
             
             <tag> WebApi </tag>
             
@@ -678,9 +705,9 @@
       
         <tags>
             
-            <tag> ASP.NET Core </tag>
-            
             <tag> .NET Core </tag>
+            
+            <tag> ASP.NET Core </tag>
             
             <tag> WebApi </tag>
             
@@ -1298,6 +1325,17 @@
     
     
     <entry>
+      <title>朋友们</title>
+      <link href="/friends.html"/>
+      <url>/friends.html</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>相册</title>
       <link href="/gallery/index.html"/>
       <url>/gallery/index.html</url>
@@ -1336,17 +1374,6 @@
       <url>/welcome-to-ghost-2.html</url>
       
         <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>Yeah，博客上线了！这篇文章的目的是向你介绍 Ghost 编辑器并帮你快速上手。通过 <code>&lt;your blog URL&gt;/ghost/</code> 链接就可以登录系统后台管理你的博客内容了。当你进入后台，你就能看到左侧文章列表处列出的这篇文章，右侧就是这篇文章的预览效果。点击预览栏右上角的铅笔图标就能进入内容编辑页面。 </p><h2 id="快速入门"><a href="#快速入门" class="headerlink" title="快速入门"></a>快速入门</h2><p>Ghost 使用 Markdown 语法书写内容。简单来说，Markdown 就是一种简化的书写格式！</p><p>用 Markdown 语法写作是很容易的。在编辑界面的左侧就是你写作的地方。在你认为需要的时候，可以使用以下这些语法来格式化你的内容。例如下面这个无序列表：</p><ul><li>Item number one</li><li>Item number two<ul><li>A nested item</li></ul></li><li>A final item</li></ul><p>还可以是有序列表：</p><ol><li>Remember to buy some milk</li><li>Drink the milk</li><li>Tweet that I remembered to buy the milk, and drank it</li></ol><h3 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h3><p>如果要链接其它页面，可以直接把页面的 URL 粘贴过来，例如 <a href="http://www.ghostchina.com" target="_blank" rel="noopener">http://www.ghostchina.com</a> - 会被自动识别为链接。但是，如果你想自定义链接文本，可以像这样： <a href="http://www.ghostchina.com" target="_blank" rel="noopener">Ghost 中文网</a>。很简单吧！</p><h3 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h3><p>插入图片也没问题！前提是你事先知道图片的 URL，然后像下面这样：</p><p><img src="http://static.ghostchina.com/image/3/fe/34a9831916be9db1381ecb320491e.png" alt="The Ghost Logo"></p><p>如果图片在本地的硬盘里怎么办？也很简单！像下面这样书写就能为图片预留一个位置，然后你可以继续写作，回头再通过拖拽的方式把图片上传到服务器上。</p><p>![一张图片]</p><h3 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h3><p>有些时候我们需要引用别人说的话，可以这样：</p><blockquote><p>Wisdomous - it’s definitely a word.</p></blockquote><h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><p>或许你是个码农，需要贴一些代码到文章里，可以通过两个引号（Tab 键上面的那个键）加入行内代码 <code>&lt;code&gt;</code>。如果需要加入大段的代码，可以在代码前加 4 个空格缩进，这就是 Markdown 的语法。</p><pre><code>.awesome-thing {    display: block;    width: 100%;}</code></pre><h3 id="分割线"><a href="#分割线" class="headerlink" title="分割线"></a>分割线</h3><p>在任一新行输入 3 个或更多的短横线（减号）就是一条分隔线了。</p><hr><h3 id="高级用法"><a href="#高级用法" class="headerlink" title="高级用法"></a>高级用法</h3><p>Markdown 还有一个特别用法，就是在你需要的时候可以直接书写 HTML 代码。</p><input type="text" placeholder="这是个输入框！" /><p>只要掌握了上面的这些介绍，你就已经入门了！继续写作吧！</p>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>朋友们</title>
-      <link href="/friends.html"/>
-      <url>/friends.html</url>
-      
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
       
     </entry>
     
