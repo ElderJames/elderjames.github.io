@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 把 Blazor WebAssembly 应用部署到 Serverless 中，加速加载能力
+title: 通过 Serverless 加速 Blazor WebAssembly
 permalink: run-blazor-webassembly-on-serverless
 date: 2020-02-21 23:54:10
 tags:
