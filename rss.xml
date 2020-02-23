@@ -9,11 +9,11 @@
     <atom:link href="/rss.xml" rel="self" type="application/rss+xml"/>
     
     <description>学习、札记、分享</description>
-    <pubDate>Sat, 22 Feb 2020 13:13:57 GMT</pubDate>
+    <pubDate>Sun, 23 Feb 2020 08:28:41 GMT</pubDate>
     <generator>http://hexo.io/</generator>
     
     <item>
-      <title>把 Blazor WebAssembly 应用部署到 Serverless 中，加速加载能力</title>
+      <title>通过 Serverless 加速 Blazor WebAssembly</title>
       <link>https://yangshunjie.com/run-blazor-webassembly-on-serverless.html</link>
       <guid>https://yangshunjie.com/run-blazor-webassembly-on-serverless.html</guid>
       <pubDate>Fri, 21 Feb 2020 23:54:10 GMT</pubDate>
@@ -49,24 +49,6 @@
     </item>
     
     <item>
-      <title>在 Blazor WebAssembly 中使用 gRPC-Web</title>
-      <link>https://yangshunjie.com/Using-gRPC-Web-with-Blazor-WebAssembly.html</link>
-      <guid>https://yangshunjie.com/Using-gRPC-Web-with-Blazor-WebAssembly.html</guid>
-      <pubDate>Tue, 21 Jan 2020 15:21:00 GMT</pubDate>
-      <description>
-      
-        
-        
-          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla
-        
-      
-      </description>
-      
-      
-      <comments>https://yangshunjie.com/Using-gRPC-Web-with-Blazor-WebAssembly.html#disqus_thread</comments>
-    </item>
-    
-    <item>
       <title>ASP.NET Core Support gRPC-Web</title>
       <link>https://yangshunjie.com/asp_net_core-support-grpc-web.html</link>
       <guid>https://yangshunjie.com/asp_net_core-support-grpc-web.html</guid>
@@ -82,6 +64,24 @@
       
       
       <comments>https://yangshunjie.com/asp_net_core-support-grpc-web.html#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>在 Blazor WebAssembly 中使用 gRPC-Web</title>
+      <link>https://yangshunjie.com/Using-gRPC-Web-with-Blazor-WebAssembly.html</link>
+      <guid>https://yangshunjie.com/Using-gRPC-Web-with-Blazor-WebAssembly.html</guid>
+      <pubDate>Tue, 21 Jan 2020 15:21:00 GMT</pubDate>
+      <description>
+      
+        
+        
+          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla
+        
+      
+      </description>
+      
+      
+      <comments>https://yangshunjie.com/Using-gRPC-Web-with-Blazor-WebAssembly.html#disqus_thread</comments>
     </item>
     
     <item>
