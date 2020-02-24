@@ -46,7 +46,7 @@
     
     <title>
         
-            NPM 国内镜像 | 
+            【译】来看看WebWindow，一个跨平台的.NET Core webview 库 | 
         
         ElderJames&#39; Blog
     </title>
@@ -57,7 +57,7 @@
 
     <meta name="format-detection" content="telephone=no"/>
     <meta name="description" itemprop="description" content="学习、札记、分享">
-    <meta name="keywords" content="ElderJames&#39; Blog,NPM">
+    <meta name="keywords" content="ElderJames&#39; Blog,Blazor,.NET Core">
     <meta name="theme-color" content="#0097A7">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
@@ -247,7 +247,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="ElderJames&#39; Blog">
-    <meta name="msapplication-starturl" content="https://yangshunjie.com/n.html">
+    <meta name="msapplication-starturl" content="https://yangshunjie.com/webwindow-a-cross-platform-webview-for-dotnet-core.html">
     <meta name="msapplication-navbutton-color" content="#0097A7">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="ElderJames&#39; Blog">
@@ -266,16 +266,16 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="https://yangshunjie.com/n.html">
+    <meta property="og:url" content="https://yangshunjie.com/webwindow-a-cross-platform-webview-for-dotnet-core.html">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="NPM 国内镜像 | ElderJames&#39; Blog">
+    <meta property="og:title" content="【译】来看看WebWindow，一个跨平台的.NET Core webview 库 | ElderJames&#39; Blog">
     <meta property="og:image" content="/img/favicon.png">
     <meta property="og:description" content="学习、札记、分享">
-    <meta property="og:article:tag" content="NPM"> 
+    <meta property="og:article:tag" content="Blazor"> <meta property="og:article:tag" content=".NET Core"> 
 
     
-        <meta property="article:published_time" content="Thu Sep 22 2016 15:18:28 GMT+0000">
-        <meta property="article:modified_time" content="Wed Sep 28 2016 23:31:38 GMT+0000">
+        <meta property="article:published_time" content="Sun Feb 23 2020 23:54:10 GMT+0000">
+        <meta property="article:modified_time" content="Mon Feb 24 2020 07:48:30 GMT+0000">
     
 
     <!-- The Twitter Card protocol -->
@@ -283,7 +283,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="https://yangshunjie.com/n.html" />
+        <link rel="canonical" href="https://yangshunjie.com/webwindow-a-cross-platform-webview-for-dotnet-core.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -295,10 +295,10 @@
 {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "mainEntityOfPage": "https://yangshunjie.com/n.html",
-    "headline": "NPM 国内镜像",
-    "datePublished": "Thu Sep 22 2016 15:18:28 GMT+0000",
-    "dateModified": "Wed Sep 28 2016 23:31:38 GMT+0000",
+    "mainEntityOfPage": "https://yangshunjie.com/webwindow-a-cross-platform-webview-for-dotnet-core.html",
+    "headline": "【译】来看看WebWindow，一个跨平台的.NET Core webview 库",
+    "datePublished": "Sun Feb 23 2020 23:54:10 GMT+0000",
+    "dateModified": "Mon Feb 24 2020 07:48:30 GMT+0000",
     "author": {
         "@type": "Person",
         "name": "James Yeung",
@@ -316,7 +316,7 @@
             "url": "/img/favicon.png"
         }
     },
-    "keywords": ",NPMElderJames&#39; Blog",
+    "keywords": ",Blazor,.NET CoreElderJames&#39; Blog",
     "description": "学习、札记、分享",
 }
 </script>
@@ -377,6 +377,15 @@
     <!-- Left aligned menu below button -->
     
     
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#“Hello-World”-示例"><span class="post-toc-number">1.</span> <span class="post-toc-text">“Hello World” 示例</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#null"><span class="post-toc-number">2.</span> <span class="post-toc-text">Hello, world!</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#托管一个-Blazor-应用程序"><span class="post-toc-number">3.</span> <span class="post-toc-text">托管一个 Blazor 应用程序</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#他是如何工作的"><span class="post-toc-number">4.</span> <span class="post-toc-text">他是如何工作的</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#这个项目会得到支持和维护吗？"><span class="post-toc-number">5.</span> <span class="post-toc-text">这个项目会得到支持和维护吗？</span></a></li></ol>
+    </ul>
+    
 
 
 
@@ -406,7 +415,7 @@
         
     
             <p class="article-headline-p">
-                NPM 国内镜像
+                【译】来看看WebWindow，一个跨平台的.NET Core webview 库
             </p>
         </div>
 
@@ -425,7 +434,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>James Yeung</strong>
-        <span>9月 22, 2016</span>
+        <span>2月 23, 2020</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -447,7 +456,7 @@
 <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
     <li class="mdl-menu__item">在其它设备中阅读本文章</li>
     
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAAB6ElEQVR42u3aS27DMAwFwNz/0u22QFvlkXR+0mhlJLHsyeKBEnX72mLcMDAwMDAwMDDehnGLx8/f/76+88hf80zeAQMD40xG8hK93/zx+OCTaB4MDIwjGUnIJvfmMTp5BwwMDIykHPy3aFuXdMtPMDAwMK5iVL9NFrEYGBgYVy1iqxtnySbdC9biGBgYH8iYNwbm12/R38DAwHhLRvmIw7L4W0fqOqyfemYEAwPjoxi9heUkLpvx2qtwMTAwtmDMo7Z3b5WEgYGB8bgwTZqX1YMdGBgYpzF6m/7VxW3+lMKRDgwMjGMYk5eoxmUVc2dODAyMYxjrAi6Jxd6xsId0YjEwMDZl5EvZPAqTP2Ue5RgYGKcxerGYRHb1+EWyJYeBgXEyI39krxmZNA8uWItjYGBsx1jHazRdvNFfxY/6GxgYGBsxkpGUjJPyMVkkY2BgYPSKtvyQRC+Om4GLgYGxHaNatCV3JQvRcsMSAwPjYMY8Uq/a6C//ERgYGMcwqkeyqsXfVXNiYGBg9JqI1SZoL3DLLUwMDIytGXkgzmfoHc7AwMDAuLYBmbQcHngsDAMD43hGsojtxWhyLwYGxsmMcuTFQVyN2lFpiIGBsSmj1xh4TnFZKA0xMDA2ZXzuwMDAwMDAwMB46fgGOlpZplN3v6kAAAAASUVORK5CYII=">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAAC1klEQVR42u3aS5IaMRAFQO5/aXvrCAfiPRVjg5S9Inqgu1Kbmvo8fl15PbCxsbGxsbGxsbE/kv2Ir2e/evGy5XfWz/nz/t+f65ixsbGxj2bnoT/7PDmUNSl/79qFjY2NfQN7/sr1b9ffT765FzM2NjY29ovHlXfmb8HGxsbGngSU/La9g42NjY39LnbRoIlb823rf9LM+sFeGjY2NvbHs/cY//fzP51vY2NjY38wu73mx5SUKHtJ60Xk2NjY2Iey5ys77Zh2cpTJMujTwgYbGxv7UHbdZF8/ulzomQ+Dk0SIjY2NfTZ7HURSZrSrluuD2CtUksPFxsbGPpv9roWbPNy9wW1bnGBjY2NjFy2bcjBcJJ44dWFjY2Pfyd57Zd5+WqefPIb5GBgbGxv7Hnb7j34bbpIUkwKpXgDCxsbGPpQ9Cfdt7Z5y9Nv+FRsbG/ts9h61LSGSsmE+WhhtKmFjY2N/OTtv08yHu/mTE0wROTY2NvbR7L3yow09L372Fol+vBTBxsbG/ip2m8CSNNO2lpJEuLl8iY2NjX0Qe1IYTIYEE0wSz4tSBBsbG/s4dtu4aRNSUjBsYoKki42NjX02ezKybYeykzfmCbLYOcXGxsY+gt2OVOfj3vy9bcGz2VTCxsbG/nJ20lp619igXdxpj7XO29jY2NhHsNtWTovJn79XAiXtJGxsbOzb2Pk//e9qMOUlymiJBxsbG/sC9qQISRJS27rKB8xR6sXGxsa+gL2XYCYNoHbYMGpXYWNjYx/Kbq92aWZvDLxXxrx4DjY2Nvah7L2UkGDaIqdd8cmTLjY2NvYN7Lats0a2R9kecRsbNjY29j3sfKA7GRLkR5YfYnRA2NjY2NjlCHaPlN9vW0vY2NjY2O2oYJRsyrWeqKTBxsbGvoCdN5Xy0iIJa/L8IqVhY2NjH81uE88kkeyVN3uHhY2NjX0D+54LGxsbGxsbGxsb+2Ou3+cmBoAEofZNAAAAAElFTkSuQmCC">
     
 </ul>
 
@@ -461,7 +470,7 @@
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/NPM/" rel="tag">NPM</a>
+        <a class="post_tag-link" href="/tags/NET-Core/" rel="tag">.NET Core</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/Blazor/" rel="tag">Blazor</a>
     </ul>
     
 
@@ -489,7 +498,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=NPM 国内镜像&url=https://yangshunjie.com/n.html&pic=https://yangshunjie.com/img/favicon.png&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=【译】来看看WebWindow，一个跨平台的.NET Core webview 库&url=https://yangshunjie.com/webwindow-a-cross-platform-webview-for-dotnet-core.html&pic=https://yangshunjie.com/img/favicon.png&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -510,7 +519,7 @@
 
     <!-- Share QQ -->
     
-        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=ElderJames&#39; Blog&title=NPM 国内镜像&summary=学习、札记、分享&pics=https://yangshunjie.com/img/favicon.png&url=https://yangshunjie.com/n.html" target="_blank">
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=ElderJames&#39; Blog&title=【译】来看看WebWindow，一个跨平台的.NET Core webview 库&summary=学习、札记、分享&pics=https://yangshunjie.com/img/favicon.png&url=https://yangshunjie.com/webwindow-a-cross-platform-webview-for-dotnet-core.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 QQ
             </li>
@@ -529,16 +538,59 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <p>npm由于很多时候都需要从国外的服务器下载组件，由于<strong>众所周知</strong>的原因，国内安装时往往会很慢甚至卡住安装不上的情况，这时就需要替换一下安装源，使用国内服务商提供的镜像：</p>
+        <p><em>本文翻译自 ASP.NET 项目组的 Steve Sanderson 的博客，发表于 2019年11月18日。Steve Sanderson 是 Blazor 最早的创造者。</em></p>
+<hr>
+<p>它类似于 Electron，但没有捆绑 Node.js 和 Chromium，也没有大部分 API。</p>
+<p>我的上一篇文章研究了如何用 web 渲染的 UI 构建一个 .NET Core 桌面或控制台应用程序，而不需要引入全部的 Electron 部件。这似乎引起了很多人的兴趣，所以我决定将其升级到新的技术并添加跨平台支持。</p>
+<p>最终成果是一个名为 <a href="https://www.nuget.org/packages/WebWindow" target="_blank" rel="noopener">WebWindow</a> 的小 NuGet 包，你可以将它添加到任何 .NET Core 控制台应用程序中。它可以打开一个包含基于 web 的 UI 的本机操作系统窗口（Windows/Mac/Linux），而无需您的应用程序绑定 Node 或 Chromium。</p>
+<p>我还把它和 Blazor 解耦了。您现在可以在窗口内托管任何类型的 web UI。repo 中包含一个使用Vue 的示例，还有一个使用了 Blazor。</p>
+<blockquote>
+<p><strong><em>注意：</em></strong> <em>这个库是超前 alpha 质量的。如果你想用它来构建一些真实的东西，请看这篇文章末尾的注释。到目前为止，这只是另一个原型。</em></p>
+</blockquote>
+<h1 id="“Hello-World”-示例"><a href="#“Hello-World”-示例" class="headerlink" title="“Hello World” 示例"></a>“Hello World” 示例</h1><p>创建一个新的 .NET Core 3 C# 控制台应用程序，然后添加一个引用到 <code>WebWindow</code> NuGet包:</p>
+<pre class="line-numbers language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ItemGroup</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>PackageReference</span> <span class="token attr-name">Include</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>WebWindow<span class="token punctuation">"</span></span> <span class="token attr-name">Version</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>0.1.0-20191120.3<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ItemGroup</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>接下来，将代码添加到 <code>Program</code>  类中的 <code>Main</code> 方法。</p>
+<pre class="line-numbers language-cs"><code class="language-cs">static void Main(string[] args)
+{
+    var window = new WebWindow("My super app");
+    window.NavigateToString("<h1>Hello, world!</h1> This window is from a .NET Core app.");
+    window.WaitForExit();
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>这样就完成了！现在根据你运行的操作系统，你的应用程序会显示如下窗口：</p>
+<p><img src="https://blog.stevensanderson.com/wp-content/uploads/2019/11/18/hello-windows.png" alt=""></p>
+<p><img src="https://blog.stevensanderson.com/wp-content/uploads/2019/11/18/hello-macos.png" alt=""></p>
+<p><img src="https://blog.stevensanderson.com/wp-content/uploads/2019/11/18/hello-ubuntu.png" alt=""></p>
+<p>这个示例使用 <code>NavigateToString(html)</code> 从硬编码的 .NET 字符串渲染 HTML。你也可以：</p>
 <ul>
-<li><a href="http://npm.hacknodejs.com/" target="_blank" rel="noopener">http://npm.hacknodejs.com/</a></li>
-<li><a href="http://registry.npmjs.vitecho.com/" target="_blank" rel="noopener">http://registry.npmjs.vitecho.com/</a></li>
-<li><a href="https://registry.npm.taobao.org" target="_blank" rel="noopener">https://registry.npm.taobao.org</a></li>
+<li>使用 <code>NavigateToUrl(url)</code> 来显示来自HTTP服务器的内容(本地或远程)</li>
+<li>使用 <code>NavigateToLocalFile(path)</code> 来显示来自本地磁盘的 HTML 文件，其中 <code>path</code> 是绝对路径或相对于当前工作目录的路径。<a href="https://github.com/SteveSandersonMS/WebWindow/blob/a01537a9328b085075866a965191d6323ad2cf7d/samples/HelloWorldApp/Program.cs#L11" target="_blank" rel="noopener">示例在这里</a></li>
 </ul>
-<p>####使用方法<br>永久使用镜像命令： </p>
-<p><code>npm config set registry https://registry.npm.taobao.org</code></p>
-<p>临时使用镜像命令：</p>
-<p><code>npm --registry &quot;http://npm.hacknodejs.com/&quot; install underscore</code></p>
+<p>作为一个稍微高级一些的选项，您可以配置 <code>WebWindow</code> 来处理自定义协议，如 <code>myapp://</code>，并指定一个委托（回调），它可以为该协议中的每个 URL 返回任意内容。示例在<a href="https://github.com/SteveSandersonMS/WebWindow/blob/a01537a9328b085075866a965191d6323ad2cf7d/testassets/HelloWorldApp/Program.cs#L14" target="_blank" rel="noopener">这里</a>和<a href="https://github.com/SteveSandersonMS/WebWindow/blob/a01537a9328b085075866a965191d6323ad2cf7d/testassets/HelloWorldApp/wwwroot/index.html#L11" target="_blank" rel="noopener">这里</a>。</p>
+<p>一旦您的 web 内容正在运行，JavaScript 和 .NET 之间的底层通信方式就是在 JS 中使用 <code>window.external.sendMessage/receiveMessage</code> API（<a href="https://github.com/SteveSandersonMS/WebWindow/blob/a01537a9328b085075866a965191d6323ad2cf7d/testassets/HelloWorldApp/wwwroot/index.html#L14-L20" target="_blank" rel="noopener">示例</a>）和在.NET中使用 <code>webWindowInstance.SendMessage</code> 和 <code>webWindowInstance.OnWebMessageReceived</code> API -（<a href="https://github.com/SteveSandersonMS/WebWindow/blob/a01537a9328b085075866a965191d6323ad2cf7d/testassets/HelloWorldApp/Program.cs#L21-L24" target="_blank" rel="noopener">示例</a>）。但是，如果您正在构建一个 Blazor 应用程序，则不需要使用这些底层 API，而可以使用 Blazor 常规的 JS 互操作特性。</p>
+<h1 id="托管一个-Blazor-应用程序"><a href="#托管一个-Blazor-应用程序" class="headerlink" title="托管一个 Blazor 应用程序"></a>托管一个 Blazor 应用程序</h1><p>WebWindow 并没有与 Blazor 耦合。这里是一个<a href="https://github.com/SteveSandersonMS/WebWindow/tree/master/samples/VueFileExplorer" target="_blank" rel="noopener">使用 Vue.js 在 WebWindow 内呈现一个简单的目录资源管理器应用程序的例子</a>。</p>
+<p>但如果你真的想用 Blazor，那是非常整洁和简单的。我还做了一个小插件包，<a href="https://www.nuget.org/packages/WebWindow.Blazor" target="_blank" rel="noopener">WebWindow.Blazor</a>，它可以让你在你的 <code>Program.Main</code> 中只用一行代码就能运行一个 Blazor 应用程序。</p>
+<pre><code>static void Main(string[] args)
+{
+    ComponentsDesktop.Run&lt;Startup&gt;(&quot;My Blazor App&quot;, &quot;wwwroot/index.html&quot;);
+}</code></pre><p>概括地说，这 <em>并不</em> 涉及 WebAssembly、Node.js 或者是一份私有绑定的 Chromium。它只是在本地运行 .NET Core，直接与操作系统自己的 web 渲染技术进行通信。这一次在 macOS 上的运行结果是:</p>
+<p><img src="https://blog.stevensanderson.com/wp-content/uploads/2019/11/18/blazor-macos.jpg" alt=""></p>
+<p>完整的 <a href="https://github.com/SteveSandersonMS/WebWindow/tree/master/samples/BlazorDesktopApp" target="_blank" rel="noopener">WebWindow+Blazor 示例在这里</a>。</p>
+<h1 id="他是如何工作的"><a href="#他是如何工作的" class="headerlink" title="他是如何工作的"></a>他是如何工作的</h1><ul>
+<li>在 <strong>Windows</strong> 上，WebWindow <a href="https://docs.microsoft.com/en-us/microsoft-edge/hosting/webview2" target="_blank" rel="noopener">通过 <code>webview2</code> 使用新的基于 Chromium 的 Edge</a>，假设你已经安装了那个浏览器（如果你不安装，它可能会退回到旧的Edge，但我还没有实现）</li>
+<li>在 <strong>Mac</strong> 上，它使用了操作系统内置的<a href="https://developer.apple.com/documentation/webkit/wkwebview" target="_blank" rel="noopener">WKWebView</a>，这与 Safari 背后的技术相同</li>
+<li>在 <strong>Linux</strong> 上，它使用了 <a href="https://webkitgtk.org/" target="_blank" rel="noopener">WebKitGTK+2</a>，这也是一种基于 WebKit 的技术</li>
+</ul>
+<p>这一切的关键在于，与使用 Electron 相比，开发出下载体积更小和内存使用更少的应用程序。但事实果真如此吗？以下是下载大小的统计数据：</p>
+<p><img src="https://blog.stevensanderson.com/wp-content/uploads/2019/11/18/download-size-chart.png" alt=""></p>
+<p>正如您所看到的，无论您选择“独立”（捆绑了.NET Core 运行时的一个副本）还是“依赖于框架”（依赖于已安装在目标系统中的 .NET Core），都会对最终的应用程序大小产生巨大的影响。依赖于框架的 WebWindow 应用程序真的可以很小，因为它们只包含您自己的应用程序的二进制文件，并且没有捆绑运行时或浏览器。</p>
+<p>接下来，是内存使用统计:</p>
+<p><img src="https://blog.stevensanderson.com/wp-content/uploads/2019/11/18/memory-use-chart.png" alt=""></p>
+<p>在 Windows 上，WebWindow 和 Electron 使用的是相同的浏览器技术（Chromium），这种技术占用了大部分内存。这就解释了为什么他们之间的差异并不是很大。在 Linux 和 Mac 上，使用自绑定浏览器（指 Electron）与使用操作系统内置技术之间的区别更为明显。</p>
+<h1 id="这个项目会得到支持和维护吗？"><a href="#这个项目会得到支持和维护吗？" class="headerlink" title="这个项目会得到支持和维护吗？"></a>这个项目会得到支持和维护吗？</h1><p>目前我还没有做出任何承诺！现在最好把它看作是另一个实验。如果有足够多的人想参与进来，就有可能创建一个合适的开源社区项目。</p>
+<p>最迫切需要的是有 C++ 经验的人来重写我的原型质量的 C++ 和 Objective-C 代码，使其真正完善。我已完成所有内存管理的概率接近于0。也许它也应该使用 CMake 或其他健全的构建配置系统。（注意：它确实有一个<a href="https://dev.azure.com/SteveSandersonMS/WebWindow/_build?definitionId=2" target="_blank" rel="noopener">基于 Azure DevOps 的跨平台 CI</a>。）</p>
+<p>如果您打算在生产中使用它，那么您还需要添加大量的特性。例如，设置应用程序图标、添加本地菜单栏等功能。如果您有兴趣贡献这样的功能，并将使其跨平台工作，请<a href="https://github.com/SteveSandersonMS/WebWindow" target="_blank" rel="noopener">来这个 repo</a>！</p>
 
         
                 <blockquote style="margin: 2em 0 0;padding: 0.5em 1em;border-left: 3px solid #F44336;background-color: #F5F5F5;list-style: none;">
@@ -547,7 +599,7 @@
                             本文原创授权为：署名-非商业性使用-禁止演绎 4.0 国际 (CC BY-NC-ND 4.0) <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">协议普通文本</a> | <a rel="law-license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode" target="_blank">协议法律文本</a>
                         </strong>
                         <br>
-                        <strong>本文链接：</strong><a href="https://yangshunjie.com/n.html">https://yangshunjie.com/n.html</a>
+                        <strong>本文链接：</strong><a href="https://yangshunjie.com/webwindow-a-cross-platform-webview-for-dotnet-core.html">https://yangshunjie.com/webwindow-a-cross-platform-webview-for-dotnet-core.html</a>
                     </p>
                 </blockquote>
         
@@ -575,7 +627,7 @@
 <script>
     var id = location.pathname;
 
-    if (Date.parse('Thu Sep 22 2016 15:18:28 GMT+0000') - Date.parse('2018-03-01') > 0 ||
+    if (Date.parse('Sun Feb 23 2020 23:54:10 GMT+0000') - Date.parse('2018-03-01') > 0 ||
         'false' === 'true') {
         id = md5(location.pathname)
     }
@@ -611,7 +663,7 @@
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/visual-studio-2017-zheng-shi-ban-an-zhuang-wen-ti-ji-jie-jue-fang-an-ji-lu.html" id="post_nav-newer" class="prev-content">
+        <a href="/exploring-lighter-alternatives-to-electron-for-hosting-a-blazor-desktop-app.html" id="post_nav-newer" class="prev-content">
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
                 <i class="material-icons">arrow_back</i>
             </button>
@@ -625,7 +677,7 @@
 
     <!-- Next Nav -->
     
-        <a href="/asp-net-corezhong-shi-yong-qing-qiu-sheng-ming-zhou-qi-nei-wei-yi-de-dbcontext.html" id="post_nav-older" class="next-content">
+        <a href="/run-blazor-webassembly-on-serverless.html" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">

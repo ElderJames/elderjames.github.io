@@ -9,13 +9,13 @@
     <atom:link href="/rss.xml" rel="self" type="application/rss+xml"/>
     
     <description>学习、札记、分享</description>
-    <pubDate>Mon, 24 Feb 2020 06:13:21 GMT</pubDate>
+    <pubDate>Mon, 24 Feb 2020 07:48:30 GMT</pubDate>
     <generator>http://hexo.io/</generator>
     
     <item>
-      <title>【译】通过 Serverless 加速 Blazor WebAssembly</title>
-      <link>https://yangshunjie.com/run-blazor-webassembly-on-serverless.html</link>
-      <guid>https://yangshunjie.com/run-blazor-webassembly-on-serverless.html</guid>
+      <title>【译】探索更轻量的Electron替代品来托管Blazor桌面应用程序</title>
+      <link>https://yangshunjie.com/exploring-lighter-alternatives-to-electron-for-hosting-a-blazor-desktop-app.html</link>
+      <guid>https://yangshunjie.com/exploring-lighter-alternatives-to-electron-for-hosting-a-blazor-desktop-app.html</guid>
       <pubDate>Sun, 23 Feb 2020 23:54:10 GMT</pubDate>
       <description>
       
@@ -27,7 +27,25 @@
       </description>
       
       
-      <comments>https://yangshunjie.com/run-blazor-webassembly-on-serverless.html#disqus_thread</comments>
+      <comments>https://yangshunjie.com/exploring-lighter-alternatives-to-electron-for-hosting-a-blazor-desktop-app.html#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>【译】来看看WebWindow，一个跨平台的.NET Core webview 库</title>
+      <link>https://yangshunjie.com/webwindow-a-cross-platform-webview-for-dotnet-core.html</link>
+      <guid>https://yangshunjie.com/webwindow-a-cross-platform-webview-for-dotnet-core.html</guid>
+      <pubDate>Sun, 23 Feb 2020 23:54:10 GMT</pubDate>
+      <description>
+      
+        
+        
+          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla
+        
+      
+      </description>
+      
+      
+      <comments>https://yangshunjie.com/webwindow-a-cross-platform-webview-for-dotnet-core.html#disqus_thread</comments>
     </item>
     
     <item>
@@ -352,24 +370,6 @@
       
       
       <comments>https://yangshunjie.com/Customized-View-Path-And-Theme-Switching-In-AspNetCore.html#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>ASP.NET Core 中的SEO优化（3）:自定义路由匹配和生成</title>
-      <link>https://yangshunjie.com/A-Middleware-Implement-For-Customized-Routing-In-AspNetCore.html</link>
-      <guid>https://yangshunjie.com/A-Middleware-Implement-For-Customized-Routing-In-AspNetCore.html</guid>
-      <pubDate>Wed, 29 Nov 2017 18:31:34 GMT</pubDate>
-      <description>
-      
-        
-        
-          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla
-        
-      
-      </description>
-      
-      
-      <comments>https://yangshunjie.com/A-Middleware-Implement-For-Customized-Routing-In-AspNetCore.html#disqus_thread</comments>
     </item>
     
   </channel>
