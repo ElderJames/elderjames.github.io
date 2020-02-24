@@ -1,7 +1,7 @@
 ---
 layout: post
-title: 【译】通过 Serverless 加速 Blazor WebAssembly
-permalink: run-blazor-webassembly-on-serverless
+title: 【译】探索更轻量的Electron替代品来托管Blazor桌面应用程序
+permalink: exploring-lighter-alternatives-to-electron-for-hosting-a-blazor-desktop-app
 date: 2020-02-23 23:54:10
 tags:
     - Blazor
@@ -10,9 +10,11 @@ categories:
     - .NET Core
 ---
 
-本文翻译自 ASP.NET 项目组的 Steve Sanderson 的博客，发表于 2019年11月1日。Steve Sanderson 是 Blazor 最早的创造者。这篇文章发布后还有一篇后续，是介绍一个在本文提到的跨平台 webview 概念的落地项目 WebWindow ，我也会接着翻译过来。
+_本文翻译自 ASP.NET 项目组的 Steve Sanderson 的博客，发表于 2019年11月1日。Steve Sanderson 是 Blazor 最早的创造者。这篇文章发布后还有一篇后续，是介绍一个在本文提到的跨平台 webview 概念的落地项目 WebWindow ，我也会接着翻译过来。_
 
 ---
+
+我们能否以更少的资源消耗，获得 Electron 的利用 web 技术构建的桌面应用程序的优势?
 
 Electron 在 2014 首次开源，作为一种使用 Web 技术（HTML+CSS+JS）构建桌面应用程序的方式，它迅速流行起来。其设计的核心思想是将可预测的环境捆绑在一起:
 
