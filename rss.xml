@@ -9,8 +9,26 @@
     <atom:link href="/rss.xml" rel="self" type="application/rss+xml"/>
     
     <description>学习、札记、分享</description>
-    <pubDate>Sun, 23 Feb 2020 08:28:41 GMT</pubDate>
+    <pubDate>Mon, 24 Feb 2020 06:13:21 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>【译】通过 Serverless 加速 Blazor WebAssembly</title>
+      <link>https://yangshunjie.com/run-blazor-webassembly-on-serverless.html</link>
+      <guid>https://yangshunjie.com/run-blazor-webassembly-on-serverless.html</guid>
+      <pubDate>Sun, 23 Feb 2020 23:54:10 GMT</pubDate>
+      <description>
+      
+        
+        
+          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla
+        
+      
+      </description>
+      
+      
+      <comments>https://yangshunjie.com/run-blazor-webassembly-on-serverless.html#disqus_thread</comments>
+    </item>
     
     <item>
       <title>通过 Serverless 加速 Blazor WebAssembly</title>
@@ -352,24 +370,6 @@
       
       
       <comments>https://yangshunjie.com/A-Middleware-Implement-For-Customized-Routing-In-AspNetCore.html#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>ASP.NET Core 中的SEO优化（2）：中间件中渲染Razor视图</title>
-      <link>https://yangshunjie.com/A-Middleware-Implement-For-Rendering-Razor-Views-In-AspNetCore.html</link>
-      <guid>https://yangshunjie.com/A-Middleware-Implement-For-Rendering-Razor-Views-In-AspNetCore.html</guid>
-      <pubDate>Thu, 23 Nov 2017 21:50:39 GMT</pubDate>
-      <description>
-      
-        
-        
-          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla
-        
-      
-      </description>
-      
-      
-      <comments>https://yangshunjie.com/A-Middleware-Implement-For-Rendering-Razor-Views-In-AspNetCore.html#disqus_thread</comments>
     </item>
     
   </channel>
