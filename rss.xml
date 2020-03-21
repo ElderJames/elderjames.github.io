@@ -9,8 +9,26 @@
     <atom:link href="/rss.xml" rel="self" type="application/rss+xml"/>
     
     <description>学习、札记、分享</description>
-    <pubDate>Mon, 24 Feb 2020 07:48:30 GMT</pubDate>
+    <pubDate>Sat, 21 Mar 2020 07:43:08 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>如何用 Blazor 实现 Ant Design 组件库？</title>
+      <link>https://yangshunjie.com/how-to-implement-ant-design-components-using-blazor.html</link>
+      <guid>https://yangshunjie.com/how-to-implement-ant-design-components-using-blazor.html</guid>
+      <pubDate>Sat, 21 Mar 2020 13:54:10 GMT</pubDate>
+      <description>
+      
+        
+        
+          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla
+        
+      
+      </description>
+      
+      
+      <comments>https://yangshunjie.com/how-to-implement-ant-design-components-using-blazor.html#disqus_thread</comments>
+    </item>
     
     <item>
       <title>【译】探索更轻量的Electron替代品来托管Blazor桌面应用程序</title>
@@ -352,24 +370,6 @@
       
       
       <comments>https://yangshunjie.com/my-first-respberry-pi.html#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>ASP.NET Core 中的SEO优化（4）：自定义视图路径及主题切换</title>
-      <link>https://yangshunjie.com/Customized-View-Path-And-Theme-Switching-In-AspNetCore.html</link>
-      <guid>https://yangshunjie.com/Customized-View-Path-And-Theme-Switching-In-AspNetCore.html</guid>
-      <pubDate>Thu, 30 Nov 2017 21:44:19 GMT</pubDate>
-      <description>
-      
-        
-        
-          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla
-        
-      
-      </description>
-      
-      
-      <comments>https://yangshunjie.com/Customized-View-Path-And-Theme-Switching-In-AspNetCore.html#disqus_thread</comments>
     </item>
     
   </channel>
