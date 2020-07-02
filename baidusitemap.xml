@@ -1,18 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://yangshunjie.com/how-to-request-a-free-https.html</loc>
-    <lastmod>2020-07-02</lastmod>
-  </url>  <url>
-    <loc>https://yangshunjie.com/influxdb-in-dotNEt-Core-1-Introduction.html</loc>
-    <lastmod>2020-07-02</lastmod>
-  </url>  <url>
-    <loc>https://yangshunjie.com/influxdb-in-dotNEt-Core-2-ioc-and-repository-pattern.html</loc>
-    <lastmod>2020-07-02</lastmod>
-  </url>  <url>
-    <loc>https://yangshunjie.com/code-first-generate-gRPC-services-and-clients-in-dotnet-Core-3_0.html</loc>
-    <lastmod>2020-07-02</lastmod>
-  </url>  <url>
     <loc>https://yangshunjie.com/run-blazor-webassembly-on-serverless.html</loc>
     <lastmod>2020-07-02</lastmod>
   </url>  <url>
@@ -41,6 +29,9 @@
     <lastmod>2020-07-02</lastmod>
   </url>  <url>
     <loc>https://yangshunjie.com/change-the-docker-image-origin-to-aliyun.html</loc>
+    <lastmod>2020-07-02</lastmod>
+  </url>  <url>
+    <loc>https://yangshunjie.com/how-to-request-a-free-https.html</loc>
     <lastmod>2020-07-02</lastmod>
   </url>  <url>
     <loc>https://yangshunjie.com/NET-Meetup-20200105.html</loc>
@@ -98,6 +89,15 @@
     <lastmod>2020-07-02</lastmod>
   </url>  <url>
     <loc>https://yangshunjie.com/ddd-project-collection.html</loc>
+    <lastmod>2020-07-02</lastmod>
+  </url>  <url>
+    <loc>https://yangshunjie.com/influxdb-in-dotNEt-Core-1-Introduction.html</loc>
+    <lastmod>2020-07-02</lastmod>
+  </url>  <url>
+    <loc>https://yangshunjie.com/influxdb-in-dotNEt-Core-2-ioc-and-repository-pattern.html</loc>
+    <lastmod>2020-07-02</lastmod>
+  </url>  <url>
+    <loc>https://yangshunjie.com/code-first-generate-gRPC-services-and-clients-in-dotnet-Core-3_0.html</loc>
     <lastmod>2020-07-02</lastmod>
   </url>  <url>
     <loc>https://yangshunjie.com/dotnet-dev-certs.html</loc>
