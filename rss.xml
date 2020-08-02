@@ -9,7 +9,7 @@
     <atom:link href="/rss.xml" rel="self" type="application/rss+xml"/>
     
     <description>学习、札记、分享</description>
-    <pubDate>Thu, 02 Jul 2020 07:29:03 GMT</pubDate>
+    <pubDate>Sun, 02 Aug 2020 14:47:26 GMT</pubDate>
     <generator>http://hexo.io/</generator>
     
     <item>
@@ -154,6 +154,24 @@
       
       
       <comments>https://yangshunjie.com/Using-gRPC-Web-with-Blazor-WebAssembly.html#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>记2020年1月5日的一次 .NET 线下MeetUp</title>
+      <link>https://yangshunjie.com/NET-Meetup-20200105.html</link>
+      <guid>https://yangshunjie.com/NET-Meetup-20200105.html</guid>
+      <pubDate>Sun, 05 Jan 2020 00:00:00 GMT</pubDate>
+      <description>
+      
+        
+        
+          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla
+        
+      
+      </description>
+      
+      
+      <comments>https://yangshunjie.com/NET-Meetup-20200105.html#disqus_thread</comments>
     </item>
     
     <item>
@@ -352,24 +370,6 @@
       
       
       <comments>https://yangshunjie.com/TinyMCE-with-SSR-and-webpack.html#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>AutoMapper自动注册映射关系配置</title>
-      <link>https://yangshunjie.com/AutoMappers-automatic-registration-mapping-relationship-configuration.html</link>
-      <guid>https://yangshunjie.com/AutoMappers-automatic-registration-mapping-relationship-configuration.html</guid>
-      <pubDate>Tue, 08 May 2018 10:29:00 GMT</pubDate>
-      <description>
-      
-        
-        
-          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla
-        
-      
-      </description>
-      
-      
-      <comments>https://yangshunjie.com/AutoMappers-automatic-registration-mapping-relationship-configuration.html#disqus_thread</comments>
     </item>
     
   </channel>

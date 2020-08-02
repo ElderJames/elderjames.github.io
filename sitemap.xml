@@ -4,449 +4,845 @@
   <url>
     <loc>https://yangshunjie.com/tags.html</loc>
     
-    <lastmod>2020-07-02T07:29:03.918Z</lastmod>
+    <lastmod>2020-08-02</lastmod>
     
   </url>
   
   <url>
     <loc>https://yangshunjie.com/timeline.html</loc>
     
-    <lastmod>2020-07-02T07:29:03.918Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://yangshunjie.com/categories.html</loc>
-    
-    <lastmod>2020-07-02T07:29:03.778Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://yangshunjie.com/contact.html</loc>
-    
-    <lastmod>2020-07-02T07:29:03.778Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://yangshunjie.com/friends.html</loc>
-    
-    <lastmod>2020-07-02T07:29:03.778Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://yangshunjie.com/gallery/index.html</loc>
-    
-    <lastmod>2020-07-02T07:29:03.778Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://yangshunjie.com/run-blazor-webassembly-on-serverless.html</loc>
-    
-    <lastmod>2020-07-02T07:29:03.762Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://yangshunjie.com/TinyMCE-with-SSR-and-webpack.html</loc>
-    
-    <lastmod>2020-07-02T07:29:03.762Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://yangshunjie.com/the-basic-credential-prompt-for-git-on-windows-10.html</loc>
-    
-    <lastmod>2020-07-02T07:29:03.762Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://yangshunjie.com/Using-gRPC-Web-with-Blazor-WebAssembly.html</loc>
-    
-    <lastmod>2020-07-02T07:29:03.762Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://yangshunjie.com/implement-simple-Aop-using-a-dotnet-core-library-System-Reflection-DispatchProxy.html</loc>
-    
-    <lastmod>2020-07-02T07:29:03.762Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://yangshunjie.com/Using-Topshelf-To-Deploy-Net-Core-Generic-Host-App-To-Windows-Services.html</loc>
-    
-    <lastmod>2020-07-02T07:29:03.762Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://yangshunjie.com/my-first-respberry-pi.html</loc>
-    
-    <lastmod>2020-07-02T07:29:03.762Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://yangshunjie.com/net-core-on-linux-operation-note.html</loc>
-    
-    <lastmod>2020-07-02T07:29:03.762Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://yangshunjie.com/boot-the-berryboot-installer-for-raspberry-pi-with-wifi-and-vnc-but-no-screen.html</loc>
-    
-    <lastmod>2020-07-02T07:29:03.762Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://yangshunjie.com/change-the-docker-image-origin-to-aliyun.html</loc>
-    
-    <lastmod>2020-07-02T07:29:03.762Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://yangshunjie.com/how-to-request-a-free-https.html</loc>
-    
-    <lastmod>2020-07-02T07:29:03.762Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://yangshunjie.com/about.html</loc>
-    
-    <lastmod>2020-07-02T07:29:03.762Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://yangshunjie.com/NET-Meetup-20200105.html</loc>
-    
-    <lastmod>2020-07-02T07:29:03.746Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://yangshunjie.com/exploring-lighter-alternatives-to-electron-for-hosting-a-blazor-desktop-app.html</loc>
-    
-    <lastmod>2020-07-02T07:29:03.746Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://yangshunjie.com/webwindow-a-cross-platform-webview-for-dotnet-core.html</loc>
-    
-    <lastmod>2020-07-02T07:29:03.746Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://yangshunjie.com/how-to-implement-ant-design-components-using-blazor.html</loc>
-    
-    <lastmod>2020-07-02T07:29:03.746Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://yangshunjie.com/how-to-implement-ant-design-components-using-blazor-2.html</loc>
-    
-    <lastmod>2020-07-02T07:29:03.746Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://yangshunjie.com/asp_net_core-support-grpc-web.html</loc>
-    
-    <lastmod>2020-07-02T07:29:03.746Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://yangshunjie.com/call-asp_net_core-grpc-web-with-js-and-ts.html</loc>
-    
-    <lastmod>2020-07-02T07:29:03.746Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://yangshunjie.com/The-Ajax-global-Antiforgery-Token-configuration-in-ASP.NET-Core.html</loc>
-    
-    <lastmod>2020-07-02T07:29:03.746Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://yangshunjie.com/A-Middleware-Implement-For-Server-Side-Static-Caching-In-AspNetCore.html</loc>
-    
-    <lastmod>2020-07-02T07:29:03.746Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://yangshunjie.com/A-Middleware-Implement-For-Rendering-Razor-Views-In-AspNetCore.html</loc>
-    
-    <lastmod>2020-07-02T07:29:03.746Z</lastmod>
+    <lastmod>2020-08-02</lastmod>
     
   </url>
   
   <url>
     <loc>https://yangshunjie.com/A-Middleware-Implement-For-Customized-Routing-In-AspNetCore.html</loc>
     
-    <lastmod>2020-07-02T07:29:03.746Z</lastmod>
+    <lastmod>2020-08-02</lastmod>
     
   </url>
   
   <url>
     <loc>https://yangshunjie.com/Customized-View-Path-And-Theme-Switching-In-AspNetCore.html</loc>
     
-    <lastmod>2020-07-02T07:29:03.746Z</lastmod>
+    <lastmod>2020-08-02</lastmod>
     
   </url>
   
   <url>
     <loc>https://yangshunjie.com/add-the-webapi-service-to-the-specified-class-in-asp-net-core.html</loc>
     
-    <lastmod>2020-07-02T07:29:03.746Z</lastmod>
+    <lastmod>2020-08-02</lastmod>
     
   </url>
   
   <url>
     <loc>https://yangshunjie.com/dynamically-add-features-to-the-controller-type-in-dot-net-core.html</loc>
     
-    <lastmod>2020-07-02T07:29:03.746Z</lastmod>
+    <lastmod>2020-08-02</lastmod>
     
   </url>
   
   <url>
     <loc>https://yangshunjie.com/add-Markdown-and-html-rendering-pipe-in-Angular-using-markedjs.html</loc>
     
-    <lastmod>2020-07-02T07:29:03.746Z</lastmod>
+    <lastmod>2020-08-02</lastmod>
     
   </url>
   
   <url>
     <loc>https://yangshunjie.com/Angular-integrating-with-UEditor-and-ssr-supporting.html</loc>
     
-    <lastmod>2020-07-02T07:29:03.746Z</lastmod>
+    <lastmod>2020-08-02</lastmod>
     
   </url>
   
   <url>
     <loc>https://yangshunjie.com/AspNet-Core-3_0-Identity-For-Microsoft-Account-OAuth.html</loc>
     
-    <lastmod>2020-07-02T07:29:03.746Z</lastmod>
+    <lastmod>2020-08-02</lastmod>
     
   </url>
   
   <url>
     <loc>https://yangshunjie.com/AutoMappers-automatic-registration-mapping-relationship-configuration.html</loc>
     
-    <lastmod>2020-07-02T07:29:03.746Z</lastmod>
+    <lastmod>2020-08-02</lastmod>
     
   </url>
   
   <url>
     <loc>https://yangshunjie.com/ddd-project-collection.html</loc>
     
-    <lastmod>2020-07-02T07:29:03.746Z</lastmod>
+    <lastmod>2020-08-02</lastmod>
     
   </url>
   
   <url>
     <loc>https://yangshunjie.com/influxdb-in-dotNEt-Core-1-Introduction.html</loc>
     
-    <lastmod>2020-07-02T07:29:03.746Z</lastmod>
+    <lastmod>2020-08-02</lastmod>
     
   </url>
   
   <url>
     <loc>https://yangshunjie.com/influxdb-in-dotNEt-Core-2-ioc-and-repository-pattern.html</loc>
     
-    <lastmod>2020-07-02T07:29:03.746Z</lastmod>
+    <lastmod>2020-08-02</lastmod>
     
   </url>
   
   <url>
     <loc>https://yangshunjie.com/code-first-generate-gRPC-services-and-clients-in-dotnet-Core-3_0.html</loc>
     
-    <lastmod>2020-07-02T07:29:03.746Z</lastmod>
+    <lastmod>2020-08-02</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://yangshunjie.com/run-blazor-webassembly-on-serverless.html</loc>
+    
+    <lastmod>2020-08-02</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://yangshunjie.com/TinyMCE-with-SSR-and-webpack.html</loc>
+    
+    <lastmod>2020-08-02</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://yangshunjie.com/the-basic-credential-prompt-for-git-on-windows-10.html</loc>
+    
+    <lastmod>2020-08-02</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://yangshunjie.com/Using-gRPC-Web-with-Blazor-WebAssembly.html</loc>
+    
+    <lastmod>2020-08-02</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://yangshunjie.com/implement-simple-Aop-using-a-dotnet-core-library-System-Reflection-DispatchProxy.html</loc>
+    
+    <lastmod>2020-08-02</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://yangshunjie.com/Using-Topshelf-To-Deploy-Net-Core-Generic-Host-App-To-Windows-Services.html</loc>
+    
+    <lastmod>2020-08-02</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://yangshunjie.com/my-first-respberry-pi.html</loc>
+    
+    <lastmod>2020-08-02</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://yangshunjie.com/net-core-on-linux-operation-note.html</loc>
+    
+    <lastmod>2020-08-02</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://yangshunjie.com/boot-the-berryboot-installer-for-raspberry-pi-with-wifi-and-vnc-but-no-screen.html</loc>
+    
+    <lastmod>2020-08-02</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://yangshunjie.com/change-the-docker-image-origin-to-aliyun.html</loc>
+    
+    <lastmod>2020-08-02</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://yangshunjie.com/how-to-request-a-free-https.html</loc>
+    
+    <lastmod>2020-08-02</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://yangshunjie.com/about.html</loc>
+    
+    <lastmod>2020-08-02</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://yangshunjie.com/categories.html</loc>
+    
+    <lastmod>2020-08-02</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://yangshunjie.com/contact.html</loc>
+    
+    <lastmod>2020-08-02</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://yangshunjie.com/friends.html</loc>
+    
+    <lastmod>2020-08-02</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://yangshunjie.com/gallery/index.html</loc>
+    
+    <lastmod>2020-08-02</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://yangshunjie.com/exploring-lighter-alternatives-to-electron-for-hosting-a-blazor-desktop-app.html</loc>
+    
+    <lastmod>2020-08-02</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://yangshunjie.com/webwindow-a-cross-platform-webview-for-dotnet-core.html</loc>
+    
+    <lastmod>2020-08-02</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://yangshunjie.com/how-to-implement-ant-design-components-using-blazor.html</loc>
+    
+    <lastmod>2020-08-02</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://yangshunjie.com/how-to-implement-ant-design-components-using-blazor-2.html</loc>
+    
+    <lastmod>2020-08-02</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://yangshunjie.com/asp_net_core-support-grpc-web.html</loc>
+    
+    <lastmod>2020-08-02</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://yangshunjie.com/call-asp_net_core-grpc-web-with-js-and-ts.html</loc>
+    
+    <lastmod>2020-08-02</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://yangshunjie.com/The-Ajax-global-Antiforgery-Token-configuration-in-ASP.NET-Core.html</loc>
+    
+    <lastmod>2020-08-02</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://yangshunjie.com/A-Middleware-Implement-For-Server-Side-Static-Caching-In-AspNetCore.html</loc>
+    
+    <lastmod>2020-08-02</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://yangshunjie.com/A-Middleware-Implement-For-Rendering-Razor-Views-In-AspNetCore.html</loc>
+    
+    <lastmod>2020-08-02</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://yangshunjie.com/NET-Meetup-20200105.html</loc>
+    
+    <lastmod>2020-08-02</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://yangshunjie.com/NET-Meetup-20200105.html</loc>
+    
+    <lastmod>2020-08-02</lastmod>
     
   </url>
   
   <url>
     <loc>https://yangshunjie.com/dotnet-dev-certs.html</loc>
     
-    <lastmod>2018-05-31T14:17:16.000Z</lastmod>
+    <lastmod>2018-05-31</lastmod>
     
   </url>
   
   <url>
     <loc>https://yangshunjie.com/Use-Appveyor-to-continuously-integrate-your-Hexo-blog.html</loc>
     
-    <lastmod>2017-08-01T01:19:08.000Z</lastmod>
+    <lastmod>2017-08-01</lastmod>
     
   </url>
   
   <url>
     <loc>https://yangshunjie.com/migrate-blog-from-ghost-to-hexo-and-github.html</loc>
     
-    <lastmod>2017-07-26T01:19:08.000Z</lastmod>
+    <lastmod>2017-07-26</lastmod>
     
   </url>
   
   <url>
     <loc>https://yangshunjie.com/visual-studio-2017-zheng-shi-ban-an-zhuang-wen-ti-ji-jie-jue-fang-an-ji-lu.html</loc>
     
-    <lastmod>2017-03-14T13:48:30.000Z</lastmod>
+    <lastmod>2017-03-14</lastmod>
     
   </url>
   
   <url>
     <loc>https://yangshunjie.com/n.html</loc>
     
-    <lastmod>2016-09-28T23:31:38.000Z</lastmod>
+    <lastmod>2016-09-28</lastmod>
     
   </url>
   
   <url>
     <loc>https://yangshunjie.com/asp-net-corezhong-shi-yong-qing-qiu-sheng-ming-zhou-qi-nei-wei-yi-de-dbcontext.html</loc>
     
-    <lastmod>2016-09-22T14:57:06.000Z</lastmod>
+    <lastmod>2016-09-22</lastmod>
     
   </url>
   
   <url>
     <loc>https://yangshunjie.com/yi-zhu-ru-de-fang-shi.html</loc>
     
-    <lastmod>2016-07-31T11:57:00.000Z</lastmod>
+    <lastmod>2016-07-31</lastmod>
     
   </url>
   
   <url>
     <loc>https://yangshunjie.com/ef-core-for-mysql-de-databasefang-shi-lian-jie-shu-ju-ku.html</loc>
     
-    <lastmod>2016-07-30T12:25:49.000Z</lastmod>
+    <lastmod>2016-07-30</lastmod>
     
   </url>
   
   <url>
     <loc>https://yangshunjie.com/yun-xing-zai-monoshang-de-efyun-xing-cuo-wu.html</loc>
     
-    <lastmod>2016-07-20T18:18:29.000Z</lastmod>
+    <lastmod>2016-07-20</lastmod>
     
   </url>
   
   <url>
     <loc>https://yangshunjie.com/shi-yong-securecrtlian-jie-ya-ma-xun-yun-fu-wu-qi.html</loc>
     
-    <lastmod>2016-07-20T01:07:38.000Z</lastmod>
+    <lastmod>2016-07-20</lastmod>
     
   </url>
   
   <url>
     <loc>https://yangshunjie.com/net-core-zi-liao-zheng-li.html</loc>
     
-    <lastmod>2016-07-15T15:21:17.000Z</lastmod>
+    <lastmod>2016-07-15</lastmod>
     
   </url>
   
   <url>
     <loc>https://yangshunjie.com/dong-tai-chuang-jian-fan-xing-jie-kou-shi-li.html</loc>
     
-    <lastmod>2016-07-12T13:40:55.000Z</lastmod>
+    <lastmod>2016-07-12</lastmod>
     
   </url>
   
   <url>
     <loc>https://yangshunjie.com/as.html</loc>
     
-    <lastmod>2016-07-08T14:23:41.000Z</lastmod>
+    <lastmod>2016-07-08</lastmod>
     
   </url>
   
   <url>
     <loc>https://yangshunjie.com/cong-jiu-ban-net-core-sheng-ji-dao-net-core-1-0zheng-shi-ban.html</loc>
     
-    <lastmod>2016-06-30T15:11:08.000Z</lastmod>
+    <lastmod>2016-06-30</lastmod>
     
   </url>
   
   <url>
     <loc>https://yangshunjie.com/git-cao-zuo-bi-ji.html</loc>
     
-    <lastmod>2016-03-28T23:52:38.000Z</lastmod>
+    <lastmod>2016-03-28</lastmod>
     
   </url>
   
   <url>
     <loc>https://yangshunjie.com/ubuntu-da-jian-gogs-qing-liang-git-webduan-guan-li-xi-tong.html</loc>
     
-    <lastmod>2016-03-28T18:13:06.000Z</lastmod>
+    <lastmod>2016-03-28</lastmod>
     
   </url>
   
   <url>
     <loc>https://yangshunjie.com/xiu-fu-apt-getbao-guan-li.html</loc>
     
-    <lastmod>2016-03-24T11:35:19.000Z</lastmod>
+    <lastmod>2016-03-24</lastmod>
     
   </url>
   
   <url>
     <loc>https://yangshunjie.com/the-lastest-way-to-install-mono-4-2-1-on-ubuntu.html</loc>
     
-    <lastmod>2015-12-03T14:39:39.000Z</lastmod>
+    <lastmod>2015-12-03</lastmod>
     
   </url>
   
   <url>
     <loc>https://yangshunjie.com/make-mysql-support-chinese-encoding.html</loc>
     
-    <lastmod>2015-11-08T12:56:43.000Z</lastmod>
+    <lastmod>2015-11-08</lastmod>
     
   </url>
   
   <url>
     <loc>https://yangshunjie.com/use-qiniu-upload-file-service-on-ueditor-for-asp-net-mvc.html</loc>
     
-    <lastmod>2015-10-30T13:35:52.000Z</lastmod>
+    <lastmod>2015-10-30</lastmod>
     
   </url>
   
   <url>
     <loc>https://yangshunjie.com/install-ghost-blog-on-jexus-successfully.html</loc>
     
-    <lastmod>2015-10-17T15:13:50.000Z</lastmod>
+    <lastmod>2015-10-17</lastmod>
     
   </url>
   
   <url>
     <loc>https://yangshunjie.com/the-smtp-setting-for-ghost-blog.html</loc>
     
-    <lastmod>2015-10-13T17:25:43.000Z</lastmod>
+    <lastmod>2015-10-13</lastmod>
     
   </url>
   
   <url>
     <loc>https://yangshunjie.com/the-multiple-views-structure-on-framework7.html</loc>
     
-    <lastmod>2015-10-11T00:48:05.000Z</lastmod>
+    <lastmod>2015-10-11</lastmod>
     
   </url>
   
   <url>
     <loc>https://yangshunjie.com/welcome-to-ghost-2.html</loc>
     
-    <lastmod>2015-10-05T03:16:54.000Z</lastmod>
+    <lastmod>2015-10-05</lastmod>
     
+  </url>
+  
+
+  <url>
+    <loc>https://yangshunjie.com/</loc>
+    <lastmod>2020-08-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  
+  <url>
+    <loc>https://yangshunjie.com/tags/Orleans/</loc>
+    <lastmod>2020-08-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://yangshunjie.com/tags/NET-Core/</loc>
+    <lastmod>2020-08-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://yangshunjie.com/tags/Blazor/</loc>
+    <lastmod>2020-08-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://yangshunjie.com/tags/AntDesignBlazor/</loc>
+    <lastmod>2020-08-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://yangshunjie.com/tags/ASP-NET-Core/</loc>
+    <lastmod>2020-08-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://yangshunjie.com/tags/gRPC-Web/</loc>
+    <lastmod>2020-08-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://yangshunjie.com/tags/NET/</loc>
+    <lastmod>2020-08-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://yangshunjie.com/tags/%E4%B8%83%E7%89%9B/</loc>
+    <lastmod>2020-08-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://yangshunjie.com/tags/Mysql/</loc>
+    <lastmod>2020-08-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://yangshunjie.com/tags/JQuery/</loc>
+    <lastmod>2020-08-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://yangshunjie.com/tags/WebApi/</loc>
+    <lastmod>2020-08-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://yangshunjie.com/tags/MVC/</loc>
+    <lastmod>2020-08-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://yangshunjie.com/tags/Angular/</loc>
+    <lastmod>2020-08-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://yangshunjie.com/tags/Typescript/</loc>
+    <lastmod>2020-08-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://yangshunjie.com/tags/AutoMapper/</loc>
+    <lastmod>2020-08-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://yangshunjie.com/tags/C/</loc>
+    <lastmod>2020-08-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://yangshunjie.com/tags/DDD/</loc>
+    <lastmod>2020-08-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://yangshunjie.com/tags/Framework7/</loc>
+    <lastmod>2020-08-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://yangshunjie.com/tags/%E5%89%8D%E7%AB%AF/</loc>
+    <lastmod>2020-08-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://yangshunjie.com/tags/ghost/</loc>
+    <lastmod>2020-08-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://yangshunjie.com/tags/smtp/</loc>
+    <lastmod>2020-08-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://yangshunjie.com/tags/Hexo/</loc>
+    <lastmod>2020-08-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://yangshunjie.com/tags/Github-Pages/</loc>
+    <lastmod>2020-08-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://yangshunjie.com/tags/InfluxDB/</loc>
+    <lastmod>2020-08-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://yangshunjie.com/tags/NPM/</loc>
+    <lastmod>2020-08-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://yangshunjie.com/tags/git/</loc>
+    <lastmod>2020-08-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://yangshunjie.com/tags/gogs/</loc>
+    <lastmod>2020-08-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://yangshunjie.com/tags/Linux/</loc>
+    <lastmod>2020-08-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://yangshunjie.com/tags/Ubuntu/</loc>
+    <lastmod>2020-08-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://yangshunjie.com/tags/mono/</loc>
+    <lastmod>2020-08-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://yangshunjie.com/tags/Visual-Studio/</loc>
+    <lastmod>2020-08-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://yangshunjie.com/tags/Git/</loc>
+    <lastmod>2020-08-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://yangshunjie.com/tags/Windows10/</loc>
+    <lastmod>2020-08-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://yangshunjie.com/tags/Appveyor/</loc>
+    <lastmod>2020-08-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://yangshunjie.com/tags/CI/</loc>
+    <lastmod>2020-08-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://yangshunjie.com/tags/Amazon-AWS/</loc>
+    <lastmod>2020-08-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://yangshunjie.com/tags/%E7%8E%AF%E5%A2%83%E9%83%A8%E7%BD%B2/</loc>
+    <lastmod>2020-08-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://yangshunjie.com/tags/Jexus/</loc>
+    <lastmod>2020-08-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://yangshunjie.com/tags/Blog/</loc>
+    <lastmod>2020-08-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://yangshunjie.com/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/</loc>
+    <lastmod>2020-08-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://yangshunjie.com/tags/Docker/</loc>
+    <lastmod>2020-08-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://yangshunjie.com/tags/Https/</loc>
+    <lastmod>2020-08-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://yangshunjie.com/tags/SSL/</loc>
+    <lastmod>2020-08-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://yangshunjie.com/tags/EF/</loc>
+    <lastmod>2020-08-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+
+  
+  <url>
+    <loc>https://yangshunjie.com/categories/NET-Core/</loc>
+    <lastmod>2020-08-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://yangshunjie.com/categories/NET-Core/Blazor/</loc>
+    <lastmod>2020-08-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://yangshunjie.com/categories/Angular/</loc>
+    <lastmod>2020-08-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://yangshunjie.com/categories/NET-%E7%AC%94%E8%AE%B0/</loc>
+    <lastmod>2020-08-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://yangshunjie.com/categories/DDD/</loc>
+    <lastmod>2020-08-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://yangshunjie.com/categories/Hexo/</loc>
+    <lastmod>2020-08-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://yangshunjie.com/categories/%E7%AC%94%E8%AE%B0/</loc>
+    <lastmod>2020-08-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://yangshunjie.com/categories/%E6%A0%91%E8%8E%93%E6%B4%BE/</loc>
+    <lastmod>2020-08-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://yangshunjie.com/categories/Docker/</loc>
+    <lastmod>2020-08-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://yangshunjie.com/categories/Github-Pages/</loc>
+    <lastmod>2020-08-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
   </url>
   
 </urlset>
