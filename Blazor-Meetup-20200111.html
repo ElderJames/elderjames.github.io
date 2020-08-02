@@ -46,7 +46,7 @@
     
     <title>
         
-            归档: 2018/9 | 
+            【分享】从 HelloWorld 到 AntDesign，Blazor 将 .NET 带到现代前端圈 | 
         
         ElderJames&#39; Blog
     </title>
@@ -57,7 +57,7 @@
 
     <meta name="format-detection" content="telephone=no"/>
     <meta name="description" itemprop="description" content="学习、札记、分享">
-    <meta name="keywords" content="ElderJames&#39; Blog">
+    <meta name="keywords" content="ElderJames&#39; Blog,Orleans,.NET Core">
     <meta name="theme-color" content="#0097A7">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
@@ -84,6 +84,9 @@
         <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?eXkKIGXLBtkgeML0A1Jlsg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
 
         
+            
+                <style id="prettify_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_css","/css/prettify.min.css?zp8STOU9v89XWFEnN+6YmQ==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+                <style id="prettify_theme"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_theme","/css/prettify/github-v2.min.css?AfzKxt++K+/lhZBlSjnxwg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
             
         
 
@@ -244,7 +247,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="ElderJames&#39; Blog">
-    <meta name="msapplication-starturl" content="https://yangshunjie.com/archives/2018/09/">
+    <meta name="msapplication-starturl" content="https://yangshunjie.com/Blazor-Meetup-20200111.html">
     <meta name="msapplication-navbutton-color" content="#0097A7">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="ElderJames&#39; Blog">
@@ -263,13 +266,16 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="https://yangshunjie.com/archives/2018/09/">
+    <meta property="og:url" content="https://yangshunjie.com/Blazor-Meetup-20200111.html">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="归档: 2018/9 | ElderJames&#39; Blog">
+    <meta property="og:title" content="【分享】从 HelloWorld 到 AntDesign，Blazor 将 .NET 带到现代前端圈 | ElderJames&#39; Blog">
     <meta property="og:image" content="/img/favicon.png">
     <meta property="og:description" content="学习、札记、分享">
-    
+    <meta property="og:article:tag" content="Orleans"> <meta property="og:article:tag" content=".NET Core"> 
 
+    
+        <meta property="article:published_time" content="Fri Jul 11 2070 00:00:00 GMT+0000">
+        <meta property="article:modified_time" content="Sun Aug 02 2020 14:54:41 GMT+0000">
     
 
     <!-- The Twitter Card protocol -->
@@ -277,13 +283,43 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="https://yangshunjie.com/archives/2018/09/index.html" />
+        <link rel="canonical" href="https://yangshunjie.com/Blazor-Meetup-20200111.html" />
     
 
     <!-- Structured-data for SEO -->
     
         
 
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "https://yangshunjie.com/Blazor-Meetup-20200111.html",
+    "headline": "【分享】从 HelloWorld 到 AntDesign，Blazor 将 .NET 带到现代前端圈",
+    "datePublished": "Fri Jul 11 2070 00:00:00 GMT+0000",
+    "dateModified": "Sun Aug 02 2020 14:54:41 GMT+0000",
+    "author": {
+        "@type": "Person",
+        "name": "James Yeung",
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://avatars0.githubusercontent.com/u/7550366?v=4&amp;s=460"
+        },
+        "description": "学习/创作/分享"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "ElderJames&#39; Blog",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.png"
+        }
+    },
+    "keywords": ",Orleans,.NET CoreElderJames&#39; Blog",
+    "description": "学习、札记、分享",
+}
+</script>
 
 
     
@@ -318,159 +354,287 @@
                         </button>
                     
 
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
-    
-    <div class="locate-thumbnail-symbol"></div>
+                    <!-- Post TOC -->
 
-    <!-- Pin on top -->
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
     
 
-    <!-- Normal Post -->
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
     
         
             <!-- Random Thumbnail -->
             <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
 
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/The-Ajax-global-Antiforgery-Token-configuration-in-ASP.NET-Core.html">ASP.NET Core 中的Ajax全局Antiforgery Token配置</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/The-Ajax-global-Antiforgery-Token-configuration-in-ASP.NET-Core.html" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="https://avatars0.githubusercontent.com/u/7550366?v=4&amp;s=460" width="44px" height="44px" alt="James Yeung's avatar">
-            </div>
-            <div>
-                <strong>James Yeung</strong>
-                <span>9月 11, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/NET-Core/">.NET Core</a>
-              </span>
-            
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/implement-simple-Aop-using-a-dotnet-core-library-System-Reflection-DispatchProxy.html">利用.NET Core类库System.Reflection.DispatchProxy实现简易Aop</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            Aop即是面向切...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/implement-simple-Aop-using-a-dotnet-core-library-System-Reflection-DispatchProxy.html" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="https://avatars0.githubusercontent.com/u/7550366?v=4&amp;s=460" width="44px" height="44px" alt="James Yeung's avatar">
-            </div>
-            <div>
-                <strong>James Yeung</strong>
-                <span>9月 01, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/NET-Core/">.NET Core</a>
-              </span>
-            
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-
-    
-
-    
-        <script type="text/ls-javascript" id="thumbnail-script">
-    var randomNum;
-
-    var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 19 + 1);
-
-        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
     $('.post_thumbnail-random').addClass('lazy');
-
-        locatePost = locatePost.next();
-    }
 </script>
 
+        
+    
+            <p class="article-headline-p">
+                【分享】从 HelloWorld 到 AntDesign，Blazor 将 .NET 带到现代前端圈
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="https://avatars0.githubusercontent.com/u/7550366?v=4&s=460" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>James Yeung</strong>
+        <span>7月 11, 2070</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">devices other</i>
+    <span class="visuallyhidden">devices other</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+    <li class="mdl-menu__item">在其它设备中阅读本文章</li>
+    
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACZUlEQVR42u3aMW7DMAwFUN//0u1aoK3zSUqKETxNGRKZL4NJkLy+PvpceHh4eHh4eHh4D+Nd8Xlx6Y/v3H/+7+bfT+nFhoeHh3eGl4f++8G97yR/XDM2PDw8vIO85JUdvZoDdjVVFNIJHh4e3iN59wlg8qKfxIaHh4f3ZN6O5PHQvIeHh4c3bkbkQVebvI/oteDh4eHFvHzIdP7z0fkeHh4eXsArrzQVmxHJQsCkYfHHE/Hw8PA28/IXca/Iro7E8qSFh4eH92TeJNCreO5TzuIuNR4eHl6Ll5e51YCSdm1eQN8j8fDw8E7ykhZq/oBecdwr3PHw8PDexesVxJPlgF6jtpBs8PDw8I7wqsHlbYj8V/niQnl1AA8PD28Dr1oQJ0FHw6oAUL0ZDw8PbzcveXy1BM9/m/MWrA7g4eHhLeJVQymM8Mft2jxV4OHh4Z3kVcf/Oaw88i+mBzw8PLx38SaJYb580GscN3fK8PDw8BbxqqP93gLBaBUgLs3x8PDwzvCSkfw8DeSABeM3PDw8vM28Xlsh//5k4WBxrwUPDw9vWxu32mCt3jBJNguaEXh4eHhLeXlroJcqkhCTgv7FMgEeHh7ecV5+XfWv6RXi5SSEh4eHt5lXPdEIKg43X2Io/H14eHh4m3lXfCbldW+Vqrn2ioeHh3eEN2nj5ikkL6Z7t+Hh4eGd5+VNh0ljYlUzYtTGxcPDwzvOy1vASSMjTyHLBmB4eHh4x3l5iJP1rDwZ4OHh4b2Llw/781WDauiTwRseHh7eSV61BdAbWeXJoHo/Hh4e3kne5x08PDw8PDw8PLwHnG+Y6aWBZNwLUAAAAABJRU5ErkJggg==">
+    
+</ul>
+
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/NET-Core/" rel="tag">.NET Core</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/Orleans/" rel="tag">Orleans</a>
+    </ul>
+    
+
+    <!-- Share -->
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+        
+            <!-- Busuanzi Views -->
+            <a class="post_share-link" href="#">
+                <li class="mdl-menu__item">
+                    <span id="busuanzi_container_page_pv">
+                        <span id="busuanzi_value_page_pv"></span>&nbsp;浏览量
+                    </span>
+                </li>
+            </a>
+        
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=【分享】从 HelloWorld 到 AntDesign，Blazor 将 .NET 带到现代前端圈&url=https://yangshunjie.com/Blazor-Meetup-20200111.html&pic=https://yangshunjie.com/img/favicon.png&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+
+    <!-- Share Facebook -->
+    
+
+    <!-- Share Google+ -->
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=ElderJames&#39; Blog&title=【分享】从 HelloWorld 到 AntDesign，Blazor 将 .NET 带到现代前端圈&summary=学习、札记、分享&pics=https://yangshunjie.com/img/favicon.png&url=https://yangshunjie.com/Blazor-Meetup-20200111.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
     
 </div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <p><img src="/images/dotnet-meetup/blazor-07.jpg" alt=""></p>
+<p>Blazor 是一个 Web UI 框架，可通过 WebAssembly 在任意浏览器中运行 .Net 。</p>
+<p>Blazor 旨在简化快速的单页面 .Net 浏览器应用的构建过程，它虽然使用了诸如 CSS 和 HTML 之类的 Web 技术，但它使用 C＃语言和 Razor 语法代替 JavaScript 来构建可组合的 Web UI 。通过提供用于编译到 Web 的大小和高效加载的格式，WebAssembly 可让 .Net 在浏览器中运行。</p>
+<p>本次交流活动由 Blazor 中文社区 和 Ant Design Blazor 开源项目小组联合举办，旨在通过定期的交流活动让帮助更多的前端开发者小伙伴们更好的使用 Blazor 框架。</p>
+<p>非常荣幸，本人收到 Reactor Shanghai 的邀请，作为这次活动的嘉宾，给大家做一次分享。</p>
+<p>我分享的主题是《Ant Design Blazor 的实现细节与开源社区治理》。重点介绍了 Blazor 的整体架构，以及 Ant Design Blazor 开源项目的开展和社区治理。</p>
+<p>另外还由 Ant Design Blazor 项目的另外两位贡献者，分享了 Blazor 与其他前端框架的对比，并使用 Ant Design Blazor 演示了 Blazor 简单页面的开发实践。</p>
+<p>回放地址：<a href="https://www.bilibili.com/video/BV17z4y1Q7cJ" target="_blank" rel="noopener">https://www.bilibili.com/video/BV17z4y1Q7cJ</a></p>
+<p>活动推广链接：<a href="https://mp.weixin.qq.com/s/8vCzXZSIS9BiuC8LXGWFOQ" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/8vCzXZSIS9BiuC8LXGWFOQ</a></p>
+<p>直播间现场随拍：</p>
+<p><img src="/images/dotnet-meetup/blazor-07-01.jpg" alt=""></p>
+<p><img src="/images/dotnet-meetup/blazor-07-02.jpg" alt=""></p>
+<p>当天合照：</p>
+<p><img src="/images/dotnet-meetup/blazor-07-03.jpg" alt=""></p>
+<p>通过这次活动，让更多开发者了解到 Blazor 这个技术，并且带给开发者们一个优秀、美观、实用、且开箱即用的组件库，简化开发，增加生产力！</p>
+
+        
+                <blockquote style="margin: 2em 0 0;padding: 0.5em 1em;border-left: 3px solid #F44336;background-color: #F5F5F5;list-style: none;">
+                    <p><strong>
+                         
+                            本文原创授权为：署名-非商业性使用-禁止演绎 4.0 国际 (CC BY-NC-ND 4.0) <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">协议普通文本</a> | <a rel="law-license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode" target="_blank">协议法律文本</a>
+                        </strong>
+                        <br>
+                        <strong>本文链接：</strong><a href="https://yangshunjie.com/Blazor-Meetup-20200111.html">https://yangshunjie.com/Blazor-Meetup-20200111.html</a>
+                    </p>
+                </blockquote>
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用 Gitalk -->
+<div id="gitalk-comment">
+    <!-- Gitalk 评论框 -->
+<div id="gitalk-container"></div>
+
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.js"></script>
+
+<script>
+    var id = location.pathname;
+
+    if (Date.parse('Fri Jul 11 2070 00:00:00 GMT+0000') - Date.parse('2018-03-01') > 0 ||
+        'false' === 'true') {
+        id = md5(location.pathname)
+    }
+
+    if ('false' === 'true') {
+        id = location.pathname;
+    }
+
+    var gitalk = new Gitalk({
+        clientID: '695234dcb3266b06c9bc',
+        clientSecret: '9012a4415f4672e4858df564fc9999e9b6d5cec0',
+        repo: 'elderjames.github.io',
+        owner: 'ElderJames',
+        admin: ['ElderJames'],
+        id: id,
+        // facebook-like distraction free mode
+        distractionFreeMode: false
+    })
+    gitalk.render('gitalk-container')
+</script>
+</div>
+<style>
+    #gitalk-comment {
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/how-to-implement-ant-design-components-using-blazor-2.html" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
 
 
                     
@@ -883,6 +1047,10 @@ It will not impact the appearance and can give developers a lot of support :)
 <!-- Import prettify js  -->
 
     
+        
+            <script>lsloader.load("prettify_js","//cdn.bootcss.com/prettify/r298/prettify.min.js", true)</script>
+        
+    
 
 
 
@@ -895,6 +1063,11 @@ It will not impact the appearance and can give developers a lot of support :)
     });
 
     
+        
+            $(function() {
+                $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+                prettyPrint();
+                })
         
     
     

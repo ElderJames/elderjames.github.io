@@ -9,8 +9,26 @@
     <atom:link href="/rss.xml" rel="self" type="application/rss+xml"/>
     
     <description>学习、札记、分享</description>
-    <pubDate>Sun, 02 Aug 2020 14:47:26 GMT</pubDate>
+    <pubDate>Sun, 02 Aug 2020 14:54:41 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>【分享】从 HelloWorld 到 AntDesign，Blazor 将 .NET 带到现代前端圈</title>
+      <link>https://yangshunjie.com/Blazor-Meetup-20200111.html</link>
+      <guid>https://yangshunjie.com/Blazor-Meetup-20200111.html</guid>
+      <pubDate>Fri, 11 Jul 2070 00:00:00 GMT</pubDate>
+      <description>
+      
+        
+        
+          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla
+        
+      
+      </description>
+      
+      
+      <comments>https://yangshunjie.com/Blazor-Meetup-20200111.html#disqus_thread</comments>
+    </item>
     
     <item>
       <title>如何用 Blazor 实现 Ant Design 组件库（二）</title>
@@ -154,24 +172,6 @@
       
       
       <comments>https://yangshunjie.com/Using-gRPC-Web-with-Blazor-WebAssembly.html#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>记2020年1月5日的一次 .NET 线下MeetUp</title>
-      <link>https://yangshunjie.com/NET-Meetup-20200105.html</link>
-      <guid>https://yangshunjie.com/NET-Meetup-20200105.html</guid>
-      <pubDate>Sun, 05 Jan 2020 00:00:00 GMT</pubDate>
-      <description>
-      
-        
-        
-          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla
-        
-      
-      </description>
-      
-      
-      <comments>https://yangshunjie.com/NET-Meetup-20200105.html#disqus_thread</comments>
     </item>
     
     <item>
