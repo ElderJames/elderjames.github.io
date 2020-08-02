@@ -1,8 +1,8 @@
 ---
 layout: post
-title: 记2020年1月5日的一次 .NET 线下MeetUp
-permalink: NET-Meetup-20200105
-date: 2020-01-05 00:00:00
+title: 【分享】从 HelloWorld 到 AntDesign，Blazor 将 .NET 带到现代前端圈
+permalink: Blazor-Meetup-20200111
+date: 2070-07-11 00:00:00
 tags:
     - Orleans
     - .NET Core
@@ -23,6 +23,8 @@ Blazor 旨在简化快速的单页面 .Net 浏览器应用的构建过程，它�
 我分享的主题是《Ant Design Blazor 的实现细节与开源社区治理》。重点介绍了 Blazor 的整体架构，以及 Ant Design Blazor 开源项目的开展和社区治理。
 
 另外还由 Ant Design Blazor 项目的另外两位贡献者，分享了 Blazor 与其他前端框架的对比，并使用 Ant Design Blazor 演示了 Blazor 简单页面的开发实践。
+
+回放地址：https://www.bilibili.com/video/BV17z4y1Q7cJ
 
 活动推广链接：https://mp.weixin.qq.com/s/8vCzXZSIS9BiuC8LXGWFOQ
 
