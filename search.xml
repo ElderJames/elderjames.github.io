@@ -31,6 +31,58 @@
     
     
     <entry>
+      <title>GitHub 修改作者信息</title>
+      <link href="/modify-the-author-of-git-commit.html"/>
+      <url>/modify-the-author-of-git-commit.html</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>当提交项目前，没有把本地仓库的用户名和邮箱设置成 Github 账号的话，提交后的 commit 就不会被识别为 GitHub 用户，所以这里记一下如何修改这些记录。</p><p>首先，需要把本地仓库的用户名和邮箱设置成跟 Github 账号一致的。</p><p>然后，执行 rebase 命令，一个个地修改 commit。例如我要修改最后 5 个 commit，则执行命令：</p><pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">git</span> rebase -i HEAD~5<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>然后，在命令行打开了一个文件，是用于设置接下来对这 5 个 commit 需要做的操作</p><pre class="line-numbers language-vim"><code class="language-vim">pick d8ca4ea initial projectpick <span class="token number">4057007</span> refactor api servicepick a875b98 feat<span class="token punctuation">:</span> add http proxypick e9d6fe8 feat<span class="token punctuation">:</span> setup server prerenderingpick 8cfe3e4 feat<span class="token punctuation">:</span> add identity configuration# Rebase 54a0c1c<span class="token operator">.</span><span class="token operator">.</span>8cfe3e4 onto e9d6fe8 <span class="token punctuation">(</span><span class="token number">5</span> commands<span class="token punctuation">)</span>## Commands<span class="token punctuation">:</span># <span class="token keyword">p</span><span class="token punctuation">,</span> pick <span class="token operator">&lt;</span>commit<span class="token operator">></span> <span class="token operator">=</span> use commit# <span class="token keyword">r</span><span class="token punctuation">,</span> reword <span class="token operator">&lt;</span>commit<span class="token operator">></span> <span class="token operator">=</span> use commit<span class="token punctuation">,</span> but <span class="token keyword">edit</span> the commit message# <span class="token keyword">e</span><span class="token punctuation">,</span> <span class="token keyword">edit</span> <span class="token operator">&lt;</span>commit<span class="token operator">></span> <span class="token operator">=</span> use commit<span class="token punctuation">,</span> but <span class="token keyword">stop</span> <span class="token keyword">for</span> amending# s<span class="token punctuation">,</span> squash <span class="token operator">&lt;</span>commit<span class="token operator">></span> <span class="token operator">=</span> use commit<span class="token punctuation">,</span> but meld into <span class="token keyword">previous</span> commit# <span class="token keyword">f</span><span class="token punctuation">,</span> fixup <span class="token operator">&lt;</span>commit<span class="token operator">></span> <span class="token operator">=</span> like <span class="token string">"squash"</span><span class="token punctuation">,</span> but discard this commit's log message# <span class="token keyword">x</span><span class="token punctuation">,</span> exec <span class="token operator">&lt;</span>command<span class="token operator">></span> <span class="token operator">=</span> run command <span class="token punctuation">(</span>the rest of the line<span class="token punctuation">)</span> using <span class="token keyword">shell</span># <span class="token keyword">b</span><span class="token punctuation">,</span> <span class="token keyword">break</span> <span class="token operator">=</span> <span class="token keyword">stop</span> here <span class="token punctuation">(</span><span class="token keyword">continue</span> rebase <span class="token keyword">later</span> with <span class="token string">'git rebase --continue'</span><span class="token punctuation">)</span># <span class="token keyword">d</span><span class="token punctuation">,</span> <span class="token keyword">drop</span> <span class="token operator">&lt;</span>commit<span class="token operator">></span> <span class="token operator">=</span> remove commit# <span class="token keyword">l</span><span class="token punctuation">,</span> label <span class="token operator">&lt;</span>label<span class="token operator">></span> <span class="token operator">=</span> label current HEAD with a name# <span class="token keyword">t</span><span class="token punctuation">,</span> reset <span class="token operator">&lt;</span>label<span class="token operator">></span> <span class="token operator">=</span> reset HEAD <span class="token keyword">to</span> a label# <span class="token keyword">m</span><span class="token punctuation">,</span> merge <span class="token punctuation">[</span><span class="token operator">-</span>C <span class="token operator">&lt;</span>commit<span class="token operator">></span> | <span class="token operator">-</span><span class="token keyword">c</span> <span class="token operator">&lt;</span>commit<span class="token operator">></span><span class="token punctuation">]</span> <span class="token operator">&lt;</span>label<span class="token operator">></span> <span class="token punctuation">[</span># <span class="token operator">&lt;</span>oneline<span class="token operator">></span><span class="token punctuation">]</span># <span class="token operator">.</span>       create a merge commit using the original merge commit's# <span class="token operator">.</span>       message <span class="token punctuation">(</span>or the oneline<span class="token punctuation">,</span> <span class="token keyword">if</span> no original merge commit was# <span class="token operator">.</span>       specified<span class="token punctuation">)</span><span class="token operator">.</span> Use <span class="token operator">-</span><span class="token keyword">c</span> <span class="token operator">&lt;</span>commit<span class="token operator">></span> <span class="token keyword">to</span> reword the commit message<span class="token operator">.</span>## These <span class="token builtin">lines</span> can <span class="token keyword">be</span> re<span class="token operator">-</span>ordered<span class="token punctuation">;</span> they are executed from <span class="token builtin">top</span> <span class="token keyword">to</span> bottom<span class="token operator">.</span>## If you remove a line here THAT COMMIT WILL BE LOST<span class="token operator">.</span>## However<span class="token punctuation">,</span> <span class="token keyword">if</span> you remove everything<span class="token punctuation">,</span> the rebase will <span class="token keyword">be</span> aborted<span class="token operator">.</span>## Note that empty commits are commented out~<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>这里，把前几行的 commit 前面的 pick 改为 edit，即：</p><pre class="line-numbers language-vim"><code class="language-vim"><span class="token keyword">edit</span> d8ca4ea initial project<span class="token keyword">edit</span> <span class="token number">4057007</span> refactor api service<span class="token keyword">edit</span> a875b98 feat<span class="token punctuation">:</span> add http proxy<span class="token keyword">edit</span> e9d6fe8 feat<span class="token punctuation">:</span> setup server prerendering<span class="token keyword">edit</span> 8cfe3e4 feat<span class="token punctuation">:</span> add identity configuration<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>然后按 Esc 退出，输入 :qw 保存并退出。此时就进入了 rebase 状态。</p><pre class="line-numbers language-vim"><code class="language-vim">You can amend the commit now<span class="token punctuation">,</span>with    git commit <span class="token operator">-</span><span class="token operator">-</span>amendOnce you are satisfied with your <span class="token keyword">changes</span><span class="token punctuation">,</span> run    git rebase <span class="token operator">-</span><span class="token operator">-</span><span class="token keyword">continue</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>意思就是，运行 <code>git commit --amend</code> 修改，修改完后运行 <code>git rebase --continue</code> 命令继续下一条，知道修改完所有 commit。</p><p>由于我们是要修改作者，所以要改为运行 <code>git commit --amend --author &quot;James Yeung &lt;shunjiey@hotmail.com&gt;&quot; --no-edit</code>。</p><p>然后再运行 <code>git rebase --continue</code> 。</p><p>重复 5 次，就完成了对作者的修改。最后，force push 到 GitHub 上就可以完成历史修改了。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Git </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Git </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>【分享】Ant Design Blazor 的开源故事</title>
+      <link href="/Blazor-Meetup-20200830.html"/>
+      <url>/Blazor-Meetup-20200830.html</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>8月30日，周日上午10点，受到 FireUG 社区的邀请，作为他们夏令营系列的最后一场分享会，这次很高兴能跟其他两位嘉宾分享 Ant Design。</p><p>活动介绍：<a href="https://mp.weixin.qq.com/s/f68_xCmGqtaNzTJe3Py6aw" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/f68_xCmGqtaNzTJe3Py6aw</a></p><p>活动回顾：<a href="https://mp.weixin.qq.com/s/lOjB9q7TjY-B5Za9Io8GSw" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/lOjB9q7TjY-B5Za9Io8GSw</a></p><p>分享视频回放：</p><iframe src="//player.bilibili.com/player.html?aid=286949840&bvid=BV1gf4y1X7vT&cid=231480848&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>]]></content>
+      
+      
+      <categories>
+          
+          <category> .NET Core </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> .NET Core </tag>
+            
+            <tag> Blazor </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>如何用 Blazor 实现 Ant Design 组件库（二）</title>
       <link href="/how-to-implement-ant-design-components-using-blazor-2.html"/>
       <url>/how-to-implement-ant-design-components-using-blazor-2.html</url>
@@ -1524,22 +1576,22 @@
     
     
     <entry>
-      <title>时间轴</title>
-      <link href="/timeline.html"/>
-      <url>/timeline.html</url>
+      <title>欢迎使用 Ghost 博客系统</title>
+      <link href="/welcome-to-ghost-2.html"/>
+      <url>/welcome-to-ghost-2.html</url>
       
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>Yeah，博客上线了！这篇文章的目的是向你介绍 Ghost 编辑器并帮你快速上手。通过 <code>&lt;your blog URL&gt;/ghost/</code> 链接就可以登录系统后台管理你的博客内容了。当你进入后台，你就能看到左侧文章列表处列出的这篇文章，右侧就是这篇文章的预览效果。点击预览栏右上角的铅笔图标就能进入内容编辑页面。 </p><h2 id="快速入门"><a href="#快速入门" class="headerlink" title="快速入门"></a>快速入门</h2><p>Ghost 使用 Markdown 语法书写内容。简单来说，Markdown 就是一种简化的书写格式！</p><p>用 Markdown 语法写作是很容易的。在编辑界面的左侧就是你写作的地方。在你认为需要的时候，可以使用以下这些语法来格式化你的内容。例如下面这个无序列表：</p><ul><li>Item number one</li><li>Item number two<ul><li>A nested item</li></ul></li><li>A final item</li></ul><p>还可以是有序列表：</p><ol><li>Remember to buy some milk</li><li>Drink the milk</li><li>Tweet that I remembered to buy the milk, and drank it</li></ol><h3 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h3><p>如果要链接其它页面，可以直接把页面的 URL 粘贴过来，例如 <a href="http://www.ghostchina.com" target="_blank" rel="noopener">http://www.ghostchina.com</a> - 会被自动识别为链接。但是，如果你想自定义链接文本，可以像这样： <a href="http://www.ghostchina.com" target="_blank" rel="noopener">Ghost 中文网</a>。很简单吧！</p><h3 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h3><p>插入图片也没问题！前提是你事先知道图片的 URL，然后像下面这样：</p><p><img src="http://static.ghostchina.com/image/3/fe/34a9831916be9db1381ecb320491e.png" alt="The Ghost Logo"></p><p>如果图片在本地的硬盘里怎么办？也很简单！像下面这样书写就能为图片预留一个位置，然后你可以继续写作，回头再通过拖拽的方式把图片上传到服务器上。</p><p>![一张图片]</p><h3 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h3><p>有些时候我们需要引用别人说的话，可以这样：</p><blockquote><p>Wisdomous - it’s definitely a word.</p></blockquote><h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><p>或许你是个码农，需要贴一些代码到文章里，可以通过两个引号（Tab 键上面的那个键）加入行内代码 <code>&lt;code&gt;</code>。如果需要加入大段的代码，可以在代码前加 4 个空格缩进，这就是 Markdown 的语法。</p><pre><code>.awesome-thing {    display: block;    width: 100%;}</code></pre><h3 id="分割线"><a href="#分割线" class="headerlink" title="分割线"></a>分割线</h3><p>在任一新行输入 3 个或更多的短横线（减号）就是一条分隔线了。</p><hr><h3 id="高级用法"><a href="#高级用法" class="headerlink" title="高级用法"></a>高级用法</h3><p>Markdown 还有一个特别用法，就是在你需要的时候可以直接书写 HTML 代码。</p><input type="text" placeholder="这是个输入框！" /><p>只要掌握了上面的这些介绍，你就已经入门了！继续写作吧！</p>]]></content>
       
     </entry>
     
     
     
     <entry>
-      <title>欢迎使用 Ghost 博客系统</title>
-      <link href="/welcome-to-ghost-2.html"/>
-      <url>/welcome-to-ghost-2.html</url>
+      <title>时间轴</title>
+      <link href="/timeline.html"/>
+      <url>/timeline.html</url>
       
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>Yeah，博客上线了！这篇文章的目的是向你介绍 Ghost 编辑器并帮你快速上手。通过 <code>&lt;your blog URL&gt;/ghost/</code> 链接就可以登录系统后台管理你的博客内容了。当你进入后台，你就能看到左侧文章列表处列出的这篇文章，右侧就是这篇文章的预览效果。点击预览栏右上角的铅笔图标就能进入内容编辑页面。 </p><h2 id="快速入门"><a href="#快速入门" class="headerlink" title="快速入门"></a>快速入门</h2><p>Ghost 使用 Markdown 语法书写内容。简单来说，Markdown 就是一种简化的书写格式！</p><p>用 Markdown 语法写作是很容易的。在编辑界面的左侧就是你写作的地方。在你认为需要的时候，可以使用以下这些语法来格式化你的内容。例如下面这个无序列表：</p><ul><li>Item number one</li><li>Item number two<ul><li>A nested item</li></ul></li><li>A final item</li></ul><p>还可以是有序列表：</p><ol><li>Remember to buy some milk</li><li>Drink the milk</li><li>Tweet that I remembered to buy the milk, and drank it</li></ol><h3 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h3><p>如果要链接其它页面，可以直接把页面的 URL 粘贴过来，例如 <a href="http://www.ghostchina.com" target="_blank" rel="noopener">http://www.ghostchina.com</a> - 会被自动识别为链接。但是，如果你想自定义链接文本，可以像这样： <a href="http://www.ghostchina.com" target="_blank" rel="noopener">Ghost 中文网</a>。很简单吧！</p><h3 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h3><p>插入图片也没问题！前提是你事先知道图片的 URL，然后像下面这样：</p><p><img src="http://static.ghostchina.com/image/3/fe/34a9831916be9db1381ecb320491e.png" alt="The Ghost Logo"></p><p>如果图片在本地的硬盘里怎么办？也很简单！像下面这样书写就能为图片预留一个位置，然后你可以继续写作，回头再通过拖拽的方式把图片上传到服务器上。</p><p>![一张图片]</p><h3 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h3><p>有些时候我们需要引用别人说的话，可以这样：</p><blockquote><p>Wisdomous - it’s definitely a word.</p></blockquote><h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><p>或许你是个码农，需要贴一些代码到文章里，可以通过两个引号（Tab 键上面的那个键）加入行内代码 <code>&lt;code&gt;</code>。如果需要加入大段的代码，可以在代码前加 4 个空格缩进，这就是 Markdown 的语法。</p><pre><code>.awesome-thing {    display: block;    width: 100%;}</code></pre><h3 id="分割线"><a href="#分割线" class="headerlink" title="分割线"></a>分割线</h3><p>在任一新行输入 3 个或更多的短横线（减号）就是一条分隔线了。</p><hr><h3 id="高级用法"><a href="#高级用法" class="headerlink" title="高级用法"></a>高级用法</h3><p>Markdown 还有一个特别用法，就是在你需要的时候可以直接书写 HTML 代码。</p><input type="text" placeholder="这是个输入框！" /><p>只要掌握了上面的这些介绍，你就已经入门了！继续写作吧！</p>]]></content>
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
       
     </entry>
     
