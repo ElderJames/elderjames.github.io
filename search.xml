@@ -4,33 +4,6 @@
   
     
     <entry>
-      <title>【分享】从 HelloWorld 到 AntDesign，Blazor 将 .NET 带到现代前端圈</title>
-      <link href="/Blazor-Meetup-20200111.html"/>
-      <url>/Blazor-Meetup-20200111.html</url>
-      
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><img src="/images/dotnet-meetup/blazor-07.jpg" alt=""></p><p>Blazor 是一个 Web UI 框架，可通过 WebAssembly 在任意浏览器中运行 .Net 。</p><p>Blazor 旨在简化快速的单页面 .Net 浏览器应用的构建过程，它虽然使用了诸如 CSS 和 HTML 之类的 Web 技术，但它使用 C＃语言和 Razor 语法代替 JavaScript 来构建可组合的 Web UI 。通过提供用于编译到 Web 的大小和高效加载的格式，WebAssembly 可让 .Net 在浏览器中运行。</p><p>本次交流活动由 Blazor 中文社区 和 Ant Design Blazor 开源项目小组联合举办，旨在通过定期的交流活动让帮助更多的前端开发者小伙伴们更好的使用 Blazor 框架。</p><p>非常荣幸，本人收到 Reactor Shanghai 的邀请，作为这次活动的嘉宾，给大家做一次分享。</p><p>我分享的主题是《Ant Design Blazor 的实现细节与开源社区治理》。重点介绍了 Blazor 的整体架构，以及 Ant Design Blazor 开源项目的开展和社区治理。</p><p>另外还由 Ant Design Blazor 项目的另外两位贡献者，分享了 Blazor 与其他前端框架的对比，并使用 Ant Design Blazor 演示了 Blazor 简单页面的开发实践。</p><p>回放地址：<a href="https://www.bilibili.com/video/BV17z4y1Q7cJ" target="_blank" rel="noopener">https://www.bilibili.com/video/BV17z4y1Q7cJ</a></p><p>活动推广链接：<a href="https://mp.weixin.qq.com/s/8vCzXZSIS9BiuC8LXGWFOQ" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/8vCzXZSIS9BiuC8LXGWFOQ</a></p><p>直播间现场随拍：</p><p><img src="/images/dotnet-meetup/blazor-07-01.jpg" alt=""></p><p><img src="/images/dotnet-meetup/blazor-07-02.jpg" alt=""></p><p>当天合照：</p><p><img src="/images/dotnet-meetup/blazor-07-03.jpg" alt=""></p><p>通过这次活动，让更多开发者了解到 Blazor 这个技术，并且带给开发者们一个优秀、美观、实用、且开箱即用的组件库，简化开发，增加生产力！</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> .NET Core </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Orleans </tag>
-            
-            <tag> .NET Core </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>GitHub 修改作者信息</title>
       <link href="/modify-the-author-of-git-commit.html"/>
       <url>/modify-the-author-of-git-commit.html</url>
@@ -60,7 +33,7 @@
       <link href="/Blazor-Meetup-20200830.html"/>
       <url>/Blazor-Meetup-20200830.html</url>
       
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>8月30日，周日上午10点，受到 FireUG 社区的邀请，作为他们夏令营系列的最后一场分享会，这次很高兴能跟其他两位嘉宾分享 Ant Design。</p><p>活动介绍：<a href="https://mp.weixin.qq.com/s/f68_xCmGqtaNzTJe3Py6aw" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/f68_xCmGqtaNzTJe3Py6aw</a></p><p>活动回顾：<a href="https://mp.weixin.qq.com/s/lOjB9q7TjY-B5Za9Io8GSw" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/lOjB9q7TjY-B5Za9Io8GSw</a></p><p>分享视频回放：</p><iframe src="//player.bilibili.com/player.html?aid=286949840&bvid=BV1gf4y1X7vT&cid=231480848&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>]]></content>
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>8月30日，周日上午10点，受到 FireUG 社区的邀请，作为他们夏令营系列的最后一场分享会，这次很高兴能跟其他两位嘉宾分享 Ant Design。</p><p>活动介绍：<a href="https://mp.weixin.qq.com/s/f68_xCmGqtaNzTJe3Py6aw" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/f68_xCmGqtaNzTJe3Py6aw</a></p><p>活动回顾：<a href="https://mp.weixin.qq.com/s/lOjB9q7TjY-B5Za9Io8GSw" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/lOjB9q7TjY-B5Za9Io8GSw</a></p><p>分享视频回放：</p><iframe src="//player.bilibili.com/player.html?aid=286949840&bvid=BV1gf4y1X7vT&cid=231480848&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" height="500px"> </iframe>]]></content>
       
       
       <categories>
@@ -75,6 +48,33 @@
             <tag> .NET Core </tag>
             
             <tag> Blazor </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>【分享】从 HelloWorld 到 AntDesign，Blazor 将 .NET 带到现代前端圈</title>
+      <link href="/Blazor-Meetup-20200111.html"/>
+      <url>/Blazor-Meetup-20200111.html</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><img src="/images/dotnet-meetup/blazor-07.jpg" alt=""></p><p>Blazor 是一个 Web UI 框架，可通过 WebAssembly 在任意浏览器中运行 .Net 。</p><p>Blazor 旨在简化快速的单页面 .Net 浏览器应用的构建过程，它虽然使用了诸如 CSS 和 HTML 之类的 Web 技术，但它使用 C＃语言和 Razor 语法代替 JavaScript 来构建可组合的 Web UI 。通过提供用于编译到 Web 的大小和高效加载的格式，WebAssembly 可让 .Net 在浏览器中运行。</p><p>本次交流活动由 Blazor 中文社区 和 Ant Design Blazor 开源项目小组联合举办，旨在通过定期的交流活动让帮助更多的前端开发者小伙伴们更好的使用 Blazor 框架。</p><p>非常荣幸，本人收到 Reactor Shanghai 的邀请，作为这次活动的嘉宾，给大家做一次分享。</p><p>我分享的主题是《Ant Design Blazor 的实现细节与开源社区治理》。重点介绍了 Blazor 的整体架构，以及 Ant Design Blazor 开源项目的开展和社区治理。</p><p>另外还由 Ant Design Blazor 项目的另外两位贡献者，分享了 Blazor 与其他前端框架的对比，并使用 Ant Design Blazor 演示了 Blazor 简单页面的开发实践。</p><p>回放地址：<a href="https://www.bilibili.com/video/BV17z4y1Q7cJ" target="_blank" rel="noopener">https://www.bilibili.com/video/BV17z4y1Q7cJ</a></p><p>活动推广链接：<a href="https://mp.weixin.qq.com/s/8vCzXZSIS9BiuC8LXGWFOQ" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/8vCzXZSIS9BiuC8LXGWFOQ</a></p><p>直播间现场随拍：</p><p><img src="/images/dotnet-meetup/blazor-07-01.jpg" alt=""></p><p><img src="/images/dotnet-meetup/blazor-07-02.jpg" alt=""></p><p>当天合照：</p><p><img src="/images/dotnet-meetup/blazor-07-03.jpg" alt=""></p><p>通过这次活动，让更多开发者了解到 Blazor 这个技术，并且带给开发者们一个优秀、美观、实用、且开箱即用的组件库，简化开发，增加生产力！</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> .NET Core </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Orleans </tag>
+            
+            <tag> .NET Core </tag>
             
         </tags>
       
@@ -1576,22 +1576,22 @@
     
     
     <entry>
-      <title>欢迎使用 Ghost 博客系统</title>
-      <link href="/welcome-to-ghost-2.html"/>
-      <url>/welcome-to-ghost-2.html</url>
+      <title>时间轴</title>
+      <link href="/timeline.html"/>
+      <url>/timeline.html</url>
       
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>Yeah，博客上线了！这篇文章的目的是向你介绍 Ghost 编辑器并帮你快速上手。通过 <code>&lt;your blog URL&gt;/ghost/</code> 链接就可以登录系统后台管理你的博客内容了。当你进入后台，你就能看到左侧文章列表处列出的这篇文章，右侧就是这篇文章的预览效果。点击预览栏右上角的铅笔图标就能进入内容编辑页面。 </p><h2 id="快速入门"><a href="#快速入门" class="headerlink" title="快速入门"></a>快速入门</h2><p>Ghost 使用 Markdown 语法书写内容。简单来说，Markdown 就是一种简化的书写格式！</p><p>用 Markdown 语法写作是很容易的。在编辑界面的左侧就是你写作的地方。在你认为需要的时候，可以使用以下这些语法来格式化你的内容。例如下面这个无序列表：</p><ul><li>Item number one</li><li>Item number two<ul><li>A nested item</li></ul></li><li>A final item</li></ul><p>还可以是有序列表：</p><ol><li>Remember to buy some milk</li><li>Drink the milk</li><li>Tweet that I remembered to buy the milk, and drank it</li></ol><h3 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h3><p>如果要链接其它页面，可以直接把页面的 URL 粘贴过来，例如 <a href="http://www.ghostchina.com" target="_blank" rel="noopener">http://www.ghostchina.com</a> - 会被自动识别为链接。但是，如果你想自定义链接文本，可以像这样： <a href="http://www.ghostchina.com" target="_blank" rel="noopener">Ghost 中文网</a>。很简单吧！</p><h3 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h3><p>插入图片也没问题！前提是你事先知道图片的 URL，然后像下面这样：</p><p><img src="http://static.ghostchina.com/image/3/fe/34a9831916be9db1381ecb320491e.png" alt="The Ghost Logo"></p><p>如果图片在本地的硬盘里怎么办？也很简单！像下面这样书写就能为图片预留一个位置，然后你可以继续写作，回头再通过拖拽的方式把图片上传到服务器上。</p><p>![一张图片]</p><h3 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h3><p>有些时候我们需要引用别人说的话，可以这样：</p><blockquote><p>Wisdomous - it’s definitely a word.</p></blockquote><h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><p>或许你是个码农，需要贴一些代码到文章里，可以通过两个引号（Tab 键上面的那个键）加入行内代码 <code>&lt;code&gt;</code>。如果需要加入大段的代码，可以在代码前加 4 个空格缩进，这就是 Markdown 的语法。</p><pre><code>.awesome-thing {    display: block;    width: 100%;}</code></pre><h3 id="分割线"><a href="#分割线" class="headerlink" title="分割线"></a>分割线</h3><p>在任一新行输入 3 个或更多的短横线（减号）就是一条分隔线了。</p><hr><h3 id="高级用法"><a href="#高级用法" class="headerlink" title="高级用法"></a>高级用法</h3><p>Markdown 还有一个特别用法，就是在你需要的时候可以直接书写 HTML 代码。</p><input type="text" placeholder="这是个输入框！" /><p>只要掌握了上面的这些介绍，你就已经入门了！继续写作吧！</p>]]></content>
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
       
     </entry>
     
     
     
     <entry>
-      <title>时间轴</title>
-      <link href="/timeline.html"/>
-      <url>/timeline.html</url>
+      <title>欢迎使用 Ghost 博客系统</title>
+      <link href="/welcome-to-ghost-2.html"/>
+      <url>/welcome-to-ghost-2.html</url>
       
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>Yeah，博客上线了！这篇文章的目的是向你介绍 Ghost 编辑器并帮你快速上手。通过 <code>&lt;your blog URL&gt;/ghost/</code> 链接就可以登录系统后台管理你的博客内容了。当你进入后台，你就能看到左侧文章列表处列出的这篇文章，右侧就是这篇文章的预览效果。点击预览栏右上角的铅笔图标就能进入内容编辑页面。 </p><h2 id="快速入门"><a href="#快速入门" class="headerlink" title="快速入门"></a>快速入门</h2><p>Ghost 使用 Markdown 语法书写内容。简单来说，Markdown 就是一种简化的书写格式！</p><p>用 Markdown 语法写作是很容易的。在编辑界面的左侧就是你写作的地方。在你认为需要的时候，可以使用以下这些语法来格式化你的内容。例如下面这个无序列表：</p><ul><li>Item number one</li><li>Item number two<ul><li>A nested item</li></ul></li><li>A final item</li></ul><p>还可以是有序列表：</p><ol><li>Remember to buy some milk</li><li>Drink the milk</li><li>Tweet that I remembered to buy the milk, and drank it</li></ol><h3 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h3><p>如果要链接其它页面，可以直接把页面的 URL 粘贴过来，例如 <a href="http://www.ghostchina.com" target="_blank" rel="noopener">http://www.ghostchina.com</a> - 会被自动识别为链接。但是，如果你想自定义链接文本，可以像这样： <a href="http://www.ghostchina.com" target="_blank" rel="noopener">Ghost 中文网</a>。很简单吧！</p><h3 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h3><p>插入图片也没问题！前提是你事先知道图片的 URL，然后像下面这样：</p><p><img src="http://static.ghostchina.com/image/3/fe/34a9831916be9db1381ecb320491e.png" alt="The Ghost Logo"></p><p>如果图片在本地的硬盘里怎么办？也很简单！像下面这样书写就能为图片预留一个位置，然后你可以继续写作，回头再通过拖拽的方式把图片上传到服务器上。</p><p>![一张图片]</p><h3 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h3><p>有些时候我们需要引用别人说的话，可以这样：</p><blockquote><p>Wisdomous - it’s definitely a word.</p></blockquote><h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><p>或许你是个码农，需要贴一些代码到文章里，可以通过两个引号（Tab 键上面的那个键）加入行内代码 <code>&lt;code&gt;</code>。如果需要加入大段的代码，可以在代码前加 4 个空格缩进，这就是 Markdown 的语法。</p><pre><code>.awesome-thing {    display: block;    width: 100%;}</code></pre><h3 id="分割线"><a href="#分割线" class="headerlink" title="分割线"></a>分割线</h3><p>在任一新行输入 3 个或更多的短横线（减号）就是一条分隔线了。</p><hr><h3 id="高级用法"><a href="#高级用法" class="headerlink" title="高级用法"></a>高级用法</h3><p>Markdown 还有一个特别用法，就是在你需要的时候可以直接书写 HTML 代码。</p><input type="text" placeholder="这是个输入框！" /><p>只要掌握了上面的这些介绍，你就已经入门了！继续写作吧！</p>]]></content>
       
     </entry>
     

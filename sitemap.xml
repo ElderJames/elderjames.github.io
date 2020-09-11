@@ -16,13 +16,6 @@
   </url>
   
   <url>
-    <loc>https://yangshunjie.com/how-to-request-a-free-https.html</loc>
-    
-    <lastmod>2020-09-11</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://yangshunjie.com/about.html</loc>
     
     <lastmod>2020-09-11</lastmod>
@@ -52,104 +45,6 @@
   
   <url>
     <loc>https://yangshunjie.com/gallery/index.html</loc>
-    
-    <lastmod>2020-09-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://yangshunjie.com/Customized-View-Path-And-Theme-Switching-In-AspNetCore.html</loc>
-    
-    <lastmod>2020-09-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://yangshunjie.com/add-the-webapi-service-to-the-specified-class-in-asp-net-core.html</loc>
-    
-    <lastmod>2020-09-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://yangshunjie.com/add-Markdown-and-html-rendering-pipe-in-Angular-using-markedjs.html</loc>
-    
-    <lastmod>2020-09-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://yangshunjie.com/Angular-integrating-with-UEditor-and-ssr-supporting.html</loc>
-    
-    <lastmod>2020-09-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://yangshunjie.com/AspNet-Core-3_0-Identity-For-Microsoft-Account-OAuth.html</loc>
-    
-    <lastmod>2020-09-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://yangshunjie.com/AutoMappers-automatic-registration-mapping-relationship-configuration.html</loc>
-    
-    <lastmod>2020-09-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://yangshunjie.com/ddd-project-collection.html</loc>
-    
-    <lastmod>2020-09-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://yangshunjie.com/influxdb-in-dotNEt-Core-1-Introduction.html</loc>
-    
-    <lastmod>2020-09-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://yangshunjie.com/influxdb-in-dotNEt-Core-2-ioc-and-repository-pattern.html</loc>
-    
-    <lastmod>2020-09-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://yangshunjie.com/code-first-generate-gRPC-services-and-clients-in-dotnet-Core-3_0.html</loc>
-    
-    <lastmod>2020-09-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://yangshunjie.com/run-blazor-webassembly-on-serverless.html</loc>
-    
-    <lastmod>2020-09-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://yangshunjie.com/TinyMCE-with-SSR-and-webpack.html</loc>
-    
-    <lastmod>2020-09-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://yangshunjie.com/the-basic-credential-prompt-for-git-on-windows-10.html</loc>
-    
-    <lastmod>2020-09-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://yangshunjie.com/Using-gRPC-Web-with-Blazor-WebAssembly.html</loc>
     
     <lastmod>2020-09-11</lastmod>
     
@@ -198,14 +93,7 @@
   </url>
   
   <url>
-    <loc>https://yangshunjie.com/dynamically-add-features-to-the-controller-type-in-dot-net-core.html</loc>
-    
-    <lastmod>2020-09-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://yangshunjie.com/NET-Meetup-20200105.html</loc>
+    <loc>https://yangshunjie.com/how-to-request-a-free-https.html</loc>
     
     <lastmod>2020-09-11</lastmod>
     
@@ -297,6 +185,118 @@
   
   <url>
     <loc>https://yangshunjie.com/A-Middleware-Implement-For-Customized-Routing-In-AspNetCore.html</loc>
+    
+    <lastmod>2020-09-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://yangshunjie.com/Customized-View-Path-And-Theme-Switching-In-AspNetCore.html</loc>
+    
+    <lastmod>2020-09-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://yangshunjie.com/add-the-webapi-service-to-the-specified-class-in-asp-net-core.html</loc>
+    
+    <lastmod>2020-09-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://yangshunjie.com/dynamically-add-features-to-the-controller-type-in-dot-net-core.html</loc>
+    
+    <lastmod>2020-09-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://yangshunjie.com/add-Markdown-and-html-rendering-pipe-in-Angular-using-markedjs.html</loc>
+    
+    <lastmod>2020-09-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://yangshunjie.com/Angular-integrating-with-UEditor-and-ssr-supporting.html</loc>
+    
+    <lastmod>2020-09-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://yangshunjie.com/AspNet-Core-3_0-Identity-For-Microsoft-Account-OAuth.html</loc>
+    
+    <lastmod>2020-09-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://yangshunjie.com/AutoMappers-automatic-registration-mapping-relationship-configuration.html</loc>
+    
+    <lastmod>2020-09-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://yangshunjie.com/ddd-project-collection.html</loc>
+    
+    <lastmod>2020-09-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://yangshunjie.com/influxdb-in-dotNEt-Core-1-Introduction.html</loc>
+    
+    <lastmod>2020-09-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://yangshunjie.com/influxdb-in-dotNEt-Core-2-ioc-and-repository-pattern.html</loc>
+    
+    <lastmod>2020-09-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://yangshunjie.com/code-first-generate-gRPC-services-and-clients-in-dotnet-Core-3_0.html</loc>
+    
+    <lastmod>2020-09-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://yangshunjie.com/run-blazor-webassembly-on-serverless.html</loc>
+    
+    <lastmod>2020-09-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://yangshunjie.com/TinyMCE-with-SSR-and-webpack.html</loc>
+    
+    <lastmod>2020-09-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://yangshunjie.com/the-basic-credential-prompt-for-git-on-windows-10.html</loc>
+    
+    <lastmod>2020-09-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://yangshunjie.com/Using-gRPC-Web-with-Blazor-WebAssembly.html</loc>
+    
+    <lastmod>2020-09-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://yangshunjie.com/NET-Meetup-20200105.html</loc>
     
     <lastmod>2020-09-11</lastmod>
     

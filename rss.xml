@@ -9,26 +9,8 @@
     <atom:link href="/rss.xml" rel="self" type="application/rss+xml"/>
     
     <description>学习、札记、分享</description>
-    <pubDate>Fri, 11 Sep 2020 09:42:48 GMT</pubDate>
+    <pubDate>Fri, 11 Sep 2020 10:27:23 GMT</pubDate>
     <generator>http://hexo.io/</generator>
-    
-    <item>
-      <title>【分享】从 HelloWorld 到 AntDesign，Blazor 将 .NET 带到现代前端圈</title>
-      <link>https://yangshunjie.com/Blazor-Meetup-20200111.html</link>
-      <guid>https://yangshunjie.com/Blazor-Meetup-20200111.html</guid>
-      <pubDate>Fri, 11 Jul 2070 00:00:00 GMT</pubDate>
-      <description>
-      
-        
-        
-          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla
-        
-      
-      </description>
-      
-      
-      <comments>https://yangshunjie.com/Blazor-Meetup-20200111.html#disqus_thread</comments>
-    </item>
     
     <item>
       <title>GitHub 修改作者信息</title>
@@ -64,6 +46,24 @@
       
       
       <comments>https://yangshunjie.com/Blazor-Meetup-20200830.html#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>【分享】从 HelloWorld 到 AntDesign，Blazor 将 .NET 带到现代前端圈</title>
+      <link>https://yangshunjie.com/Blazor-Meetup-20200111.html</link>
+      <guid>https://yangshunjie.com/Blazor-Meetup-20200111.html</guid>
+      <pubDate>Sat, 11 Jul 2020 00:00:00 GMT</pubDate>
+      <description>
+      
+        
+        
+          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla
+        
+      
+      </description>
+      
+      
+      <comments>https://yangshunjie.com/Blazor-Meetup-20200111.html#disqus_thread</comments>
     </item>
     
     <item>
