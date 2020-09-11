@@ -2,7 +2,7 @@
 layout: post
 title: 【分享】从 HelloWorld 到 AntDesign，Blazor 将 .NET 带到现代前端圈
 permalink: Blazor-Meetup-20200111
-date: 2070-07-11 00:00:00
+date: 2020-07-11 00:00:00
 tags:
     - Orleans
     - .NET Core
