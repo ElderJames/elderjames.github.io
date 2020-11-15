@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN">
+    <generator uri="https://gohugo.io/" version="0.67.1">Hugo</generator><title type="html"><![CDATA[James Yeung]]></title>
+    
+    
+    
+            <link href="https://jamesyeung.cn/atom.xml" rel="self" type="application/rss+xml" title="atom" />
+            <link href="https://jamesyeung.cn/" rel="alternate" type="text/html" title="HTML" />
+            <link href="https://jamesyeung.cn/index.json" rel="alternate" type="application/json" title="JSON" />
+    <updated>2020-11-15T07:45:19+00:00</updated>
+    
+    
+    
+    
+        <id>https://jamesyeung.cn/atom.xml</id>
+    
+        
+        <entry>
+            <title type="html"><![CDATA[Hello Hugo]]></title>
+            <link href="https://jamesyeung.cn/hello-hugo/" rel="alternate" type="text/html" />
+            
+            
+                <id>https://jamesyeung.cn/hello-hugo/</id>
+            
+            
+            <published>2020-11-15T00:00:00+00:00</published>
+            <updated>2020-11-15T00:00:00+00:00</updated>
+            
+            
+            <content type="html"><![CDATA[<p>Hello Hugo!</p>
+]]></content>
+            
+                 
+                    
+                 
+                    
+                         
+                        
+                            
+                             
+                                <category scheme="https://jamesyeung.cn/tags/%E7%A0%81" term="%E7%A0%81" label="码" />
+                            
+                        
+                    
+                
+            
+        </entry>
+    
+</feed>
