@@ -7,12 +7,44 @@
             <link href="https://jamesyeung.cn/atom.xml" rel="self" type="application/rss+xml" title="atom" />
             <link href="https://jamesyeung.cn/" rel="alternate" type="text/html" title="HTML" />
             <link href="https://jamesyeung.cn/index.json" rel="alternate" type="application/json" title="JSON" />
-    <updated>2020-11-15T08:58:02+00:00</updated>
+    <updated>2020-11-25T04:57:15+00:00</updated>
     
     
     
     
         <id>https://jamesyeung.cn/atom.xml</id>
+    
+        
+        <entry>
+            <title type="html"><![CDATA[2020-11-15]]></title>
+            <link href="https://jamesyeung.cn/2020-11-15/" rel="alternate" type="text/html" />
+            
+            
+                <id>https://jamesyeung.cn/2020-11-15/</id>
+            
+            
+            <published>2020-11-15T17:31:06+08:00</published>
+            <updated>2020-11-15T17:31:06+08:00</updated>
+            
+            
+            <content type="html"><![CDATA[<p>把博客搬过来 Hugo 啦！</p>
+]]></content>
+            
+                 
+                    
+                 
+                    
+                         
+                        
+                            
+                             
+                                <category scheme="https://jamesyeung.cn/tags/%E7%A2%8E%E7%A2%8E%E5%BF%B5" term="%E7%A2%8E%E7%A2%8E%E5%BF%B5" label="碎碎念" />
+                            
+                        
+                    
+                
+            
+        </entry>
     
         
         <entry>
