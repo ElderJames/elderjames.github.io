@@ -1,33 +1,169 @@
-<?xml version="1.0" encoding="utf-8"?> 
-<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN">
-    <generator uri="https://gohugo.io/" version="0.67.1">Hugo</generator><title type="html"><![CDATA[James Yeung]]></title>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
     
+      <title>ASP.NET Core 在 .NET 6 Preview 2 中的更新 :: James Yeung</title>
     
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="description" content="原文：《ASP.NET Core updates in .NET 6 Preview 2》，作者 Daniel Roth .NET 6 预览版 2 现已推出，其中包括许多对 ASP.NET Core 的新改进。 以下是本次预览版的新内容： Razor 编译器更新为使用 Source Generators Blazor 支持自定义事件参数 增加 MVC 视图和 Razor 页面的 CSS 隔离 Blazor 支持从祖先组件中推断组件的泛型类型 Blazor 应用程序支持保留预渲染时的状态 SignalR – 支持 Nullable 标注 马上开"/>
+<meta name="keywords" content=""/>
+<meta name="referrer" content="never" />
+<link rel="canonical" href="https://jamesyeung.cn/asp-net-core-updates-in-net-6-preview-2/" />
+<link rel="stylesheet" href="https://jamesyeung.cn/style.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Serif+SC:500&display=swap" media="print" onload="this.media='all'">
+<link rel="shortcut icon" href="https://jamesyeung.cn/favicon.ico">
+
+<meta property="og:title" content="ASP.NET Core 在 .NET 6 Preview 2 中的更新" />
+<meta property="og:description" content="原文：《ASP.NET Core updates in .NET 6 Preview 2》，作者 Daniel Roth .NET 6 预览版 2 现已推出，其中包括许多对 ASP.NET Core 的新改进。 以下是本次预览版的新内容： Razor 编译器更新为使用 Source Generators Blazor 支持自定义事件参数 增加 MVC 视图和 Razor 页面的 CSS 隔离 Blazor 支持从祖先组件中推断组件的泛型类型 Blazor 应用程序支持保留预渲染时的状态 SignalR – 支持 Nullable 标注 马上开" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jamesyeung.cn/asp-net-core-updates-in-net-6-preview-2/" />
+<meta property="article:published_time" content="2021-03-14T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-03-14T00:00:00+00:00" />
+
+
+
     
-            <link href="https://jamesyeung.cn/atom.xml" rel="self" type="application/rss+xml" title="atom" />
-            <link href="https://jamesyeung.cn/" rel="alternate" type="text/html" title="HTML" />
-            <link href="https://jamesyeung.cn/index.json" rel="alternate" type="application/json" title="JSON" />
-    <updated>2021-03-14T14:44:18+00:00</updated>
+
+<link rel="prefetch" href="https://jamesyeung.cn/2020-11-15/">
+
+  </head>
+  <body class="dark-theme">
+    <div class="container">
+      <header class="header">
+  <span class="header__inner">
+    <a href="https://jamesyeung.cn" class="logo" style="text-decoration: none;">
+  
+    <span class="logo__text">James Yeung</span>
+    <span class="logo__cursor"></span>
+  
+</a>
+
+    <span class="header__right">
+      
+        <nav class="menu hidden">
+  <ul class="menu__inner menu__inner--desktop">
     
-    
-    
-    
-        <id>https://jamesyeung.cn/atom.xml</id>
-    
+      
         
-        <entry>
-            <title type="html"><![CDATA[ASP.NET Core 在 .NET 6 Preview 2 中的更新]]></title>
-            <link href="https://jamesyeung.cn/asp-net-core-updates-in-net-6-preview-2/" rel="alternate" type="text/html" />
-            
-            
-                <id>https://jamesyeung.cn/asp-net-core-updates-in-net-6-preview-2/</id>
-            
-            
-            <published>2021-03-14T00:00:00+00:00</published>
-            <updated>2021-03-14T00:00:00+00:00</updated>
-            
-            
-            <content type="html"><![CDATA[<blockquote>
+          <li><a href="/posts/">文章</a></li>
+        
+      
+        
+          <li><a href="/photos/">相册</a></li>
+        
+      
+        
+          <li><a href="/archives/">归档</a></li>
+        
+      
+        
+          <li><a href="/about/">关于</a></li>
+        
+      
+    
+
+                <li><a href="/search/"><svg t="1556783211810" class="search-box-icon" class="icon" style="" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2078" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><style type="text/css"></style></defs><path d="M981.39652054 920.86314525L704.56522859 644.0318533a366.65501012 366.65501012 0 1 0-61.73503038 65.64040943L917.55859375 984.40065827z m-856.17925347-493.12920861a284.19142939 284.19142939 0 1 1 283.89101562 284.19142939A284.49184317 284.49184317 0 0 1 125.06706019 427.73393664z" fill="" p-id="2079" data-spm-anchor-id="a313x.7781069.0.i2"></path></svg></a></li>
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/posts/">文章</a></li>
+      
+    
+      
+        <li><a href="/photos/">相册</a></li>
+      
+    
+      
+        <li><a href="/archives/">归档</a></li>
+      
+    
+      
+        <li><a href="/about/">关于</a></li>
+      
+    
+  </ul>
+</nav>
+
+        <span class="menu-trigger hidden">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none"/>
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+          </svg>
+        </span>
+      
+      <span class="theme-toggle">
+        <svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+
+      </span>
+    </span>
+  </span>
+</header>
+
+
+      <div class="content">
+        
+
+
+
+
+
+<div class="post coding">
+  <div  class="breadcrumb">
+  
+
+  
+
+  
+
+  
+
+<li>
+  <a href="https://jamesyeung.cn/">首页</a>
+</li>
+
+
+<li>
+  <a href="https://jamesyeung.cn/posts/">文章</a>
+</li>
+
+
+<li>
+  <a href="https://jamesyeung.cn/posts/coding/">码</a>
+</li>
+
+
+<li class="active">
+  <a href="https://jamesyeung.cn/asp-net-core-updates-in-net-6-preview-2/">ASP.NET Core 在 .NET 6 Preview 2 中的更新</a>
+</li>
+
+</div>
+
+
+  
+  <h2 class="post-title"><a href="https://jamesyeung.cn/asp-net-core-updates-in-net-6-preview-2/">ASP.NET Core 在 .NET 6 Preview 2 中的更新</a></h2>
+  <div class="post-meta">
+    
+    <span class="post-date">
+      2021-03-14 00:00:00
+    </span>
+
+    
+    
+    
+    
+  </div>
+
+  
+
+  <div class="post-content">
+    <blockquote>
 <p>原文：<a href="https://devblogs.microsoft.com/aspnet/asp-net-core-updates-in-net-6-preview-2/?WT.mc_id=DT-MVP-5003987">《ASP.NET Core updates in .NET 6 Preview 2》</a>，作者 <a href="https://devblogs.microsoft.com/aspnet/author/danroth27/?WT.mc_id=DT-MVP-5003987">Daniel Roth</a></p>
 </blockquote>
 <hr>
@@ -214,54 +350,108 @@
 <h1 id="给予反馈">给予反馈</h1>
 <p>我们希望您喜欢这个 .NET 6 中 ASP.NET Core 的预览版。我们渴望听到您对这个版本的体验。请在 <a href="https://github.com/dotnet/aspnetcore/issues">GitHub</a> 上提交问题，让我们知道你的想法。</p>
 <p>感谢你试用 ASP.NET Core!</p>
-]]></content>
-            
-                 
-                    
-                 
-                    
-                         
-                        
-                            
-                             
-                                <category scheme="https://jamesyeung.cn/tags/.net" term=".net" label=".NET" />
-                            
-                        
-                    
-                
-            
-        </entry>
+
     
+  </div>
+
+  
+  <div class="tocify">目录：
+
+
+
+
+</div>
+  
+
+  
+  <span class="post-tags">
+    
+    #<a href="https://jamesyeung.cn/tags/.net/">.NET</a>&nbsp;
+    
+  </span>
+  
+  
+  <div class="clear"></div>
+
+  
+  
+  <div class="pagination">
+    <div class="pagination__title">
+      
+      <a class="pagination__title-h"
+        href="https://github.com/elderjames/blogs/edit/master/content/posts/coding/asp-net-core-updates-in-net-6-preview-2.md" target="_blank"
+        rel="noopener">阅读更多</a>
+      
+      <hr />
+    </div>
+    <div class="pagination__buttons">
+      
+      
+      <span class="button next">
+        <a href="https://jamesyeung.cn/2020-11-15/">
+          <span class="button__text">2020-11-15</span>
+          <span class="button__icon">→</span>
+        </a>
+      </span>
+      
+    </div>
+  </div>
+  
+  
+
+
+  
+    
+
+  
+
+</div>
+
+      </div>
+
+      
         
-        <entry>
-            <title type="html"><![CDATA[2020-11-15]]></title>
-            <link href="https://jamesyeung.cn/2020-11-15/" rel="alternate" type="text/html" />
-            
-            
-                <id>https://jamesyeung.cn/2020-11-15/</id>
-            
-            
-            <published>2020-11-15T17:31:06+08:00</published>
-            <updated>2020-11-15T17:31:06+08:00</updated>
-            
-            
-            <content type="html"><![CDATA[<p>把博客搬过来 Hugo 啦！</p>
-]]></content>
-            
-                 
-                    
-                 
-                    
-                         
-                        
-                            
-                             
-                                <category scheme="https://jamesyeung.cn/tags/%E7%A2%8E%E7%A2%8E%E5%BF%B5" term="%E7%A2%8E%E7%A2%8E%E5%BF%B5" label="碎碎念" />
-                            
-                        
-                    
-                
-            
-        </entry>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="copyright">
+      <span>共 2 篇文章</span><span> 2706 字</span>
+    </div>
     
-</feed>
+    <div class="copyright">
+      <span>© 2021 Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a> Theme by <a
+          href="https://twitter.com/panr" target="_blank" rel="noopener">Panr</a></span>
+    </div>
+    
+  </div>
+</footer>
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/elderjames/blogs@gh-pages/main.js"></script>
+
+<script type="text/javascript" src='https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js'></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/elderjames/blogs@gh-pages/lately.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/elderjames/blogs@gh-pages/waterfall.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/elderjames/blogs@gh-pages/slimbox2.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/elderjames/blogs@gh-pages/all1.js"></script>
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/instant.page@3.0.0/instantpage.min.js"
+  type="module"></script>
+      
+    </div>
+  </body>
+</html>
