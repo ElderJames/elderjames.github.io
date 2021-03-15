@@ -3,88 +3,96 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://jamesyeung.cn/tags/.net/</loc>
+    <loc>/tags/.net/</loc>
     <lastmod>2021-03-14T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://jamesyeung.cn/asp-net-core-updates-in-net-6-preview-2/</loc>
+    <loc>/posts/coding/asp-net-core-updates-in-net-6-preview-2/</loc>
     <lastmod>2021-03-14T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://jamesyeung.cn/posts/</loc>
+    <loc>/posts/</loc>
     <lastmod>2021-03-14T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://jamesyeung.cn/tags/</loc>
+    <loc>/tags/</loc>
     <lastmod>2021-03-14T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://jamesyeung.cn/posts/coding/</loc>
+    <loc>/posts/coding/</loc>
     <lastmod>2021-03-14T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://jamesyeung.cn/2020-11-15/</loc>
+    <loc>/</loc>
+    <lastmod>2021-03-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/chat/2020-11-15/</loc>
     <lastmod>2020-11-15T17:31:06+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://jamesyeung.cn/tags/%E7%A2%8E%E7%A2%8E%E5%BF%B5/</loc>
+    <loc>/tags/%E7%A2%8E%E7%A2%8E%E5%BF%B5/</loc>
     <lastmod>2020-11-15T17:31:06+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://jamesyeung.cn/posts/chat/</loc>
+    <loc>/posts/chat/</loc>
     <lastmod>2020-11-15T17:31:06+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://jamesyeung.cn/about/</loc>
+    <loc>/about/</loc>
     <lastmod>2020-03-14T12:41:27+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://jamesyeung.cn/</loc>
-    <lastmod>2020-03-14T12:41:27+00:00</lastmod>
+    <loc>/authors/</loc>
   </url>
   
   <url>
-    <loc>https://jamesyeung.cn/categories/</loc>
+    <loc>/categories/</loc>
   </url>
   
   <url>
-    <loc>https://jamesyeung.cn/search/</loc>
+    <loc>/search/</loc>
     <priority>0.1</priority>
   </url>
   
   <url>
-    <loc>https://jamesyeung.cn/archives/</loc>
+    <loc>/series/</loc>
   </url>
   
   <url>
-    <loc>https://jamesyeung.cn/photos/</loc>
+    <loc>/archives/</loc>
   </url>
   
   <url>
-    <loc>https://jamesyeung.cn/movies/</loc>
+    <loc>/photos/</loc>
+  </url>
+  
+  <url>
+    <loc>/movies/</loc>
     <priority>0.1</priority>
   </url>
   
   <url>
-    <loc>https://jamesyeung.cn/books/</loc>
+    <loc>/books/</loc>
     <priority>0.1</priority>
   </url>
   
   <url>
-    <loc>https://jamesyeung.cn/posts/daily/</loc>
+    <loc>/posts/daily/</loc>
   </url>
   
   <url>
-    <loc>https://jamesyeung.cn/posts/reading/</loc>
+    <loc>/posts/reading/</loc>
   </url>
   
 </urlset>
