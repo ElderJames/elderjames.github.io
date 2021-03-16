@@ -8,72 +8,27 @@
     <language>en</language>
     <copyright>&amp;copy; 2021 &lt;a href=&#34;https://www.wangchucheng.com/&#34;&gt;C. Wang&lt;/a&gt; and &lt;a href=&#34;https://www.ruiqima.com/&#34;&gt;R. Ma&lt;/a&gt;
 </copyright>
-    <lastBuildDate>Sun, 14 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 16 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Blazor 面试 18 问</title>
+      <link>/posts/blazor-interview-questions/</link>
+      <pubDate>Tue, 16 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/blazor-interview-questions/</guid>
+      <description>问题一、 什么是 Blazor 问题二、 为什么要使用 Blazor? 问题三、什么类型的应用程序可以使用 Blazor 来构建？ 问题四、Blazor 中的组件是什么？ 问题五、Blazor 的生命周期与生命周期方法分别是什么？ 问题六、什么是 Blazor WebAssembly？ 问题七、什么是 Blazor Server？ 问题八、Blazor 支持那些平台？ 问题九、Blazor 中的模板组件是什么？ 问题十、Blazor 中的路由是什么？ 问题十一、Blazor 中的数据绑定是什么？ 问题十二、如何将 Blazor 应用程序部署到 Azure 中？ 问题十三、如何将 Blazor 应用程序部署到 IIS 中？ 问题十si、Blazor 中的授权是什么？ 问题十五、Blazor Server 和 Blazor WebAssembly 之间有什么不同？ 问题十六、如何知道什么时候该用 Blazor Server 还是 Blazor WebAssembly 呢？ 问题十七、可以同时使用 Blazor WebAssembly 来构建全栈应用程序吗？ 问题十八、如何调试 Blazor WebAssembly？ </description>
+    </item>
+    
     <item>
       <title>ASP.NET Core 在 .NET 6 Preview 2 中的更新</title>
-      <link>/posts/coding/asp-net-core-updates-in-net-6-preview-2/</link>
+      <link>/posts/asp-net-core-updates-in-net-6-preview-2/</link>
       <pubDate>Sun, 14 Mar 2021 00:00:00 +0000</pubDate>
       
-      <guid>/posts/coding/asp-net-core-updates-in-net-6-preview-2/</guid>
+      <guid>/posts/asp-net-core-updates-in-net-6-preview-2/</guid>
       <description>原文：《ASP.NET Core updates in .NET 6 Preview 2》，作者 Daniel Roth
   .NET 6 预览版 2 现已推出，其中包括许多对 ASP.NET Core 的新改进。
 以下是本次预览版的新内容：
  Razor 编译器更新为使用 Source Generators Blazor 支持自定义事件参数 增加 MVC 视图和 Razor 页面的 CSS 隔离 Blazor 支持从祖先组件中推断组件的泛型类型 Blazor 应用程序支持保留预渲染时的状态 SignalR – 支持 Nullable 标注  马上开始 想开始在 .NET 6 Preview 2 中使用 ASP.NET Core，请先安装 .NET 6 SDK。
 如果您正在 Windows 上使用 Visual Studio，我们建议安装 Visual Studio 2019 16.10 的最新预览版。如果您在 macOS 上，我们建议安装 Visual Studio 2019 for Mac 8.</description>
-    </item>
-    
-    <item>
-      <title>2020-11-15</title>
-      <link>/posts/chat/2020-11-15/</link>
-      <pubDate>Sun, 15 Nov 2020 17:31:06 +0800</pubDate>
-      
-      <guid>/posts/chat/2020-11-15/</guid>
-      <description>把博客搬过来 Hugo 啦！</description>
-    </item>
-    
-    <item>
-      <title>关于</title>
-      <link>/about/</link>
-      <pubDate>Sat, 14 Mar 2020 12:41:27 +0000</pubDate>
-      
-      <guid>/about/</guid>
-      <description>维护项目  Ant Design Blazor：https://github.com/ant-design-blazor  </description>
-    </item>
-    
-    <item>
-      <title>Search Results</title>
-      <link>/search/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/search/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>我的相册</title>
-      <link>/photos/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/photos/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>我的观影</title>
-      <link>/movies/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/movies/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>我的阅读</title>
-      <link>/books/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/books/</guid>
-      <description></description>
     </item>
     
   </channel>

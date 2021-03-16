@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>标签 on James Yeung</title>
+    <title>Tags on James Yeung</title>
     <link>/tags/</link>
-    <description>Recent content in 标签 on James Yeung</description>
+    <description>Recent content in Tags on James Yeung</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>&amp;copy; 2021 &lt;a href=&#34;https://www.wangchucheng.com/&#34;&gt;C. Wang&lt;/a&gt; and &lt;a href=&#34;https://www.ruiqima.com/&#34;&gt;R. Ma&lt;/a&gt;
 </copyright>
-    <lastBuildDate>Sun, 14 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 16 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>.NET</title>
       <link>/tags/.net/</link>
-      <pubDate>Sun, 14 Mar 2021 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 16 Mar 2021 00:00:00 +0000</pubDate>
       
       <guid>/tags/.net/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>碎碎念</title>
-      <link>/tags/%E7%A2%8E%E7%A2%8E%E5%BF%B5/</link>
-      <pubDate>Sun, 15 Nov 2020 17:31:06 +0800</pubDate>
+      <title>Blazor</title>
+      <link>/tags/blazor/</link>
+      <pubDate>Tue, 16 Mar 2021 00:00:00 +0000</pubDate>
       
-      <guid>/tags/%E7%A2%8E%E7%A2%8E%E5%BF%B5/</guid>
+      <guid>/tags/blazor/</guid>
       <description></description>
     </item>
     
