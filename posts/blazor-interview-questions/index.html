@@ -50,7 +50,17 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/images/icon_hu64421c6c7700f606f0ad45d807017b09_5843_180x180_fill_box_center_2.png">
 
 <meta name="description"
-  content="问题一、 什么是 Blazor 问题二、 为什么要使用 Blazor? 问题三、什么类型的应用程序可以使用 Blazor 来构建？ 问题四、Blazor 中的组件是什么？ 问题五、Blazor 的生命周期与生命周期方法分别是什么？ 问题六、什么是 Blazor WebAssembly？ 问题七、什么是 Blazor Server？ 问题八、Blazor 支持那些平台？ 问题九、Blazor 中的模板组件是什么？ 问题十、Blazor 中的路由是什么？ 问题十一、Blazor 中的数据绑定是什么？ 问题十二、如何将 Blazor 应用程序部署到 Azure 中？ 问题十三、如何将 Blazor 应用程序部署到 IIS 中？ 问题十si、Blazor 中的授权是什么？ 问题十五、Blazor Server 和 Blazor WebAssembly 之间有什么不同？ 问题十六、如何知道什么时候该用 Blazor Server 还是 Blazor WebAssembly 呢？ 问题十七、可以同时使用 Blazor WebAssembly 来构建全栈应用程序吗？ 问题十八、如何调试 Blazor WebAssembly？ ">
+  content="本文翻译自Blazor Interview Questions And Answers 
+ 问题一、 什么是 Blazor Blazor 是一个免费的、开源的、跨平台的 Web 框架，它允许开发人员使用 C# 和 .NET 构建现代的、可扩展的、跨平台的 Web 应用程序。Blazor 是由微软和开源社区开发的，其最初设计目的是为了让 C# 和 .NET 开发人员使用 C# 语言构建 Web 客户端应用程序。Blazor 是现代的、快速的、快速发展的。
+大多数 web 客户端应用程序都是使用 JavaScript 编写的，其中代码主要在浏览器中运行。Blazor 框架允许开发人员使用 C# 代替 JavaScript 创建丰富的交互式用户界面。
+Blazor同时支持客户端和服务器端编码。服务器端和客户端的应用逻辑都是用.NET编写的。
+尽管代码是用.NET和C#编写的，但Blazor将用户界面渲染为HTML和CSS，以获得广泛的浏览器支持，包括移动浏览器。
+下面是一个简单的Blazor代码示例，展示了 HTML 和 C# 如何在同一个文件中，以及如何从 HTML 代码中调用一个函数。
+Blazor还可以与现代托管平台（如Docker）集成。
+想要了解更多关于Blazor的信息，请从这里开始:使用。net Core介绍Blazor
+问题二、 为什么要使用 Blazor? Blazor是为那些不熟悉JavaScript的开发人员开发的，他们大多拥有c#和。net背景。Blazor提供了以下优点：
+ 用C#代替JavaScript编写代码。 利用现有.NET库的.NET生态系统。 在服务器和客户端之间共享应用程序逻辑。 受益于.NET的性能、可靠性和安全性。 在Windows、Linux和macOS上使用Visual Studio保持生产力。 建立在一套通用的语言、框架和工具之上，这些语言、框架和工具稳定、功能丰富且易于使用。  问题三、什么类型的应用程序可以使用 Blazor 来构建？ Blazor支持两种类型的应用，Blazor Sever应用和Blazor WebAssembly应用。
+Blazor Server 应用程序在运行在服务端的 ASP.">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -79,7 +89,7 @@
     },
     "headline": "Blazor 面试 18 问 | James Yeung","datePublished": "2021-03-16T00:00:00+00:00",
     "dateModified": "2021-03-16T00:00:00+00:00",
-    "wordCount":  59 ,
+    "wordCount":  170 ,
     "publisher": {
         "@type": "Person",
         "name": "C. Wang",
@@ -88,7 +98,7 @@
             "url": "/images/icon.png"
         }
         },
-    "description": "问题一、 什么是 Blazor 问题二、 为什么要使用 Blazor? 问题三、什么类型的应用程序可以使用 Blazor 来构建？ 问题四、Blazor 中的组件是什么？ 问题五、Blazor 的生命周期与生命周期方法分别是什么？ 问题六、什么是 Blazor WebAssembly？ 问题七、什么是 Blazor Server？ 问题八、Blazor 支持那些平台？ 问题九、Blazor 中的模板组件是什么？ 问题十、Blazor 中的路由是什么？ 问题十一、Blazor 中的数据绑定是什么？ 问题十二、如何将 Blazor 应用程序部署到 Azure 中？ 问题十三、如何将 Blazor 应用程序部署到 IIS 中？ 问题十si、Blazor 中的授权是什么？ 问题十五、Blazor Server 和 Blazor WebAssembly 之间有什么不同？ 问题十六、如何知道什么时候该用 Blazor Server 还是 Blazor WebAssembly 呢？ 问题十七、可以同时使用 Blazor WebAssembly 来构建全栈应用程序吗？ 问题十八、如何调试 Blazor WebAssembly？ "
+    "description": "本文翻译自Blazor Interview Questions And Answers \n 问题一、 什么是 Blazor Blazor 是一个免费的、开源的、跨平台的 Web 框架，它允许开发人员使用 C# 和 .NET 构建现代的、可扩展的、跨平台的 Web 应用程序。Blazor 是由微软和开源社区开发的，其最初设计目的是为了让 C# 和 .NET 开发人员使用 C# 语言构建 Web 客户端应用程序。Blazor 是现代的、快速的、快速发展的。\n大多数 web 客户端应用程序都是使用 JavaScript 编写的，其中代码主要在浏览器中运行。Blazor 框架允许开发人员使用 C# 代替 JavaScript 创建丰富的交互式用户界面。\nBlazor同时支持客户端和服务器端编码。服务器端和客户端的应用逻辑都是用.NET编写的。\n尽管代码是用.NET和C#编写的，但Blazor将用户界面渲染为HTML和CSS，以获得广泛的浏览器支持，包括移动浏览器。\n下面是一个简单的Blazor代码示例，展示了 HTML 和 C# 如何在同一个文件中，以及如何从 HTML 代码中调用一个函数。\nBlazor还可以与现代托管平台（如Docker）集成。\n想要了解更多关于Blazor的信息，请从这里开始:使用。net Core介绍Blazor\n问题二、 为什么要使用 Blazor? Blazor是为那些不熟悉JavaScript的开发人员开发的，他们大多拥有c#和。net背景。Blazor提供了以下优点：\n 用C#代替JavaScript编写代码。 利用现有.NET库的.NET生态系统。 在服务器和客户端之间共享应用程序逻辑。 受益于.NET的性能、可靠性和安全性。 在Windows、Linux和macOS上使用Visual Studio保持生产力。 建立在一套通用的语言、框架和工具之上，这些语言、框架和工具稳定、功能丰富且易于使用。  问题三、什么类型的应用程序可以使用 Blazor 来构建？ Blazor支持两种类型的应用，Blazor Sever应用和Blazor WebAssembly应用。\nBlazor Server 应用程序在运行在服务端的 ASP."
 }
 </script><meta property="og:title" content="Blazor 面试 18 问 | James Yeung" />
 <meta property="og:type" content="article" />
@@ -102,7 +112,17 @@
 
 
 
-<meta property="og:description" content="问题一、 什么是 Blazor 问题二、 为什么要使用 Blazor? 问题三、什么类型的应用程序可以使用 Blazor 来构建？ 问题四、Blazor 中的组件是什么？ 问题五、Blazor 的生命周期与生命周期方法分别是什么？ 问题六、什么是 Blazor WebAssembly？ 问题七、什么是 Blazor Server？ 问题八、Blazor 支持那些平台？ 问题九、Blazor 中的模板组件是什么？ 问题十、Blazor 中的路由是什么？ 问题十一、Blazor 中的数据绑定是什么？ 问题十二、如何将 Blazor 应用程序部署到 Azure 中？ 问题十三、如何将 Blazor 应用程序部署到 IIS 中？ 问题十si、Blazor 中的授权是什么？ 问题十五、Blazor Server 和 Blazor WebAssembly 之间有什么不同？ 问题十六、如何知道什么时候该用 Blazor Server 还是 Blazor WebAssembly 呢？ 问题十七、可以同时使用 Blazor WebAssembly 来构建全栈应用程序吗？ 问题十八、如何调试 Blazor WebAssembly？ " />
+<meta property="og:description" content="本文翻译自Blazor Interview Questions And Answers 
+ 问题一、 什么是 Blazor Blazor 是一个免费的、开源的、跨平台的 Web 框架，它允许开发人员使用 C# 和 .NET 构建现代的、可扩展的、跨平台的 Web 应用程序。Blazor 是由微软和开源社区开发的，其最初设计目的是为了让 C# 和 .NET 开发人员使用 C# 语言构建 Web 客户端应用程序。Blazor 是现代的、快速的、快速发展的。
+大多数 web 客户端应用程序都是使用 JavaScript 编写的，其中代码主要在浏览器中运行。Blazor 框架允许开发人员使用 C# 代替 JavaScript 创建丰富的交互式用户界面。
+Blazor同时支持客户端和服务器端编码。服务器端和客户端的应用逻辑都是用.NET编写的。
+尽管代码是用.NET和C#编写的，但Blazor将用户界面渲染为HTML和CSS，以获得广泛的浏览器支持，包括移动浏览器。
+下面是一个简单的Blazor代码示例，展示了 HTML 和 C# 如何在同一个文件中，以及如何从 HTML 代码中调用一个函数。
+Blazor还可以与现代托管平台（如Docker）集成。
+想要了解更多关于Blazor的信息，请从这里开始:使用。net Core介绍Blazor
+问题二、 为什么要使用 Blazor? Blazor是为那些不熟悉JavaScript的开发人员开发的，他们大多拥有c#和。net背景。Blazor提供了以下优点：
+ 用C#代替JavaScript编写代码。 利用现有.NET库的.NET生态系统。 在服务器和客户端之间共享应用程序逻辑。 受益于.NET的性能、可靠性和安全性。 在Windows、Linux和macOS上使用Visual Studio保持生产力。 建立在一套通用的语言、框架和工具之上，这些语言、框架和工具稳定、功能丰富且易于使用。  问题三、什么类型的应用程序可以使用 Blazor 来构建？ Blazor支持两种类型的应用，Blazor Sever应用和Blazor WebAssembly应用。
+Blazor Server 应用程序在运行在服务端的 ASP." />
 
 
 
@@ -235,24 +255,63 @@
         
 
         <div class="content">
-            <h1 id="问题一-什么是-blazor">问题一、 什么是 Blazor</h1>
+            <blockquote>
+<p>本文翻译自<a href="https://www.c-sharpcorner.com/article/introduction-to-blazor-with-net-core/">Blazor Interview Questions And Answers
+</a></p>
+</blockquote>
+<h1 id="问题一-什么是-blazor">问题一、 什么是 Blazor</h1>
+<p>Blazor 是一个免费的、开源的、跨平台的 Web 框架，它允许开发人员使用 C# 和 .NET 构建现代的、可扩展的、跨平台的 Web 应用程序。Blazor 是由微软和开源社区开发的，其最初设计目的是为了让 C# 和 .NET 开发人员使用 C# 语言构建 Web 客户端应用程序。Blazor 是现代的、快速的、快速发展的。</p>
+<p>大多数 web 客户端应用程序都是使用 JavaScript 编写的，其中代码主要在浏览器中运行。Blazor 框架允许开发人员使用 C# 代替 JavaScript 创建丰富的交互式用户界面。</p>
+<p>Blazor同时支持客户端和服务器端编码。服务器端和客户端的应用逻辑都是用.NET编写的。</p>
+<p>尽管代码是用.NET和C#编写的，但Blazor将用户界面渲染为HTML和CSS，以获得广泛的浏览器支持，包括移动浏览器。</p>
+<p>下面是一个简单的Blazor代码示例，展示了 HTML 和 C# 如何在同一个文件中，以及如何从 HTML 代码中调用一个函数。</p>
+<p><img src="/photos/blazor-interview-questions/photo-1.jpg" alt="Blazor Interview Questions And Answers"></p>
+<p>Blazor还可以与现代托管平台（如Docker）集成。</p>
+<p>想要了解更多关于Blazor的信息，请从这里开始:使用。net Core介绍Blazor</p>
 <h1 id="问题二-为什么要使用-blazor">问题二、 为什么要使用 Blazor?</h1>
+<p>Blazor是为那些不熟悉JavaScript的开发人员开发的，他们大多拥有c#和。net背景。Blazor提供了以下优点：</p>
+<ul>
+<li>用C#代替JavaScript编写代码。</li>
+<li>利用现有.NET库的.NET生态系统。</li>
+<li>在服务器和客户端之间共享应用程序逻辑。</li>
+<li>受益于.NET的性能、可靠性和安全性。</li>
+<li>在Windows、Linux和macOS上使用Visual Studio保持生产力。</li>
+<li>建立在一套通用的语言、框架和工具之上，这些语言、框架和工具稳定、功能丰富且易于使用。</li>
+</ul>
 <h1 id="问题三什么类型的应用程序可以使用-blazor-来构建">问题三、什么类型的应用程序可以使用 Blazor 来构建？</h1>
+<p>Blazor支持两种类型的应用，Blazor Sever应用和Blazor WebAssembly应用。</p>
+<p><img src="/photos/blazor-interview-questions/photo-2.jpg" alt="Blazor Interview Questions And Answers1"></p>
+<p>Blazor Server 应用程序在运行在服务端的 ASP.NET Core 应用程序中，并通过 SignalR 连接处理用户交互。</p>
+<p>Blazor WebAssembly 应用程序通过 WebAssembly 在客户端浏览器中运行。</p>
 <h1 id="问题四blazor-中的组件是什么">问题四、Blazor 中的组件是什么？</h1>
-<h1 id="问题五blazor-的生命周期与生命周期方法分别是什么">问题五、Blazor 的生命周期与生命周期方法分别是什么？</h1>
-<h1 id="问题六什么是-blazor-webassembly">问题六、什么是 Blazor WebAssembly？</h1>
-<h1 id="问题七什么是-blazor-server">问题七、什么是 Blazor Server？</h1>
-<h1 id="问题八blazor-支持那些平台">问题八、Blazor 支持那些平台？</h1>
-<h1 id="问题九blazor-中的模板组件是什么">问题九、Blazor 中的模板组件是什么？</h1>
-<h1 id="问题十blazor-中的路由是什么">问题十、Blazor 中的路由是什么？</h1>
-<h1 id="问题十一blazor-中的数据绑定是什么">问题十一、Blazor 中的数据绑定是什么？</h1>
-<h1 id="问题十二如何将-blazor-应用程序部署到-azure-中">问题十二、如何将 Blazor 应用程序部署到 Azure 中？</h1>
-<h1 id="问题十三如何将-blazor-应用程序部署到-iis-中">问题十三、如何将 Blazor 应用程序部署到 IIS 中？</h1>
-<h1 id="问题十siblazor-中的授权是什么">问题十si、Blazor 中的授权是什么？</h1>
-<h1 id="问题十五blazor-server-和-blazor-webassembly-之间有什么不同">问题十五、Blazor Server 和 Blazor WebAssembly 之间有什么不同？</h1>
-<h1 id="问题十六如何知道什么时候该用-blazor-server-还是-blazor-webassembly-呢">问题十六、如何知道什么时候该用 Blazor Server 还是 Blazor WebAssembly 呢？</h1>
-<h1 id="问题十七可以同时使用-blazor-webassembly-来构建全栈应用程序吗">问题十七、可以同时使用 Blazor WebAssembly 来构建全栈应用程序吗？</h1>
-<h1 id="问题十八如何调试-blazor-webassembly">问题十八、如何调试 Blazor WebAssembly？</h1>
+<p>组件是Blazor的一个基本概念，所有Blazor应用都基于组件。Blazor中的所有UI元素都是组件，比如页面、对话框或数据输入表单。从代码的角度来看，Blazor中的组件是内置于.Net程序集中的c#类，它们定义了UI呈现逻辑并处理控件和页面事件。</p>
+<p>Blazor 组件使用 Razor、HTML 和 C# 代码的组合。组件是Blazor应用的基础元素，也就是说，在Blazor中，每个页面都被视为一个组件。下面是一个简单的客户端Blazor应用，展示了默认的页面组件代码。</p>
+<pre><code>@page &quot;/&quot;  
+&lt;h2&gt;@Title&lt;/h2&gt;  
+@functions {  
+    const string Title = &quot;Blazor&quot;;  
+}  
+</code></pre>
+<p>在上面的代码中，HTML和后面的代码写在同一个HTML文件中。组件的HTML部分包含Razor语法和HTML标记，后面的代码包含实际的逻辑。简而言之，在这个方法中，我们可以在同一个页面上添加视图标记和逻辑。逻辑通过使用一个函数块来分隔。</p>
+<p>在函数块中，我们可以定义视图标记中使用的所有属性，并将方法作为事件与控件绑定。</p>
+<p>在Blazor中，我们还可以使用 code-behind 的方式来编写组件，让 C# 代码编写在一个单独的文件中。</p>
+<hr>
+<p>未完待续&hellip;</p>
+<pre><code># 问题五、Blazor 的生命周期与生命周期方法分别是什么？
+# 问题六、什么是 Blazor WebAssembly？
+# 问题七、什么是 Blazor Server？
+# 问题八、Blazor 支持那些平台？
+# 问题九、Blazor 中的模板组件是什么？
+# 问题十、Blazor 中的路由是什么？
+# 问题十一、Blazor 中的数据绑定是什么？
+# 问题十二、如何将 Blazor 应用程序部署到 Azure 中？ 
+# 问题十三、如何将 Blazor 应用程序部署到 IIS 中？ 
+# 问题十si、Blazor 中的授权是什么？ 
+# 问题十五、Blazor Server 和 Blazor WebAssembly 之间有什么不同？ 
+# 问题十六、如何知道什么时候该用 Blazor Server 还是 Blazor WebAssembly 呢？
+# 问题十七、可以同时使用 Blazor WebAssembly 来构建全栈应用程序吗？ 
+# 问题十八、如何调试 Blazor WebAssembly？ 
+</code></pre>
 
         </div>
         
