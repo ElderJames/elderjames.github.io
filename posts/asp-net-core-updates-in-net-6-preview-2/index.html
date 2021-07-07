@@ -79,7 +79,7 @@
     },
     "headline": "ASP.NET Core 在 .NET 6 Preview 2 中的更新 | James Yeung","datePublished": "2021-03-14T00:00:00+00:00",
     "dateModified": "2021-03-14T00:00:00+00:00",
-    "wordCount":  579 ,
+    "wordCount":  591 ,
     "publisher": {
         "@type": "Person",
         "name": "C. Wang",
@@ -227,7 +227,8 @@
         
 
         <div class="content">
-            <blockquote>
+            <p>.NET 6 预览版 2 现已推出！快来看看那些让人激动不已的新东西！</p>
+<blockquote>
 <p>原文：<a href="https://devblogs.microsoft.com/aspnet/asp-net-core-updates-in-net-6-preview-2/?WT.mc_id=DT-MVP-5003987">《ASP.NET Core updates in .NET 6 Preview 2》</a>，作者 <a href="https://devblogs.microsoft.com/aspnet/author/danroth27/?WT.mc_id=DT-MVP-5003987">Daniel Roth</a></p>
 </blockquote>
 <hr>
@@ -245,14 +246,14 @@
 <p>想开始在 .NET 6 Preview 2 中使用 ASP.NET Core，请先安装 <a href="https://dotnet.microsoft.com/download/dotnet/6.0?WT.mc_id=DT-MVP-5003987">.NET 6 SDK</a>。</p>
 <p>如果您正在 Windows 上使用 Visual Studio，我们建议安装 <a href="http://visualstudio.com/preview?WT.mc_id=DT-MVP-5003987">Visual Studio 2019 16.10 的最新预览版</a>。如果您在 macOS 上，我们建议安装 <a href="https://docs.microsoft.com/visualstudio/releasenotes/vs2019-mac-preview-relnotes?WT.mc_id=DT-MVP-5003987">Visual Studio 2019 for Mac 8.10</a> 的最新预览版。</p>
 <h1 id="升级现有项目">升级现有项目</h1>
-<p>要将现有的 ASP.NET Core 应用程序从 .NET 6 Preview 1升级到.NET 6 Preview 2，您需要：</p>
+<p>要将现有的 ASP.NET Core 应用程序从 .NET 6 Preview 1 升级到.NET 6 Preview 2，您需要：</p>
 <ul>
-<li>更新所有 Microsoft.AspNetCore.* 包的引用到 6.0.0-preview.2.*.</li>
-<li>更新所有 Microsoft.Extensions.* 包的引用到 6.0.0-preview.2.*.</li>
+<li>更新所有 Microsoft.AspNetCore._ 包的引用到 6.0.0-preview.2._.</li>
+<li>更新所有 Microsoft.Extensions._ 包的引用到 6.0.0-preview.2._.</li>
 </ul>
 <p>再查看完整的 ASP.NET Core 在 .NET 6 中的<a href="https://docs.microsoft.com/dotnet/core/compatibility/6.0?WT.mc_id=DT-MVP-5003987#aspnet-core">破坏性改动</a>列表。</p>
 <h1 id="razor-编译器更新为使用-source-generators">Razor 编译器更新为使用 Source Generators</h1>
-<p>我们在这个预览版中更新了 Razor 编译器，使用 C# Source Generators来实现。Source Generators 在编译过程中运行，并能检查正在编译的内容，以生成额外的文件，与项目的其余部分一起编译。我们使用 Source Generators 简化了 Razor 编译器，并显著加快了构建的时间。</p>
+<p>我们在这个预览版中更新了 Razor 编译器，使用 C# Source Generators 来实现。Source Generators 在编译过程中运行，并能检查正在编译的内容，以生成额外的文件，与项目的其余部分一起编译。我们使用 Source Generators 简化了 Razor 编译器，并显著加快了构建的时间。</p>
 <p>下图显示了使用新的 Razor 编译器构建默认的 Blazor Server 和 MVC 模板时的构建时间改进。</p>
 <p><img src="https://devblogs.microsoft.com/aspnet/wp-content/uploads/sites/16/2021/03/razor-build-perf-improvements.png?WT.mc_id=DT-MVP-5003987" alt="Razor 构建的性能改进"></p>
 <h1 id="blazor-支持自定义事件参数">Blazor 支持自定义事件参数</h1>
@@ -292,25 +293,25 @@ public class CustomPasteEventArgs : EventArgs
 <p>然而，如果您现在实际运行代码，事件将不会触发。因为还剩下一个步骤，就是添加一些 JavaScript 代码，实际为您的新 <code>EventArgs</code> 子类提供数据。在您的 <code>index.html</code> 或 <code>_Host.cshtml</code> 文件中，添加以下内容：</p>
 <pre><code class="language-html">&lt;!-- 您需要将这段代码直接添加到 blazor.server.js 或 blazor.webassembly.js 的 &lt;script&gt; 标签后面。--&gt;
 &lt;script&gt;
-    Blazor.registerCustomEventType('custompaste', {
-        browserEventName: 'paste',
-        createEventArgs: event =&gt; {
-            // 这个例子只处理粘贴文本，但你可以使用任意的 JavaScript API
-            // 来处理用户粘贴其他类型的数据，如图片。
-            return {
-                eventTimestamp: new Date(),
-                pastedData: event.clipboardData.getData('text')
-            };
-        }
-    });
+  Blazor.registerCustomEventType('custompaste', {
+    browserEventName: 'paste',
+    createEventArgs: (event) =&gt; {
+      // 这个例子只处理粘贴文本，但你可以使用任意的 JavaScript API
+      // 来处理用户粘贴其他类型的数据，如图片。
+      return {
+        eventTimestamp: new Date(),
+        pastedData: event.clipboardData.getData('text'),
+      };
+    },
+  });
 &lt;/script&gt;
 </code></pre>
-<p>这是告诉浏览器，每当本地粘贴事件发生时，它也应该引发一个自定义粘贴事件，并使用您的自定义逻辑提供事件参数数据。请注意，事件名称的约定在 .NET（事件名称前缀为on）和 JavaScript（事件名称没有任何前缀）之间有所不同。</p>
+<p>这是告诉浏览器，每当本地粘贴事件发生时，它也应该引发一个自定义粘贴事件，并使用您的自定义逻辑提供事件参数数据。请注意，事件名称的约定在 .NET（事件名称前缀为 on）和 JavaScript（事件名称没有任何前缀）之间有所不同。</p>
 <h1 id="增加-mvc-视图和-razor-页面的-css-隔离">增加 MVC 视图和 Razor 页面的 CSS 隔离</h1>
-<p>现在，MVC视图 和 Razor 页面跟 Blazor 组件一样支持 CSS 隔离。想要添加一个视图或页面特定的 CSS 文件，只需添加一个与 <code>.cshtml</code>文件名称相匹配的 <code>.cshtml.css</code> 文件即可。</p>
+<p>现在，MVC 视图 和 Razor 页面跟 Blazor 组件一样支持 CSS 隔离。想要添加一个视图或页面特定的 CSS 文件，只需添加一个与 <code>.cshtml</code>文件名称相匹配的 <code>.cshtml.css</code> 文件即可。</p>
 <p><code>Index.cshtml.css</code></p>
 <pre><code class="language-css">h1 {
-    color: red;
+  color: red;
 }
 </code></pre>
 <p>在你的布局中添加一个链接到 {项目名}.styles.css 来引用捆绑的样式。</p>
@@ -368,15 +369,14 @@ public class CustomPasteEventArgs : EventArgs
 <p>注意：Visual Studio Code 中的 Razor 支持尚未更新以支持该功能，因此即使项目正确构建，你也可能遇到误判的错误提醒。这将在即将发布的工具版本中解决。</p>
 </blockquote>
 <h1 id="blazor-应用程序支持保留预渲染时的状态">Blazor 应用程序支持保留预渲染时的状态</h1>
-<p>Blazor 应用程序可从服务端进行预渲染，以加快应用程序可感知的加载时间。当应用程序在后台进行交互性设置时，可立即渲染预渲染的 HTML。但是，预渲染期间使用的任何状态都会丢失，必须在应用程序完全加载时重新创建。如果异步设置任何状态，那么当预渲染的 UI 被临时占位符替换，然后再次完全渲染时，UI可能会闪烁。</p>
+<p>Blazor 应用程序可从服务端进行预渲染，以加快应用程序可感知的加载时间。当应用程序在后台进行交互性设置时，可立即渲染预渲染的 HTML。但是，预渲染期间使用的任何状态都会丢失，必须在应用程序完全加载时重新创建。如果异步设置任何状态，那么当预渲染的 UI 被临时占位符替换，然后再次完全渲染时，UI 可能会闪烁。</p>
 <p>为了解决这个问题，我们增加了新的 <code>&lt;preserve-component-state /&gt;</code> tag helper，它可以支持把状态持久化到预渲染页面。在你的应用程序中，你可以使用新的 <code>ComponentApplicationState</code> 服务来决定你要持久化的状态。当状态即将被持久化到预渲染页面中时，<code>ComponentApplicationState.OnPersisting</code> 事件会被触发。然后你就可以在初始化你的组件时恢复（retrieved）任何已被持久化的状态。</p>
 <p>下面的示例展示了如何在预渲染期间持久化默认的 <code>FetchData</code> 组件中的天气预报，然后在 <code>Blazor</code> 服务端应用程序中恢复状态以初始化该组件。</p>
 <p><code>_Host.cshtml</code></p>
 <pre><code class="language-html">&lt;body&gt;
-    &lt;component type=&quot;typeof(App)&quot; render-mode=&quot;ServerPrerendered&quot; /&gt;
-    ...
-    @* 当所有组件调用后持久化组件状态 *@
-    &lt;persist-component-state /&gt;
+  &lt;component type=&quot;typeof(App)&quot; render-mode=&quot;ServerPrerendered&quot; /&gt;
+  ... @* 当所有组件调用后持久化组件状态 *@
+  &lt;persist-component-state /&gt;
 &lt;/body&gt;
 </code></pre>
 <p><code>FetchData.razor</code></p>
@@ -418,7 +418,7 @@ public class CustomPasteEventArgs : EventArgs
 }
 </code></pre>
 <blockquote>
-<p>注意：这个预览版中提供了一个 <code>TryRedeemFromJson&lt;T&gt;</code> 辅助方法，但有一个已知的问题，将会在未来的更新中解决。为了解决这个问题，请先使用 <code>TryRedeemPersistedState</code> 和手动JSON反序列化，如上例所示。</p>
+<p>注意：这个预览版中提供了一个 <code>TryRedeemFromJson&lt;T&gt;</code> 辅助方法，但有一个已知的问题，将会在未来的更新中解决。为了解决这个问题，请先使用 <code>TryRedeemPersistedState</code> 和手动 JSON 反序列化，如上例所示。</p>
 </blockquote>
 <p>通过使用与预渲染时相同的状态来初始化你的组件，任何昂贵的初始化步骤都只需要执行一次。新渲染的 UI 也与预渲染的 UI 相匹配，因此不会发生闪烁。</p>
 <h1 id="signalr---nullable-注解">SignalR - Nullable 注解</h1>
@@ -426,7 +426,6 @@ public class CustomPasteEventArgs : EventArgs
 <h1 id="给予反馈">给予反馈</h1>
 <p>我们希望您喜欢这个 .NET 6 中 ASP.NET Core 的预览版。我们渴望听到您对这个版本的体验。请在 <a href="https://github.com/dotnet/aspnetcore/issues">GitHub</a> 上提交问题，让我们知道你的想法。</p>
 <p>感谢你试用 ASP.NET Core!</p>
-
         </div>
         
         <div class="my-4">
