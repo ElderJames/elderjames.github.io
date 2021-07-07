@@ -5,10 +5,9 @@
     <link>/</link>
     <description>Recent content in 首页 on James Yeung</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <copyright>&amp;copy; 2021 &lt;a href=&#34;https://www.wangchucheng.com/&#34;&gt;C. Wang&lt;/a&gt; and &lt;a href=&#34;https://www.ruiqima.com/&#34;&gt;R. Ma&lt;/a&gt;
-</copyright>
-    <lastBuildDate>Wed, 07 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <language>zh</language>
+    <copyright>&amp;copy; 2021 &lt;a href=&#34;https://jamesyeung.cn/&#34;&gt;James Yeung
+</copyright><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Ant Design Blazor 组件库的路由复用多标签页介绍</title>
       <link>/posts/implement-reuse-tabs-using-antblazor/</link>
