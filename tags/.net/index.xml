@@ -6,7 +6,7 @@
     <description>Recent content in .NET on James Yeung</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
-    <copyright>&amp;copy; 2021 &lt;a href=&#34;https://jamesyeung.cn/&#34;&gt;James Yeung
+    <copyright>&amp;copy; 2021 &lt;a href=&#34;https://jamesyeung.cn/&#34;&gt;James Yeung&lt;/a&gt;
 </copyright>
     <lastBuildDate>Wed, 07 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="/tags/.net/index.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -24,7 +24,7 @@
       <pubDate>Tue, 16 Mar 2021 00:00:00 +0000</pubDate>
       
       <guid>/posts/blazor-interview-questions/</guid>
-      <description>&lt;p&gt;在本文中，作者以问题的形式介绍 Blazor 的基础概念。&lt;/p&gt;</description>
+      <description>Blazor 是一个免费的、开源的、跨平台的 Web 框架。本文以面试问答的形式，介绍了 Blazor 中的一些主要概念。</description>
     </item>
     
     <item>
