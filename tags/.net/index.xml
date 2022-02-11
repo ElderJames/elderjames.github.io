@@ -8,7 +8,16 @@
     <language>zh</language>
     <copyright>&amp;copy; 2021 &lt;a href=&#34;https://jamesyeung.cn/&#34;&gt;James Yeung&lt;/a&gt;
 </copyright>
-    <lastBuildDate>Wed, 07 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="/tags/.net/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 11 Feb 2022 00:00:00 +0000</lastBuildDate><atom:link href="/tags/.net/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>来自 .NET 基金会的来信——为网络20周年庆祝活动做好准备</title>
+      <link>/posts/get-ready-for-the-net-20th-anniversary-celebration/</link>
+      <pubDate>Fri, 11 Feb 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/get-ready-for-the-net-20th-anniversary-celebration/</guid>
+      <description>作为 .NET 基金会的成员和.NET的朋友，我们认为你会想知道这个庆典。</description>
+    </item>
+    
     <item>
       <title>Ant Design Blazor 组件库的路由复用多标签页介绍</title>
       <link>/posts/implement-reuse-tabs-using-antblazor/</link>
