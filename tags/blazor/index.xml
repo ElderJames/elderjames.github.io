@@ -8,7 +8,16 @@
     <language>zh</language>
     <copyright>&amp;copy; 2021 &lt;a href=&#34;https://jamesyeung.cn/&#34;&gt;James Yeung&lt;/a&gt;
 </copyright>
-    <lastBuildDate>Wed, 07 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="/tags/blazor/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 15 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="/tags/blazor/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ant Design Blazor 0.11 - 0.12 中值得回味的新特性</title>
+      <link>/posts/whats-new-in-antblazor-0.11-0.12/</link>
+      <pubDate>Thu, 15 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/whats-new-in-antblazor-0.11-0.12/</guid>
+      <description>&lt;p&gt;关注 Ant Design Blazor 的朋友应该就知道，我们分别在 6 月中和 8 月底发布了 0.11 和 0.12 两个版本，其中 0.11 积攒了大半年的新特性，而 0.12 则时隔一年多同步了 Antd 最新的样式，支持了 CSS 变量，所以很值得专门写一篇文章来介绍其中一些我觉得对项目发展影响很大的新特性。&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Ant Design Blazor 组件库的路由复用多标签页介绍</title>
       <link>/posts/implement-reuse-tabs-using-antblazor/</link>
