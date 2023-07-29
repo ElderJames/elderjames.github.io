@@ -9,6 +9,24 @@
     <copyright>&amp;copy; 2021 &lt;a href=&#34;https://jamesyeung.cn/&#34;&gt;James Yeung&lt;/a&gt;
 </copyright><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>跟进 .NET 8 Blazor 之 ReuseTabs 支持 Query 属性绑定</title>
+      <link>/posts/ant-blazor-reusetabs-supports-supply-parameter-form-query/</link>
+      <pubDate>Sat, 29 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/ant-blazor-reusetabs-supports-supply-parameter-form-query/</guid>
+      <description>ASP.NET 团队在 .NET 8 继续全力投入 Blazor，为 Blazor 带来了非常多的新特性，AntDesign Blazor也会继续佛系跟进。本篇主要介绍第一个在AntDesign Blazor 上应用的新特性，也就是 ReuseTabs 自 2021 年发布两年后，仍然未支持的 Query String 属性绑定功能。</description>
+    </item>
+    
+    <item>
+      <title>如何无需 Dockerfile 直接发布 .NET 7 应用到 Docker</title>
+      <link>/posts/publish-net-apps-to-docker/</link>
+      <pubDate>Fri, 09 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/publish-net-apps-to-docker/</guid>
+      <description>.NET 7 在今年 11 月发布了，带来了几百页的性能提升和大量的新特性，其中很多新特性都让人印象深刻。本文就给大家带来直接使用 .NET SDK 构建 Docker 镜像的实战介绍。 在 .NET 7 中，</description>
+    </item>
+    
+    <item>
       <title>Ant Design Blazor 0.11 - 0.12 中值得回味的新特性</title>
       <link>/posts/whats-new-in-antblazor-0.11-0.12/</link>
       <pubDate>Thu, 15 Sep 2022 00:00:00 +0000</pubDate>

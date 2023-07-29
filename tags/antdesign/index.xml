@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>AntDesign on James Yeung</title>
+    <link>/tags/antdesign/</link>
+    <description>Recent content in AntDesign on James Yeung</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <copyright>&amp;copy; 2021 &lt;a href=&#34;https://jamesyeung.cn/&#34;&gt;James Yeung&lt;/a&gt;
+</copyright>
+    <lastBuildDate>Sat, 29 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="/tags/antdesign/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>跟进 .NET 8 Blazor 之 ReuseTabs 支持 Query 属性绑定</title>
+      <link>/posts/ant-blazor-reusetabs-supports-supply-parameter-form-query/</link>
+      <pubDate>Sat, 29 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/ant-blazor-reusetabs-supports-supply-parameter-form-query/</guid>
+      <description>ASP.NET 团队在 .NET 8 继续全力投入 Blazor，为 Blazor 带来了非常多的新特性，AntDesign Blazor也会继续佛系跟进。本篇主要介绍第一个在AntDesign Blazor 上应用的新特性，也就是 ReuseTabs 自 2021 年发布两年后，仍然未支持的 Query String 属性绑定功能。</description>
+    </item>
+    
+  </channel>
+</rss>
