@@ -90,7 +90,7 @@
         "@id": "/posts/ant-blazor-reusetabs-supports-supply-parameter-form-query/"
     },
     "headline": "跟进 .NET 8 Blazor 之 ReuseTabs 支持 Query 属性绑定 | James Yeung","datePublished": "2023-07-29T00:00:00+00:00",
-    "dateModified": "2023-07-30T00:04:20+08:00",
+    "dateModified": "2023-07-30T00:25:16+08:00",
     "wordCount":  1136 ,
     "publisher": {
         "@type": "Person",
@@ -134,7 +134,7 @@
 <meta property="article:published_time" content="2023-07-29T00:00:00&#43;00:00" />
 
 
-<meta property="article:modified_time" content="2023-07-30T00:04:20&#43;08:00" />
+<meta property="article:modified_time" content="2023-07-30T00:25:16&#43;08:00" />
 
 
 
@@ -269,7 +269,8 @@
 <p>接着，在PR <a href="https://github.com/dotnet/aspnetcore/pull/48554">#48554</a> 中使 SupplyParameterFromQuery 也能够通过 CascadingModelBinder 传递了，然后把上文提到的 RouteView 中的<a href="https://github.com/dotnet/aspnetcore/commit/883f06cbf5bfa9d82ef797c09fbcb6af7cbb1536#diff-c9ceeb487f25fa6e4e20bbc8eb15b597b014d77d3f464c51fd36d37e0365b96a">内部类 QueryParameterValueSupplier 相关代码</a>删掉了。</p>
 <p><img src="/photos/ant-blazor-reusetabs-supports-supply-parameter-form-query/image4.png" alt="RouteView delete QueryParameterValueSupplier"></p>
 <p>这简直正中眉心，马上我就把 RouteView 中的这段代码复制到 ReuseTabs 中了，PR<a href="#3377">https://github.com/ant-design-blazor/ant-design-blazor/pull/3377</a>，完美！</p>
-<p><img src="/photos/ant-blazor-reusetabs-supports-supply-parameter-form-query/image5.png" alt="Ant Design Blazor PR 3377"></p>
+<p><img src="/photos/ant-blazor-reusetabs-supports-supply-parameter-form-query/image5.png" alt="Ant Design Blazor PR 3377">
+<img src="/photos/ant-blazor-reusetabs-supports-supply-parameter-form-query/image6.png" alt="ReuseTabs support query string"></p>
 <p>开心之余，我寻思着就算是抄，也不能抄的不明不白吧，于是就顺便调查了一下 CascadingModelBinder 是怎么传递级联值的。简单一句就是 Blazor 创建了 CascadingModelBinder 组件和 CascadingModelBindingProvider 提供者来抽象和统一了级联传值方法。没想到官方博客中平淡的两句话介绍背后有这么大的改动。详情请关注我后面文章，另作介绍。</p>
 
         </div>
