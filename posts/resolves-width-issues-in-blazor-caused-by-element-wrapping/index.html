@@ -62,7 +62,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/images/icon_hu64421c6c7700f606f0ad45d807017b09_5843_180x180_fill_box_center_2.png">
 
 <meta name="description"
-  content="实践过不同前端框架的朋友应该都知道，对于同一个样式，在不同框架上的表现都会有不同，时时需要做“适配”，在 Blazor 上也不例外。在做 Ant Design Blazor 时就深有体会，因为我们">
+  content="实践过不同前端框架的朋友应该都知道，对于同一个样式，在不同框架上的表现都会有不同，时时需要做“适配”，在 Blazor 上也不例外。">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -90,8 +90,8 @@
         "@id": "/posts/resolves-width-issues-in-blazor-caused-by-element-wrapping/"
     },
     "headline": "解决 Blazor 中因标签换行导致的行内元素空隙问题 | James Yeung","datePublished": "2023-08-06T00:00:00+00:00",
-    "dateModified": "2023-08-06T23:33:36+08:00",
-    "wordCount":  427 ,
+    "dateModified": "2023-08-07T00:49:34+08:00",
+    "wordCount":  471 ,
     "publisher": {
         "@type": "Person",
         "name": "James Yeung",
@@ -100,7 +100,7 @@
             "url": "/photos/mvp-avatar.png"
         }
         },
-    "description": "实践过不同前端框架的朋友应该都知道，对于同一个样式，在不同框架上的表现都会有不同，时时需要做“适配”，在 Blazor 上也不例外。在做 Ant Design Blazor 时就深有体会，因为我们"
+    "description": "实践过不同前端框架的朋友应该都知道，对于同一个样式，在不同框架上的表现都会有不同，时时需要做“适配”，在 Blazor 上也不例外。"
 }
 </script><meta property="og:title" content="解决 Blazor 中因标签换行导致的行内元素空隙问题 | James Yeung" />
 <meta property="og:type" content="article" />
@@ -114,7 +114,7 @@
 
 
 
-<meta property="og:description" content="实践过不同前端框架的朋友应该都知道，对于同一个样式，在不同框架上的表现都会有不同，时时需要做“适配”，在 Blazor 上也不例外。在做 Ant Design Blazor 时就深有体会，因为我们" />
+<meta property="og:description" content="实践过不同前端框架的朋友应该都知道，对于同一个样式，在不同框架上的表现都会有不同，时时需要做“适配”，在 Blazor 上也不例外。" />
 
 
 
@@ -134,7 +134,7 @@
 <meta property="article:published_time" content="2023-08-06T00:00:00&#43;00:00" />
 
 
-<meta property="article:modified_time" content="2023-08-06T23:33:36&#43;08:00" />
+<meta property="article:modified_time" content="2023-08-07T00:49:34&#43;08:00" />
 
 
 
@@ -275,8 +275,23 @@
 </code></pre>
 <p>结果可以看出，数字之间和数字周围都有空隙：</p>
 <p><img src="/photos/blazor-wrapping-issue/image1.png" alt="有空隙"></p>
-<p>那么，怎么解决呢？</p>
-<p>其实这是css的一个常见问题，解决方法也通用的，就是想办法使由换行转换的空格的字号变为0，使空隙消失，并恢复子元素的字号：</p>
+<p>而我们看下不换行是怎样的：</p>
+<pre><code>&lt;div class=&quot;badge&quot;&gt;&lt;span&gt;1&lt;/span&gt;&lt;span&gt;2&lt;/span&gt;&lt;span&gt;2&lt;/span&gt;&lt;/div&gt;
+
+&lt;style&gt;
+    .badge {
+        background-color: red;
+        font-size: 32px;
+    }
+
+        .badge span {
+            background-color: green;
+        }
+&lt;/style&gt;
+</code></pre>
+<p><img src="../../static/photos/blazor-wrapping-issue/image3.png" alt="数字之间没有空隙"></p>
+<p>可以看到数字之间没有空隙。那么，怎么解决呢？</p>
+<p>其实这属于 css 的一个常见问题，解决方法也通用的，就是想办法使那些从换行转换的空格的字号变为 0，使空隙消失，并恢复子元素的字号：</p>
 <pre><code>&lt;div class=&quot;badge&quot;&gt;
     &lt;span&gt;1&lt;/span&gt;
     &lt;span&gt;2&lt;/span&gt;
