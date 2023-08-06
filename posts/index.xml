@@ -9,6 +9,15 @@
     <copyright>&amp;copy; 2021 &lt;a href=&#34;https://jamesyeung.cn/&#34;&gt;James Yeung&lt;/a&gt;
 </copyright><atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>解决 Blazor 中因标签换行导致的行内元素空隙问题</title>
+      <link>/posts/resolves-width-issues-in-blazor-caused-by-element-wrapping/</link>
+      <pubDate>Sun, 06 Aug 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/resolves-width-issues-in-blazor-caused-by-element-wrapping/</guid>
+      <description>实践过不同前端框架的朋友应该都知道，对于同一个样式，在不同框架上的表现都会有不同，时时需要做“适配”，在 Blazor 上也不例外。在做 Ant Design Blazor 时就深有体会，因为我们</description>
+    </item>
+    
+    <item>
       <title>跟进 .NET 8 Blazor 之 ReuseTabs 支持 Query 属性绑定</title>
       <link>/posts/ant-blazor-reusetabs-supports-supply-parameter-form-query/</link>
       <pubDate>Sat, 29 Jul 2023 00:00:00 +0000</pubDate>
