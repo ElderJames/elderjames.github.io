@@ -8,7 +8,16 @@
     <language>zh</language>
     <copyright>&amp;copy; 2021 &lt;a href=&#34;https://jamesyeung.cn/&#34;&gt;James Yeung&lt;/a&gt;
 </copyright>
-    <lastBuildDate>Sun, 06 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="/tags/blazor/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 12 Aug 2024 00:00:00 +0000</lastBuildDate><atom:link href="/tags/blazor/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Blazor 应用内局部刷新</title>
+      <link>/posts/blazor-reload-partial/</link>
+      <pubDate>Mon, 12 Aug 2024 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/blazor-reload-partial/</guid>
+      <description>在大多数企业应用中，都需要页面刷新的功能。因为用户想获取最新数据，但页面上暂时没实现数据刷新功能，所以需要手动刷新页面。但又不想重新从服务器加载，那速</description>
+    </item>
+    
     <item>
       <title>解决 Blazor 中因标签换行导致的行内元素空隙问题</title>
       <link>/posts/resolves-width-issues-in-blazor-caused-by-element-wrapping/</link>

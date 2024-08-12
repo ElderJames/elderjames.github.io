@@ -3,7 +3,7 @@
 <meta name="viewport" content="width=device-width">
 
 
-<title>Blazor 面试 18 问 | James Yeung</title>
+<title>Blazor 应用内局部刷新 | James Yeung</title>
 <link rel="stylesheet" href="/css/eureka.min.css">
 <script defer src="/js/eureka.min.js"></script>
 
@@ -62,7 +62,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/images/icon_hu64421c6c7700f606f0ad45d807017b09_5843_180x180_fill_box_center_2.png">
 
 <meta name="description"
-  content="Blazor 是一个免费的、开源的、跨平台的 Web 框架。本文以面试问答的形式，介绍了 Blazor 中的一些主要概念。">
+  content="Blazor 如何实现应用内刷新？即只刷新局部内容，不需要浏览刷新。">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -74,8 +74,8 @@
       "item":"/posts/"},{
       "@type": "ListItem",
       "position": 2 ,
-      "name":"Blazor 面试 18 问",
-      "item":"/posts/blazor-interview-questions/"}]
+      "name":"Blazor 应用内局部刷新",
+      "item":"/posts/blazor-reload-partial/"}]
 }
 </script>
 
@@ -87,11 +87,11 @@
     "@type": "Article",
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "/posts/blazor-interview-questions/"
+        "@id": "/posts/blazor-reload-partial/"
     },
-    "headline": "Blazor 面试 18 问 | James Yeung","datePublished": "2021-03-16T00:00:00+00:00",
+    "headline": "Blazor 应用内局部刷新 | James Yeung","datePublished": "2024-08-12T00:00:00+00:00",
     "dateModified": "2024-08-12T16:01:42+08:00",
-    "wordCount":  1574 ,
+    "wordCount":  310 ,
     "publisher": {
         "@type": "Person",
         "name": "James Yeung",
@@ -100,22 +100,20 @@
             "url": "/photos/mvp-avatar.png"
         }
         },
-    "description": "Blazor 是一个免费的、开源的、跨平台的 Web 框架。本文以面试问答的形式，介绍了 Blazor 中的一些主要概念。"
+    "description": "Blazor 如何实现应用内刷新？即只刷新局部内容，不需要浏览刷新。"
 }
-</script><meta property="og:title" content="Blazor 面试 18 问 | James Yeung" />
+</script><meta property="og:title" content="Blazor 应用内局部刷新 | James Yeung" />
 <meta property="og:type" content="article" />
 
 
 <meta property="og:image" content="/images/icon.png">
 
 
-<meta property="og:url" content="/posts/blazor-interview-questions/" />
+<meta property="og:url" content="/posts/blazor-reload-partial/" />
 
 
 
-
-<meta property="og:description" content="Blazor 是一个免费的、开源的、跨平台的 Web 框架。本文以面试问答的形式，介绍了 Blazor 中的一些主要概念。" />
-
+<meta property="og:description" content="Blazor 如何实现应用内刷新？即只刷新局部内容，不需要浏览刷新。" />
 
 
 
@@ -131,7 +129,7 @@
 
 
 
-<meta property="article:published_time" content="2021-03-16T00:00:00&#43;00:00" />
+<meta property="article:published_time" content="2024-08-12T00:00:00&#43;00:00" />
 
 
 <meta property="article:modified_time" content="2024-08-12T16:01:42&#43;08:00" />
@@ -149,7 +147,17 @@
 
 
 
-<meta property="og:see_also" content="/posts/asp-net-core-updates-in-net-6-preview-2/" />
+<meta property="og:see_also" content="/posts/publish-net-apps-to-docker/" />
+
+<meta property="og:see_also" content="/posts/whats-new-in-antblazor-0.11-0.12/" />
+
+<meta property="og:see_also" content="/posts/ant-blazor-1.0-roadmap/" />
+
+<meta property="og:see_also" content="/posts/implement-reuse-tabs-using-antblazor/" />
+
+<meta property="og:see_also" content="/posts/blazor-interview-questions/" />
+
+<meta property="og:see_also" content="/posts/resolves-width-issues-in-blazor-caused-by-element-wrapping/" />
 
 
 
@@ -226,15 +234,15 @@
 <div class="grid grid-cols-2 lg:grid-cols-8 gap-4 lg:pt-12">
     <div
         class="col-span-2 lg:col-start-2 lg:col-span-6 bg-secondary-bg rounded px-6 py-8">
-        <h1 class="font-bold text-3xl text-primary-text">Blazor 面试 18 问</h1>
+        <h1 class="font-bold text-3xl text-primary-text">Blazor 应用内局部刷新</h1>
         <div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
     <div class="mr-6 my-2">
         <i class="fas fa-calendar mr-1"></i>
-        <span>2021-03-16</span>
+        <span>2024-08-12</span>
     </div>
     <div class="mr-6 my-2">
         <i class="fas fa-clock mr-1"></i>
-        <span>4分钟阅读时长</span>
+        <span>1分钟阅读时长</span>
     </div>
     
     
@@ -246,66 +254,78 @@
         
 
         <div class="content">
-            <blockquote>
-<p>本文翻译自<a href="https://www.c-sharpcorner.com/article/introduction-to-blazor-with-net-core/">Blazor Interview Questions And Answers</a></p>
-</blockquote>
-<h1 id="问题一-什么是-blazor">问题一、 什么是 Blazor</h1>
-<p>Blazor 是一个免费的、开源的、跨平台的 Web 框架，它允许开发人员使用 C# 和 .NET 构建现代的、可扩展的、跨平台的 Web 应用程序。Blazor 是由微软和开源社区开发的，其最初设计目的是为了让 C# 和 .NET 开发人员使用 C# 语言构建 Web 客户端应用程序。Blazor 是现代的、快速的、快速发展的。</p>
-<p>大多数 web 客户端应用程序都是使用 JavaScript 编写的，其中代码主要在浏览器中运行。Blazor 框架允许开发人员使用 C# 代替 JavaScript 创建丰富的交互式用户界面。</p>
-<p>Blazor 同时支持客户端和服务器端编码。服务器端和客户端的应用逻辑都是用.NET 编写的。</p>
-<p>尽管代码是用.NET 和 C#编写的，但 Blazor 将用户界面渲染为 HTML 和 CSS，以获得广泛的浏览器支持，包括移动浏览器。</p>
-<p>下面是一个简单的 Blazor 代码示例，展示了 HTML 和 C# 如何在同一个文件中，以及如何从 HTML 代码中调用一个函数。</p>
-<p><img src="/photos/blazor-interview-questions/photo-1.jpg" alt="Blazor Interview Questions And Answers"></p>
-<p>Blazor 还可以与现代托管平台（如 Docker）集成。</p>
-<p>想要了解更多关于 Blazor 的信息，请从这里开始:使用。net Core 介绍 Blazor</p>
-<h1 id="问题二-为什么要使用-blazor">问题二、 为什么要使用 Blazor?</h1>
-<p>Blazor 是为那些不熟悉 JavaScript 的开发人员开发的，他们大多拥有 C#和 .NET 背景。Blazor 提供了以下优点：</p>
-<ul>
-<li>用 C# 代替 JavaScript 编写代码。</li>
-<li>利用现有 .NET 库的 .NET 生态系统。</li>
-<li>在服务器和客户端之间共享应用程序逻辑。</li>
-<li>受益于 .NET 的性能、可靠性和安全性。</li>
-<li>在 Windows、Linux 和 macOS 上使用 Visual Studio 保持生产力。</li>
-<li>建立在一套通用的语言、框架和工具之上，这些语言、框架和工具稳定、功能丰富且易于使用。</li>
-</ul>
-<h1 id="问题三什么类型的应用程序可以使用-blazor-来构建">问题三、什么类型的应用程序可以使用 Blazor 来构建？</h1>
-<p>Blazor 支持两种类型的应用，Blazor Sever 应用和 Blazor WebAssembly 应用。</p>
-<p><img src="/photos/blazor-interview-questions/photo-2.jpg" alt="Blazor Interview Questions And Answers1"></p>
-<p>Blazor Server 应用程序在运行在服务端的 ASP.NET Core 应用程序中，并通过 SignalR 连接处理用户交互。</p>
-<p>Blazor WebAssembly 应用程序通过 WebAssembly 在客户端浏览器中运行。</p>
-<h1 id="问题四blazor-中的组件是什么">问题四、Blazor 中的组件是什么？</h1>
-<p>组件是Blazor的一个基本概念，所有 Blazor 应用都基于组件。Blazor 中的所有 UI 元素都是组件，比如页面、对话框或数据输入表单。从代码的角度来看，Blazor 中的组件是内置于 .Net 程序集中的 C# 类，它们定义了 UI 呈现逻辑并处理控件和页面事件。</p>
-<p>Blazor 组件使用 Razor、HTML 和 C# 代码的组合。组件是 Blazor 应用的基础元素，也就是说，在 Blazor 中，每个页面都被视为一个组件。下面是一个简单的客户端 Blazor 应用，展示了默认的页面组件代码。</p>
-<pre><code class="language-razor">@page &quot;/&quot;  
-&lt;h2&gt;@Title&lt;/h2&gt;  
-@functions {  
-    const string Title = &quot;Blazor&quot;;  
-}  
+            <p>在大多数企业应用中，都需要页面刷新的功能。因为用户想获取最新数据，但页面上暂时没实现数据刷新功能，所以需要手动刷新页面。但又不想重新从服务器加载，那速度会很慢。</p>
+<p>实现以下组件：</p>
+<pre><code>    public class ReloadContainer : IComponent
+    {
+        private RenderHandle _renderHandle;
+
+        [Parameter] public RenderFragment? ChildContent { get; set; }
+
+        public void Attach(RenderHandle renderHandle)
+        {
+            _renderHandle = renderHandle;
+        }
+
+        public Task SetParametersAsync(ParameterView parameters)
+        {
+            parameters.SetParameterProperties(this);
+            if (ChildContent != null)
+            {
+                _renderHandle.Render(ChildContent);
+            }
+
+            return Task.CompletedTask;
+        }
+
+        public void Reload()
+        {
+            _renderHandle.Render(b =&gt; { });
+            if (ChildContent != null)
+            {
+                _renderHandle.Render(ChildContent);
+            }
+        }
+    }
 </code></pre>
-<p>在上面的代码中，HTML 和后面的代码写在同一个 HTML 文件中。组件的 HTML 部分包含 Razor 语法和 HTML 标记，后面的代码包含实际的逻辑。简而言之，在这个方法中，我们可以在同一个页面上添加视图标记和逻辑。逻辑通过使用一个函数块来分隔。</p>
-<p>在函数块中，我们可以定义视图标记中使用的所有属性，并将方法作为事件与控件绑定。</p>
-<p>在 Blazor 中，我们还可以使用 code-behind 的方式来编写组件，让 C# 代码编写在一个单独的文件中。</p>
-<h1 id="问题五blazor-的生命周期与生命周期方法分别是什么">问题五、Blazor 的生命周期与生命周期方法分别是什么？</h1>
-<p>Blazor 框架的生命周期方法体现了 Blazor 应用在开始、结束以及在中间过程中的各种方法是如何执行的。
-Blazor 使用同步和异步的生命周期方法,在组件初始化和渲染过程中，可以通过重写生命周期方法来对组件执行额外的操作。</p>
-<p>下面的图和生命周期事件展示了 Blazor 组件生命周期事件、DOM 事件处理和渲染生命周期方法以及它们在应用程序生命周期中的执行方式。</p>
-<hr>
-<p>未完待续&hellip;</p>
-<pre><code>
-# 问题六、什么是 Blazor WebAssembly？
-# 问题七、什么是 Blazor Server？
-# 问题八、Blazor 支持那些平台？
-# 问题九、Blazor 中的模板组件是什么？
-# 问题十、Blazor 中的路由是什么？
-# 问题十一、Blazor 中的数据绑定是什么？
-# 问题十二、如何将 Blazor 应用程序部署到 Azure 中？
-# 问题十三、如何将 Blazor 应用程序部署到 IIS 中？
-# 问题十si、Blazor 中的授权是什么？
-# 问题十五、Blazor Server 和 Blazor WebAssembly 之间有什么不同？
-# 问题十六、如何知道什么时候该用 Blazor Server 还是 Blazor WebAssembly 呢？
-# 问题十七、可以同时使用 Blazor WebAssembly 来构建全栈应用程序吗？
-# 问题十八、如何调试 Blazor WebAssembly？
+<p>在需要的地方使用，比如布局组件中：</p>
+<pre><code>@inherits LayoutComponentBase
+
+&lt;div class=&quot;page&quot;&gt;
+    &lt;div class=&quot;sidebar&quot;&gt;
+        &lt;NavMenu /&gt;
+    &lt;/div&gt;
+
+    &lt;main&gt;
+        &lt;div class=&quot;top-row px-4&quot;&gt;
+            &lt;a @onclick=&quot;Reload&quot;&gt;Reload&lt;/a&gt;
+            &lt;a href=&quot;https://learn.microsoft.com/aspnet/core/&quot; target=&quot;_blank&quot;&gt;About&lt;/a&gt;
+        &lt;/div&gt;
+
+        &lt;article class=&quot;content px-4&quot;&gt;
+            &lt;ReloadContainer @ref=&quot;reloadContainer&quot;&gt;
+                  @Body
+            &lt;/ReloadContainer&gt;
+        &lt;/article&gt;
+    &lt;/main&gt;
+&lt;/div&gt;
+
+&lt;div id=&quot;blazor-error-ui&quot;&gt;
+    An unhandled error has occurred.
+    &lt;a href=&quot;&quot; class=&quot;reload&quot;&gt;Reload&lt;/a&gt;
+    &lt;a class=&quot;dismiss&quot;&gt;🗙&lt;/a&gt;
+&lt;/div&gt;
+
+@code{
+    ReloadContainer reloadContainer;
+
+    void Reload()
+    {
+        reloadContainer.Reload();
+    }
+}
 </code></pre>
+<p>这样点击右上角的Reload，即可看到页面刷新。特别是在有数据要加载的页面，会看到数据会重新加载，组件也重新渲染。</p>
 
         </div>
         
@@ -326,7 +346,7 @@ Blazor 使用同步和异步的生命周期方法,在组件初始化和渲染过
     
     
     
-    <a href="https://github.com/ElderJames/blogs/blob/master/content/posts/blazor-interview-questions.md" title="Edit this page">
+    <a href="https://github.com/ElderJames/blogs/blob/master/content/posts/blazor-reload-page.md" title="Edit this page">
         <i class="fas fa-edit mr-1"></i>
         <span>编辑本页</span>
     </a>
@@ -341,14 +361,11 @@ Blazor 使用同步和异步的生命周期方法,在组件初始化和渲染过
 <div class="flex flex-col md:flex-row md:justify-between -mx-2 mt-4 px-2 pt-4 border-t">
     <div>
         
-        <span class="block font-bold">上一页</span>
-        <a href="/posts/implement-reuse-tabs-using-antblazor/" class="block">Ant Design Blazor 组件库的路由复用多标签页介绍</a>
-        
     </div>
     <div class="md:text-right mt-4 md:mt-0">
         
         <span class="block font-bold">下一页</span>
-        <a href="/posts/asp-net-core-updates-in-net-6-preview-2/" class="block">ASP.NET Core 在 .NET 6 Preview 2 中的更新</a>
+        <a href="/posts/resolves-width-issues-in-blazor-caused-by-element-wrapping/" class="block">解决 Blazor 中因标签换行导致的行内元素空隙问题</a>
         
     </div>
 </div>
@@ -364,7 +381,22 @@ Blazor 使用同步和异步的生命周期方法,在组件初始化和渲染过
         <h2 class="text-lg font-semibold mb-4">相关</h2>
         <div class="content">
             
-            <a href="/posts/asp-net-core-updates-in-net-6-preview-2/">ASP.NET Core 在 .NET 6 Preview 2 中的更新</a>
+            <a href="/posts/publish-net-apps-to-docker/">如何无需 Dockerfile 直接发布 .NET 7 应用到 Docker</a>
+            <br />
+            
+            <a href="/posts/whats-new-in-antblazor-0.11-0.12/">Ant Design Blazor 0.11 - 0.12 中值得回味的新特性</a>
+            <br />
+            
+            <a href="/posts/ant-blazor-1.0-roadmap/">Ant Design Blazor 1.0 正式版发布计划</a>
+            <br />
+            
+            <a href="/posts/implement-reuse-tabs-using-antblazor/">Ant Design Blazor 组件库的路由复用多标签页介绍</a>
+            <br />
+            
+            <a href="/posts/blazor-interview-questions/">Blazor 面试 18 问</a>
+            <br />
+            
+            <a href="/posts/resolves-width-issues-in-blazor-caused-by-element-wrapping/">解决 Blazor 中因标签换行导致的行内元素空隙问题</a>
             <br />
             
         </div>
