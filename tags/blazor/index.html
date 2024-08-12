@@ -95,15 +95,15 @@
         },{
             "@type":"ListItem",
             "position":  2 ,
-            "name": "解决 Blazor 中因标签换行导致的行内元素空隙问题",
-            "description": "实践过不同前端框架的朋友应该都知道，对于同一个样式，在不同框架上的表现都会有不同，时时需要做“适配”，在 Blazor 上也不例外。",
-            "url": "/posts/resolves-width-issues-in-blazor-caused-by-element-wrapping/"
+            "name": "Blazor 标签页简化版实现",
+            "description": "AntDesign Blazor 中 ReuseTabs 通过获取页面实例来控制渲染，本文将介绍另一种方法，不需要传递路由数据，只用一个劫持ChildContetn渲染的方法。",
+            "url": "/posts/blazor-simple-reuse-tabs/"
         },{
             "@type":"ListItem",
             "position":  3 ,
-            "name": "跟进 .NET 8 Blazor 之 ReuseTabs 支持 Query 属性绑定",
-            "description": "ASP.NET 团队在 .NET 8 继续全力投入 Blazor，为 Blazor 带来了非常多的新特性，AntDesign Blazor也会继续佛系跟进。本篇主要介绍第一个在AntDesign Blazor 上应用的新特性，也就是 ReuseTabs 自 2021 年发布两年后，仍然未支持的 Query String 属性绑定功能。",
-            "url": "/posts/ant-blazor-reusetabs-supports-supply-parameter-form-query/"
+            "name": "解决 Blazor 中因标签换行导致的行内元素空隙问题",
+            "description": "实践过不同前端框架的朋友应该都知道，对于同一个样式，在不同框架上的表现都会有不同，时时需要做“适配”，在 Blazor 上也不例外。",
+            "url": "/posts/resolves-width-issues-in-blazor-caused-by-element-wrapping/"
         }
     ]
 }
@@ -259,16 +259,16 @@
   
   <div class="w-full ">
     <div class="mb-4">
-  <a href="/posts/resolves-width-issues-in-blazor-caused-by-element-wrapping/" class="font-bold text-xl hover:text-eureka">解决 Blazor 中因标签换行导致的行内元素空隙问题</a>
+  <a href="/posts/blazor-simple-reuse-tabs/" class="font-bold text-xl hover:text-eureka">Blazor 标签页简化版实现</a>
 </div>
 <div class="content">
-  实践过不同前端框架的朋友应该都知道，对于同一个样式，在不同框架上的表现都会有不同，时时需要做“适配”，在 Blazor 上也不例外。
+  核心组件，只渲染一次ChildContent，子内容不再渲染，则这个组件实例就可以达到劫持子内容的效果。 public class KeepAlive : IComponent { private RenderHandle _renderHandle; private bool _rendered = false; [Parameter] public RenderFragment? ChildContent { get; set; } public
 </div>
 
 <div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
     <div class="mr-6 my-2">
         <i class="fas fa-calendar mr-1"></i>
-        <span>2023-08-06</span>
+        <span>2024-08-12</span>
     </div>
     <div class="mr-6 my-2">
         <i class="fas fa-clock mr-1"></i>
@@ -291,20 +291,20 @@
   
   <div class="w-full ">
     <div class="mb-4">
-  <a href="/posts/ant-blazor-reusetabs-supports-supply-parameter-form-query/" class="font-bold text-xl hover:text-eureka">跟进 .NET 8 Blazor 之 ReuseTabs 支持 Query 属性绑定</a>
+  <a href="/posts/resolves-width-issues-in-blazor-caused-by-element-wrapping/" class="font-bold text-xl hover:text-eureka">解决 Blazor 中因标签换行导致的行内元素空隙问题</a>
 </div>
 <div class="content">
-  ASP.NET 团队在 .NET 8 继续全力投入 Blazor，为 Blazor 带来了非常多的新特性，AntDesign Blazor也会继续佛系跟进。本篇主要介绍第一个在AntDesign Blazor 上应用的新特性，也就是 ReuseTabs 自 2021 年发布两年后，仍然未支持的 Query String 属性绑定功能。
+  实践过不同前端框架的朋友应该都知道，对于同一个样式，在不同框架上的表现都会有不同，时时需要做“适配”，在 Blazor 上也不例外。
 </div>
 
 <div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
     <div class="mr-6 my-2">
         <i class="fas fa-calendar mr-1"></i>
-        <span>2023-07-29</span>
+        <span>2023-08-06</span>
     </div>
     <div class="mr-6 my-2">
         <i class="fas fa-clock mr-1"></i>
-        <span>3分钟阅读时长</span>
+        <span>1分钟阅读时长</span>
     </div>
     
     

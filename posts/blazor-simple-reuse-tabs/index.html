@@ -3,7 +3,7 @@
 <meta name="viewport" content="width=device-width">
 
 
-<title>解决 Blazor 中因标签换行导致的行内元素空隙问题 | James Yeung</title>
+<title>Blazor 标签页简化版实现 | James Yeung</title>
 <link rel="stylesheet" href="/css/eureka.min.css">
 <script defer src="/js/eureka.min.js"></script>
 
@@ -62,7 +62,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/images/icon_hu64421c6c7700f606f0ad45d807017b09_5843_180x180_fill_box_center_2.png">
 
 <meta name="description"
-  content="实践过不同前端框架的朋友应该都知道，对于同一个样式，在不同框架上的表现都会有不同，时时需要做“适配”，在 Blazor 上也不例外。">
+  content="AntDesign Blazor 中 ReuseTabs 通过获取页面实例来控制渲染，本文将介绍另一种方法，不需要传递路由数据，只用一个劫持ChildContetn渲染的方法。">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -74,8 +74,8 @@
       "item":"/posts/"},{
       "@type": "ListItem",
       "position": 2 ,
-      "name":"解决 Blazor 中因标签换行导致的行内元素空隙问题",
-      "item":"/posts/resolves-width-issues-in-blazor-caused-by-element-wrapping/"}]
+      "name":"Blazor 标签页简化版实现",
+      "item":"/posts/blazor-simple-reuse-tabs/"}]
 }
 </script>
 
@@ -87,11 +87,11 @@
     "@type": "Article",
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "/posts/resolves-width-issues-in-blazor-caused-by-element-wrapping/"
+        "@id": "/posts/blazor-simple-reuse-tabs/"
     },
-    "headline": "解决 Blazor 中因标签换行导致的行内元素空隙问题 | James Yeung","datePublished": "2023-08-06T00:00:00+00:00",
+    "headline": "Blazor 标签页简化版实现 | James Yeung","datePublished": "2024-08-12T00:00:00+00:00",
     "dateModified": "2024-08-12T17:26:40+08:00",
-    "wordCount":  471 ,
+    "wordCount":  282 ,
     "publisher": {
         "@type": "Person",
         "name": "James Yeung",
@@ -100,22 +100,20 @@
             "url": "/photos/mvp-avatar.png"
         }
         },
-    "description": "实践过不同前端框架的朋友应该都知道，对于同一个样式，在不同框架上的表现都会有不同，时时需要做“适配”，在 Blazor 上也不例外。"
+    "description": "AntDesign Blazor 中 ReuseTabs 通过获取页面实例来控制渲染，本文将介绍另一种方法，不需要传递路由数据，只用一个劫持ChildContetn渲染的方法。"
 }
-</script><meta property="og:title" content="解决 Blazor 中因标签换行导致的行内元素空隙问题 | James Yeung" />
+</script><meta property="og:title" content="Blazor 标签页简化版实现 | James Yeung" />
 <meta property="og:type" content="article" />
 
 
 <meta property="og:image" content="/images/icon.png">
 
 
-<meta property="og:url" content="/posts/resolves-width-issues-in-blazor-caused-by-element-wrapping/" />
+<meta property="og:url" content="/posts/blazor-simple-reuse-tabs/" />
 
 
 
-
-<meta property="og:description" content="实践过不同前端框架的朋友应该都知道，对于同一个样式，在不同框架上的表现都会有不同，时时需要做“适配”，在 Blazor 上也不例外。" />
-
+<meta property="og:description" content="AntDesign Blazor 中 ReuseTabs 通过获取页面实例来控制渲染，本文将介绍另一种方法，不需要传递路由数据，只用一个劫持ChildContetn渲染的方法。" />
 
 
 
@@ -131,7 +129,7 @@
 
 
 
-<meta property="article:published_time" content="2023-08-06T00:00:00&#43;00:00" />
+<meta property="article:published_time" content="2024-08-12T00:00:00&#43;00:00" />
 
 
 <meta property="article:modified_time" content="2024-08-12T17:26:40&#43;08:00" />
@@ -141,13 +139,15 @@
 <meta property="article:section" content="posts" />
 
 
+<meta property="article:tag" content=".NET" />
+
 <meta property="article:tag" content="Blazor" />
 
 
 
 
 
-<meta property="og:see_also" content="/posts/ant-blazor-reusetabs-supports-supply-parameter-form-query/" />
+<meta property="og:see_also" content="/posts/blazor-reload-partial/" />
 
 <meta property="og:see_also" content="/posts/publish-net-apps-to-docker/" />
 
@@ -234,11 +234,11 @@
 <div class="grid grid-cols-2 lg:grid-cols-8 gap-4 lg:pt-12">
     <div
         class="col-span-2 lg:col-start-2 lg:col-span-6 bg-secondary-bg rounded px-6 py-8">
-        <h1 class="font-bold text-3xl text-primary-text">解决 Blazor 中因标签换行导致的行内元素空隙问题</h1>
+        <h1 class="font-bold text-3xl text-primary-text">Blazor 标签页简化版实现</h1>
         <div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
     <div class="mr-6 my-2">
         <i class="fas fa-calendar mr-1"></i>
-        <span>2023-08-06</span>
+        <span>2024-08-12</span>
     </div>
     <div class="mr-6 my-2">
         <i class="fas fa-clock mr-1"></i>
@@ -254,68 +254,109 @@
         
 
         <div class="content">
-            <p>实践过不同前端框架的朋友应该都知道，对于同一个样式，在不同框架上的表现都会有不同，时时需要做“适配”，在 Blazor 上也不例外。在做 Ant Design Blazor 时就深有体会，因为我们是同步官方的样式，他们的样式只考虑了React 上的实现，除非有人专门提 PR，否则都不会特别考虑其他框架的实现。本文就介绍一个典型问题。</p>
-<p>当我们使用 Razor 模板时，特别是使用 <code>if</code> <code>for</code> 等语句块时，都会导致 HTML 元素或者组件换行。而运行后输出的 HTML 也会换行，而浏览器对于HTML换行会转换成空格，空格又由于默认或继承的字体大小，让元素之间出现空隙。这对于本来就要换行的块状元素没什么问题，但对于想要在一行显示的行内元素，就会有一个空隙。下面是一个例子：</p>
-<pre><code>&lt;div class=&quot;badge&quot;&gt;
-    &lt;span&gt;1&lt;/span&gt;
-    &lt;span&gt;2&lt;/span&gt;
-    &lt;span&gt;2&lt;/span&gt;
+            <p>核心组件，只渲染一次ChildContent，子内容不再渲染，则这个组件实例就可以达到劫持子内容的效果。</p>
+<pre><code class="language-cs">    public class KeepAlive : IComponent
+    {
+        private RenderHandle _renderHandle;
+        private bool _rendered = false;
+
+        [Parameter] public RenderFragment? ChildContent { get; set; }
+
+        public void Attach(RenderHandle renderHandle)
+        {
+            _renderHandle = renderHandle;
+        }
+
+        public Task SetParametersAsync(ParameterView parameters)
+        {
+            parameters.SetParameterProperties(this);
+
+            if (!_rendered &amp;&amp; ChildContent != null)
+            {
+                _rendered = true;
+                _renderHandle.Render(ChildContent);
+            }
+
+            return Task.CompletedTask;
+        }
+    }
+</code></pre>
+<p>然后实现页签和页面内容，分别用循环，然后用 css 来控制页面的切换即可。</p>
+<pre><code>&lt;!-- Tabs --&gt;
+
+&lt;div&gt;
+    @foreach (var item in urls)
+    {
+        &lt;a href=&quot;@item&quot; style=&quot;margin:10px;&quot;&gt;@item&lt;/a&gt;
+    }
 &lt;/div&gt;
 
-&lt;style&gt;
-    .badge {
-        background-color: red;
-        font-size: 32px;
+
+@foreach (var item in urls)
+{
+    &lt;div style=&quot;@(item == NavigationManager.Uri ? &quot;display: block&quot; : &quot;display: none&quot;) &quot;&gt;
+        &lt;KeepAlive&gt;
+            @ChildContent
+        &lt;/KeepAlive&gt;
+    &lt;/div&gt;
+}
+
+
+@code {
+    [Inject] private NavigationManager NavigationManager { get; set; } = default!;
+
+    [Parameter] public RenderFragment? ChildContent { get; set; }
+
+    private HashSet&lt;string&gt; urls = new HashSet&lt;string&gt;();
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        urls.Add(NavigationManager.Uri);
+
+        NavigationManager.LocationChanged += OnLocationChanged;
     }
 
-        .badge span {
-            background-color: green;
-        }
-&lt;/style&gt;
-</code></pre>
-<p>结果可以看出，数字之间和数字周围都有空隙：</p>
-<p><img src="/photos/blazor-wrapping-issue/image1.png" alt="有空隙"></p>
-<p>而我们看下不换行是怎样的：</p>
-<pre><code>&lt;div class=&quot;badge&quot;&gt;&lt;span&gt;1&lt;/span&gt;&lt;span&gt;2&lt;/span&gt;&lt;span&gt;2&lt;/span&gt;&lt;/div&gt;
-
-&lt;style&gt;
-    .badge {
-        background-color: red;
-        font-size: 32px;
+    private void OnLocationChanged(object? target, LocationChangedEventArgs args)
+    {
+        urls.Add(args.Location);
+        InvokeAsync(StateHasChanged);
     }
 
-        .badge span {
-            background-color: green;
-        }
-&lt;/style&gt;
+    public void Dispose()
+    {
+        NavigationManager.LocationChanged -= OnLocationChanged;
+    }
+}
 </code></pre>
-<p><img src="/photos/blazor-wrapping-issue/image3.png" alt="数字之间没有空隙"></p>
-<p>可以看到数字之间没有空隙。那么，怎么解决呢？</p>
-<p>其实这属于 css 的一个常见问题，解决方法也通用的，就是想办法使那些从换行转换的空格的字号变为 0，使空隙消失，并恢复子元素的字号：</p>
-<pre><code>&lt;div class=&quot;badge&quot;&gt;
-    &lt;span&gt;1&lt;/span&gt;
-    &lt;span&gt;2&lt;/span&gt;
-    &lt;span&gt;2&lt;/span&gt;
+<p>在布局组件中使用：</p>
+<pre><code>@inherits LayoutComponentBase
+
+&lt;div class=&quot;page&quot;&gt;
+    &lt;div class=&quot;sidebar&quot;&gt;
+        &lt;NavMenu /&gt;
+    &lt;/div&gt;
+
+    &lt;main&gt;
+        &lt;div class=&quot;top-row px-4&quot;&gt;
+            &lt;a href=&quot;https://learn.microsoft.com/aspnet/core/&quot; target=&quot;_blank&quot;&gt;About&lt;/a&gt;
+        &lt;/div&gt;
+
+        &lt;article class=&quot;content px-4&quot;&gt;
+            &lt;Tabs&gt;
+                @Body
+            &lt;/Tabs&gt;
+        &lt;/article&gt;
+    &lt;/main&gt;
 &lt;/div&gt;
-
-&lt;style&gt;
-    .badge {
-        background-color: red;
-        font-size: 0;
-    }
-
-        .badge span {
-            background-color: green;
-            font-size: 32px;
-        }
-&lt;/style&gt;
 </code></pre>
-<p>结果：</p>
-<p><img src="/photos/blazor-wrapping-issue/image2.png" alt="空隙消除"></p>
+<p>这样就可以实现页签的简单复用了。</p>
 
         </div>
         
         <div class="my-4">
+    
+    <a href="/tags/.net/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 mr-2 hover:text-eureka">#.NET</a>
     
     <a href="/tags/blazor/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 mr-2 hover:text-eureka">#Blazor</a>
     
@@ -330,7 +371,7 @@
     
     
     
-    <a href="https://github.com/ElderJames/blogs/blob/master/content/posts/resolves-width-issues-in-blazor-caused-by-element-wrapping.md" title="Edit this page">
+    <a href="https://github.com/ElderJames/blogs/blob/master/content/posts/blazor-simple-reuse-tabs.md" title="Edit this page">
         <i class="fas fa-edit mr-1"></i>
         <span>编辑本页</span>
     </a>
@@ -346,13 +387,13 @@
     <div>
         
         <span class="block font-bold">上一页</span>
-        <a href="/posts/blazor-simple-reuse-tabs/" class="block">Blazor 标签页简化版实现</a>
+        <a href="/posts/blazor-reload-partial/" class="block">Blazor 应用内局部刷新</a>
         
     </div>
     <div class="md:text-right mt-4 md:mt-0">
         
         <span class="block font-bold">下一页</span>
-        <a href="/posts/ant-blazor-reusetabs-supports-supply-parameter-form-query/" class="block">跟进 .NET 8 Blazor 之 ReuseTabs 支持 Query 属性绑定</a>
+        <a href="/posts/resolves-width-issues-in-blazor-caused-by-element-wrapping/" class="block">解决 Blazor 中因标签换行导致的行内元素空隙问题</a>
         
     </div>
 </div>
@@ -368,7 +409,7 @@
         <h2 class="text-lg font-semibold mb-4">相关</h2>
         <div class="content">
             
-            <a href="/posts/ant-blazor-reusetabs-supports-supply-parameter-form-query/">跟进 .NET 8 Blazor 之 ReuseTabs 支持 Query 属性绑定</a>
+            <a href="/posts/blazor-reload-partial/">Blazor 应用内局部刷新</a>
             <br />
             
             <a href="/posts/publish-net-apps-to-docker/">如何无需 Dockerfile 直接发布 .NET 7 应用到 Docker</a>

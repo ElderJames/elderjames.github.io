@@ -95,15 +95,15 @@
         },{
             "@type":"ListItem",
             "position":  2 ,
-            "name": "如何无需 Dockerfile 直接发布 .NET 7 应用到 Docker",
-            "description": ".NET 7 在今年 11 月发布了，带来了几百页的性能提升和大量的新特性，其中很多新特性都让人印象深刻。本文就给大家带来直接使用 .NET SDK 构建 Docker 镜像的实战介绍",
-            "url": "/posts/publish-net-apps-to-docker/"
+            "name": "Blazor 标签页简化版实现",
+            "description": "AntDesign Blazor 中 ReuseTabs 通过获取页面实例来控制渲染，本文将介绍另一种方法，不需要传递路由数据，只用一个劫持ChildContetn渲染的方法。",
+            "url": "/posts/blazor-simple-reuse-tabs/"
         },{
             "@type":"ListItem",
             "position":  3 ,
-            "name": "Ant Design Blazor 0.11 - 0.12 中值得回味的新特性",
-            "description": "Ant Design Blazor 分别在 6 月和 8 月发布了 0.11 和 0.12 两个版本，其中 0.11 积攒了大半年的新特性，而 0.12 则时隔一年多同步了Antd最新的样式，支持了 CSS 变量。",
-            "url": "/posts/whats-new-in-antblazor-0.11-0.12/"
+            "name": "如何无需 Dockerfile 直接发布 .NET 7 应用到 Docker",
+            "description": ".NET 7 在今年 11 月发布了，带来了几百页的性能提升和大量的新特性，其中很多新特性都让人印象深刻。本文就给大家带来直接使用 .NET SDK 构建 Docker 镜像的实战介绍",
+            "url": "/posts/publish-net-apps-to-docker/"
         }
     ]
 }
@@ -259,16 +259,16 @@
   
   <div class="w-full ">
     <div class="mb-4">
-  <a href="/posts/publish-net-apps-to-docker/" class="font-bold text-xl hover:text-eureka">如何无需 Dockerfile 直接发布 .NET 7 应用到 Docker</a>
+  <a href="/posts/blazor-simple-reuse-tabs/" class="font-bold text-xl hover:text-eureka">Blazor 标签页简化版实现</a>
 </div>
 <div class="content">
-  .NET 7 在今年 11 月发布了，带来了几百页的性能提升和大量的新特性，其中很多新特性都让人印象深刻。本文就给大家带来直接使用 .NET SDK 构建 Docker 镜像的实战介绍。 在 .NET 7 中，
+  核心组件，只渲染一次ChildContent，子内容不再渲染，则这个组件实例就可以达到劫持子内容的效果。 public class KeepAlive : IComponent { private RenderHandle _renderHandle; private bool _rendered = false; [Parameter] public RenderFragment? ChildContent { get; set; } public
 </div>
 
 <div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
     <div class="mr-6 my-2">
         <i class="fas fa-calendar mr-1"></i>
-        <span>2022-12-09</span>
+        <span>2024-08-12</span>
     </div>
     <div class="mr-6 my-2">
         <i class="fas fa-clock mr-1"></i>
@@ -291,17 +291,16 @@
   
   <div class="w-full ">
     <div class="mb-4">
-  <a href="/posts/whats-new-in-antblazor-0.11-0.12/" class="font-bold text-xl hover:text-eureka">Ant Design Blazor 0.11 - 0.12 中值得回味的新特性</a>
+  <a href="/posts/publish-net-apps-to-docker/" class="font-bold text-xl hover:text-eureka">如何无需 Dockerfile 直接发布 .NET 7 应用到 Docker</a>
 </div>
 <div class="content">
-  关注 Ant Design Blazor 的朋友应该就知道，我们分别在 6 月中和 8 月底发布了 0.11 和 0.12 两个版本，其中 0.11 积攒了大半年的新特性，而 0.12 则时隔一年多同步了 Antd 最新的样式，支持了 CSS 变量，所以很值得专门写一篇文章来介绍其中一些我觉得对项目发展影响很大的新特性。
-
+  .NET 7 在今年 11 月发布了，带来了几百页的性能提升和大量的新特性，其中很多新特性都让人印象深刻。本文就给大家带来直接使用 .NET SDK 构建 Docker 镜像的实战介绍。 在 .NET 7 中，
 </div>
 
 <div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
     <div class="mr-6 my-2">
         <i class="fas fa-calendar mr-1"></i>
-        <span>2022-09-15</span>
+        <span>2022-12-09</span>
     </div>
     <div class="mr-6 my-2">
         <i class="fas fa-clock mr-1"></i>

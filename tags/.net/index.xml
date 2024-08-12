@@ -19,6 +19,15 @@
     </item>
     
     <item>
+      <title>Blazor 标签页简化版实现</title>
+      <link>/posts/blazor-simple-reuse-tabs/</link>
+      <pubDate>Mon, 12 Aug 2024 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/blazor-simple-reuse-tabs/</guid>
+      <description>核心组件，只渲染一次ChildContent，子内容不再渲染，则这个组件实例就可以达到劫持子内容的效果。 public class KeepAlive : IComponent { private RenderHandle _renderHandle; private bool _rendered = false; [Parameter] public RenderFragment? ChildContent { get; set; } public</description>
+    </item>
+    
+    <item>
       <title>如何无需 Dockerfile 直接发布 .NET 7 应用到 Docker</title>
       <link>/posts/publish-net-apps-to-docker/</link>
       <pubDate>Fri, 09 Dec 2022 00:00:00 +0000</pubDate>
