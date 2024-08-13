@@ -15,7 +15,7 @@
       <pubDate>Tue, 13 Aug 2024 00:00:00 +0000</pubDate>
       
       <guid>/posts/blazor-localization-shared-resource/</guid>
-      <description>本文参考 (Shared resources - ASP.NET Core Blazor globalization and localization)[https://learn.microsoft.com/en-us/aspnet/core/blazor/globalization-localization?view=aspnetcore-8.0#shared-resources] 注册本地化服务 在 Program.cs 中注册本地化服务： builder.Services.AddLocalization(); 画重点：共享资源是通过一个空类（dummy class）来定位，不需要设置 ResourcesPath 的。 添加空类</description>
+      <description>本文介绍如何为 Blazor 应用添加共享本地化资源，并实现局部刷新</description>
     </item>
     
     <item>
@@ -24,7 +24,7 @@
       <pubDate>Mon, 12 Aug 2024 00:00:00 +0000</pubDate>
       
       <guid>/posts/blazor-reload-partial/</guid>
-      <description>在大多数企业应用中，都需要页面刷新的功能。因为用户想获取最新数据，但页面上暂时没实现数据刷新功能，所以需要手动刷新页面。但又不想重新从服务器加载，那速</description>
+      <description>Blazor 如何实现应用内刷新？即只刷新局部内容，不需要浏览刷新。</description>
     </item>
     
     <item>
@@ -33,7 +33,7 @@
       <pubDate>Mon, 12 Aug 2024 00:00:00 +0000</pubDate>
       
       <guid>/posts/blazor-simple-reuse-tabs/</guid>
-      <description>核心组件，只渲染一次ChildContent，子内容不再渲染，则这个组件实例就可以达到劫持子内容的效果。 public class KeepAlive : IComponent { private RenderHandle _renderHandle; private bool _rendered = false; [Parameter] public RenderFragment? ChildContent { get; set; } public</description>
+      <description>AntDesign Blazor 中 ReuseTabs 通过获取页面实例来控制渲染，本文将介绍另一种方法，不需要传递路由数据，只用一个劫持ChildContetn渲染的方法。</description>
     </item>
     
     <item>
@@ -42,16 +42,7 @@
       <pubDate>Fri, 09 Dec 2022 00:00:00 +0000</pubDate>
       
       <guid>/posts/publish-net-apps-to-docker/</guid>
-      <description>.NET 7 在今年 11 月发布了，带来了几百页的性能提升和大量的新特性，其中很多新特性都让人印象深刻。本文就给大家带来直接使用 .NET SDK 构建 Docker 镜像的实战介绍。 在 .NET 7 中，</description>
-    </item>
-    
-    <item>
-      <title>Ant Design Blazor 0.11 - 0.12 中值得回味的新特性</title>
-      <link>/posts/whats-new-in-antblazor-0.11-0.12/</link>
-      <pubDate>Thu, 15 Sep 2022 00:00:00 +0000</pubDate>
-      
-      <guid>/posts/whats-new-in-antblazor-0.11-0.12/</guid>
-      <description>&lt;p&gt;关注 Ant Design Blazor 的朋友应该就知道，我们分别在 6 月中和 8 月底发布了 0.11 和 0.12 两个版本，其中 0.11 积攒了大半年的新特性，而 0.12 则时隔一年多同步了 Antd 最新的样式，支持了 CSS 变量，所以很值得专门写一篇文章来介绍其中一些我觉得对项目发展影响很大的新特性。&lt;/p&gt;</description>
+      <description>.NET 7 在今年 11 月发布了，带来了几百页的性能提升和大量的新特性，其中很多新特性都让人印象深刻。本文就给大家带来直接使用 .NET SDK 构建 Docker 镜像的实战介绍</description>
     </item>
     
     <item>

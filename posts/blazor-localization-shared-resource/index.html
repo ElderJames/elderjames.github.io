@@ -62,7 +62,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/images/icon_hu64421c6c7700f606f0ad45d807017b09_5843_180x180_fill_box_center_2.png">
 
 <meta name="description"
-  content="本文介绍如何为 Blazor 应用添加共享本地化资源，并实现局部刷新。">
+  content="本文介绍如何为 Blazor 应用添加共享本地化资源，并实现局部刷新">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -90,7 +90,7 @@
         "@id": "/posts/blazor-localization-shared-resource/"
     },
     "headline": "Blazor 本地化之共享资源与局部刷新 | James Yeung","datePublished": "2024-08-13T00:00:00+00:00",
-    "dateModified": "2024-08-13T12:42:47+08:00",
+    "dateModified": "2024-08-13T12:55:37+08:00",
     "wordCount":  584 ,
     "publisher": {
         "@type": "Person",
@@ -100,7 +100,7 @@
             "url": "/photos/mvp-avatar.png"
         }
         },
-    "description": "本文介绍如何为 Blazor 应用添加共享本地化资源，并实现局部刷新。"
+    "description": "本文介绍如何为 Blazor 应用添加共享本地化资源，并实现局部刷新"
 }
 </script><meta property="og:title" content="Blazor 本地化之共享资源与局部刷新 | James Yeung" />
 <meta property="og:type" content="article" />
@@ -113,7 +113,9 @@
 
 
 
-<meta property="og:description" content="本文介绍如何为 Blazor 应用添加共享本地化资源，并实现局部刷新。" />
+
+<meta property="og:description" content="本文介绍如何为 Blazor 应用添加共享本地化资源，并实现局部刷新" />
+
 
 
 
@@ -132,7 +134,7 @@
 <meta property="article:published_time" content="2024-08-13T00:00:00&#43;00:00" />
 
 
-<meta property="article:modified_time" content="2024-08-13T12:42:47&#43;08:00" />
+<meta property="article:modified_time" content="2024-08-13T12:55:37&#43;08:00" />
 
 
 
@@ -153,11 +155,11 @@
 
 <meta property="og:see_also" content="/posts/publish-net-apps-to-docker/" />
 
-<meta property="og:see_also" content="/posts/whats-new-in-antblazor-0.11-0.12/" />
-
 <meta property="og:see_also" content="/posts/ant-blazor-1.0-roadmap/" />
 
 <meta property="og:see_also" content="/posts/implement-reuse-tabs-using-antblazor/" />
+
+<meta property="og:see_also" content="/posts/blazor-interview-questions/" />
 
 
 
@@ -254,7 +256,7 @@
         
 
         <div class="content">
-            <p>本文参考 (Shared resources - ASP.NET Core Blazor globalization and localization)[https://learn.microsoft.com/en-us/aspnet/core/blazor/globalization-localization?view=aspnetcore-8.0#shared-resources]</p>
+            <p>本文参考 <a href="https://learn.microsoft.com/en-us/aspnet/core/blazor/globalization-localization?view=aspnetcore-8.0#shared-resources">Shared resources - ASP.NET Core Blazor globalization and localization</a></p>
 <h2 id="注册本地化服务">注册本地化服务</h2>
 <p>在 <code>Program.cs</code> 中注册本地化服务：</p>
 <pre><code class="language-csharp">builder.Services.AddLocalization();
@@ -277,7 +279,7 @@ public class SharedResource
 <p><code>Localization/SharedResource.zh-CN.resx</code></p>
 <p>打开这些资源文件的属性，把 <code>生成操作(Build Action)</code> 设置为 <code>嵌入的资源（Embedded resource）</code>。</p>
 <h2 id="使用">使用</h2>
-<p>直接修改 <code>CultureInfo.DefaultThreadCurrentUICulture</code> 即可实现切换语言。切换后，利用之前的文章中介绍的<a href="blazor-reload-partial">局部刷新方法</a>，实现 @Body 内容的刷新，这样就能让页面重新显示对应语言的字符串。但是要注意的是，这种实现方式在静态渲染模式下无效，静态渲染的实现方式将在下篇文章中介绍。</p>
+<p>直接修改 <code>CultureInfo.DefaultThreadCurrentUICulture</code> 即可实现切换语言。切换后，利用之前的文章中介绍的<a href="./blazor-reload-partial">局部刷新方法</a>，实现 @Body 内容的刷新，这样就能让页面重新显示对应语言的字符串。但是要注意的是，这种实现方式在静态渲染模式下无效，静态渲染的实现方式将在下篇文章中介绍。</p>
 <pre><code class="language-csharp">@using System.Globalization
 @inherits LayoutComponentBase
 
@@ -409,13 +411,13 @@ public class SharedResource
             <a href="/posts/publish-net-apps-to-docker/">如何无需 Dockerfile 直接发布 .NET 7 应用到 Docker</a>
             <br />
             
-            <a href="/posts/whats-new-in-antblazor-0.11-0.12/">Ant Design Blazor 0.11 - 0.12 中值得回味的新特性</a>
-            <br />
-            
             <a href="/posts/ant-blazor-1.0-roadmap/">Ant Design Blazor 1.0 正式版发布计划</a>
             <br />
             
             <a href="/posts/implement-reuse-tabs-using-antblazor/">Ant Design Blazor 组件库的路由复用多标签页介绍</a>
+            <br />
+            
+            <a href="/posts/blazor-interview-questions/">Blazor 面试 18 问</a>
             <br />
             
         </div>

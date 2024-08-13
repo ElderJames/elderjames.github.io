@@ -371,7 +371,7 @@
   <a href="/posts/blazor-localization-shared-resource/" class="font-bold text-xl hover:text-eureka">Blazor 本地化之共享资源与局部刷新</a>
 </div>
 <div class="content">
-  本文参考 (Shared resources - ASP.NET Core Blazor globalization and localization)[https://learn.microsoft.com/en-us/aspnet/core/blazor/globalization-localization?view=aspnetcore-8.0#shared-resources] 注册本地化服务 在 Program.cs 中注册本地化服务： builder.Services.AddLocalization(); 画重点：共享资源是通过一个空类（dummy class）来定位，不需要设置 ResourcesPath 的。 添加空类
+  本文介绍如何为 Blazor 应用添加共享本地化资源，并实现局部刷新
 </div>
 
 <div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
@@ -403,7 +403,7 @@
   <a href="/posts/blazor-reload-partial/" class="font-bold text-xl hover:text-eureka">Blazor 应用内局部刷新</a>
 </div>
 <div class="content">
-  在大多数企业应用中，都需要页面刷新的功能。因为用户想获取最新数据，但页面上暂时没实现数据刷新功能，所以需要手动刷新页面。但又不想重新从服务器加载，那速
+  Blazor 如何实现应用内刷新？即只刷新局部内容，不需要浏览刷新。
 </div>
 
 <div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
@@ -435,7 +435,7 @@
   <a href="/posts/blazor-simple-reuse-tabs/" class="font-bold text-xl hover:text-eureka">Blazor 标签页简化版实现</a>
 </div>
 <div class="content">
-  核心组件，只渲染一次ChildContent，子内容不再渲染，则这个组件实例就可以达到劫持子内容的效果。 public class KeepAlive : IComponent { private RenderHandle _renderHandle; private bool _rendered = false; [Parameter] public RenderFragment? ChildContent { get; set; } public
+  AntDesign Blazor 中 ReuseTabs 通过获取页面实例来控制渲染，本文将介绍另一种方法，不需要传递路由数据，只用一个劫持ChildContetn渲染的方法。
 </div>
 
 <div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
