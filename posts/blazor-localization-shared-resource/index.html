@@ -3,7 +3,7 @@
 <meta name="viewport" content="width=device-width">
 
 
-<title>来自 .NET 基金会的来信 —— 为 .NET 20周年庆祝活动做好准备 | James Yeung</title>
+<title>Blazor 本地化之共享资源与局部刷新 | James Yeung</title>
 <link rel="stylesheet" href="/css/eureka.min.css">
 <script defer src="/js/eureka.min.js"></script>
 
@@ -62,7 +62,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/images/icon_hu64421c6c7700f606f0ad45d807017b09_5843_180x180_fill_box_center_2.png">
 
 <meta name="description"
-  content="作为 .NET 基金会的成员和.NET的朋友，我们认为你会想知道这个庆典。">
+  content="本文介绍如何为 Blazor 应用添加共享本地化资源，并实现局部刷新。">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -74,8 +74,8 @@
       "item":"/posts/"},{
       "@type": "ListItem",
       "position": 2 ,
-      "name":"来自 .NET 基金会的来信 —— 为 .NET 20周年庆祝活动做好准备",
-      "item":"/posts/get-ready-for-the-net-20th-anniversary-celebration/"}]
+      "name":"Blazor 本地化之共享资源与局部刷新",
+      "item":"/posts/blazor-localization-shared-resource/"}]
 }
 </script>
 
@@ -87,11 +87,11 @@
     "@type": "Article",
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "/posts/get-ready-for-the-net-20th-anniversary-celebration/"
+        "@id": "/posts/blazor-localization-shared-resource/"
     },
-    "headline": "来自 .NET 基金会的来信 —— 为 .NET 20周年庆祝活动做好准备 | James Yeung","datePublished": "2022-02-11T00:00:00+00:00",
+    "headline": "Blazor 本地化之共享资源与局部刷新 | James Yeung","datePublished": "2024-08-13T00:00:00+00:00",
     "dateModified": "2024-08-13T12:28:03+08:00",
-    "wordCount":  777 ,
+    "wordCount":  584 ,
     "publisher": {
         "@type": "Person",
         "name": "James Yeung",
@@ -100,22 +100,20 @@
             "url": "/photos/mvp-avatar.png"
         }
         },
-    "description": "作为 .NET 基金会的成员和.NET的朋友，我们认为你会想知道这个庆典。"
+    "description": "本文介绍如何为 Blazor 应用添加共享本地化资源，并实现局部刷新。"
 }
-</script><meta property="og:title" content="来自 .NET 基金会的来信 —— 为 .NET 20周年庆祝活动做好准备 | James Yeung" />
+</script><meta property="og:title" content="Blazor 本地化之共享资源与局部刷新 | James Yeung" />
 <meta property="og:type" content="article" />
 
 
 <meta property="og:image" content="/images/icon.png">
 
 
-<meta property="og:url" content="/posts/get-ready-for-the-net-20th-anniversary-celebration/" />
+<meta property="og:url" content="/posts/blazor-localization-shared-resource/" />
 
 
 
-
-<meta property="og:description" content="作为 .NET 基金会的成员和.NET的朋友，我们认为你会想知道这个庆典。" />
-
+<meta property="og:description" content="本文介绍如何为 Blazor 应用添加共享本地化资源，并实现局部刷新。" />
 
 
 
@@ -131,7 +129,7 @@
 
 
 
-<meta property="article:published_time" content="2022-02-11T00:00:00&#43;00:00" />
+<meta property="article:published_time" content="2024-08-13T00:00:00&#43;00:00" />
 
 
 <meta property="article:modified_time" content="2024-08-13T12:28:03&#43;08:00" />
@@ -143,15 +141,23 @@
 
 <meta property="article:tag" content=".NET" />
 
+<meta property="article:tag" content="Blazor" />
 
 
 
+
+
+<meta property="og:see_also" content="/posts/blazor-reload-partial/" />
+
+<meta property="og:see_also" content="/posts/blazor-simple-reuse-tabs/" />
+
+<meta property="og:see_also" content="/posts/publish-net-apps-to-docker/" />
+
+<meta property="og:see_also" content="/posts/whats-new-in-antblazor-0.11-0.12/" />
+
+<meta property="og:see_also" content="/posts/ant-blazor-1.0-roadmap/" />
 
 <meta property="og:see_also" content="/posts/implement-reuse-tabs-using-antblazor/" />
-
-<meta property="og:see_also" content="/posts/blazor-interview-questions/" />
-
-<meta property="og:see_also" content="/posts/asp-net-core-updates-in-net-6-preview-2/" />
 
 
 
@@ -227,12 +233,12 @@
 
 <div class="grid grid-cols-2 lg:grid-cols-8 gap-4 lg:pt-12">
     <div
-        class="col-span-2 lg:col-start-2 lg:col-span-6 bg-secondary-bg rounded px-6 py-8">
-        <h1 class="font-bold text-3xl text-primary-text">来自 .NET 基金会的来信 —— 为 .NET 20周年庆祝活动做好准备</h1>
+        class="col-span-2  lg:col-span-6 bg-secondary-bg rounded px-6 py-8">
+        <h1 class="font-bold text-3xl text-primary-text">Blazor 本地化之共享资源与局部刷新</h1>
         <div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
     <div class="mr-6 my-2">
         <i class="fas fa-calendar mr-1"></i>
-        <span>2022-02-11</span>
+        <span>2024-08-13</span>
     </div>
     <div class="mr-6 my-2">
         <i class="fas fa-clock mr-1"></i>
@@ -248,49 +254,80 @@
         
 
         <div class="content">
-            <blockquote>
-<p>这是我前几天收到的来自 .NET 基金会的邮件，是关于 .NET 20 周年庆祝活动的。国内 .NET 社区也在应援，欢迎更多的朋友关注和参与！</p>
-</blockquote>
-<p><img src="/photos/dotnet20/title.png" alt=""></p>
-<p>作为 .NET 基金会的成员和 .NET 的朋友，我们认为你会想知道这个庆典。</p>
-<h1 id="庆祝-20-年的革新">庆祝 20 年的革新</h1>
-<p>20 年前，即 2002 年 2 月 13 日，Visual Studio .NET 推出，第一个版本的 .NET 开发平台正式向世界发布。整个月，我们都将庆祝这个巨大的里程碑。</p>
-<h1 id="太平洋时区-2-月-14-日上午-900北京时间-2-月-15-日凌晨-100在线广播">太平洋时区 2 月 14 日上午 9:00（北京时间 2 月 15 日凌晨 1：00）在线广播</h1>
-<p>太平洋时间 2 月 14 日上午 9:00（北京时间 2 月 15 日凌晨 1：00）开始，微软将在 <a href="http://www.dot.net">www.dot.net</a> 直播一个 30 分钟的活动，内容包括：</p>
-<ul>
-<li>采访知名人士和微软校友</li>
-<li>来自客户和开发人员的故事，他们正在建造令人惊叹的东西</li>
-<li>与 Scott Hunter, Scott Hanselman 和特别嘉宾一起回忆 .NET 的建设</li>
-<li>&hellip;还有许多来自 OSS 贡献者、MVP 和.NET 团队成员的 ❤</li>
-</ul>
-<p>在 2 月 14 日上午 9:00 PT, 12:00PM ET, 5:00PM GMT 观看流媒体或组织观看聚会，并在直播期间在 <a href="http://www.dot.net">www.dot.net</a> 的主页上参与直播聊天。如果你错过了，以后再来观看点播吧!</p>
-<div style="background-color: #B43093;">
-    <p style="padding: 18px;color: #FFFFFF;font-size: 14px;font-weight: normal;text-align: center;word-break: break-word;line-height: 150%;">
-        使用标签 #dotNETLovesMe，在 Twitter 上以图片或视频形式分享你的故事、纪念品和最喜欢的功能。在2月14日之前完成，你就有可能出现在广播节目中！
-    </p>
-</div>
-<h1 id="在社交媒体上庆祝">在社交媒体上庆祝</h1>
-<p>在整个 2 月份的社交媒体上与社区一起庆祝。有一个美好的回忆吗？还保留着 PDC 会议的徽章吗？你是否建造了一些惊人的东西？在 Twitter 上用#dotNETLovesMe 的标签以图片或视频的形式分享你的故事、纪念品、最喜欢的功能等。微软、.NET 基金会和生态系统合作伙伴将以数字礼品、小游戏等方式参加庆祝活动。</p>
-<h1 id="玩得开心">玩得开心！</h1>
-<p>玩得开心，祝 @dotnet 生日快乐。用 <a href="https://mod-dotnet-bot.net/">mod-dotnet-bot.net</a> 上的新设计建造你自己的生日快乐主题的 dotnet-bot。你可以从<a href="https://github.com/dotnet-presentations/dotNET20th">活动资料库</a>中获得庆祝的图片和数字礼品，用于你 2 月份的所有数字活动。</p>
-<div style="background-color: #B43093;padding: 18px;text-align: center;font-size:14px;color:#fff;">
-    <p>
-        我们希望看到你穿上你的.NET装备!
-    </p>
-    <p>
-        在 2 月期间访问.NET 基金会商店，以获得特定物品的特殊价格，以帮助你庆祝。
-    </p>
-    <p>
-        不要忘记使用标签 #dotNETLovesMe 来向我们展示你的风格！
-    </p>
-</div>
-<p><img src="/photos/dotnet20/bot.png" alt=""></p>
+            <p>本文参考 (Shared resources - ASP.NET Core Blazor globalization and localization)[https://learn.microsoft.com/en-us/aspnet/core/blazor/globalization-localization?view=aspnetcore-8.0#shared-resources]</p>
+<h2 id="注册本地化服务">注册本地化服务</h2>
+<p>在 <code>Program.cs</code> 中注册本地化服务：</p>
+<pre><code class="language-csharp">builder.Services.AddLocalization();
+</code></pre>
+<p>画重点：共享资源是通过一个空类（dummy class）来定位，不需要设置 <code>ResourcesPath</code> 的。</p>
+<h2 id="添加空类">添加空类</h2>
+<p>在项目一个目录定义一个空类，命名随意，但需要注意的是，这个类的命名空间需要与路径匹配。</p>
+<p>如在详谬根目录里的 Localization 目录下，创建名为 <code>SharedResource.cs</code> 的</p>
+<p><code>Localization/SharedResource.cs:</code></p>
+<pre><code class="language-csharp">namespace BlazorSample.Localization;
+
+public class SharedResource
+{
+}
+</code></pre>
+<h2 id="添加资源文件">添加资源文件</h2>
+<p>然后在同一个目录下（Localization/）创建资源文件，文件名前缀要与空类一样。</p>
+<p><code>Localization/SharedResource.resx</code></p>
+<p>默认是英文，我们继续添加其他语言，如 zh-CN：</p>
+<p><code>Localization/SharedResource.zh-CN.resx</code></p>
+<p>打开这些资源文件的属性，把 <code>生成操作(Build Action)</code> 设置为 <code>嵌入的资源（Embedded resource）</code>。</p>
+<h2 id="使用">使用</h2>
+<p>直接修改 <code>CultureInfo.DefaultThreadCurrentUICulture</code> 即可实现切换语言。切换后，利用之前的文章中介绍的<a href="blazor-reload-partial">局部刷新方法</a>，实现 @Body 内容的刷新，这样就能让页面重新显示对应语言的字符串。但是要注意的是，这种实现方式在静态渲染模式下无效，静态渲染的实现方式将在下篇文章中介绍。</p>
+<pre><code class="language-csharp">@using System.Globalization
+@inherits LayoutComponentBase
+
+&lt;div class=&quot;page&quot;&gt;
+    &lt;div class=&quot;sidebar&quot;&gt;
+        &lt;NavMenu /&gt;
+    &lt;/div&gt;
+
+    &lt;main&gt;
+        &lt;div class=&quot;top-row px-4&quot;&gt;
+            @if (CultureInfo.DefaultThreadCurrentUICulture?.Name == &quot;en-US&quot;)
+            {
+                &lt;a @onclick=&quot;@(()=&gt;ChangeLanuge(&quot;zh-CN&quot;))&quot;&gt;中文&lt;/a&gt;
+            }
+            else
+            {
+                &lt;a @onclick=&quot;@(()=&gt;ChangeLanuge(&quot;en-US&quot;))&quot;&gt;English&lt;/a&gt;
+            }
+            &lt;a href=&quot;https://learn.microsoft.com/aspnet/core/&quot; target=&quot;_blank&quot;&gt;About&lt;/a&gt;
+        &lt;/div&gt;
+
+        &lt;article class=&quot;content px-4&quot;&gt;
+            &lt;ReloadContainer @ref=&quot;reload&quot;&gt;
+                @Body
+            &lt;/ReloadContainer&gt;
+        &lt;/article&gt;
+    &lt;/main&gt;
+&lt;/div&gt;
+
+
+@code {
+    ReloadContainer reload;
+
+    void ChangeLanuge(string culture)
+    {
+        CultureInfo.DefaultThreadCurrentUICulture = new CultureInfo(culture);
+        reload.Reload();
+    }
+}
+</code></pre>
+<h2 id="总结">总结</h2>
+<p>本文介绍了如何在 Blazor 应用中添加共享本地化资源，并利用局部刷新实现切换语言。核心思路是通过一个空类来定位资源文件，并利用 <code>CultureInfo.DefaultThreadCurrentUICulture</code> 来切换语言。</p>
 
         </div>
         
         <div class="my-4">
     
     <a href="/tags/.net/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 mr-2 hover:text-eureka">#.NET</a>
+    
+    <a href="/tags/blazor/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 mr-2 hover:text-eureka">#Blazor</a>
     
 </div>
         
@@ -303,7 +340,7 @@
     
     
     
-    <a href="https://github.com/ElderJames/blogs/blob/master/content/posts/get-ready-for-the-net-20th-anniversary-celebration.md" title="Edit this page">
+    <a href="https://github.com/ElderJames/blogs/blob/master/content/posts/blazor-localization-shared-resource.md" title="Edit this page">
         <i class="fas fa-edit mr-1"></i>
         <span>编辑本页</span>
     </a>
@@ -318,14 +355,11 @@
 <div class="flex flex-col md:flex-row md:justify-between -mx-2 mt-4 px-2 pt-4 border-t">
     <div>
         
-        <span class="block font-bold">上一页</span>
-        <a href="/posts/ant-blazor-1.0-roadmap/" class="block">Ant Design Blazor 1.0 正式版发布计划</a>
-        
     </div>
     <div class="md:text-right mt-4 md:mt-0">
         
         <span class="block font-bold">下一页</span>
-        <a href="/posts/implement-reuse-tabs-using-antblazor/" class="block">Ant Design Blazor 组件库的路由复用多标签页介绍</a>
+        <a href="/posts/blazor-reload-partial/" class="block">Blazor 应用内局部刷新</a>
         
     </div>
 </div>
@@ -333,21 +367,55 @@
         
     </div>
     
+    <div class="col-span-2">
+        
+        
+        <div class="sticky top-16 z-10 hidden lg:block px-6 py-4  bg-primary-bg ">
+    <span class="text-lg font-semibold">本页内容</span>
+</div>
+<div class="sticky-toc hidden lg:block px-6 pb-6 ">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#注册本地化服务">注册本地化服务</a></li>
+    <li><a href="#添加空类">添加空类</a></li>
+    <li><a href="#添加资源文件">添加资源文件</a></li>
+    <li><a href="#使用">使用</a></li>
+    <li><a href="#总结">总结</a></li>
+  </ul>
+</nav>
+</div>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        enableStickyToc();
+    });
+</script>
+        
+    </div>
+    
 
     
     
     <div
-        class="col-span-2 lg:col-start-2 lg:col-span-6 bg-secondary-bg rounded p-6">
+        class="col-span-2  lg:col-span-6 bg-secondary-bg rounded p-6">
         <h2 class="text-lg font-semibold mb-4">相关</h2>
         <div class="content">
             
+            <a href="/posts/blazor-reload-partial/">Blazor 应用内局部刷新</a>
+            <br />
+            
+            <a href="/posts/blazor-simple-reuse-tabs/">Blazor 标签页简化版实现</a>
+            <br />
+            
+            <a href="/posts/publish-net-apps-to-docker/">如何无需 Dockerfile 直接发布 .NET 7 应用到 Docker</a>
+            <br />
+            
+            <a href="/posts/whats-new-in-antblazor-0.11-0.12/">Ant Design Blazor 0.11 - 0.12 中值得回味的新特性</a>
+            <br />
+            
+            <a href="/posts/ant-blazor-1.0-roadmap/">Ant Design Blazor 1.0 正式版发布计划</a>
+            <br />
+            
             <a href="/posts/implement-reuse-tabs-using-antblazor/">Ant Design Blazor 组件库的路由复用多标签页介绍</a>
-            <br />
-            
-            <a href="/posts/blazor-interview-questions/">Blazor 面试 18 问</a>
-            <br />
-            
-            <a href="/posts/asp-net-core-updates-in-net-6-preview-2/">ASP.NET Core 在 .NET 6 Preview 2 中的更新</a>
             <br />
             
         </div>

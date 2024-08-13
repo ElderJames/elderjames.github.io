@@ -9,6 +9,15 @@
     <copyright>&amp;copy; 2021 &lt;a href=&#34;https://jamesyeung.cn/&#34;&gt;James Yeung&lt;/a&gt;
 </copyright><atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Blazor 本地化之共享资源与局部刷新</title>
+      <link>/posts/blazor-localization-shared-resource/</link>
+      <pubDate>Tue, 13 Aug 2024 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/blazor-localization-shared-resource/</guid>
+      <description>本文参考 (Shared resources - ASP.NET Core Blazor globalization and localization)[https://learn.microsoft.com/en-us/aspnet/core/blazor/globalization-localization?view=aspnetcore-8.0#shared-resources] 注册本地化服务 在 Program.cs 中注册本地化服务： builder.Services.AddLocalization(); 画重点：共享资源是通过一个空类（dummy class）来定位，不需要设置 ResourcesPath 的。 添加空类</description>
+    </item>
+    
+    <item>
       <title>Blazor 应用内局部刷新</title>
       <link>/posts/blazor-reload-partial/</link>
       <pubDate>Mon, 12 Aug 2024 00:00:00 +0000</pubDate>
