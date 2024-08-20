@@ -8,7 +8,16 @@
     <language>zh</language>
     <copyright>&amp;copy; 2021 &lt;a href=&#34;https://jamesyeung.cn/&#34;&gt;James Yeung&lt;/a&gt;
 </copyright>
-    <lastBuildDate>Tue, 13 Aug 2024 00:00:00 +0000</lastBuildDate><atom:link href="/tags/.net/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 20 Aug 2024 00:00:00 +0000</lastBuildDate><atom:link href="/tags/.net/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Blazor CSS 隔离</title>
+      <link>/posts/blazor-css-isolation/</link>
+      <pubDate>Tue, 20 Aug 2024 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/blazor-css-isolation/</guid>
+      <description>很多人遇到Blazor 样式隔离的问题，本文再解说下 Blazor 官方文档中的 CSS 隔离</description>
+    </item>
+    
     <item>
       <title>Blazor 本地化之共享资源与局部刷新</title>
       <link>/posts/blazor-localization-shared-resource/</link>

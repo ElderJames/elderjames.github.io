@@ -3,7 +3,7 @@
 <meta name="viewport" content="width=device-width">
 
 
-<title>来自 .NET 基金会的来信 —— 为 .NET 20周年庆祝活动做好准备 | James Yeung</title>
+<title>Blazor CSS 隔离 | James Yeung</title>
 <link rel="stylesheet" href="/css/eureka.min.css">
 <script defer src="/js/eureka.min.js"></script>
 
@@ -62,7 +62,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/images/icon_hu64421c6c7700f606f0ad45d807017b09_5843_180x180_fill_box_center_2.png">
 
 <meta name="description"
-  content="作为 .NET 基金会的成员和.NET的朋友，我们认为你会想知道这个庆典。">
+  content="很多人遇到Blazor 样式隔离的问题，本文再解说下 Blazor 官方文档中的 CSS 隔离">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -74,8 +74,8 @@
       "item":"/posts/"},{
       "@type": "ListItem",
       "position": 2 ,
-      "name":"来自 .NET 基金会的来信 —— 为 .NET 20周年庆祝活动做好准备",
-      "item":"/posts/get-ready-for-the-net-20th-anniversary-celebration/"}]
+      "name":"Blazor CSS 隔离",
+      "item":"/posts/blazor-css-isolation/"}]
 }
 </script>
 
@@ -87,11 +87,11 @@
     "@type": "Article",
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "/posts/get-ready-for-the-net-20th-anniversary-celebration/"
+        "@id": "/posts/blazor-css-isolation/"
     },
-    "headline": "来自 .NET 基金会的来信 —— 为 .NET 20周年庆祝活动做好准备 | James Yeung","datePublished": "2022-02-11T00:00:00+00:00",
+    "headline": "Blazor CSS 隔离 | James Yeung","datePublished": "2024-08-20T00:00:00+00:00",
     "dateModified": "2024-08-20T16:29:36+08:00",
-    "wordCount":  777 ,
+    "wordCount":  928 ,
     "publisher": {
         "@type": "Person",
         "name": "James Yeung",
@@ -100,21 +100,21 @@
             "url": "/photos/mvp-avatar.png"
         }
         },
-    "description": "作为 .NET 基金会的成员和.NET的朋友，我们认为你会想知道这个庆典。"
+    "description": "很多人遇到Blazor 样式隔离的问题，本文再解说下 Blazor 官方文档中的 CSS 隔离"
 }
-</script><meta property="og:title" content="来自 .NET 基金会的来信 —— 为 .NET 20周年庆祝活动做好准备 | James Yeung" />
+</script><meta property="og:title" content="Blazor CSS 隔离 | James Yeung" />
 <meta property="og:type" content="article" />
 
 
 <meta property="og:image" content="/images/icon.png">
 
 
-<meta property="og:url" content="/posts/get-ready-for-the-net-20th-anniversary-celebration/" />
+<meta property="og:url" content="/posts/blazor-css-isolation/" />
 
 
 
 
-<meta property="og:description" content="作为 .NET 基金会的成员和.NET的朋友，我们认为你会想知道这个庆典。" />
+<meta property="og:description" content="很多人遇到Blazor 样式隔离的问题，本文再解说下 Blazor 官方文档中的 CSS 隔离" />
 
 
 
@@ -131,7 +131,7 @@
 
 
 
-<meta property="article:published_time" content="2022-02-11T00:00:00&#43;00:00" />
+<meta property="article:published_time" content="2024-08-20T00:00:00&#43;00:00" />
 
 
 <meta property="article:modified_time" content="2024-08-20T16:29:36&#43;08:00" />
@@ -143,15 +143,23 @@
 
 <meta property="article:tag" content=".NET" />
 
+<meta property="article:tag" content="Blazor" />
 
 
 
+
+
+<meta property="og:see_also" content="/posts/blazor-localization-shared-resource/" />
+
+<meta property="og:see_also" content="/posts/blazor-reload-partial/" />
+
+<meta property="og:see_also" content="/posts/blazor-simple-reuse-tabs/" />
+
+<meta property="og:see_also" content="/posts/publish-net-apps-to-docker/" />
+
+<meta property="og:see_also" content="/posts/ant-blazor-1.0-roadmap/" />
 
 <meta property="og:see_also" content="/posts/implement-reuse-tabs-using-antblazor/" />
-
-<meta property="og:see_also" content="/posts/blazor-interview-questions/" />
-
-<meta property="og:see_also" content="/posts/asp-net-core-updates-in-net-6-preview-2/" />
 
 
 
@@ -227,12 +235,12 @@
 
 <div class="grid grid-cols-2 lg:grid-cols-8 gap-4 lg:pt-12">
     <div
-        class="col-span-2 lg:col-start-2 lg:col-span-6 bg-secondary-bg rounded px-6 py-8">
-        <h1 class="font-bold text-3xl text-primary-text">来自 .NET 基金会的来信 —— 为 .NET 20周年庆祝活动做好准备</h1>
+        class="col-span-2  lg:col-span-6 bg-secondary-bg rounded px-6 py-8">
+        <h1 class="font-bold text-3xl text-primary-text">Blazor CSS 隔离</h1>
         <div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
     <div class="mr-6 my-2">
         <i class="fas fa-calendar mr-1"></i>
-        <span>2022-02-11</span>
+        <span>2024-08-20</span>
     </div>
     <div class="mr-6 my-2">
         <i class="fas fa-clock mr-1"></i>
@@ -248,49 +256,54 @@
         
 
         <div class="content">
-            <blockquote>
-<p>这是我前几天收到的来自 .NET 基金会的邮件，是关于 .NET 20 周年庆祝活动的。国内 .NET 社区也在应援，欢迎更多的朋友关注和参与！</p>
-</blockquote>
-<p><img src="/photos/dotnet20/title.png" alt=""></p>
-<p>作为 .NET 基金会的成员和 .NET 的朋友，我们认为你会想知道这个庆典。</p>
-<h1 id="庆祝-20-年的革新">庆祝 20 年的革新</h1>
-<p>20 年前，即 2002 年 2 月 13 日，Visual Studio .NET 推出，第一个版本的 .NET 开发平台正式向世界发布。整个月，我们都将庆祝这个巨大的里程碑。</p>
-<h1 id="太平洋时区-2-月-14-日上午-900北京时间-2-月-15-日凌晨-100在线广播">太平洋时区 2 月 14 日上午 9:00（北京时间 2 月 15 日凌晨 1：00）在线广播</h1>
-<p>太平洋时间 2 月 14 日上午 9:00（北京时间 2 月 15 日凌晨 1：00）开始，微软将在 <a href="http://www.dot.net">www.dot.net</a> 直播一个 30 分钟的活动，内容包括：</p>
-<ul>
-<li>采访知名人士和微软校友</li>
-<li>来自客户和开发人员的故事，他们正在建造令人惊叹的东西</li>
-<li>与 Scott Hunter, Scott Hanselman 和特别嘉宾一起回忆 .NET 的建设</li>
-<li>&hellip;还有许多来自 OSS 贡献者、MVP 和.NET 团队成员的 ❤</li>
-</ul>
-<p>在 2 月 14 日上午 9:00 PT, 12:00PM ET, 5:00PM GMT 观看流媒体或组织观看聚会，并在直播期间在 <a href="http://www.dot.net">www.dot.net</a> 的主页上参与直播聊天。如果你错过了，以后再来观看点播吧!</p>
-<div style="background-color: #B43093;">
-    <p style="padding: 18px;color: #FFFFFF;font-size: 14px;font-weight: normal;text-align: center;word-break: break-word;line-height: 150%;">
-        使用标签 #dotNETLovesMe，在 Twitter 上以图片或视频形式分享你的故事、纪念品和最喜欢的功能。在2月14日之前完成，你就有可能出现在广播节目中！
-    </p>
-</div>
-<h1 id="在社交媒体上庆祝">在社交媒体上庆祝</h1>
-<p>在整个 2 月份的社交媒体上与社区一起庆祝。有一个美好的回忆吗？还保留着 PDC 会议的徽章吗？你是否建造了一些惊人的东西？在 Twitter 上用#dotNETLovesMe 的标签以图片或视频的形式分享你的故事、纪念品、最喜欢的功能等。微软、.NET 基金会和生态系统合作伙伴将以数字礼品、小游戏等方式参加庆祝活动。</p>
-<h1 id="玩得开心">玩得开心！</h1>
-<p>玩得开心，祝 @dotnet 生日快乐。用 <a href="https://mod-dotnet-bot.net/">mod-dotnet-bot.net</a> 上的新设计建造你自己的生日快乐主题的 dotnet-bot。你可以从<a href="https://github.com/dotnet-presentations/dotNET20th">活动资料库</a>中获得庆祝的图片和数字礼品，用于你 2 月份的所有数字活动。</p>
-<div style="background-color: #B43093;padding: 18px;text-align: center;font-size:14px;color:#fff;">
-    <p>
-        我们希望看到你穿上你的.NET装备!
-    </p>
-    <p>
-        在 2 月期间访问.NET 基金会商店，以获得特定物品的特殊价格，以帮助你庆祝。
-    </p>
-    <p>
-        不要忘记使用标签 #dotNETLovesMe 来向我们展示你的风格！
-    </p>
-</div>
-<p><img src="/photos/dotnet20/bot.png" alt=""></p>
+            <h2 id="样式隔离如何生效">样式隔离如何生效</h2>
+<p>Blazor 默认开启了样式隔离，只要把 css 文件命名为与 razor 组件文件名相同，后缀改为 razor.css，就可以了。例如组件名是 Home.razor，那css文件的文件名就是 Home.razor.css。</p>
+<p>然后，如果不是通过官方模板创建的项目，需要在入口文件中引入 Blazor 给样式隔离生成的 css 文件，这个文件的文件名是固定的，为文件所在程序集名称加<code>.styles.css</code>后缀。例如，当前项目叫做 MyBlazorApp，那么 css 文件就是 MyBlazorApp.styles.css。</p>
+<p>用一下代码引入这个文件：</p>
+<pre><code class="language-html">&lt;link href=&quot;{ASSEMBLY NAME}.styles.css&quot; rel=&quot;stylesheet&quot;&gt;
+</code></pre>
+<p>在 Blazor Web 应用中，在 Components/App.razor 文件中添加。</p>
+<p>在 Blazor WebAssembly 应用中，在 wwwroot/index.html 文件中添加。</p>
+<h2 id="样式隔离的原理">样式隔离的原理</h2>
+<p>Blazor 的样式隔离，是在渲染 html 标签时，自动加上一个 Attribute ,如 <code>bl_1234</code>，然后在上文所说的隔离css文件中，给我们写的样式选择器都加这个Attribue，如 <code>div[bl_1234] { }</code>，这样就能利用属性选择器（Attribute Selector）的限制达到隔离的效果。生成的策略也是简单粗暴，</p>
+<h2 id="如何覆盖子组件或者组件库组件的样式">如何覆盖子组件或者组件库组件的样式？</h2>
+<p>Blazor 的样式隔离不会作用到子组件中，即不会给子组件的 html 标签加 Attribute。只能当前组件标签上 Attribute ，然后再用这个 Attribute 来隔离对子组件的覆盖样式（也就是可以实现不同页面的样式覆盖都不同）。</p>
+<p>所以，要达到这个目的，有两个要求：</p>
+<ol>
+<li>需要被覆盖样式的子组件，需要用原生html元素包围。</li>
+<li>需要利用特定的标记 <code>::deep</code> 来连接父组件和子组件的元素，等于给父组件的元素加一个优先级，而不给子组件的元素加Attribute，否则也隔离了就无法作用到子组件上了。</li>
+</ol>
+<p>看官方文档上的示例：</p>
+<pre><code>@page &quot;/parent&quot;
+
+&lt;div&gt;
+    &lt;h1&gt;Parent component&lt;/h1&gt;
+
+    &lt;Child /&gt;
+&lt;/div&gt;
+</code></pre>
+<p>这里 <code>&lt;Child /&gt;</code> 是一个子组件，被 <code>&lt;div&gt;</code> 包围了。它里面也是一个元素的元素。</p>
+<pre><code>&lt;h1&gt;Child Component&lt;/h1&gt;
+</code></pre>
+<p>那么，要在父级组件覆盖这个h1元素的样式，如果直接用 div h1，就只能作用在父组件上的 h1，而 <Child /> 中的 h1 则毫无反应。因此，需要加一个 ::deep 来关联起来。</p>
+<pre><code class="language-css">duv ::deep h1 {
+    color: red;
+}
+</code></pre>
+<p>这样就能覆盖子组件的样式，而又不会影响当前组件的样式了。</p>
+<h2 id="组件库rcl上使用样式隔离的不同点">组件库（RCL）上使用样式隔离的不同点</h2>
+<p>组件库的隔离样式生成的文件名和引入的路径与普通 Blazor 应用的有所区别。</p>
+<pre><code>_content/ClassLib/ClassLib.bundle.scp.css
+</code></pre>
+<p>这个文件会被自动导入到引用了这个RCL的应用的隔离css文件中，所以如果应用引用的组件库用了样式隔离，那么应用必须引入它自己的 styles.css 文件才能让组件库样式生效。</p>
 
         </div>
         
         <div class="my-4">
     
     <a href="/tags/.net/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 mr-2 hover:text-eureka">#.NET</a>
+    
+    <a href="/tags/blazor/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 mr-2 hover:text-eureka">#Blazor</a>
     
 </div>
         
@@ -303,7 +316,7 @@
     
     
     
-    <a href="https://github.com/ElderJames/blogs/blob/master/content/posts/get-ready-for-the-net-20th-anniversary-celebration.md" title="Edit this page">
+    <a href="https://github.com/ElderJames/blogs/blob/master/content/posts/blazor-css-isolation.md" title="Edit this page">
         <i class="fas fa-edit mr-1"></i>
         <span>编辑本页</span>
     </a>
@@ -318,14 +331,11 @@
 <div class="flex flex-col md:flex-row md:justify-between -mx-2 mt-4 px-2 pt-4 border-t">
     <div>
         
-        <span class="block font-bold">上一页</span>
-        <a href="/posts/ant-blazor-1.0-roadmap/" class="block">Ant Design Blazor 1.0 正式版发布计划</a>
-        
     </div>
     <div class="md:text-right mt-4 md:mt-0">
         
         <span class="block font-bold">下一页</span>
-        <a href="/posts/implement-reuse-tabs-using-antblazor/" class="block">Ant Design Blazor 组件库的路由复用多标签页介绍</a>
+        <a href="/posts/blazor-localization-shared-resource/" class="block">Blazor 本地化之共享资源与局部刷新</a>
         
     </div>
 </div>
@@ -333,21 +343,54 @@
         
     </div>
     
+    <div class="col-span-2">
+        
+        
+        <div class="sticky top-16 z-10 hidden lg:block px-6 py-4  bg-primary-bg ">
+    <span class="text-lg font-semibold">本页内容</span>
+</div>
+<div class="sticky-toc hidden lg:block px-6 pb-6 ">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#样式隔离如何生效">样式隔离如何生效</a></li>
+    <li><a href="#样式隔离的原理">样式隔离的原理</a></li>
+    <li><a href="#如何覆盖子组件或者组件库组件的样式">如何覆盖子组件或者组件库组件的样式？</a></li>
+    <li><a href="#组件库rcl上使用样式隔离的不同点">组件库（RCL）上使用样式隔离的不同点</a></li>
+  </ul>
+</nav>
+</div>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        enableStickyToc();
+    });
+</script>
+        
+    </div>
+    
 
     
     
     <div
-        class="col-span-2 lg:col-start-2 lg:col-span-6 bg-secondary-bg rounded p-6">
+        class="col-span-2  lg:col-span-6 bg-secondary-bg rounded p-6">
         <h2 class="text-lg font-semibold mb-4">相关</h2>
         <div class="content">
             
+            <a href="/posts/blazor-localization-shared-resource/">Blazor 本地化之共享资源与局部刷新</a>
+            <br />
+            
+            <a href="/posts/blazor-reload-partial/">Blazor 应用内局部刷新</a>
+            <br />
+            
+            <a href="/posts/blazor-simple-reuse-tabs/">Blazor 标签页简化版实现</a>
+            <br />
+            
+            <a href="/posts/publish-net-apps-to-docker/">如何无需 Dockerfile 直接发布 .NET 7 应用到 Docker</a>
+            <br />
+            
+            <a href="/posts/ant-blazor-1.0-roadmap/">Ant Design Blazor 1.0 正式版发布计划</a>
+            <br />
+            
             <a href="/posts/implement-reuse-tabs-using-antblazor/">Ant Design Blazor 组件库的路由复用多标签页介绍</a>
-            <br />
-            
-            <a href="/posts/blazor-interview-questions/">Blazor 面试 18 问</a>
-            <br />
-            
-            <a href="/posts/asp-net-core-updates-in-net-6-preview-2/">ASP.NET Core 在 .NET 6 Preview 2 中的更新</a>
             <br />
             
         </div>

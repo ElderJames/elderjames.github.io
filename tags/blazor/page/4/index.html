@@ -3,7 +3,7 @@
 <meta name="viewport" content="width=device-width">
 
 
-<title>文章 | James Yeung</title>
+<title>Blazor | James Yeung</title>
 <link rel="stylesheet" href="/css/eureka.min.css">
 <script defer src="/js/eureka.min.js"></script>
 
@@ -63,6 +63,21 @@
 
 <meta name="description"
   content="James&#39; Blog">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1 ,
+      "name":"Tags",
+      "item":"/tags/"},{
+      "@type": "ListItem",
+      "position": 2 ,
+      "name":"Blazor",
+      "item":"/tags/blazor/"}]
+}
+</script>
 
 
 
@@ -74,32 +89,20 @@
     "itemListElement":[{
             "@type":"ListItem",
             "position":  1 ,
-            "name": "如何无需 Dockerfile 直接发布 .NET 7 应用到 Docker",
-            "description": ".NET 7 在今年 11 月发布了，带来了几百页的性能提升和大量的新特性，其中很多新特性都让人印象深刻。本文就给大家带来直接使用 .NET SDK 构建 Docker 镜像的实战介绍",
-            "url": "/posts/publish-net-apps-to-docker/"
-        },{
-            "@type":"ListItem",
-            "position":  2 ,
-            "name": "Ant Design Blazor 1.0 正式版发布计划",
-            "description": "\u003cp\u003e大家好，感谢大家两年来对 AntDesign Blazor 的支持。我们项目已经发展了两年，组件基本完成了 Antd 所有功能的 Blazor 实现，甚至在有些组件上（如Table、Form）增加了很多Blazor/C#的特性，也已经有很多个人和公司用在了生产环境和商业项目中。\u003c/p\u003e",
-            "url": "/posts/ant-blazor-1.0-roadmap/"
-        },{
-            "@type":"ListItem",
-            "position":  3 ,
-            "name": "来自 .NET 基金会的来信 —— 为 .NET 20周年庆祝活动做好准备",
-            "description": "作为 .NET 基金会的成员和.NET的朋友，我们认为你会想知道这个庆典。",
-            "url": "/posts/get-ready-for-the-net-20th-anniversary-celebration/"
+            "name": "Blazor 面试 18 问",
+            "description": "Blazor 是一个免费的、开源的、跨平台的 Web 框架。本文以面试问答的形式，介绍了 Blazor 中的一些主要概念。",
+            "url": "/posts/blazor-interview-questions/"
         }
     ]
 }
-</script><meta property="og:title" content="文章 | James Yeung" />
+</script><meta property="og:title" content="Blazor | James Yeung" />
 <meta property="og:type" content="website" />
 
 
 <meta property="og:image" content="/images/icon.png">
 
 
-<meta property="og:url" content="/posts/" />
+<meta property="og:url" content="/tags/blazor/" />
 
 
 
@@ -123,12 +126,14 @@
 
 
 
+<meta property="og:updated_time" content="2024-08-20T00:00:00&#43;00:00" />
 
 
-<meta property="article:section" content="posts" />
+
+<meta property="article:section" content="tags" />
 
 
-<link rel="alternate" type="application/rss+xml" href="/posts/index.xml" title="James Yeung" />
+<link rel="alternate" type="application/rss+xml" href="/tags/blazor/index.xml" title="James Yeung" />
 
 <body class="flex flex-col min-h-screen">
   <header class="fixed flex items-center w-full min-h-16 pl-scrollbar z-50 bg-secondary-bg shadow-sm">
@@ -148,7 +153,7 @@
         class="hidden block md:flex md:flex-grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20">
         <div class="md:flex md:h-16 text-sm md:flex-grow pb-4 md:pb-0 border-b md:border-b-0">
             <a href="/#about" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  mr-4">关于</a>
-            <a href="/posts/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  selected-menu-item  mr-4">文章</a>
+            <a href="/posts/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  mr-4">文章</a>
         </div>
 
         <div class="flex">
@@ -199,12 +204,7 @@
     <div class="pl-scrollbar">
       <div class="w-full max-w-screen-xl lg:px-4 xl:px-8 mx-auto">
 <article class="mx-6 my-8">
-    <h1 class="font-bold text-3xl text-primary-text">文章</h1>
-    
-    <div class="content">
-        <hr>
-
-    </div>
+    <h1 class="font-bold text-3xl text-primary-text">Blazor</h1>
     
 </article>
 <div class="bg-secondary-bg rounded px-6">
@@ -215,85 +215,20 @@
   
   <div class="w-full ">
     <div class="mb-4">
-  <a href="/posts/publish-net-apps-to-docker/" class="font-bold text-xl hover:text-eureka">如何无需 Dockerfile 直接发布 .NET 7 应用到 Docker</a>
+  <a href="/posts/blazor-interview-questions/" class="font-bold text-xl hover:text-eureka">Blazor 面试 18 问</a>
 </div>
 <div class="content">
-  .NET 7 在今年 11 月发布了，带来了几百页的性能提升和大量的新特性，其中很多新特性都让人印象深刻。本文就给大家带来直接使用 .NET SDK 构建 Docker 镜像的实战介绍
+  Blazor 是一个免费的、开源的、跨平台的 Web 框架。本文以面试问答的形式，介绍了 Blazor 中的一些主要概念。
 </div>
 
 <div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
     <div class="mr-6 my-2">
         <i class="fas fa-calendar mr-1"></i>
-        <span>2022-12-09</span>
+        <span>2021-03-16</span>
     </div>
     <div class="mr-6 my-2">
         <i class="fas fa-clock mr-1"></i>
-        <span>1分钟阅读时长</span>
-    </div>
-    
-    
-
-    
-</div>
-
-  </div>
-
-  
-</div>
-  </div>
-  
-  <div class="py-6">
-    <div class="flex flex-col-reverse lg:flex-row justify-between">
-  
-  <div class="w-full ">
-    <div class="mb-4">
-  <a href="/posts/ant-blazor-1.0-roadmap/" class="font-bold text-xl hover:text-eureka">Ant Design Blazor 1.0 正式版发布计划</a>
-</div>
-<div class="content">
-  大家好，感谢大家两年来对 AntDesign Blazor 的支持。我们项目已经发展了两年，组件基本完成了 Antd 所有功能的 Blazor 实现，甚至在有些组件上（如Table、Form）增加了很多Blazor/C#的特性，也已经有很多个人和公司用在了生产环境和商业项目中。
-
-</div>
-
-<div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
-    <div class="mr-6 my-2">
-        <i class="fas fa-calendar mr-1"></i>
-        <span>2022-09-15</span>
-    </div>
-    <div class="mr-6 my-2">
-        <i class="fas fa-clock mr-1"></i>
-        <span>1分钟阅读时长</span>
-    </div>
-    
-    
-
-    
-</div>
-
-  </div>
-
-  
-</div>
-  </div>
-  
-  <div class="py-6">
-    <div class="flex flex-col-reverse lg:flex-row justify-between">
-  
-  <div class="w-full ">
-    <div class="mb-4">
-  <a href="/posts/get-ready-for-the-net-20th-anniversary-celebration/" class="font-bold text-xl hover:text-eureka">来自 .NET 基金会的来信 —— 为 .NET 20周年庆祝活动做好准备</a>
-</div>
-<div class="content">
-  作为 .NET 基金会的成员和.NET的朋友，我们认为你会想知道这个庆典。
-</div>
-
-<div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
-    <div class="mr-6 my-2">
-        <i class="fas fa-calendar mr-1"></i>
-        <span>2022-02-11</span>
-    </div>
-    <div class="mr-6 my-2">
-        <i class="fas fa-clock mr-1"></i>
-        <span>2分钟阅读时长</span>
+        <span>4分钟阅读时长</span>
     </div>
     
     
@@ -314,28 +249,28 @@
 
 <ul class="pagination">
   <li class="page-item">
-    <a href="/posts/" class="page-link" aria-label="First"><span aria-hidden="true">&laquo;&laquo;</span></a>
+    <a href="/tags/blazor/" class="page-link" aria-label="First"><span aria-hidden="true">&laquo;&laquo;</span></a>
   </li>
   <li class="page-item">
-    <a href="/posts/page/2/" class="page-link" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
+    <a href="/tags/blazor/page/3/" class="page-link" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
   </li>
   <li class="page-item">
-    <a class="page-link" href="/posts/">1</a>
+    <a class="page-link" href="/tags/blazor/">1</a>
   </li>
   <li class="page-item">
-    <a class="page-link" href="/posts/page/2/">2</a>
+    <a class="page-link" href="/tags/blazor/page/2/">2</a>
+  </li>
+  <li class="page-item">
+    <a class="page-link" href="/tags/blazor/page/3/">3</a>
   </li>
   <li class="page-item active">
-    <a class="page-link" href="/posts/page/3/">3</a>
+    <a class="page-link" href="/tags/blazor/page/4/">4</a>
+  </li>
+  <li class="page-item disabled">
+    <a  class="page-link" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
   </li>
   <li class="page-item">
-    <a class="page-link" href="/posts/page/4/">4</a>
-  </li>
-  <li class="page-item">
-    <a href="/posts/page/4/" class="page-link" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
-  </li>
-  <li class="page-item">
-    <a href="/posts/page/4/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
+    <a href="/tags/blazor/page/4/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
   </li>
 </ul>
 
