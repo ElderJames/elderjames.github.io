@@ -3,7 +3,7 @@
 <meta name="viewport" content="width=device-width">
 
 
-<title>跟进 .NET 8 Blazor 之 ReuseTabs 支持 Query 属性绑定 | James Yeung</title>
+<title>C# 利用 Spire 替换 PDF 文件的指定文字 | James Yeung</title>
 <link rel="stylesheet" href="/css/eureka.min.css">
 <script defer src="/js/eureka.min.js"></script>
 
@@ -62,7 +62,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/images/icon_hu64421c6c7700f606f0ad45d807017b09_5843_180x180_fill_box_center_2.png">
 
 <meta name="description"
-  content="ASP.NET 团队在 .NET 8 继续全力投入 Blazor，为 Blazor 带来了非常多的新特性，AntDesign Blazor也会继续佛系跟进。本篇主要介绍第一个在AntDesign Blazor 上应用的新特性，也就是 ReuseTabs 自 2021 年发布两年后，仍然未支持的 Query String 属性绑定功能。">
+  content="本文介绍对于已导出的pdf文件，使用 Spire 替换其中的指定文字。">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -74,8 +74,8 @@
       "item":"/posts/"},{
       "@type": "ListItem",
       "position": 2 ,
-      "name":"跟进 .NET 8 Blazor 之 ReuseTabs 支持 Query 属性绑定",
-      "item":"/posts/ant-blazor-reusetabs-supports-supply-parameter-form-query/"}]
+      "name":"C# 利用 Spire 替换 PDF 文件的指定文字",
+      "item":"/posts/spire-replace-pdf-text/"}]
 }
 </script>
 
@@ -87,11 +87,11 @@
     "@type": "Article",
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "/posts/ant-blazor-reusetabs-supports-supply-parameter-form-query/"
+        "@id": "/posts/spire-replace-pdf-text/"
     },
-    "headline": "跟进 .NET 8 Blazor 之 ReuseTabs 支持 Query 属性绑定 | James Yeung","datePublished": "2023-07-29T00:00:00+00:00",
+    "headline": "C# 利用 Spire 替换 PDF 文件的指定文字 | James Yeung","datePublished": "2024-09-10T00:00:00+00:00",
     "dateModified": "2024-09-10T11:58:50+08:00",
-    "wordCount":  1136 ,
+    "wordCount":  222 ,
     "publisher": {
         "@type": "Person",
         "name": "James Yeung",
@@ -100,21 +100,21 @@
             "url": "/photos/mvp-avatar.png"
         }
         },
-    "description": "ASP.NET 团队在 .NET 8 继续全力投入 Blazor，为 Blazor 带来了非常多的新特性，AntDesign Blazor也会继续佛系跟进。本篇主要介绍第一个在AntDesign Blazor 上应用的新特性，也就是 ReuseTabs 自 2021 年发布两年后，仍然未支持的 Query String 属性绑定功能。"
+    "description": "本文介绍对于已导出的pdf文件，使用 Spire 替换其中的指定文字。"
 }
-</script><meta property="og:title" content="跟进 .NET 8 Blazor 之 ReuseTabs 支持 Query 属性绑定 | James Yeung" />
+</script><meta property="og:title" content="C# 利用 Spire 替换 PDF 文件的指定文字 | James Yeung" />
 <meta property="og:type" content="article" />
 
 
 <meta property="og:image" content="/images/icon.png">
 
 
-<meta property="og:url" content="/posts/ant-blazor-reusetabs-supports-supply-parameter-form-query/" />
+<meta property="og:url" content="/posts/spire-replace-pdf-text/" />
 
 
 
 
-<meta property="og:description" content="ASP.NET 团队在 .NET 8 继续全力投入 Blazor，为 Blazor 带来了非常多的新特性，AntDesign Blazor也会继续佛系跟进。本篇主要介绍第一个在AntDesign Blazor 上应用的新特性，也就是 ReuseTabs 自 2021 年发布两年后，仍然未支持的 Query String 属性绑定功能。" />
+<meta property="og:description" content="本文介绍对于已导出的pdf文件，使用 Spire 替换其中的指定文字。" />
 
 
 
@@ -131,7 +131,7 @@
 
 
 
-<meta property="article:published_time" content="2023-07-29T00:00:00&#43;00:00" />
+<meta property="article:published_time" content="2024-09-10T00:00:00&#43;00:00" />
 
 
 <meta property="article:modified_time" content="2024-09-10T11:58:50&#43;08:00" />
@@ -141,21 +141,25 @@
 <meta property="article:section" content="posts" />
 
 
-<meta property="article:tag" content="AntDesign" />
+<meta property="article:tag" content=".NET" />
 
-<meta property="article:tag" content="Blazor" />
-
-
+<meta property="article:tag" content="PDF" />
 
 
+
+
+
+<meta property="og:see_also" content="/posts/pdf-remove-watermark/" />
+
+<meta property="og:see_also" content="/posts/blazor-css-isolation/" />
+
+<meta property="og:see_also" content="/posts/blazor-localization-shared-resource/" />
+
+<meta property="og:see_also" content="/posts/blazor-reload-partial/" />
+
+<meta property="og:see_also" content="/posts/blazor-simple-reuse-tabs/" />
 
 <meta property="og:see_also" content="/posts/publish-net-apps-to-docker/" />
-
-<meta property="og:see_also" content="/posts/ant-blazor-1.0-roadmap/" />
-
-<meta property="og:see_also" content="/posts/implement-reuse-tabs-using-antblazor/" />
-
-<meta property="og:see_also" content="/posts/blazor-interview-questions/" />
 
 
 
@@ -232,15 +236,15 @@
 <div class="grid grid-cols-2 lg:grid-cols-8 gap-4 lg:pt-12">
     <div
         class="col-span-2 lg:col-start-2 lg:col-span-6 bg-secondary-bg rounded px-6 py-8">
-        <h1 class="font-bold text-3xl text-primary-text">跟进 .NET 8 Blazor 之 ReuseTabs 支持 Query 属性绑定</h1>
+        <h1 class="font-bold text-3xl text-primary-text">C# 利用 Spire 替换 PDF 文件的指定文字</h1>
         <div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
     <div class="mr-6 my-2">
         <i class="fas fa-calendar mr-1"></i>
-        <span>2023-07-29</span>
+        <span>2024-09-10</span>
     </div>
     <div class="mr-6 my-2">
         <i class="fas fa-clock mr-1"></i>
-        <span>3分钟阅读时长</span>
+        <span>1分钟阅读时长</span>
     </div>
     
     
@@ -252,32 +256,49 @@
         
 
         <div class="content">
-            <p>ASP.NET 团队和社区在 .NET 8 继续全力投入 Blazor，为它带来了非常多的新特性，特别是在服务端渲染（SSR）方面，一定程度解决之前 WASM 加载慢，Server 性能不理想等局限性，也跟原来的 MVC，Razor Pages 框架在底层完成了统一。</p>
-<p>AntDesign Blazor 作为 Blazor 最受欢迎的开源组件库之一，自然也会继续佛系跟进。本篇主要介绍第一个在 AntDesign Blazor 上应用的 .NET 8 新特性—— <code>CascadingModelBinder</code>，我利用它实现了 ReuseTabs 自 2021 年发布两年后，一直未支持的 Query String 属性绑定。</p>
-<p>ReuseTabs 是 AntDesign Blazor 在 2021 年 7 月增加的组件，也是 Blazor 目前唯一真正实现路由复用的组件。它只需在 App.razor 增加 RouteData 级联值，就可以在任何 Blazor 项目中独立使用（其文档上的例子就是在官方模板上使用的），不依赖菜单配置就能够主动识别路由，渲染页面组件，并保持每个 Tab 页面的状态切换不会丢失。不像其他组件库的实现，只能在他们指定的配套模板上才能使用…</p>
-<p><img src="/photos/reuse-tabs/reuse-tabs-demo1.gif" alt="Ant Design Blazor 组件库中的多标签页"></p>
-<p>它的实现原理也很简单，是通过级联的 RouteData 值，获取需要展示的组件类型以及要绑定页面组件的属性值，再动态渲染组件的。但是因为在 .NET 6 加入的 Query string 属性值绑定实现是在 RouteView 内部利用一个内部静态方法来解析 QueryString 并传给页面组件的，ReuseTabs 想要支持得把代码都抄一份。当时就觉得这样的设计很有局限（后来就懒得了）。</p>
-<p>直到在前段时间 .NET 官方博客中发布的文章 <a href="https://devblogs.microsoft.com/dotnet/asp-net-core-updates-in-dotnet-8-preview-6/?WT.mc_id=DT-MVP-5003987#cascade-query-string-values-to-blazor-components">ASP.NET Core 在 .NET 8 Preview 6 中的更新</a>，里面提到了一个特性，级联 query string 值到 Blazor 组件，意思是不再让Query string 值绑定局限于页面组件了，我就像这下 ReuseTabs 缺失了两年的功能，有希望填补了。</p>
-<p><img src="/photos/ant-blazor-reusetabs-supports-supply-parameter-form-query/image1.png" alt="Cascade query string values to Blazor components - .NET Blog"></p>
-<p>于是就有了今天要介绍的内容。</p>
-<p>为了寻找官方是怎么实现的，把 aspnetcore 仓库源码切换到 .NET 6 Preivew 6 的 tag 上，找到 RouteView 的源码在 <a href="https://github.com/dotnet/aspnetcore/blob/v8.0.0-preview.6.23329.11/src/Components/Components/src/RouteView.cs#L90">https://github.com/dotnet/aspnetcore/blob/v8.0.0-preview.6.23329.11/src/Components/Components/src/RouteView.cs#L90</a>，这个 RenderPageWithParameters 方法就是用于渲染页面组件的。</p>
-<p><img src="/photos/ant-blazor-reusetabs-supports-supply-parameter-form-query/image2.png" alt="RouteView"></p>
-<p>于是追溯这个文件的历史记录，找到在这个支持服务端静态渲染表单的 PR<a href="https://github.com/dotnet/aspnetcore/pull/47716/files#diff-c9ceeb487f25fa6e4e20bbc8eb15b597b014d77d3f464c51fd36d37e0365b96aR80-R84">#47716</a> 加入了 CascadingModelBinder，这样就可以从 Http 请求中获取提交的 FormData 绑定到组件中标记了 SupplyParameterFromForm 特性的模型上。</p>
-<p><img src="/photos/ant-blazor-reusetabs-supports-supply-parameter-form-query/image3.png" alt="RouteView CascadingModelBinder"></p>
-<p>接着，在PR <a href="https://github.com/dotnet/aspnetcore/pull/48554">#48554</a> 中使 SupplyParameterFromQuery 也能够通过 CascadingModelBinder 传递了，然后把上文提到的 RouteView 中的<a href="https://github.com/dotnet/aspnetcore/commit/883f06cbf5bfa9d82ef797c09fbcb6af7cbb1536#diff-c9ceeb487f25fa6e4e20bbc8eb15b597b014d77d3f464c51fd36d37e0365b96a">内部类 QueryParameterValueSupplier 相关代码</a>删掉了。</p>
-<p><img src="/photos/ant-blazor-reusetabs-supports-supply-parameter-form-query/image4.png" alt="RouteView delete QueryParameterValueSupplier"></p>
-<p>这简直正中眉心，马上我就把 RouteView 中的这段代码复制到 ReuseTabs 中了，PR<a href="#3377">https://github.com/ant-design-blazor/ant-design-blazor/pull/3377</a>，完美！</p>
-<p><img src="/photos/ant-blazor-reusetabs-supports-supply-parameter-form-query/image5.png" alt="Ant Design Blazor PR 3377">
-<img src="/photos/ant-blazor-reusetabs-supports-supply-parameter-form-query/image6.jpg" alt="ReuseTabs support query string"></p>
-<p>开心之余，我寻思着就算是抄，也不能抄的不明不白吧，于是就顺便调查了一下 CascadingModelBinder 是怎么传递级联值的。简单一句就是 Blazor 创建了 CascadingModelBinder 组件和 CascadingModelBindingProvider 提供者来抽象和统一了级联传值方法。没想到官方博客中平淡的两句话介绍背后有这么大的改动。详情请关注我后面文章，另作介绍。</p>
+            <p>找了多个C#库，只有 Spire 的 PdfTextReplacer 类比较好用，能直接替换整段文本。</p>
+<pre><code class="language-cs">    private void ReplaceText(string sourceFile, string outputPdf)
+    {
+        // 创建PdfDocument 对象
+        Spire.Pdf.PdfDocument doc = new();
+
+        // 加载PDF 文件
+        doc.LoadFromFile(sourceFile);
+
+        // 获取特定的页面
+        PdfPageBase page = doc.Pages[0];
+
+        // 根据页面创建 PdfTextReplacer 对象
+        PdfTextReplacer textReplacer = new PdfTextReplacer(page);
+
+        // // 创建PdfTextReplaceOptions 对象
+        // PdfTextReplaceOptions textReplaceOptions = new PdfTextReplaceOptions();
+
+        // // 指定文本替换的选项
+        // textReplaceOptions.ReplaceType = PdfTextReplaceOptions.ReplaceActionType.AutofitWidth;
+        // textReplacer.Options = textReplaceOptions;
+
+        // 将所有目标文本的出现替换为新文本
+        textReplacer.ReplaceAllText(&quot;{{username}}&quot;, &quot;John Doe&quot;);
+        textReplacer.ReplaceAllText(&quot;{{date}}&quot;, &quot;2024-Sept&quot;);
+
+        // 将文档保存到另一个 PDF 文件中
+        doc.SaveToFile(outputPdf);
+
+        // 释放资源
+        doc.Dispose();
+
+    }
+</code></pre>
+<p>未授权版本会有水印，可以用另一篇文字介绍的方法去除，或购买正版授权。</p>
 
         </div>
         
         <div class="my-4">
     
-    <a href="/tags/antdesign/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 mr-2 hover:text-eureka">#AntDesign</a>
+    <a href="/tags/.net/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 mr-2 hover:text-eureka">#.NET</a>
     
-    <a href="/tags/blazor/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 mr-2 hover:text-eureka">#Blazor</a>
+    <a href="/tags/pdf/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 mr-2 hover:text-eureka">#PDF</a>
     
 </div>
         
@@ -290,7 +311,7 @@
     
     
     
-    <a href="https://github.com/ElderJames/blogs/blob/master/content/posts/ant-blazor-reusetabs-supports-supply-parameter-form-query.md" title="Edit this page">
+    <a href="https://github.com/ElderJames/blogs/blob/master/content/posts/pdf-replace-text.md" title="Edit this page">
         <i class="fas fa-edit mr-1"></i>
         <span>编辑本页</span>
     </a>
@@ -305,14 +326,11 @@
 <div class="flex flex-col md:flex-row md:justify-between -mx-2 mt-4 px-2 pt-4 border-t">
     <div>
         
-        <span class="block font-bold">上一页</span>
-        <a href="/posts/resolves-width-issues-in-blazor-caused-by-element-wrapping/" class="block">解决 Blazor 中因标签换行导致的行内元素空隙问题</a>
-        
     </div>
     <div class="md:text-right mt-4 md:mt-0">
         
         <span class="block font-bold">下一页</span>
-        <a href="/posts/publish-net-apps-to-docker/" class="block">如何无需 Dockerfile 直接发布 .NET 7 应用到 Docker</a>
+        <a href="/posts/pdf-remove-watermark/" class="block">利用 iTextSharp 去除 PDF 水印</a>
         
     </div>
 </div>
@@ -328,16 +346,22 @@
         <h2 class="text-lg font-semibold mb-4">相关</h2>
         <div class="content">
             
+            <a href="/posts/pdf-remove-watermark/">利用 iTextSharp 去除 PDF 水印</a>
+            <br />
+            
+            <a href="/posts/blazor-css-isolation/">Blazor CSS 隔离</a>
+            <br />
+            
+            <a href="/posts/blazor-localization-shared-resource/">Blazor 本地化之共享资源与局部刷新</a>
+            <br />
+            
+            <a href="/posts/blazor-reload-partial/">Blazor 应用内局部刷新</a>
+            <br />
+            
+            <a href="/posts/blazor-simple-reuse-tabs/">Blazor 标签页简化版实现</a>
+            <br />
+            
             <a href="/posts/publish-net-apps-to-docker/">如何无需 Dockerfile 直接发布 .NET 7 应用到 Docker</a>
-            <br />
-            
-            <a href="/posts/ant-blazor-1.0-roadmap/">Ant Design Blazor 1.0 正式版发布计划</a>
-            <br />
-            
-            <a href="/posts/implement-reuse-tabs-using-antblazor/">Ant Design Blazor 组件库的路由复用多标签页介绍</a>
-            <br />
-            
-            <a href="/posts/blazor-interview-questions/">Blazor 面试 18 问</a>
             <br />
             
         </div>

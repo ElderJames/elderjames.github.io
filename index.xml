@@ -9,6 +9,24 @@
     <copyright>&amp;copy; 2021 &lt;a href=&#34;https://jamesyeung.cn/&#34;&gt;James Yeung&lt;/a&gt;
 </copyright><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>C# 利用 Spire 替换 PDF 文件的指定文字</title>
+      <link>/posts/spire-replace-pdf-text/</link>
+      <pubDate>Tue, 10 Sep 2024 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/spire-replace-pdf-text/</guid>
+      <description>本文介绍对于已导出的pdf文件，使用 Spire 替换其中的指定文字。</description>
+    </item>
+    
+    <item>
+      <title>利用 iTextSharp 去除 PDF 水印</title>
+      <link>/posts/pdf-remove-watermark/</link>
+      <pubDate>Tue, 10 Sep 2024 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/pdf-remove-watermark/</guid>
+      <description>当临时使用一些收费库处理pdf时，由于未获得授权，这些库会在 PDF 文件中添加水印。本文介绍如何移除这些水印。</description>
+    </item>
+    
+    <item>
       <title>Blazor CSS 隔离</title>
       <link>/posts/blazor-css-isolation/</link>
       <pubDate>Tue, 20 Aug 2024 00:00:00 +0000</pubDate>

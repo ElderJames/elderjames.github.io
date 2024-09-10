@@ -3,7 +3,7 @@
 <meta name="viewport" content="width=device-width">
 
 
-<title>如何无需 Dockerfile 直接发布 .NET 7 应用到 Docker | James Yeung</title>
+<title>PDF | James Yeung</title>
 <link rel="stylesheet" href="/css/eureka.min.css">
 <script defer src="/js/eureka.min.js"></script>
 
@@ -62,7 +62,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/images/icon_hu64421c6c7700f606f0ad45d807017b09_5843_180x180_fill_box_center_2.png">
 
 <meta name="description"
-  content=".NET 7 在今年 11 月发布了，带来了几百页的性能提升和大量的新特性，其中很多新特性都让人印象深刻。本文就给大家带来直接使用 .NET SDK 构建 Docker 镜像的实战介绍">
+  content="James&#39; Blog">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -70,51 +70,52 @@
   "itemListElement": [{
       "@type": "ListItem",
       "position": 1 ,
-      "name":"文章",
-      "item":"/posts/"},{
+      "name":"Tags",
+      "item":"/tags/"},{
       "@type": "ListItem",
       "position": 2 ,
-      "name":"如何无需 Dockerfile 直接发布 .NET 7 应用到 Docker",
-      "item":"/posts/publish-net-apps-to-docker/"}]
+      "name":"PDF",
+      "item":"/tags/pdf/"}]
 }
 </script>
 
 
 
+
 <script type="application/ld+json">
 {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": "/posts/publish-net-apps-to-docker/"
-    },
-    "headline": "如何无需 Dockerfile 直接发布 .NET 7 应用到 Docker | James Yeung","datePublished": "2022-12-09T00:00:00+00:00",
-    "dateModified": "2024-09-10T11:58:50+08:00",
-    "wordCount":  403 ,
-    "publisher": {
-        "@type": "Person",
-        "name": "James Yeung",
-        "logo": {
-            "@type": "ImageObject",
-            "url": "/photos/mvp-avatar.png"
+    "@context":"https://schema.org",
+    "@type":"ItemList",
+    "itemListElement":[{
+            "@type":"ListItem",
+            "position":  1 ,
+            "name": "C# 利用 Spire 替换 PDF 文件的指定文字",
+            "description": "本文介绍对于已导出的pdf文件，使用 Spire 替换其中的指定文字。",
+            "url": "/posts/spire-replace-pdf-text/"
+        },{
+            "@type":"ListItem",
+            "position":  2 ,
+            "name": "利用 iTextSharp 去除 PDF 水印",
+            "description": "当临时使用一些收费库处理pdf时，由于未获得授权，这些库会在 PDF 文件中添加水印。本文介绍如何移除这些水印。",
+            "url": "/posts/pdf-remove-watermark/"
         }
-        },
-    "description": ".NET 7 在今年 11 月发布了，带来了几百页的性能提升和大量的新特性，其中很多新特性都让人印象深刻。本文就给大家带来直接使用 .NET SDK 构建 Docker 镜像的实战介绍"
+    ]
 }
-</script><meta property="og:title" content="如何无需 Dockerfile 直接发布 .NET 7 应用到 Docker | James Yeung" />
-<meta property="og:type" content="article" />
+</script><meta property="og:title" content="PDF | James Yeung" />
+<meta property="og:type" content="website" />
 
 
 <meta property="og:image" content="/images/icon.png">
 
 
-<meta property="og:url" content="/posts/publish-net-apps-to-docker/" />
+<meta property="og:url" content="/tags/pdf/" />
 
 
 
 
-<meta property="og:description" content=".NET 7 在今年 11 月发布了，带来了几百页的性能提升和大量的新特性，其中很多新特性都让人印象深刻。本文就给大家带来直接使用 .NET SDK 构建 Docker 镜像的实战介绍" />
+
+<meta property="og:description" content="James&#39; Blog" />
+
 
 
 
@@ -131,35 +132,14 @@
 
 
 
-<meta property="article:published_time" content="2022-12-09T00:00:00&#43;00:00" />
-
-
-<meta property="article:modified_time" content="2024-09-10T11:58:50&#43;08:00" />
+<meta property="og:updated_time" content="2024-09-10T00:00:00&#43;00:00" />
 
 
 
-<meta property="article:section" content="posts" />
+<meta property="article:section" content="tags" />
 
 
-<meta property="article:tag" content=".NET" />
-
-<meta property="article:tag" content="Blazor" />
-
-
-
-
-
-<meta property="og:see_also" content="/posts/ant-blazor-1.0-roadmap/" />
-
-<meta property="og:see_also" content="/posts/implement-reuse-tabs-using-antblazor/" />
-
-<meta property="og:see_also" content="/posts/blazor-interview-questions/" />
-
-<meta property="og:see_also" content="/posts/get-ready-for-the-net-20th-anniversary-celebration/" />
-
-<meta property="og:see_also" content="/posts/asp-net-core-updates-in-net-6-preview-2/" />
-
-
+<link rel="alternate" type="application/rss+xml" href="/tags/pdf/index.xml" title="James Yeung" />
 
 <body class="flex flex-col min-h-screen">
   <header class="fixed flex items-center w-full min-h-16 pl-scrollbar z-50 bg-secondary-bg shadow-sm">
@@ -179,7 +159,7 @@
         class="hidden block md:flex md:flex-grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20">
         <div class="md:flex md:h-16 text-sm md:flex-grow pb-4 md:pb-0 border-b md:border-b-0">
             <a href="/#about" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  mr-4">关于</a>
-            <a href="/posts/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  selected-menu-item  mr-4">文章</a>
+            <a href="/posts/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  mr-4">文章</a>
         </div>
 
         <div class="flex">
@@ -229,16 +209,28 @@
   <main class="flex-grow pt-16">
     <div class="pl-scrollbar">
       <div class="w-full max-w-screen-xl lg:px-4 xl:px-8 mx-auto">
+<article class="mx-6 my-8">
+    <h1 class="font-bold text-3xl text-primary-text">PDF</h1>
+    
+</article>
+<div class="bg-secondary-bg rounded px-6">
+    <div class="overflow-hidden divide-y">
+  
+  <div class="py-6">
+    <div class="flex flex-col-reverse lg:flex-row justify-between">
+  
+  <div class="w-full ">
+    <div class="mb-4">
+  <a href="/posts/spire-replace-pdf-text/" class="font-bold text-xl hover:text-eureka">C# 利用 Spire 替换 PDF 文件的指定文字</a>
+</div>
+<div class="content">
+  本文介绍对于已导出的pdf文件，使用 Spire 替换其中的指定文字。
+</div>
 
-
-<div class="grid grid-cols-2 lg:grid-cols-8 gap-4 lg:pt-12">
-    <div
-        class="col-span-2 lg:col-start-2 lg:col-span-6 bg-secondary-bg rounded px-6 py-8">
-        <h1 class="font-bold text-3xl text-primary-text">如何无需 Dockerfile 直接发布 .NET 7 应用到 Docker</h1>
-        <div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
+<div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
     <div class="mr-6 my-2">
         <i class="fas fa-calendar mr-1"></i>
-        <span>2022-12-09</span>
+        <span>2024-09-10</span>
     </div>
     <div class="mr-6 my-2">
         <i class="fas fa-clock mr-1"></i>
@@ -249,108 +241,52 @@
 
     
 </div>
-        
-        
-        
 
-        <div class="content">
-            <p>.NET 7 在今年 11 月发布了，带来了几百页的性能提升和大量的新特性，其中很多新特性都让人印象深刻。本文就给大家带来直接使用 .NET SDK 构建 Docker 镜像的实战介绍。</p>
-<p>在 .NET 7 中，无需显式地指定 Dockerfile 文件，利用 .NET 的构建基础设施可以直接将应用程序发布到 Docker 容器注册表。</p>
-<p>容器化已经在我们身边无处不在，但是老实讲，我们中的许多人还不习惯使用 Docker 或者类似的工具。不管怎样，现在每个人都在谈论 .NET 7，我也想探索一下最新 SDK 提供给我们的一个新特性。</p>
-<p>那么，让我们看看如何仅使用内置框架工具就能将 .NET 7 应用程序直接部署到 Docker 上。为此，我使用的是安装了 Docker 的 Windows 11 机器。</p>
-<p>如果还没安装 Docker，可以在命令行执行以下命令：</p>
-<pre><code>winget install -e --id Docker.DockerDesktop
-</code></pre>
-<h1 id="创建简单的应用程序">创建简单的应用程序</h1>
-<p>首先，让我们创建一个简单的应用程序，让我们在后面看到一切都在正确地工作。为了做到这一点，我在自己的临时目录中向 .NET CLI 发出 PowerShell 命令。使用下面的命令，我们将创建一个 Blazor 应用程序:</p>
-<pre><code>dotnet new blazorserver -o BlazorDocker --no-https
-</code></pre>
-<p>完成之后，切换到新创建的目录并运行:</p>
-<pre><code>cd BlazorDocker
-dotnet run
-</code></pre>
+  </div>
 
-        </div>
-        
-        <div class="my-4">
+  
+</div>
+  </div>
+  
+  <div class="py-6">
+    <div class="flex flex-col-reverse lg:flex-row justify-between">
+  
+  <div class="w-full ">
+    <div class="mb-4">
+  <a href="/posts/pdf-remove-watermark/" class="font-bold text-xl hover:text-eureka">利用 iTextSharp 去除 PDF 水印</a>
+</div>
+<div class="content">
+  当临时使用一些收费库处理pdf时，由于未获得授权，这些库会在 PDF 文件中添加水印。本文介绍如何移除这些水印。
+</div>
+
+<div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
+    <div class="mr-6 my-2">
+        <i class="fas fa-calendar mr-1"></i>
+        <span>2024-09-10</span>
+    </div>
+    <div class="mr-6 my-2">
+        <i class="fas fa-clock mr-1"></i>
+        <span>1分钟阅读时长</span>
+    </div>
     
-    <a href="/tags/.net/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 mr-2 hover:text-eureka">#.NET</a>
     
-    <a href="/tags/blazor/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 mr-2 hover:text-eureka">#Blazor</a>
+
     
 </div>
-        
-        
-        
-        <div class="flex md:justify-end my-4">
-    
-    
-    
-    
-    
-    
-    <a href="https://github.com/ElderJames/blogs/blob/master/content/posts/publish-net-apps-to-docker.md" title="Edit this page">
-        <i class="fas fa-edit mr-1"></i>
-        <span>编辑本页</span>
-    </a>
+
+  </div>
+
+  
+</div>
+  </div>
+  
 </div>
 
 
-        
-        
-        
-        
-        
-<div class="flex flex-col md:flex-row md:justify-between -mx-2 mt-4 px-2 pt-4 border-t">
-    <div>
-        
-        <span class="block font-bold">上一页</span>
-        <a href="/posts/ant-blazor-reusetabs-supports-supply-parameter-form-query/" class="block">跟进 .NET 8 Blazor 之 ReuseTabs 支持 Query 属性绑定</a>
-        
-    </div>
-    <div class="md:text-right mt-4 md:mt-0">
-        
-        <span class="block font-bold">下一页</span>
-        <a href="/posts/ant-blazor-1.0-roadmap/" class="block">Ant Design Blazor 1.0 正式版发布计划</a>
-        
-    </div>
 </div>
 
-        
-    </div>
-    
 
-    
-    
-    <div
-        class="col-span-2 lg:col-start-2 lg:col-span-6 bg-secondary-bg rounded p-6">
-        <h2 class="text-lg font-semibold mb-4">相关</h2>
-        <div class="content">
-            
-            <a href="/posts/ant-blazor-1.0-roadmap/">Ant Design Blazor 1.0 正式版发布计划</a>
-            <br />
-            
-            <a href="/posts/implement-reuse-tabs-using-antblazor/">Ant Design Blazor 组件库的路由复用多标签页介绍</a>
-            <br />
-            
-            <a href="/posts/blazor-interview-questions/">Blazor 面试 18 问</a>
-            <br />
-            
-            <a href="/posts/get-ready-for-the-net-20th-anniversary-celebration/">来自 .NET 基金会的来信 —— 为 .NET 20周年庆祝活动做好准备</a>
-            <br />
-            
-            <a href="/posts/asp-net-core-updates-in-net-6-preview-2/">ASP.NET Core 在 .NET 6 Preview 2 中的更新</a>
-            <br />
-            
-        </div>
-    </div>
-    
-</div>
-<script>
-    document.addEventListener('DOMContentLoaded', ()=>{
-        hljs.initHighlightingOnLoad();
-    })
-</script>
+
 
       </div>
     </div>
