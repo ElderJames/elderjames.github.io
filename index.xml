@@ -9,6 +9,15 @@
     <copyright>&amp;copy; 2021 &lt;a href=&#34;https://jamesyeung.cn/&#34;&gt;James Yeung&lt;/a&gt;
 </copyright><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Blazor 模版方式复用渲染片段</title>
+      <link>/posts/blazor-reload-partial/</link>
+      <pubDate>Sat, 04 Jan 2025 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/blazor-reload-partial/</guid>
+      <description>本文介绍一个官方文档上没有的隐藏技巧，去复用渲染片段</description>
+    </item>
+    
+    <item>
       <title>C# 利用 Spire 替换 PDF 文件的指定文字</title>
       <link>/posts/spire-replace-pdf-text/</link>
       <pubDate>Tue, 10 Sep 2024 00:00:00 +0000</pubDate>

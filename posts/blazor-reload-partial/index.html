@@ -3,7 +3,7 @@
 <meta name="viewport" content="width=device-width">
 
 
-<title>Blazor 应用内局部刷新 | James Yeung</title>
+<title>Blazor 模版方式复用渲染片段 | James Yeung</title>
 <link rel="stylesheet" href="/css/eureka.min.css">
 <script defer src="/js/eureka.min.js"></script>
 
@@ -62,7 +62,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/images/icon_hu64421c6c7700f606f0ad45d807017b09_5843_180x180_fill_box_center_2.png">
 
 <meta name="description"
-  content="Blazor 如何实现应用内刷新？即只刷新局部内容，不需要浏览刷新。">
+  content="本文介绍一个官方文档上没有的隐藏技巧，去复用渲染片段">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -74,7 +74,7 @@
       "item":"/posts/"},{
       "@type": "ListItem",
       "position": 2 ,
-      "name":"Blazor 应用内局部刷新",
+      "name":"Blazor 模版方式复用渲染片段",
       "item":"/posts/blazor-reload-partial/"}]
 }
 </script>
@@ -89,9 +89,9 @@
         "@type": "WebPage",
         "@id": "/posts/blazor-reload-partial/"
     },
-    "headline": "Blazor 应用内局部刷新 | James Yeung","datePublished": "2024-08-12T00:00:00+00:00",
-    "dateModified": "2024-09-10T11:58:50+08:00",
-    "wordCount":  310 ,
+    "headline": "Blazor 模版方式复用渲染片段 | James Yeung","datePublished": "2025-01-04T00:00:00+00:00",
+    "dateModified": "2025-01-04T19:55:01+08:00",
+    "wordCount":  560 ,
     "publisher": {
         "@type": "Person",
         "name": "James Yeung",
@@ -100,9 +100,9 @@
             "url": "/photos/mvp-avatar.png"
         }
         },
-    "description": "Blazor 如何实现应用内刷新？即只刷新局部内容，不需要浏览刷新。"
+    "description": "本文介绍一个官方文档上没有的隐藏技巧，去复用渲染片段"
 }
-</script><meta property="og:title" content="Blazor 应用内局部刷新 | James Yeung" />
+</script><meta property="og:title" content="Blazor 模版方式复用渲染片段 | James Yeung" />
 <meta property="og:type" content="article" />
 
 
@@ -114,7 +114,7 @@
 
 
 
-<meta property="og:description" content="Blazor 如何实现应用内刷新？即只刷新局部内容，不需要浏览刷新。" />
+<meta property="og:description" content="本文介绍一个官方文档上没有的隐藏技巧，去复用渲染片段" />
 
 
 
@@ -131,10 +131,10 @@
 
 
 
-<meta property="article:published_time" content="2024-08-12T00:00:00&#43;00:00" />
+<meta property="article:published_time" content="2025-01-04T00:00:00&#43;00:00" />
 
 
-<meta property="article:modified_time" content="2024-09-10T11:58:50&#43;08:00" />
+<meta property="article:modified_time" content="2025-01-04T19:55:01&#43;08:00" />
 
 
 
@@ -149,17 +149,17 @@
 
 
 
+<meta property="og:see_also" content="/posts/blazor-css-isolation/" />
+
+<meta property="og:see_also" content="/posts/blazor-localization-shared-resource/" />
+
+<meta property="og:see_also" content="/posts/blazor-reload-partial/" />
+
 <meta property="og:see_also" content="/posts/blazor-simple-reuse-tabs/" />
 
 <meta property="og:see_also" content="/posts/publish-net-apps-to-docker/" />
 
 <meta property="og:see_also" content="/posts/ant-blazor-1.0-roadmap/" />
-
-<meta property="og:see_also" content="/posts/implement-reuse-tabs-using-antblazor/" />
-
-<meta property="og:see_also" content="/posts/blazor-interview-questions/" />
-
-<meta property="og:see_also" content="/posts/resolves-width-issues-in-blazor-caused-by-element-wrapping/" />
 
 
 
@@ -236,15 +236,15 @@
 <div class="grid grid-cols-2 lg:grid-cols-8 gap-4 lg:pt-12">
     <div
         class="col-span-2 lg:col-start-2 lg:col-span-6 bg-secondary-bg rounded px-6 py-8">
-        <h1 class="font-bold text-3xl text-primary-text">Blazor 应用内局部刷新</h1>
+        <h1 class="font-bold text-3xl text-primary-text">Blazor 模版方式复用渲染片段</h1>
         <div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
     <div class="mr-6 my-2">
         <i class="fas fa-calendar mr-1"></i>
-        <span>2024-08-12</span>
+        <span>2025-01-04</span>
     </div>
     <div class="mr-6 my-2">
         <i class="fas fa-clock mr-1"></i>
-        <span>1分钟阅读时长</span>
+        <span>2分钟阅读时长</span>
     </div>
     
     
@@ -256,78 +256,55 @@
         
 
         <div class="content">
-            <p>在大多数企业应用中，都需要页面刷新的功能。因为用户想获取最新数据，但页面上暂时没实现数据刷新功能，所以需要手动刷新页面。但又不想重新从服务器加载，那速度会很慢。</p>
-<p>实现以下组件：</p>
-<pre><code>    public class ReloadContainer : IComponent
-    {
-        private RenderHandle _renderHandle;
+            <p>我们在开发现代前端项目时，跟代码复用一样，也经常需要复用一些参数不同、模版相同的代码。React和Vue可以用 txs/jsx，Angular 用 ng-template 直接在模版上定义一个命名模版。而 Blazor 中，就要用 RenderFragment 类型的变量来定义“渲染片段”。</p>
+<p>官方文档中有关于 <a href="https://learn.microsoft.com/zh-cn/aspnet/core/blazor/performance?view=aspnetcore-9.0#define-reusable-renderfragments-in-code">定义可重用 RenderFragment</a> 的方式。</p>
+<pre><code class="language-razor">@RenderWelcomeInfo
 
-        [Parameter] public RenderFragment? ChildContent { get; set; }
-
-        public void Attach(RenderHandle renderHandle)
-        {
-            _renderHandle = renderHandle;
-        }
-
-        public Task SetParametersAsync(ParameterView parameters)
-        {
-            parameters.SetParameterProperties(this);
-            if (ChildContent != null)
-            {
-                _renderHandle.Render(ChildContent);
-            }
-
-            return Task.CompletedTask;
-        }
-
-        public void Reload()
-        {
-            _renderHandle.Render(b =&gt; { });
-            if (ChildContent != null)
-            {
-                _renderHandle.Render(ChildContent);
-            }
-        }
-    }
+@code {
+    private RenderFragment RenderWelcomeInfo = @&lt;p&gt;Welcome to your new app!&lt;/p&gt;;
+}
 </code></pre>
-<p>在需要的地方使用，比如布局组件中：</p>
-<pre><code>@inherits LayoutComponentBase
+<p>要传参数时，用泛型，但是值要用委托了：</p>
+<pre><code class="language-razor">@RenderWelcomeInfo(123)
 
-&lt;div class=&quot;page&quot;&gt;
-    &lt;div class=&quot;sidebar&quot;&gt;
-        &lt;NavMenu /&gt;
-    &lt;/div&gt;
+@code {
+    private RenderFragment&lt;int&gt; RenderWelcomeInfo = index =&gt; @&lt;p&gt;Welcome to your new app @index! &lt;/p&gt;;
+}
+</code></pre>
+<p>当然你愿意也可以在 C# 代码中用 Builder 方式构建渲染片段。</p>
+<pre><code class="language-cs">private RenderFragment RenderWelcomeInfo = builder =&gt; builder.AddContent(0, &quot;Welcome to your new app!&quot;);
+</code></pre>
+<p>这是学是定义渲染片段最简单的方式，但是强制要用标签开头，对于复杂的模版不太友好，比如我们想在开头加 @if 条件。另外对 VS 的格式化也不友好。</p>
+<p>因此本文介绍一个官方文档上都没有的隐藏的技巧，就是用 __builder 这个 razor 文件在编译时才生成的变量，作为模版的上下文。这样就可以用普通方式写 razor 模版了。</p>
+<p>在 razor 文件中定义一个方法，入参需要包含类型是 <code>RenderTreeBuilder</code> 参数名是 <code>__builder</code> 的参数。这样就能直接在方法内些 razor 模版代码了。如果无需访问当前组件实例的引用，可以定义为 <code>static</code> 方法。</p>
+<pre><code class="language-razor">@RenderWelcomeInfo
 
-    &lt;main&gt;
-        &lt;div class=&quot;top-row px-4&quot;&gt;
-            &lt;a @onclick=&quot;Reload&quot;&gt;Reload&lt;/a&gt;
-            &lt;a href=&quot;https://learn.microsoft.com/aspnet/core/&quot; target=&quot;_blank&quot;&gt;About&lt;/a&gt;
-        &lt;/div&gt;
+@code {
 
-        &lt;article class=&quot;content px-4&quot;&gt;
-            &lt;ReloadContainer @ref=&quot;reloadContainer&quot;&gt;
-                  @Body
-            &lt;/ReloadContainer&gt;
-        &lt;/article&gt;
-    &lt;/main&gt;
-&lt;/div&gt;
-
-&lt;div id=&quot;blazor-error-ui&quot;&gt;
-    An unhandled error has occurred.
-    &lt;a href=&quot;&quot; class=&quot;reload&quot;&gt;Reload&lt;/a&gt;
-    &lt;a class=&quot;dismiss&quot;&gt;🗙&lt;/a&gt;
-&lt;/div&gt;
-
-@code{
-    ReloadContainer reloadContainer;
-
-    void Reload()
+    void RenderWelcomeInfo(RenderTreeBuilder __builder)
     {
-        reloadContainer.Reload();
+        @if (someCondition)
+        {
+            &lt;p&gt;Welcome to your new app!&lt;/p&gt;
+        }
     }
 }
 </code></pre>
-<p>这样点击右上角的Reload，即可看到页面刷新。特别是在有数据要加载的页面，会看到数据会重新加载，组件也重新渲染。</p>
+<p>当需要传参数时，可以在方法上再加参数。使用时则需要用调用方法的方式，并传入隐藏的固定变量 __builder。</p>
+<pre><code class="language-razor">@{ RenderWelcomeInfo(__builder, 1); }
+
+@code {
+
+    void RenderWelcomeInfo(RenderTreeBuilder __builder, int index)
+    {
+        @if (someCondition)
+        {
+            &lt;p&gt;Welcome to your new app @index !&lt;/p&gt;
+        }
+    }
+}
+</code></pre>
+<p>可以看出 __builder 是个神奇的魔法变量，正常用户都不了解。学会这个技巧，你也就成为 Blazor 的高手了！</p>
 
         </div>
         
@@ -348,7 +325,7 @@
     
     
     
-    <a href="https://github.com/ElderJames/blogs/blob/master/content/posts/blazor-reload-page.md" title="Edit this page">
+    <a href="https://github.com/ElderJames/blogs/blob/master/content/posts/blazor_reuse.md" title="Edit this page">
         <i class="fas fa-edit mr-1"></i>
         <span>编辑本页</span>
     </a>
@@ -363,14 +340,11 @@
 <div class="flex flex-col md:flex-row md:justify-between -mx-2 mt-4 px-2 pt-4 border-t">
     <div>
         
-        <span class="block font-bold">上一页</span>
-        <a href="/posts/blazor-localization-shared-resource/" class="block">Blazor 本地化之共享资源与局部刷新</a>
-        
     </div>
     <div class="md:text-right mt-4 md:mt-0">
         
         <span class="block font-bold">下一页</span>
-        <a href="/posts/blazor-simple-reuse-tabs/" class="block">Blazor 标签页简化版实现</a>
+        <a href="/posts/spire-replace-pdf-text/" class="block">C# 利用 Spire 替换 PDF 文件的指定文字</a>
         
     </div>
 </div>
@@ -386,6 +360,15 @@
         <h2 class="text-lg font-semibold mb-4">相关</h2>
         <div class="content">
             
+            <a href="/posts/blazor-css-isolation/">Blazor CSS 隔离</a>
+            <br />
+            
+            <a href="/posts/blazor-localization-shared-resource/">Blazor 本地化之共享资源与局部刷新</a>
+            <br />
+            
+            <a href="/posts/blazor-reload-partial/">Blazor 应用内局部刷新</a>
+            <br />
+            
             <a href="/posts/blazor-simple-reuse-tabs/">Blazor 标签页简化版实现</a>
             <br />
             
@@ -393,15 +376,6 @@
             <br />
             
             <a href="/posts/ant-blazor-1.0-roadmap/">Ant Design Blazor 1.0 正式版发布计划</a>
-            <br />
-            
-            <a href="/posts/implement-reuse-tabs-using-antblazor/">Ant Design Blazor 组件库的路由复用多标签页介绍</a>
-            <br />
-            
-            <a href="/posts/blazor-interview-questions/">Blazor 面试 18 问</a>
-            <br />
-            
-            <a href="/posts/resolves-width-issues-in-blazor-caused-by-element-wrapping/">解决 Blazor 中因标签换行导致的行内元素空隙问题</a>
             <br />
             
         </div>
