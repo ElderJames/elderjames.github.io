@@ -3,7 +3,7 @@
 <meta name="viewport" content="width=device-width">
 
 
-<title>Ant Design Blazor 1.0 正式版发布计划 | James Yeung</title>
+<title>如何解决 Blazor 导航时页面加载慢的问题 | James Yeung</title>
 <link rel="stylesheet" href="/css/eureka.min.css">
 <script defer src="/js/eureka.min.js"></script>
 
@@ -62,7 +62,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/images/icon_hu64421c6c7700f606f0ad45d807017b09_5843_180x180_fill_box_center_2.png">
 
 <meta name="description"
-  content="大家好，感谢大家两年来对 AntDesign Blazor 的支持。我们项目已经发展了两年，组件基本完成了 Antd 所有功能的 Blazor 实现，甚至在有些组件上（如Table、Form）增加了很多Blazor/C#的特性，也已经有很多个人和公司用在了生产环境和商业项目中。">
+  content="大部 Blazor 分新手可能会遇到点击菜单跳转页面时，页面加载明细很慢的情况。">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -74,8 +74,8 @@
       "item":"/posts/"},{
       "@type": "ListItem",
       "position": 2 ,
-      "name":"Ant Design Blazor 1.0 正式版发布计划",
-      "item":"/posts/ant-blazor-1.0-roadmap/"}]
+      "name":"如何解决 Blazor 导航时页面加载慢的问题",
+      "item":"/posts/how-to-fix-slow-page-loads-when-navigating-blazor/"}]
 }
 </script>
 
@@ -87,11 +87,11 @@
     "@type": "Article",
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "/posts/ant-blazor-1.0-roadmap/"
+        "@id": "/posts/how-to-fix-slow-page-loads-when-navigating-blazor/"
     },
-    "headline": "Ant Design Blazor 1.0 正式版发布计划 | James Yeung","datePublished": "2022-09-15T00:00:00+00:00",
+    "headline": "如何解决 Blazor 导航时页面加载慢的问题 | James Yeung","datePublished": "2025-01-12T00:00:00+00:00",
     "dateModified": "2025-01-12T18:32:12+08:00",
-    "wordCount":  265 ,
+    "wordCount":  1310 ,
     "publisher": {
         "@type": "Person",
         "name": "James Yeung",
@@ -100,21 +100,21 @@
             "url": "/photos/mvp-avatar.png"
         }
         },
-    "description": "\u003cp\u003e大家好，感谢大家两年来对 AntDesign Blazor 的支持。我们项目已经发展了两年，组件基本完成了 Antd 所有功能的 Blazor 实现，甚至在有些组件上（如Table、Form）增加了很多Blazor\/C#的特性，也已经有很多个人和公司用在了生产环境和商业项目中。\u003c\/p\u003e"
+    "description": "大部 Blazor 分新手可能会遇到点击菜单跳转页面时，页面加载明细很慢的情况。"
 }
-</script><meta property="og:title" content="Ant Design Blazor 1.0 正式版发布计划 | James Yeung" />
+</script><meta property="og:title" content="如何解决 Blazor 导航时页面加载慢的问题 | James Yeung" />
 <meta property="og:type" content="article" />
 
 
 <meta property="og:image" content="/images/icon.png">
 
 
-<meta property="og:url" content="/posts/ant-blazor-1.0-roadmap/" />
+<meta property="og:url" content="/posts/how-to-fix-slow-page-loads-when-navigating-blazor/" />
 
 
 
 
-<meta property="og:description" content="大家好，感谢大家两年来对 AntDesign Blazor 的支持。我们项目已经发展了两年，组件基本完成了 Antd 所有功能的 Blazor 实现，甚至在有些组件上（如Table、Form）增加了很多Blazor/C#的特性，也已经有很多个人和公司用在了生产环境和商业项目中。" />
+<meta property="og:description" content="大部 Blazor 分新手可能会遇到点击菜单跳转页面时，页面加载明细很慢的情况。" />
 
 
 
@@ -131,7 +131,7 @@
 
 
 
-<meta property="article:published_time" content="2022-09-15T00:00:00&#43;00:00" />
+<meta property="article:published_time" content="2025-01-12T00:00:00&#43;00:00" />
 
 
 <meta property="article:modified_time" content="2025-01-12T18:32:12&#43;08:00" />
@@ -149,13 +149,17 @@
 
 
 
-<meta property="og:see_also" content="/posts/implement-reuse-tabs-using-antblazor/" />
+<meta property="og:see_also" content="/posts/blazor-reuse-render-fragment/" />
 
-<meta property="og:see_also" content="/posts/blazor-interview-questions/" />
+<meta property="og:see_also" content="/posts/blazor-css-isolation/" />
 
-<meta property="og:see_also" content="/posts/get-ready-for-the-net-20th-anniversary-celebration/" />
+<meta property="og:see_also" content="/posts/blazor-localization-shared-resource/" />
 
-<meta property="og:see_also" content="/posts/asp-net-core-updates-in-net-6-preview-2/" />
+<meta property="og:see_also" content="/posts/blazor-reload-partial/" />
+
+<meta property="og:see_also" content="/posts/blazor-simple-reuse-tabs/" />
+
+<meta property="og:see_also" content="/posts/publish-net-apps-to-docker/" />
 
 
 
@@ -231,16 +235,16 @@
 
 <div class="grid grid-cols-2 lg:grid-cols-8 gap-4 lg:pt-12">
     <div
-        class="col-span-2 lg:col-start-2 lg:col-span-6 bg-secondary-bg rounded px-6 py-8">
-        <h1 class="font-bold text-3xl text-primary-text">Ant Design Blazor 1.0 正式版发布计划</h1>
+        class="col-span-2  lg:col-span-6 bg-secondary-bg rounded px-6 py-8">
+        <h1 class="font-bold text-3xl text-primary-text">如何解决 Blazor 导航时页面加载慢的问题</h1>
         <div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
     <div class="mr-6 my-2">
         <i class="fas fa-calendar mr-1"></i>
-        <span>2022-09-15</span>
+        <span>2025-01-12</span>
     </div>
     <div class="mr-6 my-2">
         <i class="fas fa-clock mr-1"></i>
-        <span>1分钟阅读时长</span>
+        <span>3分钟阅读时长</span>
     </div>
     
     
@@ -252,16 +256,84 @@
         
 
         <div class="content">
-            <p>大家好，感谢大家两年来对 AntDesign Blazor 的支持。我们项目已经发展了两年，组件基本完成了 Antd 所有功能的 Blazor 实现，甚至在有些组件上（如Table、Form）增加了很多Blazor/C#的特性，也已经有很多个人和公司用在了生产环境和商业项目中。</p>
-<p>也许您已经发现了，虽然现在 AntDesign Blazor 在功能上已经趋于完善，但是我们仍然没有发布 1.0 正式版。这是由于我们对此项目的周边设施有待完善，其中，单元测试覆盖率和文档是最重要的指标。我们期待由社区一起来贡献，共同见证 1.0 的最终发布。</p>
-<p>具体要求（欢迎补充）</p>
-<ul>
-<li>测试覆盖率 &gt; 90%</li>
-<li>文档 API 部分全部更新</li>
-<li>文档 中英文完善</li>
-<li>DatePicker 语言包补充</li>
-<li>增加内置多语言服务</li>
-</ul>
+            <p>大部 Blazor 分新手可能会遇到点击菜单跳转页面时，页面加载明细很慢的情况。其实这是对组件的生命周期不够了解。本文列举几个场景的误区，以便大家在以后的开发过程中避免。</p>
+<h2 id="1-避免在-oninitializedasync-方法中加载数据">1. 避免在 Oninitialized{Async} 方法中加载数据。</h2>
+<p>当路由导航到一个页面组件，就会进入这个页面组件的生命周期。在组件首次渲染时，会先调用一次Oninitialized{Async}方法。等这个方法执行完毕，才会渲染页面。如果在这个方法中加载数据，那么页面加载时间会比较长。</p>
+<p><img src="https://learn.microsoft.com/zh-cn/aspnet/core/blazor/components/lifecycle/_static/lifecycle1.png?view=aspnetcore-9.0" alt=""></p>
+<p>因此，这个方法需要尽快执行完成，不宜在这里执行数据库查询或者 Http 请求等时间时间很长的操作，否则就会让用户有一种进入页面都很慢的感觉。那应该怎么加载数据呢？请看下节。</p>
+<h2 id="2-执行时间较长的操作应放到后台线程">2. 执行时间较长的操作应放到后台线程。</h2>
+<p>习惯使用异步方法的开发者，可能习惯了async/await的方式调用异步方法，虽然这是标准的做法，也更好的让运行时管理线程。但是，在 Blazor 组件中的各个生命周期异步方法中，去执行异步方法时也会使UI线程的阻塞，体验上就会有卡顿的感觉。所以建议将这些操作放到后台线程，做法也简单，就是用 <code>Task.Run()</code>。要注意的是，当操作执行完需要重新渲染时，记得要在 <code>InvokeAsync()</code> 中调用<code>StateHasnChanged()</code> 方法。另外，不只是异步方法需要再后台运行，同步但耗时的方法也需要。以下是一个执行同步但耗时的方法的示例。</p>
+<pre><code class="language-csharp">
+@text
+
+@code {
+    private string text = &quot;loading...&quot;;
+
+    protected override void OnInitialized()
+    {
+        _ = Task.Run(() =&gt;
+        {
+            for (int i = 0; i &lt; 10000000; i++)
+            {
+                title += &quot; &quot;;
+            }
+
+            text = &quot;done!&quot;;
+            InvokeAsync(StateHasChanged);
+        });
+    }
+}
+</code></pre>
+<h2 id="3-复杂组件需延迟渲染">3. 复杂组件需延迟渲染</h2>
+<p>对于复杂的组件，它们的构建初始化过程会比较耗时，所以当页面上有大量耗时的组件时，建议让这些组件延迟渲染。延迟渲染什么意思？就是优先、尽快地把页面组件渲染出来，再去渲染局部的耗时组件。</p>
+<p>那怎么知道页面何时才被渲染？在 OnAfterRendered 方法中执行一些操作，比如记录页面加载时间，或者调用一个方法，让页面组件去执行一些操作。</p>
+<pre><code class="language-csharp">
+@if (isLoad)
+{
+    &lt;a&gt;Loading...&lt;/a&gt;
+}
+else
+{
+    &lt;ComplexComponent /&gt;
+}
+
+@code {
+    private bool isLoad = false;
+
+    protected override void OnAfterRender(bool firstRender)
+    {
+        isLoad = true;
+    }
+}
+
+</code></pre>
+<p>如果页面中复杂组件比较多，如果统一的渲染，也会造成渲染卡顿，那么我们就需要延迟加载一些不需要展示的组件，当需要展示时再渲染。也可以先用 Spin 组件或者骨架屏组件渲染一个占位符，再一个一个地渲染这些组件。如何一个个地渲染呢？以下是一种方式：用一个集合来保存需要渲染的组件，然后边加入到集合，边调用<code>StateHasChanged()</code>方法来先渲染，而不是等到最后一起渲染。</p>
+<pre><code class="language-cs">
+@foreach (var item in showComponents)
+{
+    &lt;DynamicComponent Type=&quot;item&quot; /&gt;
+}
+
+@code {
+    private List&lt;Type&gt; components = [typeof(ComplexComponent1), typeof(ComplexComponent2)];
+    private List&lt;Type&gt; showComponents=[];
+
+    protected override void OnAfterRender(bool firstRender)
+    {
+        for (var item in components)
+        {
+            _demos.Add(item);
+            StateHasChanged();
+        }
+    }
+}
+       
+</code></pre>
+<p>当组件被添加到渲染树时，就会执行其内部的初始化方法，这就会造成UI线程的阻塞。所以，这个方法的原理就是将多个组件的初始化方法逐个拆分，逐个渲染。虽然最终的页面完整渲染时间会变长（执行渲染会消耗一点时间），但能够更快地渲染那些重要的部分（例如页面第一屏要显示的部分、Tabs 中第一页的部分），总体的体验反而是更好的。</p>
+<p>当然，也不是所以场景都是顺序渲染的，这就需要用别的方式，但原理都是一样，就是做到小步快跑，让页面整体上的体验更好。</p>
+<h2 id="4-将复杂的页面元素封装为组件">4. 将复杂的页面元素封装为组件</h2>
+<p>基于上一节的内容，很容易得出这个思路。因为将一个复杂的页面拆分为多个组件，是有利于延迟渲染的。否则，这个组件中的渲染树是一个整体，会一起执行渲染的，这样就不利于页面的加载速度。</p>
+
         </div>
         
         <div class="my-4">
@@ -281,7 +353,7 @@
     
     
     
-    <a href="https://github.com/ElderJames/blogs/blob/master/content/posts/ant-blazor-1.0-roadmap.md" title="Edit this page">
+    <a href="https://github.com/ElderJames/blogs/blob/master/content/posts/blazor-navigating-pref.md" title="Edit this page">
         <i class="fas fa-edit mr-1"></i>
         <span>编辑本页</span>
     </a>
@@ -296,14 +368,11 @@
 <div class="flex flex-col md:flex-row md:justify-between -mx-2 mt-4 px-2 pt-4 border-t">
     <div>
         
-        <span class="block font-bold">上一页</span>
-        <a href="/posts/publish-net-apps-to-docker/" class="block">如何无需 Dockerfile 直接发布 .NET 7 应用到 Docker</a>
-        
     </div>
     <div class="md:text-right mt-4 md:mt-0">
         
         <span class="block font-bold">下一页</span>
-        <a href="/posts/get-ready-for-the-net-20th-anniversary-celebration/" class="block">来自 .NET 基金会的来信 —— 为 .NET 20周年庆祝活动做好准备</a>
+        <a href="/posts/blazor-reuse-render-fragment/" class="block">Blazor 模版方式复用渲染片段</a>
         
     </div>
 </div>
@@ -311,24 +380,54 @@
         
     </div>
     
+    <div class="col-span-2">
+        
+        
+        <div class="sticky top-16 z-10 hidden lg:block px-6 py-4  bg-primary-bg ">
+    <span class="text-lg font-semibold">本页内容</span>
+</div>
+<div class="sticky-toc hidden lg:block px-6 pb-6 ">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-避免在-oninitializedasync-方法中加载数据">1. 避免在 Oninitialized{Async} 方法中加载数据。</a></li>
+    <li><a href="#2-执行时间较长的操作应放到后台线程">2. 执行时间较长的操作应放到后台线程。</a></li>
+    <li><a href="#3-复杂组件需延迟渲染">3. 复杂组件需延迟渲染</a></li>
+    <li><a href="#4-将复杂的页面元素封装为组件">4. 将复杂的页面元素封装为组件</a></li>
+  </ul>
+</nav>
+</div>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        enableStickyToc();
+    });
+</script>
+        
+    </div>
+    
 
     
     
     <div
-        class="col-span-2 lg:col-start-2 lg:col-span-6 bg-secondary-bg rounded p-6">
+        class="col-span-2  lg:col-span-6 bg-secondary-bg rounded p-6">
         <h2 class="text-lg font-semibold mb-4">相关</h2>
         <div class="content">
             
-            <a href="/posts/implement-reuse-tabs-using-antblazor/">Ant Design Blazor 组件库的路由复用多标签页介绍</a>
+            <a href="/posts/blazor-reuse-render-fragment/">Blazor 模版方式复用渲染片段</a>
             <br />
             
-            <a href="/posts/blazor-interview-questions/">Blazor 面试 18 问</a>
+            <a href="/posts/blazor-css-isolation/">Blazor CSS 隔离</a>
             <br />
             
-            <a href="/posts/get-ready-for-the-net-20th-anniversary-celebration/">来自 .NET 基金会的来信 —— 为 .NET 20周年庆祝活动做好准备</a>
+            <a href="/posts/blazor-localization-shared-resource/">Blazor 本地化之共享资源与局部刷新</a>
             <br />
             
-            <a href="/posts/asp-net-core-updates-in-net-6-preview-2/">ASP.NET Core 在 .NET 6 Preview 2 中的更新</a>
+            <a href="/posts/blazor-reload-partial/">Blazor 应用内局部刷新</a>
+            <br />
+            
+            <a href="/posts/blazor-simple-reuse-tabs/">Blazor 标签页简化版实现</a>
+            <br />
+            
+            <a href="/posts/publish-net-apps-to-docker/">如何无需 Dockerfile 直接发布 .NET 7 应用到 Docker</a>
             <br />
             
         </div>

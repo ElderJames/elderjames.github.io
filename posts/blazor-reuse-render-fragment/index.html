@@ -3,7 +3,7 @@
 <meta name="viewport" content="width=device-width">
 
 
-<title>Ant Design Blazor 1.0 正式版发布计划 | James Yeung</title>
+<title>Blazor 模版方式复用渲染片段 | James Yeung</title>
 <link rel="stylesheet" href="/css/eureka.min.css">
 <script defer src="/js/eureka.min.js"></script>
 
@@ -62,7 +62,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/images/icon_hu64421c6c7700f606f0ad45d807017b09_5843_180x180_fill_box_center_2.png">
 
 <meta name="description"
-  content="大家好，感谢大家两年来对 AntDesign Blazor 的支持。我们项目已经发展了两年，组件基本完成了 Antd 所有功能的 Blazor 实现，甚至在有些组件上（如Table、Form）增加了很多Blazor/C#的特性，也已经有很多个人和公司用在了生产环境和商业项目中。">
+  content="本文介绍一个官方文档上没有的隐藏技巧，去复用渲染片段">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -74,8 +74,8 @@
       "item":"/posts/"},{
       "@type": "ListItem",
       "position": 2 ,
-      "name":"Ant Design Blazor 1.0 正式版发布计划",
-      "item":"/posts/ant-blazor-1.0-roadmap/"}]
+      "name":"Blazor 模版方式复用渲染片段",
+      "item":"/posts/blazor-reuse-render-fragment/"}]
 }
 </script>
 
@@ -87,11 +87,11 @@
     "@type": "Article",
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "/posts/ant-blazor-1.0-roadmap/"
+        "@id": "/posts/blazor-reuse-render-fragment/"
     },
-    "headline": "Ant Design Blazor 1.0 正式版发布计划 | James Yeung","datePublished": "2022-09-15T00:00:00+00:00",
+    "headline": "Blazor 模版方式复用渲染片段 | James Yeung","datePublished": "2025-01-04T00:00:00+00:00",
     "dateModified": "2025-01-12T18:32:12+08:00",
-    "wordCount":  265 ,
+    "wordCount":  560 ,
     "publisher": {
         "@type": "Person",
         "name": "James Yeung",
@@ -100,21 +100,21 @@
             "url": "/photos/mvp-avatar.png"
         }
         },
-    "description": "\u003cp\u003e大家好，感谢大家两年来对 AntDesign Blazor 的支持。我们项目已经发展了两年，组件基本完成了 Antd 所有功能的 Blazor 实现，甚至在有些组件上（如Table、Form）增加了很多Blazor\/C#的特性，也已经有很多个人和公司用在了生产环境和商业项目中。\u003c\/p\u003e"
+    "description": "本文介绍一个官方文档上没有的隐藏技巧，去复用渲染片段"
 }
-</script><meta property="og:title" content="Ant Design Blazor 1.0 正式版发布计划 | James Yeung" />
+</script><meta property="og:title" content="Blazor 模版方式复用渲染片段 | James Yeung" />
 <meta property="og:type" content="article" />
 
 
 <meta property="og:image" content="/images/icon.png">
 
 
-<meta property="og:url" content="/posts/ant-blazor-1.0-roadmap/" />
+<meta property="og:url" content="/posts/blazor-reuse-render-fragment/" />
 
 
 
 
-<meta property="og:description" content="大家好，感谢大家两年来对 AntDesign Blazor 的支持。我们项目已经发展了两年，组件基本完成了 Antd 所有功能的 Blazor 实现，甚至在有些组件上（如Table、Form）增加了很多Blazor/C#的特性，也已经有很多个人和公司用在了生产环境和商业项目中。" />
+<meta property="og:description" content="本文介绍一个官方文档上没有的隐藏技巧，去复用渲染片段" />
 
 
 
@@ -131,7 +131,7 @@
 
 
 
-<meta property="article:published_time" content="2022-09-15T00:00:00&#43;00:00" />
+<meta property="article:published_time" content="2025-01-04T00:00:00&#43;00:00" />
 
 
 <meta property="article:modified_time" content="2025-01-12T18:32:12&#43;08:00" />
@@ -149,13 +149,17 @@
 
 
 
-<meta property="og:see_also" content="/posts/implement-reuse-tabs-using-antblazor/" />
+<meta property="og:see_also" content="/posts/blazor-css-isolation/" />
 
-<meta property="og:see_also" content="/posts/blazor-interview-questions/" />
+<meta property="og:see_also" content="/posts/blazor-localization-shared-resource/" />
 
-<meta property="og:see_also" content="/posts/get-ready-for-the-net-20th-anniversary-celebration/" />
+<meta property="og:see_also" content="/posts/blazor-reload-partial/" />
 
-<meta property="og:see_also" content="/posts/asp-net-core-updates-in-net-6-preview-2/" />
+<meta property="og:see_also" content="/posts/blazor-simple-reuse-tabs/" />
+
+<meta property="og:see_also" content="/posts/publish-net-apps-to-docker/" />
+
+<meta property="og:see_also" content="/posts/ant-blazor-1.0-roadmap/" />
 
 
 
@@ -232,15 +236,15 @@
 <div class="grid grid-cols-2 lg:grid-cols-8 gap-4 lg:pt-12">
     <div
         class="col-span-2 lg:col-start-2 lg:col-span-6 bg-secondary-bg rounded px-6 py-8">
-        <h1 class="font-bold text-3xl text-primary-text">Ant Design Blazor 1.0 正式版发布计划</h1>
+        <h1 class="font-bold text-3xl text-primary-text">Blazor 模版方式复用渲染片段</h1>
         <div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
     <div class="mr-6 my-2">
         <i class="fas fa-calendar mr-1"></i>
-        <span>2022-09-15</span>
+        <span>2025-01-04</span>
     </div>
     <div class="mr-6 my-2">
         <i class="fas fa-clock mr-1"></i>
-        <span>1分钟阅读时长</span>
+        <span>2分钟阅读时长</span>
     </div>
     
     
@@ -252,16 +256,56 @@
         
 
         <div class="content">
-            <p>大家好，感谢大家两年来对 AntDesign Blazor 的支持。我们项目已经发展了两年，组件基本完成了 Antd 所有功能的 Blazor 实现，甚至在有些组件上（如Table、Form）增加了很多Blazor/C#的特性，也已经有很多个人和公司用在了生产环境和商业项目中。</p>
-<p>也许您已经发现了，虽然现在 AntDesign Blazor 在功能上已经趋于完善，但是我们仍然没有发布 1.0 正式版。这是由于我们对此项目的周边设施有待完善，其中，单元测试覆盖率和文档是最重要的指标。我们期待由社区一起来贡献，共同见证 1.0 的最终发布。</p>
-<p>具体要求（欢迎补充）</p>
-<ul>
-<li>测试覆盖率 &gt; 90%</li>
-<li>文档 API 部分全部更新</li>
-<li>文档 中英文完善</li>
-<li>DatePicker 语言包补充</li>
-<li>增加内置多语言服务</li>
-</ul>
+            <p>我们在开发现代前端项目时，跟代码复用一样，也经常需要复用一些参数不同、模版相同的代码。React和Vue可以用 txs/jsx，Angular 用 ng-template 直接在模版上定义一个命名模版。而 Blazor 中，就要用 RenderFragment 类型的变量来定义“渲染片段”。</p>
+<p>官方文档中有关于 <a href="https://learn.microsoft.com/zh-cn/aspnet/core/blazor/performance?view=aspnetcore-9.0#define-reusable-renderfragments-in-code">定义可重用 RenderFragment</a> 的方式。</p>
+<pre><code class="language-razor">@RenderWelcomeInfo
+
+@code {
+    private RenderFragment RenderWelcomeInfo = @&lt;p&gt;Welcome to your new app!&lt;/p&gt;;
+}
+</code></pre>
+<p>要传参数时，用泛型，但是值要用委托了：</p>
+<pre><code class="language-razor">@RenderWelcomeInfo(123)
+
+@code {
+    private RenderFragment&lt;int&gt; RenderWelcomeInfo = index =&gt; @&lt;p&gt;Welcome to your new app @index! &lt;/p&gt;;
+}
+</code></pre>
+<p>当然你愿意也可以在 C# 代码中用 Builder 方式构建渲染片段。</p>
+<pre><code class="language-cs">private RenderFragment RenderWelcomeInfo = builder =&gt; builder.AddContent(0, &quot;Welcome to your new app!&quot;);
+</code></pre>
+<p>这是学是定义渲染片段最简单的方式，但是强制要用标签开头，对于复杂的模版不太友好，比如我们想在开头加 @if 条件。另外对 VS 的格式化也不友好。</p>
+<p>因此本文介绍一个官方文档上都没有的隐藏的技巧，就是用 __builder 这个 razor 文件在编译时才生成的变量，作为模版的上下文。这样就可以用普通方式写 razor 模版了。</p>
+<p>在 razor 文件中定义一个方法，入参需要包含类型是 <code>RenderTreeBuilder</code> 参数名是 <code>__builder</code> 的参数。这样就能直接在方法内些 razor 模版代码了。如果无需访问当前组件实例的引用，可以定义为 <code>static</code> 方法。</p>
+<pre><code class="language-razor">@RenderWelcomeInfo
+
+@code {
+
+    void RenderWelcomeInfo(RenderTreeBuilder __builder)
+    {
+        @if (someCondition)
+        {
+            &lt;p&gt;Welcome to your new app!&lt;/p&gt;
+        }
+    }
+}
+</code></pre>
+<p>当需要传参数时，可以在方法上再加参数。使用时则需要用调用方法的方式，并传入隐藏的固定变量 __builder。</p>
+<pre><code class="language-razor">@{ RenderWelcomeInfo(__builder, 1); }
+
+@code {
+
+    void RenderWelcomeInfo(RenderTreeBuilder __builder, int index)
+    {
+        @if (someCondition)
+        {
+            &lt;p&gt;Welcome to your new app @index !&lt;/p&gt;
+        }
+    }
+}
+</code></pre>
+<p>可以看出 __builder 是个神奇的魔法变量，正常用户都不了解。学会这个技巧，你也就成为 Blazor 的高手了！</p>
+
         </div>
         
         <div class="my-4">
@@ -281,7 +325,7 @@
     
     
     
-    <a href="https://github.com/ElderJames/blogs/blob/master/content/posts/ant-blazor-1.0-roadmap.md" title="Edit this page">
+    <a href="https://github.com/ElderJames/blogs/blob/master/content/posts/blazor-reuse-render-fragment.md" title="Edit this page">
         <i class="fas fa-edit mr-1"></i>
         <span>编辑本页</span>
     </a>
@@ -297,13 +341,13 @@
     <div>
         
         <span class="block font-bold">上一页</span>
-        <a href="/posts/publish-net-apps-to-docker/" class="block">如何无需 Dockerfile 直接发布 .NET 7 应用到 Docker</a>
+        <a href="/posts/how-to-fix-slow-page-loads-when-navigating-blazor/" class="block">如何解决 Blazor 导航时页面加载慢的问题</a>
         
     </div>
     <div class="md:text-right mt-4 md:mt-0">
         
         <span class="block font-bold">下一页</span>
-        <a href="/posts/get-ready-for-the-net-20th-anniversary-celebration/" class="block">来自 .NET 基金会的来信 —— 为 .NET 20周年庆祝活动做好准备</a>
+        <a href="/posts/spire-replace-pdf-text/" class="block">C# 利用 Spire 替换 PDF 文件的指定文字</a>
         
     </div>
 </div>
@@ -319,16 +363,22 @@
         <h2 class="text-lg font-semibold mb-4">相关</h2>
         <div class="content">
             
-            <a href="/posts/implement-reuse-tabs-using-antblazor/">Ant Design Blazor 组件库的路由复用多标签页介绍</a>
+            <a href="/posts/blazor-css-isolation/">Blazor CSS 隔离</a>
             <br />
             
-            <a href="/posts/blazor-interview-questions/">Blazor 面试 18 问</a>
+            <a href="/posts/blazor-localization-shared-resource/">Blazor 本地化之共享资源与局部刷新</a>
             <br />
             
-            <a href="/posts/get-ready-for-the-net-20th-anniversary-celebration/">来自 .NET 基金会的来信 —— 为 .NET 20周年庆祝活动做好准备</a>
+            <a href="/posts/blazor-reload-partial/">Blazor 应用内局部刷新</a>
             <br />
             
-            <a href="/posts/asp-net-core-updates-in-net-6-preview-2/">ASP.NET Core 在 .NET 6 Preview 2 中的更新</a>
+            <a href="/posts/blazor-simple-reuse-tabs/">Blazor 标签页简化版实现</a>
+            <br />
+            
+            <a href="/posts/publish-net-apps-to-docker/">如何无需 Dockerfile 直接发布 .NET 7 应用到 Docker</a>
+            <br />
+            
+            <a href="/posts/ant-blazor-1.0-roadmap/">Ant Design Blazor 1.0 正式版发布计划</a>
             <br />
             
         </div>

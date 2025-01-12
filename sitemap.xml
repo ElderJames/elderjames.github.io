@@ -4,102 +4,107 @@
   
   <url>
     <loc>/tags/.net/</loc>
-    <lastmod>2025-01-04T19:55:01+08:00</lastmod>
+    <lastmod>2025-01-12T18:32:12+08:00</lastmod>
   </url>
   
   <url>
     <loc>/tags/blazor/</loc>
-    <lastmod>2025-01-04T19:55:01+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/posts/blazor-reload-partial/</loc>
-    <lastmod>2025-01-04T19:55:01+08:00</lastmod>
+    <lastmod>2025-01-12T18:32:12+08:00</lastmod>
   </url>
   
   <url>
     <loc>/tags/</loc>
-    <lastmod>2025-01-04T19:55:01+08:00</lastmod>
+    <lastmod>2025-01-12T18:32:12+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/how-to-fix-slow-page-loads-when-navigating-blazor/</loc>
+    <lastmod>2025-01-12T18:32:12+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/blazor-reuse-render-fragment/</loc>
+    <lastmod>2025-01-12T18:32:12+08:00</lastmod>
   </url>
   
   <url>
     <loc>/posts/spire-replace-pdf-text/</loc>
-    <lastmod>2025-01-04T19:55:01+08:00</lastmod>
+    <lastmod>2025-01-12T18:32:12+08:00</lastmod>
   </url>
   
   <url>
     <loc>/tags/pdf/</loc>
-    <lastmod>2025-01-04T19:55:01+08:00</lastmod>
+    <lastmod>2025-01-12T18:32:12+08:00</lastmod>
   </url>
   
   <url>
     <loc>/posts/pdf-remove-watermark/</loc>
-    <lastmod>2025-01-04T19:55:01+08:00</lastmod>
+    <lastmod>2025-01-12T18:32:12+08:00</lastmod>
   </url>
   
   <url>
     <loc>/posts/blazor-css-isolation/</loc>
-    <lastmod>2025-01-04T19:55:01+08:00</lastmod>
+    <lastmod>2025-01-12T18:32:12+08:00</lastmod>
   </url>
   
   <url>
     <loc>/posts/blazor-localization-shared-resource/</loc>
-    <lastmod>2025-01-04T19:55:01+08:00</lastmod>
+    <lastmod>2025-01-12T18:32:12+08:00</lastmod>
   </url>
   
   <url>
     <loc>/posts/blazor-reload-partial/</loc>
-    <lastmod>2025-01-04T19:55:01+08:00</lastmod>
+    <lastmod>2025-01-12T18:32:12+08:00</lastmod>
   </url>
   
   <url>
     <loc>/posts/blazor-simple-reuse-tabs/</loc>
-    <lastmod>2025-01-04T19:55:01+08:00</lastmod>
+    <lastmod>2025-01-12T18:32:12+08:00</lastmod>
   </url>
   
   <url>
     <loc>/posts/resolves-width-issues-in-blazor-caused-by-element-wrapping/</loc>
-    <lastmod>2025-01-04T19:55:01+08:00</lastmod>
+    <lastmod>2025-01-12T18:32:12+08:00</lastmod>
   </url>
   
   <url>
     <loc>/tags/antdesign/</loc>
-    <lastmod>2025-01-04T19:55:01+08:00</lastmod>
+    <lastmod>2025-01-12T18:32:12+08:00</lastmod>
   </url>
   
   <url>
     <loc>/posts/ant-blazor-reusetabs-supports-supply-parameter-form-query/</loc>
-    <lastmod>2025-01-04T19:55:01+08:00</lastmod>
+    <lastmod>2025-01-12T18:32:12+08:00</lastmod>
   </url>
   
   <url>
     <loc>/posts/publish-net-apps-to-docker/</loc>
-    <lastmod>2025-01-04T19:55:01+08:00</lastmod>
+    <lastmod>2025-01-12T18:32:12+08:00</lastmod>
   </url>
   
   <url>
     <loc>/posts/ant-blazor-1.0-roadmap/</loc>
-    <lastmod>2025-01-04T19:55:01+08:00</lastmod>
+    <lastmod>2025-01-12T18:32:12+08:00</lastmod>
   </url>
   
   <url>
     <loc>/posts/get-ready-for-the-net-20th-anniversary-celebration/</loc>
-    <lastmod>2025-01-04T19:55:01+08:00</lastmod>
+    <lastmod>2025-01-12T18:32:12+08:00</lastmod>
   </url>
   
   <url>
     <loc>/posts/implement-reuse-tabs-using-antblazor/</loc>
-    <lastmod>2025-01-04T19:55:01+08:00</lastmod>
+    <lastmod>2025-01-12T18:32:12+08:00</lastmod>
   </url>
   
   <url>
     <loc>/posts/blazor-interview-questions/</loc>
-    <lastmod>2025-01-04T19:55:01+08:00</lastmod>
+    <lastmod>2025-01-12T18:32:12+08:00</lastmod>
   </url>
   
   <url>
     <loc>/posts/asp-net-core-updates-in-net-6-preview-2/</loc>
-    <lastmod>2025-01-04T19:55:01+08:00</lastmod>
+    <lastmod>2025-01-12T18:32:12+08:00</lastmod>
   </url>
   
   <url>
@@ -116,17 +121,17 @@
   
   <url>
     <loc>/archives/</loc>
-    <lastmod>2025-01-04T19:55:01+08:00</lastmod>
+    <lastmod>2025-01-12T18:32:12+08:00</lastmod>
   </url>
   
   <url>
     <loc>/posts/</loc>
-    <lastmod>2025-01-04T19:55:01+08:00</lastmod>
+    <lastmod>2025-01-12T18:32:12+08:00</lastmod>
   </url>
   
   <url>
     <loc>/</loc>
-    <lastmod>2025-01-04T19:55:01+08:00</lastmod>
+    <lastmod>2025-01-12T18:32:12+08:00</lastmod>
   </url>
   
 </urlset>
