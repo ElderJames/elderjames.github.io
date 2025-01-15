@@ -9,6 +9,15 @@
     <copyright>&amp;copy; 2021 &lt;a href=&#34;https://jamesyeung.cn/&#34;&gt;James Yeung&lt;/a&gt;
 </copyright><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Blazor 如何避免组件内部修改过的属性值被外部覆写</title>
+      <link>/posts/blazor-prevents-property-be-overwritten-externally/</link>
+      <pubDate>Wed, 15 Jan 2025 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/blazor-prevents-property-be-overwritten-externally/</guid>
+      <description>在开发组件时，我们经常会在组件内部修改组件的某个属性，来达到控制组件功能的目的。但是属性值被修改后，又会在组件外部重新渲染时被覆盖为外部的值。那么，组件内部修改的属性值，如何避免被外部覆写呢？</description>
+    </item>
+    
+    <item>
       <title>如何解决 Blazor 导航时页面加载慢的问题</title>
       <link>/posts/how-to-fix-slow-page-loads-when-navigating-blazor/</link>
       <pubDate>Sun, 12 Jan 2025 00:00:00 +0000</pubDate>

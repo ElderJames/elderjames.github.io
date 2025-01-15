@@ -3,7 +3,7 @@
 <meta name="viewport" content="width=device-width">
 
 
-<title>C# 利用 Spire 替换 PDF 文件的指定文字 | James Yeung</title>
+<title>Blazor 如何避免组件内部修改过的属性值被外部覆写 | James Yeung</title>
 <link rel="stylesheet" href="/css/eureka.min.css">
 <script defer src="/js/eureka.min.js"></script>
 
@@ -62,7 +62,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/images/icon_hu64421c6c7700f606f0ad45d807017b09_5843_180x180_fill_box_center_2.png">
 
 <meta name="description"
-  content="本文介绍对于已导出的pdf文件，使用 Spire 替换其中的指定文字。">
+  content="在开发组件时，我们经常会在组件内部修改组件的某个属性，来达到控制组件功能的目的。但是属性值被修改后，又会在组件外部重新渲染时被覆盖为外部的值。那么，组件内部修改的属性值，如何避免被外部覆写呢？">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -74,8 +74,8 @@
       "item":"/posts/"},{
       "@type": "ListItem",
       "position": 2 ,
-      "name":"C# 利用 Spire 替换 PDF 文件的指定文字",
-      "item":"/posts/spire-replace-pdf-text/"}]
+      "name":"Blazor 如何避免组件内部修改过的属性值被外部覆写",
+      "item":"/posts/blazor-prevents-property-be-overwritten-externally/"}]
 }
 </script>
 
@@ -87,11 +87,11 @@
     "@type": "Article",
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "/posts/spire-replace-pdf-text/"
+        "@id": "/posts/blazor-prevents-property-be-overwritten-externally/"
     },
-    "headline": "C# 利用 Spire 替换 PDF 文件的指定文字 | James Yeung","datePublished": "2024-09-10T00:00:00+00:00",
+    "headline": "Blazor 如何避免组件内部修改过的属性值被外部覆写 | James Yeung","datePublished": "2025-01-15T00:00:00+00:00",
     "dateModified": "2025-01-15T22:14:43+08:00",
-    "wordCount":  222 ,
+    "wordCount":  1376 ,
     "publisher": {
         "@type": "Person",
         "name": "James Yeung",
@@ -100,21 +100,21 @@
             "url": "/photos/mvp-avatar.png"
         }
         },
-    "description": "本文介绍对于已导出的pdf文件，使用 Spire 替换其中的指定文字。"
+    "description": "在开发组件时，我们经常会在组件内部修改组件的某个属性，来达到控制组件功能的目的。但是属性值被修改后，又会在组件外部重新渲染时被覆盖为外部的值。那么，组件内部修改的属性值，如何避免被外部覆写呢？"
 }
-</script><meta property="og:title" content="C# 利用 Spire 替换 PDF 文件的指定文字 | James Yeung" />
+</script><meta property="og:title" content="Blazor 如何避免组件内部修改过的属性值被外部覆写 | James Yeung" />
 <meta property="og:type" content="article" />
 
 
 <meta property="og:image" content="/images/icon.png">
 
 
-<meta property="og:url" content="/posts/spire-replace-pdf-text/" />
+<meta property="og:url" content="/posts/blazor-prevents-property-be-overwritten-externally/" />
 
 
 
 
-<meta property="og:description" content="本文介绍对于已导出的pdf文件，使用 Spire 替换其中的指定文字。" />
+<meta property="og:description" content="在开发组件时，我们经常会在组件内部修改组件的某个属性，来达到控制组件功能的目的。但是属性值被修改后，又会在组件外部重新渲染时被覆盖为外部的值。那么，组件内部修改的属性值，如何避免被外部覆写呢？" />
 
 
 
@@ -131,7 +131,7 @@
 
 
 
-<meta property="article:published_time" content="2024-09-10T00:00:00&#43;00:00" />
+<meta property="article:published_time" content="2025-01-15T00:00:00&#43;00:00" />
 
 
 <meta property="article:modified_time" content="2025-01-15T22:14:43&#43;08:00" />
@@ -143,13 +143,15 @@
 
 <meta property="article:tag" content=".NET" />
 
-<meta property="article:tag" content="PDF" />
+<meta property="article:tag" content="Blazor" />
 
 
 
 
 
-<meta property="og:see_also" content="/posts/pdf-remove-watermark/" />
+<meta property="og:see_also" content="/posts/how-to-fix-slow-page-loads-when-navigating-blazor/" />
+
+<meta property="og:see_also" content="/posts/blazor-reuse-render-fragment/" />
 
 <meta property="og:see_also" content="/posts/blazor-css-isolation/" />
 
@@ -158,8 +160,6 @@
 <meta property="og:see_also" content="/posts/blazor-reload-partial/" />
 
 <meta property="og:see_also" content="/posts/blazor-simple-reuse-tabs/" />
-
-<meta property="og:see_also" content="/posts/publish-net-apps-to-docker/" />
 
 
 
@@ -235,16 +235,16 @@
 
 <div class="grid grid-cols-2 lg:grid-cols-8 gap-4 lg:pt-12">
     <div
-        class="col-span-2 lg:col-start-2 lg:col-span-6 bg-secondary-bg rounded px-6 py-8">
-        <h1 class="font-bold text-3xl text-primary-text">C# 利用 Spire 替换 PDF 文件的指定文字</h1>
+        class="col-span-2  lg:col-span-6 bg-secondary-bg rounded px-6 py-8">
+        <h1 class="font-bold text-3xl text-primary-text">Blazor 如何避免组件内部修改过的属性值被外部覆写</h1>
         <div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
     <div class="mr-6 my-2">
         <i class="fas fa-calendar mr-1"></i>
-        <span>2024-09-10</span>
+        <span>2025-01-15</span>
     </div>
     <div class="mr-6 my-2">
         <i class="fas fa-clock mr-1"></i>
-        <span>1分钟阅读时长</span>
+        <span>3分钟阅读时长</span>
     </div>
     
     
@@ -256,41 +256,46 @@
         
 
         <div class="content">
-            <p>找了多个C#库，只有 Spire 的 PdfTextReplacer 类比较好用，能直接替换整段文本。</p>
-<pre><code class="language-cs">    private void ReplaceText(string sourceFile, string outputPdf)
+            <p>在开发组件时，我们经常会在组件内部修改组件的某个属性，来达到控制组件功能的目的。但是属性值被修改后，又会在组件外部重新渲染时被覆盖为外部的值。那么，组件内部修改的属性值，如何避免被外部覆写呢？</p>
+<p>我们比较熟悉 Vue 的朋友可能会知道，Vue 也有遇到这种问题，因此 props 是有约束不可以被组件内部修改的。往往需要用一个计算属性或者data来另外存储组件内部修改的属性值，然后再使用这个计算属性或者data来接受外部修改的新值。</p>
+<p>在 Blazor 中，没有属性修改约束，大家在开发时可以自由地修改属性值。但是从内部修改了属性之后，根据组件的生命周期，当父级组件执行渲染时，会重新设置组件的属性，在 <code>SetParametersAsync</code> 方法中会逐一对比组件内当前的属性值与外部传入的值，如果不相等就会赋值给属性，所以内部值就被覆盖了。
+举个例子，当要开发一个组件，里面有一个 <code>Visible</code> 属性用于控制组件的显示/隐藏状态。要求支持在组件外部用 <code>Visible</code> 属性控制，又需要组件内部本身有按钮/图标等来控制打开/关闭时，会出现以下一些情况：</p>
+<ol>
+<li>默认Visible=false，点击组件内部的按钮变为 Visible=true，然后组件外部重新渲染，则会重新赋值 Visible=false（因为外部属性赋值就是false）。</li>
+<li>外部将Visible从false改为true，组件显示了，内部按钮点击关闭，将Visible=false，然后组件外部重新渲染，则会重新赋值 Visible=true（因为外部属性赋值就是true）。</li>
+</ol>
+<p>&hellip; 以此类推，总之就是因为<strong>内外属性值不同步</strong>导致的内部无法正常改变状态的问题。</p>
+<p>那应该怎么解决呢？我目前有两种方法，欢迎有更好的思路的朋友赐教。</p>
+<h3 id="1-使用-bind-value-双向绑定">1. 使用 @bind-value 双向绑定</h3>
+<p>我们知道双向绑定就是在组件内部修改组件外部通过 <code>@bind</code> 绑定的变量，以达到属性值在组件内外的同步。</p>
+<p>但是要实现双向绑定，组件的外部和内部都增加了不少的代码。比如组件内要增加属性 VisibleChanged，并注意在属性值需要被修改时调用 <code>VisibleChanged.InvokeAsync(newValue)</code>。然后在使用组件时，又要用户自己注意用 <code>@bind-Visible</code> 的方式来绑定值，不看文档及其容易漏掉。如果没有双向绑定的写法，一样会遇到同样的问题。</p>
+<h3 id="2-增加内部字段使用属性setter同步外部的值">2. 增加内部字段，使用属性setter同步外部的值</h3>
+<p>我认为这种方式更加适合组件的开发，让组件本身更有自主性。</p>
+<p>首先，我们先在组件内定义一个字段例如 <code>_isVisible</code>，在组件内部只依据 <code>_isVisible</code> 来控制显示/隐藏，组件内部的按钮/图标等点击时，修改 <code>_isVisible</code> 即可。</p>
+<p>这样就解决了组件内部状态自治的问题，那怎么解决外部通过属性来控制这个状态呢？</p>
+<p>当然还是要定义属性 <code>Visible</code> 并且是完整属性，即包含了 <code>get</code> 和 <code>set</code> 方法和承接属性的字段 <code>_visible</code>。然后在 <code>set</code> 方法中，判断 <code>_visible!= value</code> 时更新 <code>_isVisible</code>。</p>
+<pre><code>
+private bool _visible;
+private bool _isVisible;
+
+[Parameter] 
+public bool Visible
+{
+    get =&gt; _visible;
+    set
     {
-        // 创建PdfDocument 对象
-        Spire.Pdf.PdfDocument doc = new();
-
-        // 加载PDF 文件
-        doc.LoadFromFile(sourceFile);
-
-        // 获取特定的页面
-        PdfPageBase page = doc.Pages[0];
-
-        // 根据页面创建 PdfTextReplacer 对象
-        PdfTextReplacer textReplacer = new PdfTextReplacer(page);
-
-        // // 创建PdfTextReplaceOptions 对象
-        // PdfTextReplaceOptions textReplaceOptions = new PdfTextReplaceOptions();
-
-        // // 指定文本替换的选项
-        // textReplaceOptions.ReplaceType = PdfTextReplaceOptions.ReplaceActionType.AutofitWidth;
-        // textReplacer.Options = textReplaceOptions;
-
-        // 将所有目标文本的出现替换为新文本
-        textReplacer.ReplaceAllText(&quot;{{username}}&quot;, &quot;John Doe&quot;);
-        textReplacer.ReplaceAllText(&quot;{{date}}&quot;, &quot;2024-Sept&quot;);
-
-        // 将文档保存到另一个 PDF 文件中
-        doc.SaveToFile(outputPdf);
-
-        // 释放资源
-        doc.Dispose();
-
+        if (_visible != value)
+        {
+            _visible = value;
+            _isVisible = value;
+        }
     }
+}
 </code></pre>
-<p>未授权版本会有水印，可以用另一篇文字介绍的方法去除，或购买正版授权。</p>
+<p>这样，<code>_visible</code> 负责存储外部传入的属性值，<code>_isVisible</code> 负责存储组件内部修改的属性值，判断 <code>visible != value</code> 则达到了避免覆写的目的。</p>
+<p>当用户没有用 <code>Visible</code> 来控制时，就是默认 false，就算被重新赋值，也会被这个判断拦住，不去修改 <code>_isVisible</code>。</p>
+<p>当用户要使用 <code>Visible</code> 属性来控制组件时， <code>_isVisible</code> 的值会跟着 <code>_visible</code> 变化的。就是不同步，最多是当 <code>_visible</code> 变为 <code>_isVisible</code> 相等，外部看起来操作无效，但是最终状态的一致的。</p>
+<p>这个写法我自己认为很像汽车的离合器，可以让组件自转，又能在需要时从外部控制。</p>
 
         </div>
         
@@ -298,7 +303,7 @@
     
     <a href="/tags/.net/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 mr-2 hover:text-eureka">#.NET</a>
     
-    <a href="/tags/pdf/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 mr-2 hover:text-eureka">#PDF</a>
+    <a href="/tags/blazor/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 mr-2 hover:text-eureka">#Blazor</a>
     
 </div>
         
@@ -311,7 +316,7 @@
     
     
     
-    <a href="https://github.com/ElderJames/blogs/blob/master/content/posts/pdf-replace-text.md" title="Edit this page">
+    <a href="https://github.com/ElderJames/blogs/blob/master/content/posts/prevert-blazor-parameter-recover.md" title="Edit this page">
         <i class="fas fa-edit mr-1"></i>
         <span>编辑本页</span>
     </a>
@@ -326,14 +331,11 @@
 <div class="flex flex-col md:flex-row md:justify-between -mx-2 mt-4 px-2 pt-4 border-t">
     <div>
         
-        <span class="block font-bold">上一页</span>
-        <a href="/posts/blazor-reuse-render-fragment/" class="block">Blazor 模版方式复用渲染片段</a>
-        
     </div>
     <div class="md:text-right mt-4 md:mt-0">
         
         <span class="block font-bold">下一页</span>
-        <a href="/posts/pdf-remove-watermark/" class="block">利用 iTextSharp 去除 PDF 水印</a>
+        <a href="/posts/how-to-fix-slow-page-loads-when-navigating-blazor/" class="block">如何解决 Blazor 导航时页面加载慢的问题</a>
         
     </div>
 </div>
@@ -341,15 +343,44 @@
         
     </div>
     
+    <div class="col-span-2">
+        
+        
+        <div class="sticky top-16 z-10 hidden lg:block px-6 py-4  bg-primary-bg ">
+    <span class="text-lg font-semibold">本页内容</span>
+</div>
+<div class="sticky-toc hidden lg:block px-6 pb-6 ">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#1-使用-bind-value-双向绑定">1. 使用 @bind-value 双向绑定</a></li>
+        <li><a href="#2-增加内部字段使用属性setter同步外部的值">2. 增加内部字段，使用属性setter同步外部的值</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</div>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        enableStickyToc();
+    });
+</script>
+        
+    </div>
+    
 
     
     
     <div
-        class="col-span-2 lg:col-start-2 lg:col-span-6 bg-secondary-bg rounded p-6">
+        class="col-span-2  lg:col-span-6 bg-secondary-bg rounded p-6">
         <h2 class="text-lg font-semibold mb-4">相关</h2>
         <div class="content">
             
-            <a href="/posts/pdf-remove-watermark/">利用 iTextSharp 去除 PDF 水印</a>
+            <a href="/posts/how-to-fix-slow-page-loads-when-navigating-blazor/">如何解决 Blazor 导航时页面加载慢的问题</a>
+            <br />
+            
+            <a href="/posts/blazor-reuse-render-fragment/">Blazor 模版方式复用渲染片段</a>
             <br />
             
             <a href="/posts/blazor-css-isolation/">Blazor CSS 隔离</a>
@@ -362,9 +393,6 @@
             <br />
             
             <a href="/posts/blazor-simple-reuse-tabs/">Blazor 标签页简化版实现</a>
-            <br />
-            
-            <a href="/posts/publish-net-apps-to-docker/">如何无需 Dockerfile 直接发布 .NET 7 应用到 Docker</a>
             <br />
             
         </div>
